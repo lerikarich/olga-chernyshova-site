@@ -1,4 +1,5 @@
 .DS_Store
+*.swp
 
 # Working notes and original image sources are not needed on the public site.
 TZ_for_client_meeting.md
