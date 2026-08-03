@@ -4288,6 +4288,24 @@ li,
   .modal-carousel--compact .modal-carousel__slide img {
     height: clamp(280px, 88vw, 420px);
   }
+
+  #modal-contour .contour-carousel .modal-carousel__viewport,
+  #modal-contour .contour-carousel .modal-carousel__slide,
+  #modal-contour .contour-carousel .modal-carousel__slide img,
+  #modal-contour .contour-carousel .modal-result__caption {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  #modal-contour .contour-carousel {
+    display: block;
+  }
+
+  #modal-contour .contour-carousel .modal-result__caption {
+    overflow-wrap: anywhere;
+  }
 }
 
 .service-modal-content .modal-result__grid {
@@ -6514,6 +6532,22 @@ if ('IntersectionObserver' in window) {
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-new-before-after.webp" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="720" height="1280" />
                   <figcaption class="modal-result__caption">Контурная пластика губ — до и после</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-01.webp" alt="До и после контурной пластики губ: более выраженный объем и контур" loading="lazy" decoding="async" width="1000" height="1778" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 1</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-02.webp" alt="До и после контурной пластики губ: естественная коррекция формы" loading="lazy" decoding="async" width="1000" height="1778" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 2</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-03.webp" alt="До и после контурной пластики губ: гармоничный объем" loading="lazy" decoding="async" width="954" height="1662" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 3</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-04.webp" alt="До и после контурной пластики губ: деликатная коррекция объема" loading="lazy" decoding="async" width="1000" height="1752" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 4</figcaption>
                 </figure>
               </div>
               <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото контурной пластики">›</button>
