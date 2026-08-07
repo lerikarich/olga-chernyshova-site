@@ -4306,6 +4306,28 @@ li,
   #modal-contour .contour-carousel .modal-result__caption {
     overflow-wrap: anywhere;
   }
+
+  #modal-contour .contour-carousel .modal-carousel__dots {
+    width: 100%;
+    gap: 0;
+  }
+
+  #modal-contour .contour-carousel .modal-carousel__dots button,
+  #modal-contour .contour-carousel .modal-carousel__dots button.is-active {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    height: 36px;
+  }
+
+  #modal-contour .contour-carousel .modal-carousel__dots button::before {
+    width: 7px;
+    height: 7px;
+  }
+
+  #modal-contour .contour-carousel .modal-carousel__dots button.is-active::before {
+    width: 18px;
+  }
 }
 
 .service-modal-content .modal-result__grid {
@@ -6548,6 +6570,14 @@ if ('IntersectionObserver' in window) {
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-result-04.webp" alt="До и после контурной пластики губ: деликатная коррекция объема" loading="lazy" decoding="async" width="1000" height="1752" />
                   <figcaption class="modal-result__caption">Контурная пластика губ — результат 4</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-05.webp" alt="До и после контурной пластики губ: коррекция формы и объема" loading="lazy" decoding="async" width="1000" height="1778" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 5</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-06.webp" alt="До и после контурной пластики губ: естественный объем и четкий контур" loading="lazy" decoding="async" width="1000" height="1778" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 6</figcaption>
                 </figure>
               </div>
               <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото контурной пластики">›</button>
