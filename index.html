@@ -5598,6 +5598,574 @@ li,
   }
 }
 
+/* Peeling details: compact editorial layout inspired by the supplied reference. */
+#modal-peel .service-modal-dialog {
+  width: min(980px, calc(100vw - 32px));
+  background:
+    radial-gradient(circle at 100% 0%, rgba(219, 229, 211, .32), transparent 34%),
+    #fbfaf7;
+  border-color: rgba(61, 92, 70, .14);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(36, 50, 40, .18);
+}
+
+#modal-peel .service-modal-header {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 44px;
+  min-height: 44px;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+#modal-peel .service-modal-header h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+#modal-peel .service-modal-header .service-modal-close {
+  position: static;
+  width: 44px;
+  height: 44px;
+  border-color: rgba(37, 67, 48, .12);
+  background: rgba(255, 255, 252, .9);
+  box-shadow: 0 8px 24px rgba(31, 48, 36, .1);
+  transform: none;
+  backdrop-filter: blur(10px);
+}
+
+#modal-peel .service-modal-scroll {
+  padding: 14px;
+}
+
+#modal-peel .peel-editorial {
+  --peel-ink: #173d2a;
+  --peel-copy: #42564a;
+  --peel-muted: #6f7d73;
+  --peel-line: rgba(40, 73, 52, .13);
+  --peel-soft: #f2f4ee;
+  --peel-card: rgba(255, 255, 252, .84);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex !important;
+  flex-direction: column;
+  gap: 0 !important;
+  color: var(--peel-copy);
+  font-family: "Manrope", sans-serif;
+}
+
+#modal-peel .peel-editorial h4 {
+  margin: 0;
+  color: var(--peel-ink);
+  font-family: "Playfair Display", serif;
+  font-weight: 650;
+  letter-spacing: -.025em;
+}
+
+#modal-peel .peel-editorial p {
+  margin: 0;
+}
+
+#modal-peel .peel-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  grid-template-areas:
+    "intro media"
+    "facts media"
+    "concerns media";
+  gap: 22px 28px;
+  padding: 26px;
+  border: 1px solid var(--peel-line);
+  border-radius: 18px;
+  background: var(--peel-card);
+}
+
+#modal-peel .peel-hero__intro {
+  grid-area: intro;
+  padding-right: 18px;
+}
+
+#modal-peel .peel-hero__intro h4 {
+  font-size: clamp(2.2rem, 4.8vw, 3.65rem);
+  line-height: 1;
+}
+
+#modal-peel .peel-hero__intro p {
+  max-width: 44ch;
+  margin-top: 16px;
+  color: #2e4436;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+#modal-peel .peel-hero__media {
+  grid-area: media;
+  min-height: 380px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e8e6df;
+}
+
+#modal-peel .peel-hero__media img {
+  width: 100%;
+  height: 100%;
+  max-height: none !important;
+  display: block;
+  object-fit: cover;
+  object-position: 61% center;
+}
+
+#modal-peel .peel-facts {
+  grid-area: facts;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#modal-peel .peel-fact {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 4px;
+  text-align: center;
+}
+
+#modal-peel .peel-fact svg,
+#modal-peel .peel-note svg,
+#modal-peel .peel-faq summary svg,
+#modal-peel .peel-consult > svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--peel-ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#modal-peel .peel-fact strong {
+  color: #263c2e;
+  font-size: .8rem;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+#modal-peel .peel-fact span {
+  color: var(--peel-muted);
+  font-size: .76rem;
+  line-height: 1.25;
+}
+
+#modal-peel .peel-concerns {
+  grid-area: concerns;
+  align-self: end;
+  padding-top: 20px;
+  border-top: 1px solid var(--peel-line);
+}
+
+#modal-peel .peel-concerns > p {
+  color: #2c4635;
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+#modal-peel .peel-concerns ul,
+#modal-peel .peel-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#modal-peel .peel-concerns li,
+#modal-peel .peel-types li {
+  padding: 7px 11px;
+  border: 1px solid rgba(49, 79, 58, .08);
+  border-radius: 999px;
+  color: #56685d;
+  background: var(--peel-soft);
+  font-size: .76rem;
+  line-height: 1.1;
+}
+
+#modal-peel .peel-result-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(280px, .82fr);
+  gap: 26px;
+  padding: 26px 8px;
+  border-bottom: 1px solid var(--peel-line);
+}
+
+#modal-peel .peel-result,
+#modal-peel .peel-steps {
+  min-width: 0;
+}
+
+#modal-peel .peel-result h4,
+#modal-peel .peel-steps h4,
+#modal-peel .peel-faq > h4 {
+  font-size: 1.28rem;
+  line-height: 1.25;
+}
+
+#modal-peel .peel-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+#modal-peel .peel-comparison figure {
+  min-width: 0;
+  margin: 0;
+}
+
+#modal-peel .peel-comparison__crop {
+  position: relative;
+  aspect-ratio: .565 / 1;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #e7ddd5;
+}
+
+#modal-peel .peel-comparison__crop img {
+  position: absolute;
+  top: 0;
+  width: 200%;
+  max-width: none;
+  height: 100%;
+  max-height: none !important;
+  display: block;
+}
+
+#modal-peel .peel-comparison__before {
+  left: 0;
+}
+
+#modal-peel .peel-comparison__after {
+  left: -100%;
+}
+
+#modal-peel .peel-comparison figcaption {
+  margin-top: 8px;
+  color: #31483a;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+#modal-peel .peel-result__copy {
+  margin-top: 14px;
+  color: var(--peel-muted);
+  font-size: .78rem;
+  line-height: 1.55;
+}
+
+#modal-peel .peel-steps {
+  align-self: start;
+  padding: 22px;
+  border: 1px solid var(--peel-line);
+  border-radius: 16px;
+  background: rgba(255, 255, 252, .72);
+}
+
+#modal-peel .peel-steps ol {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#modal-peel .peel-steps li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  color: #31483a;
+  font-size: .88rem;
+  line-height: 1.35;
+}
+
+#modal-peel .peel-steps li > span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #41634c;
+  background: var(--peel-soft);
+  font-size: .8rem;
+  font-weight: 750;
+}
+
+#modal-peel .peel-note {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f7f8f3, #efeee7);
+}
+
+#modal-peel .peel-note p {
+  color: #56665b;
+  font-size: .75rem;
+  line-height: 1.55;
+}
+
+#modal-peel .peel-faq {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--peel-line);
+}
+
+#modal-peel .peel-faq > h4 {
+  margin: 0 8px 16px;
+}
+
+#modal-peel .peel-faq details {
+  margin-top: 9px;
+  overflow: hidden;
+  border: 1px solid var(--peel-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 252, .76);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+#modal-peel .peel-faq details[open] {
+  border-color: rgba(48, 84, 58, .24);
+  background: #fffefb;
+}
+
+#modal-peel .peel-faq summary {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  color: #294333;
+  font-size: .86rem;
+  font-weight: 650;
+  list-style: none;
+  cursor: pointer;
+}
+
+#modal-peel .peel-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+#modal-peel .peel-faq summary::after {
+  content: ">";
+  display: inline-block;
+  color: #31513c;
+  font-size: 1.1rem;
+  transform: rotate(90deg);
+  transition: transform .2s ease;
+}
+
+#modal-peel .peel-faq details[open] summary::after {
+  transform: rotate(-90deg);
+}
+
+#modal-peel .peel-faq summary:focus-visible {
+  outline: 2px solid #6f9477;
+  outline-offset: -4px;
+  border-radius: 12px;
+}
+
+#modal-peel .peel-faq details > div {
+  padding: 0 18px 18px 56px;
+}
+
+#modal-peel .peel-faq details p,
+#modal-peel .peel-faq__result-list {
+  color: var(--peel-muted);
+  font-size: .8rem;
+  line-height: 1.6;
+}
+
+#modal-peel .peel-faq__result-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px 18px;
+  margin: 0 0 10px;
+  padding-left: 18px;
+}
+
+#modal-peel .peel-types {
+  margin-top: 0;
+}
+
+#modal-peel .peel-consult {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #f4f5ef, #eeece4);
+}
+
+#modal-peel .peel-consult > svg {
+  width: 38px;
+  height: 38px;
+}
+
+#modal-peel .peel-consult h4 {
+  font-family: "Manrope", sans-serif;
+  font-size: .98rem;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+#modal-peel .peel-consult p {
+  margin-top: 4px;
+  color: var(--peel-muted);
+  font-size: .8rem;
+}
+
+#modal-peel .peel-booking.btn {
+  width: 100%;
+  min-height: 56px;
+  margin: 20px 0 0;
+  border-radius: 14px;
+  justify-content: center;
+  text-align: center;
+}
+
+#modal-peel .peel-booking-note {
+  margin: 12px 0 4px;
+  color: var(--peel-muted);
+  font-size: .76rem;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  #modal-peel .service-modal-dialog {
+    width: calc(100vw - 20px);
+    height: calc(100dvh - 20px);
+    margin: 10px auto;
+    border-radius: 20px;
+  }
+
+  #modal-peel .service-modal-scroll {
+    padding: 8px;
+  }
+
+  #modal-peel .service-modal-header {
+    display: block;
+    grid-template-columns: none;
+  }
+
+  #modal-peel .peel-hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(128px, .95fr);
+    grid-template-areas:
+      "intro media"
+      "facts facts"
+      "concerns concerns";
+    gap: 18px 16px;
+    padding: 18px;
+  }
+
+  #modal-peel .peel-hero__intro {
+    align-self: center;
+    padding-right: 0;
+  }
+
+  #modal-peel .peel-hero__intro h4 {
+    font-size: clamp(1.85rem, 9vw, 2.45rem);
+  }
+
+  #modal-peel .peel-hero__intro p {
+    margin-top: 12px;
+    font-size: .8rem;
+    line-height: 1.55;
+  }
+
+  #modal-peel .peel-hero__media {
+    min-height: 210px;
+    border-radius: 14px;
+  }
+
+  #modal-peel .peel-facts {
+    gap: 8px;
+  }
+
+  #modal-peel .peel-concerns {
+    padding-top: 16px;
+  }
+
+  #modal-peel .peel-result-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding: 24px 8px;
+  }
+
+  #modal-peel .peel-steps {
+    padding: 18px;
+  }
+
+  #modal-peel .peel-faq {
+    padding: 24px 0;
+  }
+
+  #modal-peel .peel-faq details > div {
+    padding-left: 18px;
+  }
+
+  #modal-peel .peel-faq__result-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #modal-peel .peel-consult {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  #modal-peel .peel-booking.btn {
+    min-height: 54px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 720px) {
+  #modal-peel .peel-result-layout {
+    grid-template-columns: minmax(0, 1.16fr) minmax(210px, .84fr);
+  }
+}
+
+@media (max-width: 380px) {
+  #modal-peel .peel-hero {
+    grid-template-columns: minmax(0, 1fr) 116px;
+    padding: 16px;
+  }
+
+  #modal-peel .peel-hero__media {
+    min-height: 190px;
+  }
+
+  #modal-peel .peel-fact strong,
+  #modal-peel .peel-fact span {
+    font-size: .7rem;
+  }
+}
+
 /* Hardware service covers: editorial, image-led cards */
 </style>
   </head>
@@ -6076,6 +6644,7 @@ let modalBackgroundState = [];
 function prepareModalStructure(modal) {
   const content = modal.querySelector('.service-modal-content');
   if (!content) return;
+  if (modal.id === 'modal-peel') return;
   content.classList.add('service-modal-content--linear');
   const bookingLink = content.querySelector('a.btn');
   if (!bookingLink || bookingLink.closest('.modal-booking-card')) return;
@@ -6240,6 +6809,7 @@ function prepareModalShell(modal) {
 }
 function prepareModalFooter(modal) {
   const dialog = modal.querySelector('.service-modal-dialog');
+  if (modal.id === 'modal-peel') return;
   const bookingLink = dialog?.querySelector('.service-modal-content a.btn');
   if (!dialog || !bookingLink || dialog.querySelector(':scope > .service-modal-footer')) return;
 
@@ -6337,11 +6907,11 @@ function openModal(modal){
   lastFocused=document.activeElement;
   activeModal=modal;
   modal.hidden=false;
-  resetModalView(modal);
   document.body.classList.add('modal-open');
   isolateModalBackground(modal);
   const dialog=modal.querySelector('.service-modal-dialog');
-  if(dialog) dialog.focus();
+  if(dialog) dialog.focus({ preventScroll: true });
+  resetModalView(modal);
 }
 function closeModal(){if(!activeModal) return; activeModal.hidden=true; document.body.classList.remove('modal-open'); restoreModalBackground(); if(lastFocused) lastFocused.focus(); activeModal=null;}
 modalButtons.forEach((btn)=>btn.addEventListener('click',()=>openModal(document.getElementById(btn.dataset.modal))));
@@ -7198,64 +7768,130 @@ if ('IntersectionObserver' in window) {
       <div class="service-modal-dialog" tabindex="-1">
         <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
         <h3 id="modal-peel-title">Пилинги</h3>
-        <div class="service-modal-content">
-          <section class="modal-detail-card modal-detail-card--intro">
-            <h4>Услуга</h4>
-            <p>Пилинги для обновления кожи, выравнивания тона и мягкой коррекции текстуры.</p>
-          </section>
-          <section class="modal-detail-card modal-detail-card--gallery">
-            <h4>До / после фото</h4>
-            <figure class="modal-result__media">
-              <img src="peeling-before-after.jpeg" alt="До и после курса пилинга: уменьшение пигментации и более ровный тон кожи" loading="lazy" width="1320" height="1171" />
-              <figcaption class="modal-result__caption">До и после курса пилинга</figcaption>
+        <div class="service-modal-content peel-editorial">
+          <section class="peel-hero" aria-labelledby="peel-editorial-title">
+            <div class="peel-hero__intro">
+              <h4 id="peel-editorial-title">Пилинги</h4>
+              <p>Пилинги для обновления кожи, выравнивания тона и мягкой коррекции текстуры.</p>
+            </div>
+            <figure class="peel-hero__media">
+              <img src="peeling-cover.jpg" alt="Нанесение профессионального пилинга на кожу лица" loading="lazy" decoding="async" width="1536" height="1024" />
             </figure>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Описание услуги</h4>
-            <p>Подбор состава выполняется индивидуально, чтобы аккуратно улучшить состояние кожи без перегрузки и травматизации.</p>
-          </section>
-          <div class="modal-result__grid">
-            <section class="modal-result__panel">
-              <h4>Решаемые проблемы</h4>
-              <ul class="modal-result__list">
+            <div class="peel-facts" aria-label="Особенности процедуры">
+              <div class="peel-fact">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Zm0 4v5l3 2" /></svg>
+                <strong>Обновление</strong>
+                <span>кожи</span>
+              </div>
+              <div class="peel-fact">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 13-7 7-9-9V4h7l9 9ZM8 8h.01" /></svg>
+                <strong>Ровный тон</strong>
+                <span>и текстура</span>
+              </div>
+              <div class="peel-fact">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5.5 21a6.5 6.5 0 0 1 13 0" /></svg>
+                <strong>Подбор</strong>
+                <span>индивидуально</span>
+              </div>
+            </div>
+            <div class="peel-concerns">
+              <p>Подойдёт, если вас беспокоят:</p>
+              <ul>
                 <li>Пигментация</li>
                 <li>Акне и постакне</li>
-                <li>Неровный тон кожи</li>
+                <li>Неровный тон</li>
                 <li>Тусклый цвет лица</li>
                 <li>Расширенные поры</li>
               </ul>
-              <p class="modal-result__leaf">Подбираем пилинг индивидуально под потребности вашей кожи.</p>
-            </section>
-            <section class="modal-result__panel">
-              <h4>Результат</h4>
-              <ul class="modal-result__list">
-                <li>Обновление кожи</li>
-                <li>Более ровный тон лица</li>
-                <li>Сужение пор</li>
-                <li>Улучшение текстуры кожи</li>
-                <li>Здоровое сияние</li>
-              </ul>
-              <div class="modal-result__copy">
-                <p>После курса пилингов кожа выглядит более ровной, свежей и спокойной. Тон становится светлее и чище, а пигментация и следы постакне заметно смягчаются.</p>
+            </div>
+          </section>
+
+          <section class="peel-result-layout">
+            <div class="peel-result">
+              <h4>До и после</h4>
+              <div class="peel-comparison" role="group" aria-label="Результат курса пилинга до и после">
+                <figure>
+                  <div class="peel-comparison__crop">
+                    <img class="peel-comparison__before" src="peeling-before-after.jpeg" alt="Кожа до курса пилинга" loading="lazy" decoding="async" width="1320" height="1171" />
+                  </div>
+                  <figcaption>До</figcaption>
+                </figure>
+                <figure>
+                  <div class="peel-comparison__crop">
+                    <img class="peel-comparison__after" src="peeling-before-after.jpeg" alt="Кожа после курса пилинга" loading="lazy" decoding="async" width="1320" height="1171" />
+                  </div>
+                  <figcaption>После</figcaption>
+                </figure>
+              </div>
+              <p class="peel-result__copy">После курса пилингов кожа выглядит более ровной, свежей и спокойной. Тон становится светлее и чище, а пигментация и следы постакне заметно смягчаются.</p>
+            </div>
+
+            <aside class="peel-steps" aria-labelledby="peel-steps-title">
+              <h4 id="peel-steps-title">Как проходит процедура</h4>
+              <ol>
+                <li><span>1</span>Очищение кожи</li>
+                <li><span>2</span>Нанесение пилингового состава</li>
+                <li><span>3</span>Нейтрализация и уход</li>
+              </ol>
+              <div class="peel-note">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5m0-8h.01" /></svg>
+                <p>Подбор состава выполняется индивидуально, чтобы аккуратно улучшить состояние кожи без перегрузки и травматизации.</p>
+              </div>
+            </aside>
+          </section>
+
+          <section class="peel-faq" aria-labelledby="peel-faq-title">
+            <h4 id="peel-faq-title">Что важно знать</h4>
+            <details>
+              <summary>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v13H4zM8 4v6m8-6v6" /></svg>
+                <span>Как подбирается пилинг?</span>
+              </summary>
+              <div><p>Подбираем пилинг индивидуально под потребности вашей кожи.</p></div>
+            </details>
+            <details>
+              <summary>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M8 7l4-4 4 4m-8 10 4 4 4-4" /></svg>
+                <span>Какой результат можно получить?</span>
+              </summary>
+              <div>
+                <ul class="peel-faq__result-list">
+                  <li>Обновление кожи</li>
+                  <li>Более ровный тон лица</li>
+                  <li>Сужение пор</li>
+                  <li>Улучшение текстуры кожи</li>
+                  <li>Здоровое сияние</li>
+                </ul>
                 <p>Это хороший вариант, когда нужен аккуратный результат без перегрузки кожи и с сохранением естественного вида.</p>
               </div>
-            </section>
-          </div>
-          <div class="modal-result__footer">
+            </details>
+            <details>
+              <summary>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.4 5 5.6.8-4 3.9.9 5.6-4.9-2.7-4.9 2.7.9-5.6-4-3.9 5.6-.8L12 3Z" /></svg>
+                <span>Какие виды пилингов доступны?</span>
+              </summary>
+              <div>
+                <ul class="peel-types">
+                  <li>Желтый</li>
+                  <li>Азелаиновый</li>
+                  <li>Салициловый</li>
+                  <li>Миндальный</li>
+                  <li>Гликолевый</li>
+                  <li>Пептидный</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section class="peel-consult">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z" /><path d="M8 12h.01M12 12h.01M16 12h.01" /></svg>
             <div>
-              <h4>Препараты</h4>
-              <p class="modal-peel-types__title">Виды пилингов</p>
+              <h4>Не знаете, какой пилинг выбрать?</h4>
+              <p>Определим подходящий вариант на консультации.</p>
             </div>
-            <ul class="modal-peel-types__list">
-              <li>Желтый</li>
-              <li>Азелаиновый</li>
-              <li>Салициловый</li>
-              <li>Миндальный</li>
-              <li>Гликолевый</li>
-              <li>Пептидный</li>
-            </ul>
-          </div>
-          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">Записаться</a>
+          </section>
+          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified peel-booking">Записаться на пилинг</a>
+          <p class="peel-booking-note">Подберём процедуру, протокол и препараты на консультации.</p>
         </div>
       </div>
     </div>
