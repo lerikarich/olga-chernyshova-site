@@ -6266,6 +6266,519 @@ li,
   }
 }
 
+/* Botulinotherapy details: editorial layout matching the peeling modal. */
+#modal-botox .service-modal-dialog {
+  width: min(980px, calc(100vw - 32px));
+  background:
+    radial-gradient(circle at 100% 0%, rgba(219, 229, 211, .32), transparent 34%),
+    #fbfaf7;
+  border-color: rgba(61, 92, 70, .14);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(36, 50, 40, .18);
+}
+
+#modal-botox .service-modal-header {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 44px;
+  min-height: 44px;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+#modal-botox .service-modal-header h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+#modal-botox .service-modal-header .service-modal-close {
+  position: static;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(37, 67, 48, .12);
+  background: rgba(255, 255, 252, .9);
+  box-shadow: 0 8px 24px rgba(31, 48, 36, .1);
+  transform: none;
+  backdrop-filter: blur(10px);
+}
+
+#modal-botox .service-modal-content {
+  padding: 14px;
+}
+
+#modal-botox .botox-editorial {
+  --botox-ink: #173d2a;
+  --botox-copy: #42564a;
+  --botox-muted: #6f7d73;
+  --botox-line: rgba(40, 73, 52, .13);
+  --botox-soft: #f2f4ee;
+  --botox-card: rgba(255, 255, 252, .84);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex !important;
+  flex-direction: column;
+  gap: 0 !important;
+  color: var(--botox-copy);
+  font-family: "Manrope", sans-serif;
+}
+
+#modal-botox .botox-editorial h4,
+#modal-botox .botox-editorial p {
+  margin: 0;
+}
+
+#modal-botox .botox-editorial h4 {
+  color: var(--botox-ink);
+  font-family: "Playfair Display", serif;
+  font-weight: 650;
+  letter-spacing: -.025em;
+}
+
+#modal-botox .botox-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  grid-template-areas:
+    "intro media"
+    "facts media"
+    "concerns media";
+  gap: 22px 28px;
+  padding: 26px;
+  border: 1px solid var(--botox-line);
+  border-radius: 18px;
+  background: var(--botox-card);
+}
+
+#modal-botox .botox-hero__intro {
+  grid-area: intro;
+  align-self: end;
+  padding-right: 12px;
+}
+
+#modal-botox .botox-hero__intro h4 {
+  font-size: clamp(2.05rem, 3.4vw, 2.65rem);
+  line-height: 1;
+}
+
+#modal-botox .botox-hero__intro p {
+  max-width: 44ch;
+  margin-top: 16px;
+  color: #2e4436;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+#modal-botox .botox-hero__media {
+  grid-area: media;
+  min-height: 390px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e8e6df;
+}
+
+#modal-botox .botox-hero__media img {
+  width: 100%;
+  height: 100%;
+  max-height: none !important;
+  display: block;
+  object-fit: cover;
+  object-position: center 24%;
+}
+
+#modal-botox .botox-facts {
+  grid-area: facts;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#modal-botox .botox-fact {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 7px;
+  text-align: center;
+}
+
+#modal-botox .botox-fact svg,
+#modal-botox .botox-consult > svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--botox-ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#modal-botox .botox-fact strong {
+  color: #263c2e;
+  font-size: .79rem;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+#modal-botox .botox-concerns {
+  grid-area: concerns;
+  align-self: end;
+  padding-top: 20px;
+  border-top: 1px solid var(--botox-line);
+}
+
+#modal-botox .botox-concerns > p {
+  color: #2c4635;
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+#modal-botox .botox-concerns ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#modal-botox .botox-concerns li {
+  padding: 7px 11px;
+  border: 1px solid rgba(49, 79, 58, .08);
+  border-radius: 999px;
+  color: #56685d;
+  background: var(--botox-soft);
+  font-size: .76rem;
+  line-height: 1.1;
+}
+
+#modal-botox .botox-result-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
+  align-items: stretch;
+  gap: 52px;
+  padding: 26px 8px;
+  border-bottom: 1px solid var(--botox-line);
+}
+
+#modal-botox .botox-result,
+#modal-botox .botox-steps {
+  min-width: 0;
+}
+
+#modal-botox .botox-result h4,
+#modal-botox .botox-steps h4,
+#modal-botox .botox-faq > h4 {
+  font-size: 1.28rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+#modal-botox .botox-carousel {
+  width: 100%;
+  margin: 26px 0 0;
+}
+
+#modal-botox .botox-carousel .modal-carousel__viewport {
+  border: 1px solid var(--botox-line);
+  border-radius: 14px;
+  background: #f5f2ed;
+  box-shadow: none;
+}
+
+#modal-botox .botox-carousel .modal-carousel__slide {
+  padding: 12px;
+}
+
+#modal-botox .botox-carousel .modal-carousel__crop {
+  width: min(100%, 420px);
+}
+
+#modal-botox .botox-carousel .modal-carousel__crop img {
+  height: auto !important;
+  max-height: none !important;
+}
+
+#modal-botox .botox-carousel .modal-carousel__slide > img {
+  width: 100%;
+  height: auto;
+  max-height: 430px;
+  object-fit: contain;
+}
+
+#modal-botox .botox-carousel .modal-result__caption {
+  margin-top: 10px;
+  color: var(--botox-muted);
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
+#modal-botox .botox-carousel .modal-carousel__control {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--botox-line);
+  box-shadow: none;
+}
+
+#modal-botox .botox-steps {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+#modal-botox .botox-steps ol {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(76px, 1fr));
+  flex: 1;
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--botox-line);
+}
+
+#modal-botox .botox-steps li {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-height: 76px;
+  padding: 22px 0;
+  border-top: 1px solid var(--botox-line);
+  color: #31483a;
+  font-size: .88rem;
+  line-height: 1.4;
+}
+
+#modal-botox .botox-steps li > span {
+  color: #315840;
+  font-family: "Playfair Display", serif;
+  font-size: 2.35rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+
+#modal-botox .botox-steps li > p {
+  font-weight: 500;
+}
+
+#modal-botox .botox-faq {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--botox-line);
+}
+
+#modal-botox .botox-faq > h4 {
+  margin: 0 8px 16px;
+}
+
+#modal-botox .botox-faq details {
+  margin-top: 9px;
+  overflow: hidden;
+  border: 1px solid var(--botox-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 252, .76);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+#modal-botox .botox-faq details[open] {
+  border-color: rgba(48, 84, 58, .24);
+  background: #fffefb;
+}
+
+#modal-botox .botox-faq summary {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  color: #294333;
+  font-size: .86rem;
+  font-weight: 650;
+  list-style: none;
+  cursor: pointer;
+}
+
+#modal-botox .botox-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+#modal-botox .botox-faq summary::after {
+  content: ">";
+  display: inline-block;
+  color: #31513c;
+  font-size: 1.1rem;
+  transform: rotate(90deg);
+  transition: transform .2s ease;
+}
+
+#modal-botox .botox-faq details[open] summary::after {
+  transform: rotate(-90deg);
+}
+
+#modal-botox .botox-faq summary:focus-visible {
+  outline: 2px solid #6f9477;
+  outline-offset: -4px;
+  border-radius: 12px;
+}
+
+#modal-botox .botox-faq details > div {
+  padding: 0 18px 18px;
+}
+
+#modal-botox .botox-faq details p {
+  color: var(--botox-muted);
+  font-size: .8rem;
+  line-height: 1.6;
+}
+
+#modal-botox .botox-consult {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #f4f5ef, #eeece4);
+}
+
+#modal-botox .botox-consult > svg {
+  width: 38px;
+  height: 38px;
+}
+
+#modal-botox .botox-consult h4 {
+  font-family: "Manrope", sans-serif;
+  font-size: .98rem;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+#modal-botox .botox-consult p {
+  margin-top: 5px;
+  color: var(--botox-muted);
+  font-size: .8rem;
+  line-height: 1.55;
+}
+
+#modal-botox .botox-booking.btn {
+  width: 100%;
+  min-height: 56px;
+  margin: 20px 0 0;
+  border-radius: 14px;
+  justify-content: center;
+  text-align: center;
+}
+
+#modal-botox .botox-booking-note {
+  margin: 12px 0 4px;
+  color: var(--botox-muted);
+  font-size: .76rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  #modal-botox .service-modal-dialog {
+    width: calc(100vw - 20px);
+    height: calc(100dvh - 20px);
+    margin: 10px auto;
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  #modal-botox .service-modal-content {
+    padding: 0;
+  }
+
+  #modal-botox .botox-hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "intro"
+      "media"
+      "facts"
+      "concerns";
+    gap: 18px;
+    padding: 18px;
+  }
+
+  #modal-botox .botox-hero__intro {
+    align-self: center;
+    padding-right: 0;
+  }
+
+  #modal-botox .botox-hero__intro h4 {
+    font-size: clamp(1.85rem, 9vw, 2.3rem);
+  }
+
+  #modal-botox .botox-hero__intro p {
+    margin-top: 12px;
+    font-size: .8rem;
+    line-height: 1.55;
+  }
+
+  #modal-botox .botox-hero__media {
+    min-height: 230px;
+    border-radius: 14px;
+  }
+
+  #modal-botox .botox-facts {
+    gap: 8px;
+  }
+
+  #modal-botox .botox-concerns {
+    padding-top: 16px;
+  }
+
+  #modal-botox .botox-result-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 24px 8px;
+  }
+
+  #modal-botox .botox-steps ol {
+    grid-template-rows: none;
+  }
+
+  #modal-botox .botox-faq {
+    padding: 24px 0;
+  }
+
+  #modal-botox .botox-consult {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  #modal-botox .botox-booking.btn {
+    min-height: 54px;
+  }
+}
+
+@media (max-width: 380px) {
+  #modal-botox .botox-hero {
+    padding: 16px;
+  }
+
+  #modal-botox .botox-hero__media {
+    min-height: 215px;
+  }
+
+  #modal-botox .botox-fact strong {
+    font-size: .7rem;
+  }
+}
+
 /* Contour plastic details: the same editorial language as the peeling modal. */
 #modal-contour .service-modal-dialog {
   width: min(980px, calc(100vw - 32px));
@@ -7387,7 +7900,7 @@ let modalBackgroundState = [];
 function prepareModalStructure(modal) {
   const content = modal.querySelector('.service-modal-content');
   if (!content) return;
-  if (modal.id === 'modal-peel' || modal.id === 'modal-contour') return;
+  if (modal.id === 'modal-peel' || modal.id === 'modal-contour' || modal.id === 'modal-botox') return;
   content.classList.add('service-modal-content--linear');
   const bookingLink = content.querySelector('a.btn');
   if (!bookingLink || bookingLink.closest('.modal-booking-card')) return;
@@ -7552,7 +8065,7 @@ function prepareModalShell(modal) {
 }
 function prepareModalFooter(modal) {
   const dialog = modal.querySelector('.service-modal-dialog');
-  if (modal.id === 'modal-peel' || modal.id === 'modal-contour') return;
+  if (modal.id === 'modal-peel' || modal.id === 'modal-contour' || modal.id === 'modal-botox') return;
   const bookingLink = dialog?.querySelector('.service-modal-content a.btn');
   if (!dialog || !bookingLink || dialog.querySelector(':scope > .service-modal-footer')) return;
 
@@ -7631,7 +8144,7 @@ function restoreModalBackground() {
 function resetModalView(modal) {
   const scroll = modal.querySelector('.service-modal-scroll');
   if (scroll) scroll.scrollTop = 0;
-  modal.querySelectorAll('.peel-faq details, .contour-editorial__faq details').forEach((details) => {
+  modal.querySelectorAll('.peel-faq details, .contour-editorial__faq details, .botox-faq details').forEach((details) => {
     details.open = false;
   });
   modal.querySelector('.modal-carousel__dots button')?.click();
@@ -7645,7 +8158,7 @@ function openModal(modal){
   if(!modal) return;
   prepareModalStructure(modal);
   // Preserve dedicated editorial layouts without rewrapping their content.
-  if (modal.id !== 'modal-peel' && modal.id !== 'modal-contour') decorateModalDetails(modal);
+  if (modal.id !== 'modal-peel' && modal.id !== 'modal-contour' && modal.id !== 'modal-botox') decorateModalDetails(modal);
   modal.querySelectorAll('.modal-carousel').forEach(initCarousel);
   prepareModalSummary(modal);
   prepareModalAccordions(modal);
@@ -8009,49 +8522,105 @@ if ('IntersectionObserver' in window) {
       <div class="service-modal-dialog" tabindex="-1">
         <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
         <h3 id="modal-botox-title">Ботулинотерапия</h3>
-        <div class="service-modal-content">
-          <section class="modal-detail-card modal-detail-card--intro">
-            <h4>Услуга</h4>
-            <p>Ботулинотерапия для мягкой коррекции мимических морщин и профилактики новых заломов.</p>
-          </section>
-          <section class="modal-detail-card modal-detail-card--gallery">
-            <h4>До / после фото</h4>
-            <div class="modal-carousel modal-carousel--compact" data-carousel="botox">
-              <button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото">‹</button>
-              <div class="modal-carousel__viewport">
-                <figure class="modal-carousel__slide is-active">
-                  <div class="modal-carousel__crop modal-carousel__crop--relatox">
-                    <img src="botox-relatox-before-after.jpeg" alt="До и после ботулинотерапии Релатокс: разглаживание лба и межбровья" loading="lazy" width="730" height="1280" />
-                  </div>
-                  <figcaption class="modal-result__caption">Релатокс, 35 единиц. Лоб + межбровье</figcaption>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <div class="modal-carousel__crop modal-carousel__crop--rentox">
-                    <img src="botox-rentox-before-after.jpeg" alt="До и после ботулинотерапии Рентокс" loading="lazy" width="728" height="1280" />
-                  </div>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <img src="botox-before-after.png" alt="До и после ботулинотерапии: разглаживание лба и уменьшение мимических морщин" loading="lazy" width="1092" height="1060" />
-                  <figcaption class="modal-result__caption">До и после ботулинотерапии</figcaption>
-                </figure>
+        <div class="service-modal-content botox-editorial">
+          <section class="botox-hero" aria-labelledby="botox-editorial-title">
+            <div class="botox-hero__intro">
+              <h4 id="botox-editorial-title">Ботулинотерапия</h4>
+              <p>Мягкая коррекция мимических морщин с сохранением естественного выражения лица.</p>
+            </div>
+            <figure class="botox-hero__media">
+              <img src="botox-cover.jpg" alt="Естественный результат ботулинотерапии лица" loading="lazy" decoding="async" width="972" height="1619" />
+            </figure>
+            <div class="botox-facts" aria-label="Особенности процедуры">
+              <div class="botox-fact">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.5-5 9-5 9 5 9 5-3.5 5-9 5-9-5-9-5Z" /><circle cx="12" cy="12" r="2.5" /></svg>
+                <strong>Естественный эффект</strong>
               </div>
-              <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото">›</button>
-              <div class="modal-carousel__dots" aria-label="Фотографии ботулинотерапии"></div>
+              <div class="botox-fact">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z" /><path d="m18.5 14 .8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z" /></svg>
+                <strong>Мягкая коррекция</strong>
+              </div>
+              <div class="botox-fact">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5.5 21a6.5 6.5 0 0 1 13 0" /></svg>
+                <strong>Индивидуальный подбор</strong>
+              </div>
+            </div>
+            <div class="botox-concerns">
+              <p>Подойдёт, если вас беспокоят:</p>
+              <ul>
+                <li>Морщины лба</li>
+                <li>Межбровные складки</li>
+                <li>Гусиные лапки</li>
+                <li>Хмурое выражение</li>
+                <li>Активная мимика</li>
+              </ul>
             </div>
           </section>
-          <section class="modal-detail-card">
-            <h4>Описание услуги</h4>
-            <p>Процедура расслабляет гиперактивные мышцы и помогает сделать лицо более свежим, при этом сохраняя естественную мимику.</p>
+
+          <section class="botox-result-layout">
+            <div class="botox-result">
+              <h4>До и после</h4>
+              <div class="modal-carousel modal-carousel--compact botox-carousel" data-carousel="botox">
+                <button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото ботулинотерапии">‹</button>
+                <div class="modal-carousel__viewport">
+                  <figure class="modal-carousel__slide is-active">
+                    <div class="modal-carousel__crop modal-carousel__crop--relatox">
+                      <img src="botox-relatox-before-after.jpeg" alt="До и после ботулинотерапии Релатокс: разглаживание лба и межбровья" loading="lazy" decoding="async" width="730" height="1280" />
+                    </div>
+                    <figcaption class="modal-result__caption">Релатокс, 35 единиц. Лоб и межбровье</figcaption>
+                  </figure>
+                  <figure class="modal-carousel__slide">
+                    <div class="modal-carousel__crop modal-carousel__crop--rentox">
+                      <img src="botox-rentox-before-after.jpeg" alt="До и после ботулинотерапии Рентокс" loading="lazy" decoding="async" width="728" height="1280" />
+                    </div>
+                    <figcaption class="modal-result__caption">Рентокс — до и после</figcaption>
+                  </figure>
+                  <figure class="modal-carousel__slide">
+                    <img src="botox-before-after.png" alt="До и после ботулинотерапии: разглаживание лба и уменьшение мимических морщин" loading="lazy" decoding="async" width="1092" height="1060" />
+                    <figcaption class="modal-result__caption">До и после ботулинотерапии</figcaption>
+                  </figure>
+                </div>
+                <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото ботулинотерапии">›</button>
+                <div class="modal-carousel__dots" aria-label="Фотографии результатов ботулинотерапии"></div>
+              </div>
+            </div>
+
+            <aside class="botox-steps" aria-labelledby="botox-steps-title">
+              <h4 id="botox-steps-title">Как проходит процедура</h4>
+              <ol>
+                <li><span>01</span><p>Консультация и диагностика мимики</p></li>
+                <li><span>02</span><p>Индивидуальная разметка</p></li>
+                <li><span>03</span><p>Введение препарата</p></li>
+                <li><span>04</span><p>Рекомендации и контроль результата</p></li>
+              </ol>
+            </aside>
           </section>
-          <section class="modal-detail-card">
-            <h4>Препараты</h4>
-            <p>Релатокс, Рентокс, а также другие ботулотоксины подбираются на консультации в зависимости от зоны, выраженности мимики и желаемого эффекта.</p>
+
+          <section class="botox-faq" aria-labelledby="botox-faq-title">
+            <h4 id="botox-faq-title">Что важно знать</h4>
+            <details>
+              <summary><span>Когда появляется результат?</span></summary>
+              <div><p>Эффект развивается постепенно. Срок итоговой оценки и контрольного осмотра врач определяет с учётом выбранного препарата и индивидуальной реакции.</p></div>
+            </details>
+            <details>
+              <summary><span>Лицо останется естественным?</span></summary>
+              <div><p>Степень коррекции подбирается так, чтобы смягчить избыточную активность мышц и сохранить живое, естественное выражение лица.</p></div>
+            </details>
+            <details>
+              <summary><span>Как подбирается препарат?</span></summary>
+              <div><p>Врач оценивает анатомию, активность мимики, зоны коррекции, показания и противопоказания, а затем определяет препарат и индивидуальную дозировку.</p></div>
+            </details>
           </section>
-          <h4>Какие проблемы решает?</h4>
-          <p>✔ Морщины лба<br>✔ Межбровные морщины<br>✔ Гусиные лапки<br>✔ Опущение бровей<br>✔ Гипертонус мышц лица</p>
-          <h4>Результат</h4>
-          <p>• Разглаживание мимических морщин<br>• Профилактика появления новых заломов<br>• Более свежий и отдохнувший внешний вид<br>• Сохранение естественной мимики</p>
-          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">Записаться</a>
+
+          <section class="botox-consult">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z" /><path d="M8 12h.01M12 12h.01M16 12h.01" /></svg>
+            <div>
+              <h4>Хотите более свежий взгляд, но боитесь потерять естественную мимику?</h4>
+              <p>На консультации оценим особенности вашего лица и подберём степень коррекции, которая будет выглядеть естественно именно на вас.</p>
+            </div>
+          </section>
+          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified botox-booking">Записаться на консультацию</a>
+          <p class="botox-booking-note">Врач определит показания, зоны коррекции, препарат и индивидуальную дозировку.</p>
         </div>
       </div>
     </div>
