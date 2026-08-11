@@ -6166,6 +6166,649 @@ li,
   }
 }
 
+/* Contour plastic details: the same editorial language as the peeling modal. */
+#modal-contour .service-modal-dialog {
+  width: min(980px, calc(100vw - 32px));
+  background:
+    radial-gradient(circle at 100% 0%, rgba(223, 228, 215, .34), transparent 34%),
+    #fbfaf7;
+  border-color: rgba(61, 92, 70, .14);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(36, 50, 40, .18);
+}
+
+#modal-contour .service-modal-header {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 44px;
+  min-height: 44px;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+#modal-contour .service-modal-header h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+#modal-contour .service-modal-header .service-modal-close {
+  position: static;
+  width: 44px;
+  height: 44px;
+  border-color: rgba(37, 67, 48, .12);
+  background: rgba(255, 255, 252, .9);
+  box-shadow: 0 8px 24px rgba(31, 48, 36, .1);
+  transform: none;
+  backdrop-filter: blur(10px);
+}
+
+#modal-contour .service-modal-scroll {
+  padding: 14px;
+}
+
+#modal-contour .contour-editorial {
+  --contour-ink: #173d2a;
+  --contour-copy: #42564a;
+  --contour-muted: #6f7d73;
+  --contour-line: rgba(40, 73, 52, .13);
+  --contour-soft: #f2f4ee;
+  --contour-card: rgba(255, 255, 252, .84);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex !important;
+  flex-direction: column;
+  gap: 0 !important;
+  color: var(--contour-copy);
+  font-family: "Manrope", sans-serif;
+}
+
+#modal-contour .contour-editorial h4 {
+  margin: 0;
+  color: var(--contour-ink);
+  font-family: "Playfair Display", serif;
+  font-weight: 650;
+  letter-spacing: -.025em;
+}
+
+#modal-contour .contour-editorial p {
+  margin: 0;
+}
+
+#modal-contour .contour-editorial__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr);
+  grid-template-areas:
+    "intro cover"
+    "facts cover"
+    "zones cover";
+  gap: 22px 28px;
+  padding: 26px;
+  border: 1px solid var(--contour-line);
+  border-radius: 18px;
+  background: var(--contour-card);
+}
+
+#modal-contour .contour-editorial__intro {
+  grid-area: intro;
+  align-self: end;
+  padding-right: 14px;
+}
+
+#modal-contour .contour-editorial__intro h4 {
+  max-width: 8.5ch;
+  font-size: clamp(2.15rem, 4.5vw, 3.5rem);
+  line-height: .98;
+  text-wrap: balance;
+}
+
+#modal-contour .contour-editorial__intro p {
+  max-width: 48ch;
+  margin-top: 16px;
+  color: #2e4436;
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+#modal-contour .contour-editorial__cover {
+  grid-area: cover;
+  min-height: 430px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e8e2d9;
+}
+
+#modal-contour .contour-editorial__cover img {
+  width: 100%;
+  height: 100%;
+  max-height: none !important;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 36%;
+}
+
+#modal-contour .contour-editorial__facts {
+  grid-area: facts;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#modal-contour .contour-editorial__facts > div {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 4px;
+  text-align: center;
+}
+
+#modal-contour .contour-editorial__facts svg,
+#modal-contour .contour-editorial__note svg,
+#modal-contour .contour-editorial__consult > svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--contour-ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#modal-contour .contour-editorial__facts strong {
+  color: #263c2e;
+  font-size: .78rem;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+#modal-contour .contour-editorial__facts span {
+  color: var(--contour-muted);
+  font-size: .74rem;
+  line-height: 1.25;
+}
+
+#modal-contour .contour-editorial__zones {
+  grid-area: zones;
+  align-self: end;
+  padding-top: 18px;
+  border-top: 1px solid var(--contour-line);
+}
+
+#modal-contour .contour-editorial__zones > p {
+  color: #2c4635;
+  font-size: .84rem;
+  font-weight: 750;
+}
+
+#modal-contour .contour-editorial__zones ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#modal-contour .contour-editorial__zones li {
+  padding: 7px 11px;
+  border: 1px solid rgba(49, 79, 58, .08);
+  border-radius: 999px;
+  color: #56685d;
+  background: var(--contour-soft);
+  font-size: .74rem;
+  line-height: 1.1;
+}
+
+#modal-contour .contour-editorial__result {
+  display: grid;
+  grid-template-columns: minmax(230px, .68fr) minmax(0, 1.32fr);
+  align-items: center;
+  gap: 28px;
+  padding: 28px 8px;
+  border-bottom: 1px solid var(--contour-line);
+}
+
+#modal-contour .contour-editorial__result-copy {
+  min-width: 0;
+  padding-left: 8px;
+}
+
+#modal-contour .contour-editorial__result-copy > span {
+  display: block;
+  margin-bottom: 12px;
+  color: #4d6655;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+#modal-contour .contour-editorial__result-copy h4 {
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  line-height: 1.14;
+}
+
+#modal-contour .contour-editorial__result-copy > p {
+  margin-top: 16px;
+  color: var(--contour-muted);
+  font-size: .82rem;
+  line-height: 1.65;
+}
+
+#modal-contour .contour-editorial__note {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--contour-line);
+}
+
+#modal-contour .contour-editorial__note svg {
+  width: 22px;
+  height: 22px;
+}
+
+#modal-contour .contour-editorial__note p {
+  color: var(--contour-muted);
+  font-size: .72rem;
+  line-height: 1.5;
+}
+
+#modal-contour .contour-editorial__carousel {
+  min-width: 0;
+  margin: 0;
+  padding: 0 42px;
+}
+
+#modal-contour .contour-editorial__carousel .modal-carousel__viewport,
+#modal-contour .contour-editorial__carousel .modal-carousel__slide {
+  min-height: 440px;
+}
+
+#modal-contour .contour-editorial__carousel .modal-carousel__slide {
+  padding: 0;
+  border-radius: 16px;
+  background: #f4f1ec;
+}
+
+#modal-contour .contour-editorial__carousel .modal-carousel__slide img {
+  width: 100%;
+  height: 390px !important;
+  max-height: none !important;
+  display: block;
+  border-radius: 16px 16px 0 0;
+  object-fit: contain;
+  object-position: center;
+  background: #eeeae4;
+}
+
+#modal-contour .contour-editorial__carousel .modal-result__caption {
+  min-height: 50px;
+  display: grid;
+  place-items: center;
+  padding: 10px 16px;
+  color: #516258;
+  font-size: .76rem;
+  text-align: center;
+}
+
+#modal-contour .contour-editorial__carousel .modal-carousel__control {
+  width: 38px;
+  height: 38px;
+  border-color: var(--contour-line);
+  background: rgba(255, 255, 252, .94);
+}
+
+#modal-contour .contour-editorial__carousel .modal-carousel__control--prev {
+  left: 0;
+}
+
+#modal-contour .contour-editorial__carousel .modal-carousel__control--next {
+  right: 0;
+}
+
+#modal-contour .contour-editorial__carousel .modal-carousel__dots {
+  margin-top: 8px;
+}
+
+#modal-contour .contour-editorial__steps {
+  padding: 26px 8px;
+  border-bottom: 1px solid var(--contour-line);
+}
+
+#modal-contour .contour-editorial__steps > h4,
+#modal-contour .contour-editorial__faq > h4 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+#modal-contour .contour-editorial__steps ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#modal-contour .contour-editorial__steps li {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+#modal-contour .contour-editorial__steps li > span {
+  color: #335840;
+  font-family: "Playfair Display", serif;
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+#modal-contour .contour-editorial__steps li > p {
+  color: #536359;
+  font-size: .72rem;
+  line-height: 1.4;
+}
+
+#modal-contour .contour-editorial__faq {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--contour-line);
+}
+
+#modal-contour .contour-editorial__faq > h4 {
+  margin: 0 8px 16px;
+}
+
+#modal-contour .contour-editorial__faq details {
+  margin-top: 9px;
+  overflow: hidden;
+  border: 1px solid var(--contour-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 252, .76);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+#modal-contour .contour-editorial__faq details[open] {
+  border-color: rgba(48, 84, 58, .24);
+  background: #fffefb;
+}
+
+#modal-contour .contour-editorial__faq summary {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  color: #294333;
+  font-size: .86rem;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+#modal-contour .contour-editorial__faq summary::-webkit-details-marker {
+  display: none;
+}
+
+#modal-contour .contour-editorial__faq summary::after {
+  content: ">";
+  display: inline-block;
+  color: #31513c;
+  font-size: 1.1rem;
+  transform: rotate(90deg);
+  transition: transform .2s ease;
+}
+
+#modal-contour .contour-editorial__faq details[open] summary::after {
+  transform: rotate(-90deg);
+}
+
+#modal-contour .contour-editorial__faq summary:focus-visible {
+  outline: 2px solid #6f9477;
+  outline-offset: -4px;
+  border-radius: 12px;
+}
+
+#modal-contour .contour-editorial__faq-body,
+#modal-contour .contour-editorial__zone-grid {
+  padding: 0 18px 20px;
+}
+
+#modal-contour .contour-editorial__faq .contour-product {
+  padding: 14px 0;
+}
+
+#modal-contour .contour-editorial__faq .contour-product + .contour-product {
+  margin-top: 0;
+  border-top: 1px solid var(--contour-line);
+}
+
+#modal-contour .contour-editorial__faq h5 {
+  margin: 0 0 5px;
+  color: #2b4635;
+  font-size: .86rem;
+  line-height: 1.4;
+}
+
+#modal-contour .contour-editorial__faq p,
+#modal-contour .contour-editorial__faq .contour-benefits {
+  color: var(--contour-muted);
+  font-size: .78rem;
+  line-height: 1.6;
+}
+
+#modal-contour .contour-editorial__zone-copy {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--contour-soft);
+}
+
+#modal-contour .contour-editorial__zone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+#modal-contour .contour-editorial__zone-grid article {
+  min-width: 0;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--contour-soft);
+}
+
+#modal-contour .contour-editorial__faq .contour-benefits {
+  margin: 0;
+  padding-left: 20px;
+}
+
+#modal-contour .contour-editorial__consult {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #f4f5ef, #eeece4);
+}
+
+#modal-contour .contour-editorial__consult > svg {
+  width: 38px;
+  height: 38px;
+}
+
+#modal-contour .contour-editorial__consult h4 {
+  font-family: "Manrope", sans-serif;
+  font-size: .98rem;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+#modal-contour .contour-editorial__consult p {
+  margin-top: 4px;
+  color: var(--contour-muted);
+  font-size: .8rem;
+}
+
+#modal-contour .contour-editorial__booking.btn {
+  width: 100%;
+  min-height: 56px;
+  margin: 20px 0 0;
+  border-radius: 14px;
+  justify-content: center;
+  text-align: center;
+}
+
+#modal-contour .contour-editorial__booking-note {
+  margin: 12px 0 4px;
+  color: var(--contour-muted);
+  font-size: .76rem;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  #modal-contour .service-modal-dialog {
+    width: calc(100vw - 20px);
+    height: calc(100dvh - 20px);
+    margin: 10px auto;
+    border-radius: 20px;
+  }
+
+  #modal-contour .service-modal-scroll {
+    padding: 8px;
+  }
+
+  #modal-contour .service-modal-header {
+    display: block;
+    grid-template-columns: none;
+  }
+
+  #modal-contour .contour-editorial__hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(128px, .95fr);
+    grid-template-areas:
+      "intro cover"
+      "facts facts"
+      "zones zones";
+    gap: 18px 16px;
+    padding: 18px;
+  }
+
+  #modal-contour .contour-editorial__intro {
+    align-self: center;
+    padding-right: 0;
+  }
+
+  #modal-contour .contour-editorial__intro h4 {
+    max-width: 9ch;
+    font-size: clamp(1.65rem, 7.4vw, 2.2rem);
+  }
+
+  #modal-contour .contour-editorial__intro p {
+    margin-top: 12px;
+    font-size: .76rem;
+    line-height: 1.5;
+  }
+
+  #modal-contour .contour-editorial__cover {
+    min-height: 230px;
+    border-radius: 14px;
+  }
+
+  #modal-contour .contour-editorial__facts {
+    gap: 8px;
+  }
+
+  #modal-contour .contour-editorial__zones {
+    padding-top: 16px;
+  }
+
+  #modal-contour .contour-editorial__result {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding: 24px 8px;
+  }
+
+  #modal-contour .contour-editorial__result-copy {
+    padding: 0;
+  }
+
+  #modal-contour .contour-editorial__carousel {
+    padding: 0 34px;
+  }
+
+  #modal-contour .contour-editorial__carousel .modal-carousel__viewport,
+  #modal-contour .contour-editorial__carousel .modal-carousel__slide {
+    min-height: 390px;
+  }
+
+  #modal-contour .contour-editorial__carousel .modal-carousel__slide img {
+    height: 340px !important;
+  }
+
+  #modal-contour .contour-editorial__steps {
+    padding: 24px 8px;
+  }
+
+  #modal-contour .contour-editorial__steps ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #modal-contour .contour-editorial__faq {
+    padding: 24px 0;
+  }
+
+  #modal-contour .contour-editorial__zone-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #modal-contour .contour-editorial__consult {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  #modal-contour .contour-editorial__booking.btn {
+    min-height: 54px;
+    font-size: .82rem;
+  }
+}
+
+@media (max-width: 380px) {
+  #modal-contour .contour-editorial__hero {
+    grid-template-columns: minmax(0, 1fr) 116px;
+    padding: 16px;
+  }
+
+  #modal-contour .contour-editorial__cover {
+    min-height: 210px;
+  }
+
+  #modal-contour .contour-editorial__facts strong,
+  #modal-contour .contour-editorial__facts span {
+    font-size: .68rem;
+  }
+
+  #modal-contour .contour-editorial__carousel {
+    padding: 0 28px;
+  }
+}
+
 /* Hardware service covers: editorial, image-led cards */
 </style>
   </head>
@@ -6644,7 +7287,7 @@ let modalBackgroundState = [];
 function prepareModalStructure(modal) {
   const content = modal.querySelector('.service-modal-content');
   if (!content) return;
-  if (modal.id === 'modal-peel') return;
+  if (modal.id === 'modal-peel' || modal.id === 'modal-contour') return;
   content.classList.add('service-modal-content--linear');
   const bookingLink = content.querySelector('a.btn');
   if (!bookingLink || bookingLink.closest('.modal-booking-card')) return;
@@ -6809,7 +7452,7 @@ function prepareModalShell(modal) {
 }
 function prepareModalFooter(modal) {
   const dialog = modal.querySelector('.service-modal-dialog');
-  if (modal.id === 'modal-peel') return;
+  if (modal.id === 'modal-peel' || modal.id === 'modal-contour') return;
   const bookingLink = dialog?.querySelector('.service-modal-content a.btn');
   if (!dialog || !bookingLink || dialog.querySelector(':scope > .service-modal-footer')) return;
 
@@ -6888,6 +7531,10 @@ function restoreModalBackground() {
 function resetModalView(modal) {
   const scroll = modal.querySelector('.service-modal-scroll');
   if (scroll) scroll.scrollTop = 0;
+  modal.querySelectorAll('.peel-faq details, .contour-editorial__faq details').forEach((details) => {
+    details.open = false;
+  });
+  modal.querySelector('.modal-carousel__dots button')?.click();
   modal.querySelectorAll('.modal-accordion-trigger').forEach((trigger) => {
     trigger.setAttribute('aria-expanded', 'false');
     const panel = document.getElementById(trigger.getAttribute('aria-controls'));
@@ -6897,8 +7544,8 @@ function resetModalView(modal) {
 function openModal(modal){
   if(!modal) return;
   prepareModalStructure(modal);
-  // Preserve the dedicated editorial layout for the peeling result.
-  if (modal.id !== 'modal-peel') decorateModalDetails(modal);
+  // Preserve dedicated editorial layouts without rewrapping their content.
+  if (modal.id !== 'modal-peel' && modal.id !== 'modal-contour') decorateModalDetails(modal);
   modal.querySelectorAll('.modal-carousel').forEach(initCarousel);
   prepareModalSummary(modal);
   prepareModalAccordions(modal);
@@ -7093,28 +7740,61 @@ if ('IntersectionObserver' in window) {
       <div class="service-modal-dialog" tabindex="-1">
         <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
         <h3 id="modal-contour-title">Контурная пластика</h3>
-        <div class="service-modal-content service-modal-content--contour">
-          <section class="contour-section">
-            <h4>Услуга</h4>
-            <p>Контурная пластика для губ, скул, подбородка и других зон лица с индивидуальным подбором препарата под анатомию и задачу пациента.</p>
+        <div class="service-modal-content service-modal-content--contour contour-editorial">
+          <section class="contour-editorial__hero" aria-labelledby="contour-editorial-title">
+            <div class="contour-editorial__intro">
+              <h4 id="contour-editorial-title">Контурная пластика</h4>
+              <p>Контурная пластика для губ, скул, подбородка и других зон лица с индивидуальным подбором препарата под анатомию и задачу пациента.</p>
+            </div>
+            <figure class="contour-editorial__cover">
+              <img src="contour-plastic-cover.jpg" alt="Контурная пластика лица с индивидуальным подбором зоны коррекции" loading="lazy" decoding="async" width="1003" height="1568" />
+            </figure>
+            <div class="contour-editorial__facts" aria-label="Особенности контурной пластики">
+              <div>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12c2-4 5-6 8-6s6 2 8 6c-2 4-5 6-8 6s-6-2-8-6Z" /><circle cx="12" cy="12" r="2.5" /></svg>
+                <strong>Гармонизация</strong><span>пропорций</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c2.5 2.5 5 3.5 7 3.5s4.5-1 7-3.5M7 9h.01M17 9h.01" /><circle cx="12" cy="12" r="9" /></svg>
+                <strong>Естественная</strong><span>мимика</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5.5 21a6.5 6.5 0 0 1 13 0" /></svg>
+                <strong>Подбор</strong><span>индивидуально</span>
+              </div>
+            </div>
+            <div class="contour-editorial__zones">
+              <p>Зоны коррекции:</p>
+              <ul>
+                <li>Губы</li>
+                <li>Скулы</li>
+                <li>Подбородок</li>
+                <li>Носогубные складки</li>
+                <li>Углы нижней челюсти</li>
+                <li>Носослёзная борозда</li>
+              </ul>
+            </div>
           </section>
-          <section class="contour-section">
-            <h4>До / после фото</h4>
-            <div class="modal-carousel modal-carousel--compact contour-carousel" data-carousel="contour-results">
+
+          <section class="contour-editorial__result" aria-labelledby="contour-result-title">
+            <div class="contour-editorial__result-copy">
+              <span>Результаты</span>
+              <h4 id="contour-result-title">Естественная коррекция объёмов и пропорций</h4>
+              <p>Процедура помогает скорректировать объемы, улучшить пропорции лица, смягчить возрастные изменения и сохранить естественную мимику.</p>
+              <div class="contour-editorial__note">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5m0-8h.01" /></svg>
+                <p>Результат и выбор препарата зависят от анатомии, зоны коррекции и индивидуальной задачи.</p>
+              </div>
+            </div>
+            <div class="modal-carousel modal-carousel--compact contour-carousel contour-editorial__carousel" data-carousel="contour-results">
               <button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото контурной пластики">‹</button>
               <div class="modal-carousel__viewport">
                 <figure class="modal-carousel__slide is-active">
-                  <picture>
-                    <source srcset="contour-lips-anatomy.webp" type="image/webp" />
-                    <img src="contour-lips-anatomy.png" alt="Анатомическая схема губ перед контурной пластикой" loading="lazy" decoding="async" width="908" height="1056" />
-                  </picture>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <img src="contour-lips-before-after.jpeg" alt="До и после контурной пластики губ: естественный объем и более четкий контур" loading="lazy" width="917" height="1280" />
+                  <img src="contour-lips-before-after.jpeg" alt="До и после контурной пластики губ: естественный объем и более четкий контур" loading="lazy" decoding="async" width="917" height="1280" />
                   <figcaption class="modal-result__caption">Результат контурной пластики губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
-                  <img src="contour-cheeks-before-after.jpeg" alt="До и после контурной пластики скул: более выраженный объем и гармоничный профиль" loading="lazy" width="1280" height="1247" />
+                  <img src="contour-cheeks-before-after.jpeg" alt="До и после контурной пластики скул: более выраженный объем и гармоничный профиль" loading="lazy" decoding="async" width="1280" height="1247" />
                   <figcaption class="modal-result__caption">Результат контурной пластики скул</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
@@ -7149,101 +7829,77 @@ if ('IntersectionObserver' in window) {
                   <img src="contour-lips-result-06.webp" alt="До и после контурной пластики губ: естественный объем и четкий контур" loading="lazy" decoding="async" width="1000" height="1778" />
                   <figcaption class="modal-result__caption">Контурная пластика губ — результат 6</figcaption>
                 </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-anatomy.webp" alt="Анатомическая схема губ перед контурной пластикой" loading="lazy" decoding="async" width="908" height="1056" />
+                  <figcaption class="modal-result__caption">Анатомия губ и индивидуальное планирование коррекции</figcaption>
+                </figure>
               </div>
               <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото контурной пластики">›</button>
               <div class="modal-carousel__dots" aria-label="Фотографии результатов контурной пластики"></div>
             </div>
           </section>
-          <section class="contour-section">
-            <h4>Описание услуги</h4>
-            <p>Процедура помогает скорректировать объемы, улучшить пропорции лица, смягчить возрастные изменения и сохранить естественную мимику.</p>
+
+          <section class="contour-editorial__steps" aria-labelledby="contour-steps-title">
+            <h4 id="contour-steps-title">Как проходит процедура</h4>
+            <ol>
+              <li><span>01</span><p>Консультация и оценка анатомии</p></li>
+              <li><span>02</span><p>Подбор зоны и препарата</p></li>
+              <li><span>03</span><p>Выполнение коррекции</p></li>
+              <li><span>04</span><p>Рекомендации после процедуры</p></li>
+            </ol>
           </section>
-          <section class="contour-section">
-            <h4>Препараты</h4>
-            <p>Teoxane Kiss, Tessoro Deep, Stylage M, Neauvia Lips, Juvederm Volift, Belotero Lips Shape / Contour, Neuramis Deep, Revolax Sub, Stylage XL / XXL, Juvederm Voluma.</p>
+
+          <section class="contour-editorial__faq" aria-labelledby="contour-faq-title">
+            <h4 id="contour-faq-title">Подробнее о зонах и препаратах</h4>
+            <details>
+              <summary><span>Губы и носогубные складки</span></summary>
+              <div class="contour-editorial__faq-body">
+                <div class="contour-product"><h5>Teoxane Kiss 0,7 мл <span class="contour-country">(Швейцария)</span></h5><p>Естественная красота губ без выраженного увеличения. Швейцарский препарат премиум-класса на основе гиалуроновой кислоты.</p></div>
+                <div class="contour-product"><h5>Tessoro Deep <span class="contour-country">(Южная Корея)</span></h5><p>Современный филлер с высокой степенью очистки гиалуроновой кислоты для естественной коррекции губ и носогубных складок.</p></div>
+                <div class="contour-product"><h5>Stylage M 1 мл <span class="contour-country">(Франция)</span></h5><p>Французский филлер с антиоксидантом маннитолом. Подходит для гармоничного объёма губ, коррекции контура и деликатного омоложения периоральной зоны, носогубных складок и губоподбородочных морщин.</p></div>
+                <div class="contour-product"><h5>Neauvia Lips 1 мл <span class="contour-country">(Италия)</span></h5><p>Премиальный препарат европейского производства на основе гиалуроновой кислоты. Подходит для создания красивой формы губ, коррекции носогубных складок и губоподбородочных морщин.</p></div>
+                <div class="contour-product"><h5>Juvederm Volift <span class="contour-country">(США)</span></h5><p>Один из самых востребованных филлеров в мире. Благодаря технологии Vycross препарат равномерно распределяется в тканях, создавая мягкий и максимально естественный результат.</p></div>
+                <div class="contour-product"><h5>Belotero Lips Shape / Contour 0,6 мл <span class="contour-country">(Германия)</span></h5><p>Позволяет подчеркнуть естественную красоту губ, сделать контур более выразительным и создать эффект ухоженности без значительного увеличения объёма.</p></div>
+                <div class="contour-product"><h5>Neuramis Deep <span class="contour-country">(Южная Корея)</span></h5><p>Филлер средней плотности для коррекции формы и объёма губ. Подходит пациентам, которые хотят более заметный объём.</p></div>
+                <div class="contour-editorial__zone-copy"><h5>Коррекция носогубных складок</h5><p>Позволяет восполнить утраченный объём, смягчить складки и вернуть лицу свежий, отдохнувший вид без изменения индивидуальных черт.</p></div>
+              </div>
+            </details>
+            <details>
+              <summary><span>Скулы и объёмная коррекция</span></summary>
+              <div class="contour-editorial__faq-body">
+                <div class="contour-product"><h5>Revolax Sub <span class="contour-country">(Южная Корея)</span></h5><p>Плотный филлер для восстановления объёмов средней трети лица. Помогает подчеркнуть скулы, сделать контуры лица более чёткими и визуально омолодить внешность.</p></div>
+                <div class="contour-product"><h5>Stylage XL / XXL <span class="contour-country">(Франция)</span></h5><p>Премиальные объёмообразующие филлеры для выраженной коррекции скуловой области.</p></div>
+                <div class="contour-product"><h5>Juvederm Voluma <span class="contour-country">(США)</span></h5><p>Один из золотых стандартов объёмной коррекции лица. Обеспечивает естественный лифтинг-эффект.</p></div>
+              </div>
+            </details>
+            <details>
+              <summary><span>Другие зоны коррекции</span></summary>
+              <div class="contour-editorial__zone-grid">
+                <article><h5>Подбородок</h5><p>Коррекция подбородка позволяет улучшить профиль, создать более гармоничные пропорции лица и визуально сделать нижнюю треть более выразительной.</p></article>
+                <article><h5>Углы нижней челюсти</h5><p>Создание чёткой линии нижней челюсти помогает сделать овал лица более структурным и подтянутым.</p></article>
+                <article><h5>Носослёзная борозда</h5><p>Позволяет убрать эффект «усталого взгляда», уменьшить тени под глазами и создать более молодой и свежий вид.</p></article>
+              </div>
+            </details>
+            <details>
+              <summary><span>Преимущества контурной пластики</span></summary>
+              <div class="contour-editorial__faq-body">
+                <ul class="contour-benefits">
+                  <li>Моментальный видимый результат</li>
+                  <li>Сохранение естественной мимики и индивидуальности</li>
+                  <li>Возможность скорректировать возрастные изменения без операции</li>
+                  <li>Использование сертифицированных препаратов мировых производителей</li>
+                  <li>Индивидуальный подбор препарата под анатомию и пожелания пациента</li>
+                </ul>
+              </div>
+            </details>
           </section>
-          <div class="contour-modal-copy">
-            <section class="contour-section">
-              <h4>Губы и носогубные складки</h4>
-              <div class="contour-product">
-                <h5>Teoxane Kiss 0,7 мл <span class="contour-country">(Швейцария)</span></h5>
-                <p>Естественная красота губ без выраженного увеличения. Швейцарский препарат премиум-класса на основе гиалуроновой кислоты.</p>
-              </div>
-              <div class="contour-product">
-                <h5>Tessoro Deep <span class="contour-country">(Южная Корея)</span></h5>
-                <p>Современный филлер с высокой степенью очистки гиалуроновой кислоты для естественной коррекции губ и носогубных складок.</p>
-              </div>
-              <div class="contour-product">
-                <h5>Stylage M 1 мл <span class="contour-country">(Франция)</span></h5>
-                <p>Французский филлер с антиоксидантом маннитолом. Подходит для гармоничного объёма губ, коррекции контура и деликатного омоложения периоральной зоны, носогубных складок и губоподбородочных морщин.</p>
-              </div>
-              <div class="contour-product">
-                <h5>Neauvia Lips 1 мл <span class="contour-country">(Италия)</span></h5>
-                <p>Премиальный препарат европейского производства на основе гиалуроновой кислоты. Подходит для создания красивой формы губ, коррекции носогубных складок и губоподбородочных морщин.</p>
-              </div>
-              <div class="contour-product">
-                <h5>Juvederm Volift <span class="contour-country">(США)</span></h5>
-                <p>Один из самых востребованных филлеров в мире. Благодаря технологии Vycross препарат равномерно распределяется в тканях, создавая мягкий и максимально естественный результат.</p>
-              </div>
-              <div class="contour-product">
-                <h5>Belotero Lips Shape / Contour 0,6 мл <span class="contour-country">(Германия)</span></h5>
-                <p>Позволяет подчеркнуть естественную красоту губ, сделать контур более выразительным и создать эффект ухоженности без значительного увеличения объёма.</p>
-              </div>
-              <div class="contour-product">
-                <h5>Neuramis Deep <span class="contour-country">(Южная Корея)</span></h5>
-                <p>Филлер средней плотности для коррекции формы и объёма губ. Подходит пациентам, которые хотят более заметный объём.</p>
-              </div>
-            </section>
 
-            <section class="contour-section">
-              <h4>Коррекция носогубных складок</h4>
-              <p>Позволяет восполнить утраченный объём, смягчить складки и вернуть лицу свежий, отдохнувший вид без изменения индивидуальных черт.</p>
-            </section>
-
-            <section class="contour-section">
-              <h4>Скулы</h4>
-              <div class="contour-product">
-                <h5>Revolax Sub <span class="contour-country">(Южная Корея)</span></h5>
-                <p>Плотный филлер для восстановления объёмов средней трети лица. Помогает подчеркнуть скулы, сделать контуры лица более чёткими и визуально омолодить внешность.</p>
-              </div>
-              <div class="contour-product">
-                <h5>Stylage XL / XXL <span class="contour-country">(Франция)</span></h5>
-                <p>Премиальные объёмообразующие филлеры для выраженной коррекции скуловой области.</p>
-              </div>
-              <div class="contour-product">
-                <h5>Juvederm Voluma <span class="contour-country">(США)</span></h5>
-                <p>Один из золотых стандартов объёмной коррекции лица. Обеспечивает естественный лифтинг-эффект.</p>
-              </div>
-            </section>
-
-            <section class="contour-section">
-              <h4>Подбородок</h4>
-              <p>Коррекция подбородка позволяет улучшить профиль, создать более гармоничные пропорции лица и визуально сделать нижнюю треть более выразительной.</p>
-            </section>
-
-            <section class="contour-section">
-              <h4>Углы нижней челюсти</h4>
-              <p>Создание чёткой линии нижней челюсти помогает сделать овал лица более структурным и подтянутым.</p>
-            </section>
-
-            <section class="contour-section">
-              <h4>Коррекция носослёзной борозды</h4>
-              <p>Позволяет убрать эффект «усталого взгляда», уменьшить тени под глазами и создать более молодой и свежий вид.</p>
-            </section>
-
-            <section class="contour-section">
-              <h4>Преимущества контурной пластики</h4>
-              <ul class="contour-benefits">
-                <li>Моментальный видимый результат</li>
-                <li>Сохранение естественной мимики и индивидуальности</li>
-                <li>Возможность скорректировать возрастные изменения без операции</li>
-                <li>Использование сертифицированных препаратов мировых производителей</li>
-                <li>Индивидуальный подбор препарата под анатомию и пожелания пациента</li>
-              </ul>
-            </section>
-
-            <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">Записаться</a>
-          </div>
+          <section class="contour-editorial__consult">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z" /><path d="M8 12h.01M12 12h.01M16 12h.01" /></svg>
+            <div><h4>Не знаете, какая зона коррекции подойдёт?</h4><p>Подберём решение с учётом анатомии и желаемого результата.</p></div>
+          </section>
+          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified contour-editorial__booking">Записаться на контурную пластику</a>
+          <p class="contour-editorial__booking-note">Зона, препарат и объём подбираются индивидуально на консультации.</p>
         </div>
       </div>
     </div>
