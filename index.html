@@ -7684,6 +7684,29 @@ li,
   background: #fff;
 }
 
+.treatment-result-crop {
+  height: min(46vw, 430px);
+  overflow: hidden;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.treatment-result-crop img {
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover;
+}
+
+#modal-massage .treatment-result-crop {
+  height: auto;
+  max-height: 430px;
+  aspect-ratio: 1.05 / 1;
+}
+
+#modal-massage .treatment-result-crop img {
+  object-position: 50% 46%;
+}
+
 .treatment-result-media figcaption,
 .treatment-carousel .modal-result__caption {
   margin-top: 10px;
@@ -8007,6 +8030,10 @@ li,
   .treatment-carousel .modal-carousel__slide img {
     height: min(52dvh, 430px) !important;
     max-height: none !important;
+  }
+
+  #modal-massage .treatment-result-crop img {
+    object-position: 50% 82%;
   }
 
   .treatment-benefit-panel {
@@ -8688,9 +8715,10 @@ const editorialServiceData = {
     cover: { src: 'facial-massage-cover.jpg', alt: 'Профессиональный массаж лица', width: 1536, height: 1024 },
     facts: ['Без инъекций', 'Лимфодренаж', 'Расслабление мышц'],
     concerns: ['Отёчность лица', 'Напряжение жевательных мышц', 'Нечёткий овал', 'Тусклый тон', 'Усталый вид'],
-    resultTitle: 'Что даёт массаж',
-    resultLead: 'Лицо выглядит более свежим и отдохнувшим',
-    benefits: ['Уменьшение пастозности и ощущения тяжести', 'Расслабление мышц лица, шеи и жевательной зоны', 'Поддержка микроциркуляции и более чёткого овала'],
+    resultTitle: 'До и после',
+    results: [
+      { src: 'facial-massage-before-after.jpeg', alt: 'До и после массажа лица: профиль и более свежий вид кожи', caption: 'Результат массажа лица — профиль', width: 1320, height: 2346, crop: true }
+    ],
     resultCopy: 'Выраженность эффекта зависит от причины отёчности, тонуса мышц и регулярности процедур. Массаж не заменяет медицинскую диагностику при стойких отёках.',
     steps: ['Оценка отёчности и мышечного тонуса', 'Подготовка кожи и выбор техники', 'Массаж лица, шеи и выбранных зон', 'Завершающий уход и домашние рекомендации'],
     note: 'Техника и интенсивность подбираются по состоянию кожи, мышц и самочувствию в день процедуры.',
@@ -8812,7 +8840,8 @@ function editorialResultMarkup(key, service) {
 
   if (service.results.length === 1) {
     const image = service.results[0];
-    return `<figure class="treatment-result-media"><img ${editorialImageAttributes(image)}><figcaption>${image.caption}</figcaption></figure>`;
+    const media = image.crop ? `<div class="treatment-result-crop"><img ${editorialImageAttributes(image)}></div>` : `<img ${editorialImageAttributes(image)}>`;
+    return `<figure class="treatment-result-media">${media}<figcaption>${image.caption}</figcaption></figure>`;
   }
 
   const slides = service.results.map((image, index) => `<figure class="modal-carousel__slide${index === 0 ? ' is-active' : ''}"><img ${editorialImageAttributes(image)}><figcaption class="modal-result__caption">${image.caption}</figcaption></figure>`).join('');
@@ -9357,48 +9386,20 @@ if ('IntersectionObserver' in window) {
               <button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото контурной пластики">‹</button>
               <div class="modal-carousel__viewport">
                 <figure class="modal-carousel__slide is-active">
-                  <img src="contour-lips-before-after.jpeg" alt="До и после контурной пластики губ: естественный объем и более четкий контур" loading="lazy" decoding="async" width="917" height="1280" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики губ</figcaption>
+                  <img src="contour-plastic-olga-01.jpeg" alt="До и после контурной пластики губ — Dr. Olga_cosmetolog" loading="lazy" decoding="async" width="1320" height="2346" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики — Dr. Olga_cosmetolog</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
-                  <img src="contour-cheeks-before-after.jpeg" alt="До и после контурной пластики скул: более выраженный объем и гармоничный профиль" loading="lazy" decoding="async" width="1280" height="1247" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики скул</figcaption>
+                  <img src="contour-plastic-olga-02.jpeg" alt="До и после контурной пластики губ — Dr. Olga_cosmetolog" loading="lazy" decoding="async" width="1320" height="2346" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики — Dr. Olga_cosmetolog</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
-                  <img src="contour-profile-before-after.webp" alt="До и после контурной пластики: коррекция профиля и губ" loading="lazy" decoding="async" width="1284" height="1605" />
-                  <figcaption class="modal-result__caption">Контурная пластика — коррекция профиля</figcaption>
+                  <img src="contour-plastic-olga-03.jpeg" alt="До и после контурной пластики губ — Dr. Olga_cosmetolog" loading="lazy" decoding="async" width="720" height="1280" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики — Dr. Olga_cosmetolog</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
-                  <img src="contour-lips-new-before-after.webp" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="720" height="1280" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — до и после</figcaption>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <img src="contour-lips-result-01.webp" alt="До и после контурной пластики губ: более выраженный объем и контур" loading="lazy" decoding="async" width="1000" height="1778" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 1</figcaption>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <img src="contour-lips-result-02.webp" alt="До и после контурной пластики губ: естественная коррекция формы" loading="lazy" decoding="async" width="1000" height="1778" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 2</figcaption>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <img src="contour-lips-result-03.webp" alt="До и после контурной пластики губ: гармоничный объем" loading="lazy" decoding="async" width="954" height="1662" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 3</figcaption>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <img src="contour-lips-result-04.webp" alt="До и после контурной пластики губ: деликатная коррекция объема" loading="lazy" decoding="async" width="1000" height="1752" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 4</figcaption>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <img src="contour-lips-result-05.webp" alt="До и после контурной пластики губ: коррекция формы и объема" loading="lazy" decoding="async" width="1000" height="1778" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 5</figcaption>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <img src="contour-lips-result-06.webp" alt="До и после контурной пластики губ: естественный объем и четкий контур" loading="lazy" decoding="async" width="1000" height="1778" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 6</figcaption>
-                </figure>
-                <figure class="modal-carousel__slide">
-                  <img src="contour-lips-anatomy.webp" alt="Анатомическая схема губ перед контурной пластикой" loading="lazy" decoding="async" width="908" height="1056" />
-                  <figcaption class="modal-result__caption">Анатомия губ и индивидуальное планирование коррекции</figcaption>
+                  <img src="contour-plastic-olga-04.jpeg" alt="До и после контурной пластики губ — Dr. Olga_cosmetolog" loading="lazy" decoding="async" width="720" height="1280" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики — Dr. Olga_cosmetolog</figcaption>
                 </figure>
               </div>
               <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото контурной пластики">›</button>
