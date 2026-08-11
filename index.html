@@ -4502,12 +4502,12 @@ li,
   margin-top: 18px;
 }
 
-#modal-peel .service-modal-content {
+:is(#modal-peel, #modal-clean) .service-modal-content {
   display: grid;
   gap: 24px;
 }
 
-#modal-peel .service-modal-dialog {
+:is(#modal-peel, #modal-clean) .service-modal-dialog {
   width: min(1120px, calc(100vw - 40px));
   max-width: none;
   max-height: min(900px, calc(100dvh - 40px));
@@ -4519,44 +4519,44 @@ li,
     #f8f6f3;
 }
 
-#modal-peel .service-modal-content {
+:is(#modal-peel, #modal-clean) .service-modal-content {
   max-width: 960px;
   margin: 0 auto;
 }
 
-#modal-peel .modal-result__media {
+:is(#modal-peel, #modal-clean) .modal-result__media {
   width: min(100%, 760px);
   margin: 0 auto;
   padding: 12px;
   border-radius: 28px;
 }
 
-#modal-peel .modal-result__media img {
+:is(#modal-peel, #modal-clean) .modal-result__media img {
   aspect-ratio: 1.72 / 1;
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
 }
 
-#modal-peel .modal-result__grid {
+:is(#modal-peel, #modal-clean) .modal-result__grid {
   grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
   gap: 0;
 }
 
-#modal-peel .modal-result__panel {
+:is(#modal-peel, #modal-clean) .modal-result__panel {
   display: flex;
   flex-direction: column;
   padding: 18px 34px 18px 0;
 }
 
-#modal-peel .modal-result__panel + .modal-result__panel {
+:is(#modal-peel, #modal-clean) .modal-result__panel + .modal-result__panel {
   padding: 18px 0 18px 34px;
   border-top: 0;
   border-left: 1px solid rgba(88,129,87,.16);
 }
 
-#modal-peel .modal-result__leaf,
-#modal-peel .modal-result__copy {
+:is(#modal-peel, #modal-clean) .modal-result__leaf,
+:is(#modal-peel, #modal-clean) .modal-result__copy {
   box-sizing: border-box;
   min-height: 148px;
   margin-top: auto;
@@ -4567,23 +4567,23 @@ li,
   line-height: 1.55;
 }
 
-#modal-peel .modal-result__leaf {
+:is(#modal-peel, #modal-clean) .modal-result__leaf {
   text-align: left;
 }
 
-#modal-peel .modal-result__leaf::before {
+:is(#modal-peel, #modal-clean) .modal-result__leaf::before {
   display: none;
 }
 
-#modal-peel .modal-result__copy {
+:is(#modal-peel, #modal-clean) .modal-result__copy {
   max-width: none;
 }
 
-#modal-peel .modal-result__copy p {
+:is(#modal-peel, #modal-clean) .modal-result__copy p {
   margin-bottom: 10px;
 }
 
-#modal-peel .modal-result__footer {
+:is(#modal-peel, #modal-clean) .modal-result__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -4594,7 +4594,7 @@ li,
   background: rgba(240, 245, 237, .56);
 }
 
-#modal-peel .modal-peel-types__title {
+:is(#modal-peel, #modal-clean) .modal-peel-types__title {
   flex: 0 0 auto;
   margin: 0;
   color: #34483a;
@@ -4603,7 +4603,7 @@ li,
   font-weight: 600;
 }
 
-#modal-peel .modal-peel-types__list {
+:is(#modal-peel, #modal-clean) .modal-peel-types__list {
   display: flex;
   flex: 1 1 auto;
   flex-wrap: wrap;
@@ -4614,7 +4614,7 @@ li,
   list-style: none;
 }
 
-#modal-peel .modal-peel-types__list li {
+:is(#modal-peel, #modal-clean) .modal-peel-types__list li {
   padding: 7px 11px;
   border: 1px solid rgba(88,129,87,.15);
   border-radius: 999px;
@@ -4624,7 +4624,7 @@ li,
   line-height: 1;
 }
 
-#modal-peel .btn {
+:is(#modal-peel, #modal-clean) .btn {
   width: min(100%, 300px);
   margin: 0 auto;
 }
@@ -4819,35 +4819,35 @@ li,
     padding: 24px 16px 18px;
   }
 
-  #modal-peel .service-modal-dialog {
+  :is(#modal-peel, #modal-clean) .service-modal-dialog {
     width: calc(100vw - 24px);
     max-height: calc(100dvh - 24px);
     margin: 12px auto;
     padding: 24px 18px;
   }
 
-  #modal-peel .modal-result__media img {
+  :is(#modal-peel, #modal-clean) .modal-result__media img {
     aspect-ratio: 1 / 1.08;
   }
 
-  #modal-peel .modal-result__panel,
-  #modal-peel .modal-result__panel + .modal-result__panel {
+  :is(#modal-peel, #modal-clean) .modal-result__panel,
+  :is(#modal-peel, #modal-clean) .modal-result__panel + .modal-result__panel {
     padding: 0;
   }
 
-  #modal-peel .modal-result__leaf,
-  #modal-peel .modal-result__copy {
+  :is(#modal-peel, #modal-clean) .modal-result__leaf,
+  :is(#modal-peel, #modal-clean) .modal-result__copy {
     min-height: auto;
   }
 
-  #modal-peel .modal-result__footer {
+  :is(#modal-peel, #modal-clean) .modal-result__footer {
     align-items: flex-start;
     flex-direction: column;
     gap: 14px;
     padding: 18px;
   }
 
-  #modal-peel .modal-peel-types__list {
+  :is(#modal-peel, #modal-clean) .modal-peel-types__list {
     justify-content: flex-start;
   }
 
@@ -5264,8 +5264,8 @@ li,
 
 .service-modal .service-modal-content.service-modal-content--linear .modal-detail-card,
 #modal-contour .service-modal-content--linear .contour-section,
-#modal-peel .service-modal-content--linear > .modal-result__grid,
-#modal-peel .service-modal-content--linear > .modal-result__footer {
+:is(#modal-peel, #modal-clean) .service-modal-content--linear > .modal-result__grid,
+:is(#modal-peel, #modal-clean) .service-modal-content--linear > .modal-result__footer {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) !important;
   column-gap: 0 !important;
@@ -5283,15 +5283,15 @@ li,
 
 .service-modal .service-modal-content.service-modal-content--linear .modal-detail-card::before,
 #modal-contour .service-modal-content--linear .contour-section::before,
-#modal-peel .service-modal-content--linear > .modal-result__grid::before,
-#modal-peel .service-modal-content--linear > .modal-result__footer::before {
+:is(#modal-peel, #modal-clean) .service-modal-content--linear > .modal-result__grid::before,
+:is(#modal-peel, #modal-clean) .service-modal-content--linear > .modal-result__footer::before {
   display: none;
 }
 
 .service-modal .service-modal-content.service-modal-content--linear .modal-detail-card > *,
 #modal-contour .service-modal-content--linear .contour-section > *,
-#modal-peel .service-modal-content--linear > .modal-result__grid > *,
-#modal-peel .service-modal-content--linear > .modal-result__footer > * {
+:is(#modal-peel, #modal-clean) .service-modal-content--linear > .modal-result__grid > *,
+:is(#modal-peel, #modal-clean) .service-modal-content--linear > .modal-result__footer > * {
   grid-column: 1;
   width: 100%;
   min-width: 0;
@@ -5351,18 +5351,18 @@ li,
   margin-top: 18px !important;
 }
 
-#modal-peel .service-modal-content--linear > .modal-result__grid {
+:is(#modal-peel, #modal-clean) .service-modal-content--linear > .modal-result__grid {
   grid-template-columns: minmax(0, 1fr) !important;
 }
 
-#modal-peel .service-modal-content--linear .modal-result__panel,
-#modal-peel .service-modal-content--linear .modal-result__panel + .modal-result__panel {
+:is(#modal-peel, #modal-clean) .service-modal-content--linear .modal-result__panel,
+:is(#modal-peel, #modal-clean) .service-modal-content--linear .modal-result__panel + .modal-result__panel {
   width: 100%;
   padding: 0;
   border: 0;
 }
 
-#modal-peel .service-modal-content--linear .modal-result__panel + .modal-result__panel {
+:is(#modal-peel, #modal-clean) .service-modal-content--linear .modal-result__panel + .modal-result__panel {
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid var(--treatment-line);
@@ -5371,8 +5371,8 @@ li,
 @media (max-width: 720px) {
   .service-modal .service-modal-content.service-modal-content--linear .modal-detail-card,
   #modal-contour .service-modal-content--linear .contour-section,
-  #modal-peel .service-modal-content--linear > .modal-result__grid,
-  #modal-peel .service-modal-content--linear > .modal-result__footer {
+  :is(#modal-peel, #modal-clean) .service-modal-content--linear > .modal-result__grid,
+  :is(#modal-peel, #modal-clean) .service-modal-content--linear > .modal-result__footer {
     grid-template-columns: minmax(0, 1fr) !important;
     column-gap: 0 !important;
     padding: 24px 0 !important;
@@ -5688,7 +5688,7 @@ li,
 }
 
 /* Peeling details: compact editorial layout inspired by the supplied reference. */
-#modal-peel .service-modal-dialog {
+:is(#modal-peel, #modal-clean) .service-modal-dialog {
   width: min(980px, calc(100vw - 32px));
   background:
     radial-gradient(circle at 100% 0%, rgba(219, 229, 211, .32), transparent 34%),
@@ -5698,7 +5698,7 @@ li,
   box-shadow: 0 24px 70px rgba(36, 50, 40, .18);
 }
 
-#modal-peel .service-modal-header {
+:is(#modal-peel, #modal-clean) .service-modal-header {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -5711,7 +5711,7 @@ li,
   background: transparent;
 }
 
-#modal-peel .service-modal-header h3 {
+:is(#modal-peel, #modal-clean) .service-modal-header h3 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -5722,7 +5722,7 @@ li,
   white-space: nowrap;
 }
 
-#modal-peel .service-modal-header .service-modal-close {
+:is(#modal-peel, #modal-clean) .service-modal-header .service-modal-close {
   position: static;
   width: 44px;
   height: 44px;
@@ -5733,11 +5733,11 @@ li,
   backdrop-filter: blur(10px);
 }
 
-#modal-peel .service-modal-scroll {
+:is(#modal-peel, #modal-clean) .service-modal-scroll {
   padding: 14px;
 }
 
-#modal-peel .peel-editorial {
+:is(#modal-peel, #modal-clean) .peel-editorial {
   --peel-ink: #173d2a;
   --peel-copy: #42564a;
   --peel-muted: #6f7d73;
@@ -5754,7 +5754,7 @@ li,
   font-family: "Manrope", sans-serif;
 }
 
-#modal-peel .peel-editorial h4 {
+:is(#modal-peel, #modal-clean) .peel-editorial h4 {
   margin: 0;
   color: var(--peel-ink);
   font-family: "Playfair Display", serif;
@@ -5762,11 +5762,11 @@ li,
   letter-spacing: -.025em;
 }
 
-#modal-peel .peel-editorial p {
+:is(#modal-peel, #modal-clean) .peel-editorial p {
   margin: 0;
 }
 
-#modal-peel .peel-hero {
+:is(#modal-peel, #modal-clean) .peel-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
   grid-template-areas:
@@ -5780,17 +5780,17 @@ li,
   background: var(--peel-card);
 }
 
-#modal-peel .peel-hero__intro {
+:is(#modal-peel, #modal-clean) .peel-hero__intro {
   grid-area: intro;
   padding-right: 18px;
 }
 
-#modal-peel .peel-hero__intro h4 {
+:is(#modal-peel, #modal-clean) .peel-hero__intro h4 {
   font-size: clamp(2.2rem, 4.8vw, 3.65rem);
   line-height: 1;
 }
 
-#modal-peel .peel-hero__intro p {
+:is(#modal-peel, #modal-clean) .peel-hero__intro p {
   max-width: 44ch;
   margin-top: 16px;
   color: #2e4436;
@@ -5798,7 +5798,7 @@ li,
   line-height: 1.65;
 }
 
-#modal-peel .peel-hero__media {
+:is(#modal-peel, #modal-clean) .peel-hero__media {
   grid-area: media;
   min-height: 380px;
   margin: 0;
@@ -5807,7 +5807,7 @@ li,
   background: #e8e6df;
 }
 
-#modal-peel .peel-hero__media img {
+:is(#modal-peel, #modal-clean) .peel-hero__media img {
   width: 100%;
   height: 100%;
   max-height: none !important;
@@ -5816,14 +5816,14 @@ li,
   object-position: 61% center;
 }
 
-#modal-peel .peel-facts {
+:is(#modal-peel, #modal-clean) .peel-facts {
   grid-area: facts;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
-#modal-peel .peel-fact {
+:is(#modal-peel, #modal-clean) .peel-fact {
   min-width: 0;
   display: grid;
   justify-items: center;
@@ -5832,10 +5832,10 @@ li,
   text-align: center;
 }
 
-#modal-peel .peel-fact svg,
-#modal-peel .peel-note svg,
-#modal-peel .peel-faq summary svg,
-#modal-peel .peel-consult > svg {
+:is(#modal-peel, #modal-clean) .peel-fact svg,
+:is(#modal-peel, #modal-clean) .peel-note svg,
+:is(#modal-peel, #modal-clean) .peel-faq summary svg,
+:is(#modal-peel, #modal-clean) .peel-consult > svg {
   width: 24px;
   height: 24px;
   fill: none;
@@ -5845,34 +5845,34 @@ li,
   stroke-linejoin: round;
 }
 
-#modal-peel .peel-fact strong {
+:is(#modal-peel, #modal-clean) .peel-fact strong {
   color: #263c2e;
   font-size: .8rem;
   font-weight: 750;
   line-height: 1.25;
 }
 
-#modal-peel .peel-fact span {
+:is(#modal-peel, #modal-clean) .peel-fact span {
   color: var(--peel-muted);
   font-size: .76rem;
   line-height: 1.25;
 }
 
-#modal-peel .peel-concerns {
+:is(#modal-peel, #modal-clean) .peel-concerns {
   grid-area: concerns;
   align-self: end;
   padding-top: 20px;
   border-top: 1px solid var(--peel-line);
 }
 
-#modal-peel .peel-concerns > p {
+:is(#modal-peel, #modal-clean) .peel-concerns > p {
   color: #2c4635;
   font-size: .86rem;
   font-weight: 750;
 }
 
-#modal-peel .peel-concerns ul,
-#modal-peel .peel-types {
+:is(#modal-peel, #modal-clean) .peel-concerns ul,
+:is(#modal-peel, #modal-clean) .peel-types {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -5881,8 +5881,8 @@ li,
   list-style: none;
 }
 
-#modal-peel .peel-concerns li,
-#modal-peel .peel-types li {
+:is(#modal-peel, #modal-clean) .peel-concerns li,
+:is(#modal-peel, #modal-clean) .peel-types li {
   padding: 7px 11px;
   border: 1px solid rgba(49, 79, 58, .08);
   border-radius: 999px;
@@ -5892,7 +5892,7 @@ li,
   line-height: 1.1;
 }
 
-#modal-peel .peel-result-layout {
+:is(#modal-peel, #modal-clean) .peel-result-layout {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
   align-items: stretch;
@@ -5901,13 +5901,13 @@ li,
   border-bottom: 1px solid var(--peel-line);
 }
 
-#modal-peel .peel-result,
-#modal-peel .peel-steps {
+:is(#modal-peel, #modal-clean) .peel-result,
+:is(#modal-peel, #modal-clean) .peel-steps {
   min-width: 0;
 }
 
-#modal-peel .peel-result h4,
-#modal-peel .peel-steps h4 {
+:is(#modal-peel, #modal-clean) .peel-result h4,
+:is(#modal-peel, #modal-clean) .peel-steps h4 {
   margin: 0;
   font-family: "Playfair Display", serif;
   font-size: 1.28rem;
@@ -5915,24 +5915,29 @@ li,
   font-weight: 600;
 }
 
-#modal-peel .peel-faq > h4 {
+:is(#modal-peel, #modal-clean) .peel-faq > h4 {
   font-size: 1.28rem;
   line-height: 1.25;
 }
 
-#modal-peel .peel-comparison {
+:is(#modal-peel, #modal-clean) .peel-comparison {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-top: 26px;
 }
 
-#modal-peel .peel-comparison figure {
+#modal-peel .peel-result > .modal-carousel {
+  width: 100%;
+  margin-top: 26px;
+}
+
+:is(#modal-peel, #modal-clean) .peel-comparison figure {
   min-width: 0;
   margin: 0;
 }
 
-#modal-peel .peel-comparison__crop {
+:is(#modal-peel, #modal-clean) .peel-comparison__crop {
   position: relative;
   aspect-ratio: .64 / 1;
   overflow: hidden;
@@ -5940,7 +5945,7 @@ li,
   background: #e7ddd5;
 }
 
-#modal-peel .peel-comparison__crop img {
+:is(#modal-peel, #modal-clean) .peel-comparison__crop img {
   position: absolute;
   top: 50%;
   width: 200%;
@@ -5951,15 +5956,15 @@ li,
   transform: translateY(-50%);
 }
 
-#modal-peel .peel-comparison__before {
+:is(#modal-peel, #modal-clean) .peel-comparison__before {
   left: 0;
 }
 
-#modal-peel .peel-comparison__after {
+:is(#modal-peel, #modal-clean) .peel-comparison__after {
   left: -100%;
 }
 
-#modal-peel .peel-comparison figcaption {
+:is(#modal-peel, #modal-clean) .peel-comparison figcaption {
   margin-top: 12px;
   color: #66736a;
   font-size: .72rem;
@@ -5967,7 +5972,7 @@ li,
   letter-spacing: .05em;
 }
 
-#modal-peel .peel-result__copy {
+:is(#modal-peel, #modal-clean) .peel-result__copy {
   margin-top: 14px;
   max-width: 48ch;
   color: var(--peel-muted);
@@ -5975,14 +5980,14 @@ li,
   line-height: 1.55;
 }
 
-#modal-peel .peel-steps {
+:is(#modal-peel, #modal-clean) .peel-steps {
   align-self: stretch;
   display: flex;
   flex-direction: column;
   padding: 0;
 }
 
-#modal-peel .peel-steps ol {
+:is(#modal-peel, #modal-clean) .peel-steps ol {
   display: grid;
   grid-template-rows: repeat(3, minmax(86px, 1fr));
   flex: 1;
@@ -5992,7 +5997,7 @@ li,
   border-bottom: 1px solid var(--peel-line);
 }
 
-#modal-peel .peel-steps li {
+:is(#modal-peel, #modal-clean) .peel-steps li {
   display: grid;
   grid-template-columns: 64px minmax(0, 1fr);
   align-items: center;
@@ -6005,7 +6010,7 @@ li,
   line-height: 1.35;
 }
 
-#modal-peel .peel-steps li > span {
+:is(#modal-peel, #modal-clean) .peel-steps li > span {
   color: #315840;
   font-family: "Playfair Display", serif;
   font-size: 2.35rem;
@@ -6014,13 +6019,13 @@ li,
   letter-spacing: -.04em;
 }
 
-#modal-peel .peel-steps li > p {
+:is(#modal-peel, #modal-clean) .peel-steps li > p {
   margin: 0;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
 }
 
-#modal-peel .peel-note {
+:is(#modal-peel, #modal-clean) .peel-note {
   display: grid;
   grid-template-columns: 20px minmax(0, 1fr);
   gap: 10px;
@@ -6029,22 +6034,22 @@ li,
   padding: 20px 0 0;
 }
 
-#modal-peel .peel-note p {
+:is(#modal-peel, #modal-clean) .peel-note p {
   color: #56665b;
   font-size: .75rem;
   line-height: 1.55;
 }
 
-#modal-peel .peel-faq {
+:is(#modal-peel, #modal-clean) .peel-faq {
   padding: 26px 0;
   border-bottom: 1px solid var(--peel-line);
 }
 
-#modal-peel .peel-faq > h4 {
+:is(#modal-peel, #modal-clean) .peel-faq > h4 {
   margin: 0 8px 16px;
 }
 
-#modal-peel .peel-faq details {
+:is(#modal-peel, #modal-clean) .peel-faq details {
   margin-top: 9px;
   overflow: hidden;
   border: 1px solid var(--peel-line);
@@ -6053,12 +6058,12 @@ li,
   transition: border-color .2s ease, background-color .2s ease;
 }
 
-#modal-peel .peel-faq details[open] {
+:is(#modal-peel, #modal-clean) .peel-faq details[open] {
   border-color: rgba(48, 84, 58, .24);
   background: #fffefb;
 }
 
-#modal-peel .peel-faq summary {
+:is(#modal-peel, #modal-clean) .peel-faq summary {
   min-height: 58px;
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr) 18px;
@@ -6072,11 +6077,11 @@ li,
   cursor: pointer;
 }
 
-#modal-peel .peel-faq summary::-webkit-details-marker {
+:is(#modal-peel, #modal-clean) .peel-faq summary::-webkit-details-marker {
   display: none;
 }
 
-#modal-peel .peel-faq summary::after {
+:is(#modal-peel, #modal-clean) .peel-faq summary::after {
   content: ">";
   display: inline-block;
   color: #31513c;
@@ -6085,28 +6090,28 @@ li,
   transition: transform .2s ease;
 }
 
-#modal-peel .peel-faq details[open] summary::after {
+:is(#modal-peel, #modal-clean) .peel-faq details[open] summary::after {
   transform: rotate(-90deg);
 }
 
-#modal-peel .peel-faq summary:focus-visible {
+:is(#modal-peel, #modal-clean) .peel-faq summary:focus-visible {
   outline: 2px solid #6f9477;
   outline-offset: -4px;
   border-radius: 12px;
 }
 
-#modal-peel .peel-faq details > div {
+:is(#modal-peel, #modal-clean) .peel-faq details > div {
   padding: 0 18px 18px 56px;
 }
 
-#modal-peel .peel-faq details p,
-#modal-peel .peel-faq__result-list {
+:is(#modal-peel, #modal-clean) .peel-faq details p,
+:is(#modal-peel, #modal-clean) .peel-faq__result-list {
   color: var(--peel-muted);
   font-size: .8rem;
   line-height: 1.6;
 }
 
-#modal-peel .peel-faq__result-list {
+:is(#modal-peel, #modal-clean) .peel-faq__result-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 5px 18px;
@@ -6114,11 +6119,11 @@ li,
   padding-left: 18px;
 }
 
-#modal-peel .peel-types {
+:is(#modal-peel, #modal-clean) .peel-types {
   margin-top: 0;
 }
 
-#modal-peel .peel-consult {
+:is(#modal-peel, #modal-clean) .peel-consult {
   display: grid;
   grid-template-columns: 44px minmax(0, 1fr);
   align-items: center;
@@ -6129,25 +6134,25 @@ li,
   background: linear-gradient(120deg, #f4f5ef, #eeece4);
 }
 
-#modal-peel .peel-consult > svg {
+:is(#modal-peel, #modal-clean) .peel-consult > svg {
   width: 38px;
   height: 38px;
 }
 
-#modal-peel .peel-consult h4 {
+:is(#modal-peel, #modal-clean) .peel-consult h4 {
   font-family: "Manrope", sans-serif;
   font-size: .98rem;
   font-weight: 750;
   letter-spacing: 0;
 }
 
-#modal-peel .peel-consult p {
+:is(#modal-peel, #modal-clean) .peel-consult p {
   margin-top: 4px;
   color: var(--peel-muted);
   font-size: .8rem;
 }
 
-#modal-peel .peel-booking.btn {
+:is(#modal-peel, #modal-clean) .peel-booking.btn {
   width: 100%;
   min-height: 56px;
   margin: 20px 0 0;
@@ -6156,31 +6161,40 @@ li,
   text-align: center;
 }
 
-#modal-peel .peel-booking-note {
+:is(#modal-peel, #modal-clean) .peel-booking-note {
   margin: 12px 0 4px;
   color: var(--peel-muted);
   font-size: .76rem;
   text-align: center;
 }
 
+#modal-clean .peel-booking-note {
+  width: 100%;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(.62rem, 1.4vw, .76rem);
+  line-height: 1.4;
+  text-wrap: nowrap;
+}
+
 @media (max-width: 720px) {
-  #modal-peel .service-modal-dialog {
+  :is(#modal-peel, #modal-clean) .service-modal-dialog {
     width: calc(100vw - 20px);
     height: calc(100dvh - 20px);
     margin: 10px auto;
     border-radius: 20px;
   }
 
-  #modal-peel .service-modal-scroll {
+  :is(#modal-peel, #modal-clean) .service-modal-scroll {
     padding: 8px;
   }
 
-  #modal-peel .service-modal-header {
+  :is(#modal-peel, #modal-clean) .service-modal-header {
     display: block;
     grid-template-columns: none;
   }
 
-  #modal-peel .peel-hero {
+  :is(#modal-peel, #modal-clean) .peel-hero {
     grid-template-columns: minmax(0, 1.05fr) minmax(128px, .95fr);
     grid-template-areas:
       "intro media"
@@ -6190,78 +6204,78 @@ li,
     padding: 18px;
   }
 
-  #modal-peel .peel-hero__intro {
+  :is(#modal-peel, #modal-clean) .peel-hero__intro {
     align-self: center;
     padding-right: 0;
   }
 
-  #modal-peel .peel-hero__intro h4 {
+  :is(#modal-peel, #modal-clean) .peel-hero__intro h4 {
     font-size: clamp(1.85rem, 9vw, 2.45rem);
   }
 
-  #modal-peel .peel-hero__intro p {
+  :is(#modal-peel, #modal-clean) .peel-hero__intro p {
     margin-top: 12px;
     font-size: .8rem;
     line-height: 1.55;
   }
 
-  #modal-peel .peel-hero__media {
+  :is(#modal-peel, #modal-clean) .peel-hero__media {
     min-height: 210px;
     border-radius: 14px;
   }
 
-  #modal-peel .peel-facts {
+  :is(#modal-peel, #modal-clean) .peel-facts {
     gap: 8px;
   }
 
-  #modal-peel .peel-concerns {
+  :is(#modal-peel, #modal-clean) .peel-concerns {
     padding-top: 16px;
   }
 
-  #modal-peel .peel-result-layout {
+  :is(#modal-peel, #modal-clean) .peel-result-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 22px;
     padding: 24px 8px;
   }
 
-  #modal-peel .peel-steps {
+  :is(#modal-peel, #modal-clean) .peel-steps {
     padding: 0;
   }
 
-  #modal-peel .peel-faq {
+  :is(#modal-peel, #modal-clean) .peel-faq {
     padding: 24px 0;
   }
 
-  #modal-peel .peel-faq details > div {
+  :is(#modal-peel, #modal-clean) .peel-faq details > div {
     padding-left: 18px;
   }
 
-  #modal-peel .peel-faq__result-list {
+  :is(#modal-peel, #modal-clean) .peel-faq__result-list {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  #modal-peel .peel-consult {
+  :is(#modal-peel, #modal-clean) .peel-consult {
     margin-top: 20px;
     padding: 16px;
   }
 
-  #modal-peel .peel-booking.btn {
+  :is(#modal-peel, #modal-clean) .peel-booking.btn {
     min-height: 54px;
   }
 }
 
 @media (max-width: 380px) {
-  #modal-peel .peel-hero {
+  :is(#modal-peel, #modal-clean) .peel-hero {
     grid-template-columns: minmax(0, 1fr) 116px;
     padding: 16px;
   }
 
-  #modal-peel .peel-hero__media {
+  :is(#modal-peel, #modal-clean) .peel-hero__media {
     min-height: 190px;
   }
 
-  #modal-peel .peel-fact strong,
-  #modal-peel .peel-fact span {
+  :is(#modal-peel, #modal-clean) .peel-fact strong,
+  :is(#modal-peel, #modal-clean) .peel-fact span {
     font-size: .7rem;
   }
 }
@@ -7422,6 +7436,613 @@ li,
   }
 }
 
+/* Shared editorial service details for active treatment modals. */
+.treatment-modal .service-modal-dialog {
+  width: min(980px, calc(100vw - 32px));
+  background:
+    radial-gradient(circle at 100% 0%, rgba(219, 229, 211, .3), transparent 34%),
+    #fbfaf7;
+  border-color: rgba(61, 92, 70, .14);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(36, 50, 40, .18);
+}
+
+.treatment-modal .service-modal-header {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 44px;
+  min-height: 44px;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.treatment-modal .service-modal-header h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.treatment-modal .service-modal-header .service-modal-close {
+  position: static;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(37, 67, 48, .12);
+  background: rgba(255, 255, 252, .9);
+  box-shadow: 0 8px 24px rgba(31, 48, 36, .1);
+  transform: none;
+  backdrop-filter: blur(10px);
+}
+
+.treatment-modal .service-modal-scroll {
+  padding: 14px;
+}
+
+.treatment-editorial {
+  --treatment-ink: #173d2a;
+  --treatment-copy: #42564a;
+  --treatment-muted: #6f7d73;
+  --treatment-line: rgba(40, 73, 52, .13);
+  --treatment-soft: #f2f4ee;
+  --treatment-card: rgba(255, 255, 252, .84);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex !important;
+  flex-direction: column;
+  gap: 0 !important;
+  color: var(--treatment-copy);
+  font-family: "Manrope", sans-serif;
+}
+
+.treatment-editorial h4,
+.treatment-editorial h5,
+.treatment-editorial p {
+  margin: 0;
+}
+
+.treatment-editorial h4,
+.treatment-editorial h5 {
+  color: var(--treatment-ink);
+  font-family: "Playfair Display", serif;
+  font-weight: 650;
+  letter-spacing: -.025em;
+}
+
+.treatment-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr);
+  grid-template-areas:
+    "intro media"
+    "facts media"
+    "concerns media";
+  gap: 22px 28px;
+  padding: 26px;
+  border: 1px solid var(--treatment-line);
+  border-radius: 18px;
+  background: var(--treatment-card);
+}
+
+.treatment-hero__intro {
+  grid-area: intro;
+  align-self: end;
+  padding-right: 10px;
+}
+
+.treatment-hero__intro h4 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.02;
+}
+
+.treatment-hero__intro p {
+  max-width: 46ch;
+  margin-top: 16px;
+  color: #2e4436;
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+.treatment-hero__media {
+  grid-area: media;
+  min-height: 390px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e8e6df;
+}
+
+.treatment-hero__media img {
+  width: 100%;
+  height: 100%;
+  max-height: none !important;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.treatment-facts {
+  grid-area: facts;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.treatment-fact {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 7px;
+  text-align: center;
+}
+
+.treatment-fact svg,
+.treatment-note svg,
+.treatment-consult > svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--treatment-ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.treatment-fact strong {
+  color: #263c2e;
+  font-size: .78rem;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.treatment-concerns {
+  grid-area: concerns;
+  align-self: end;
+  padding-top: 20px;
+  border-top: 1px solid var(--treatment-line);
+}
+
+.treatment-concerns > p {
+  color: #2c4635;
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+.treatment-concerns ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.treatment-concerns li {
+  padding: 7px 11px;
+  border: 1px solid rgba(49, 79, 58, .08);
+  border-radius: 999px;
+  color: #56685d;
+  background: var(--treatment-soft);
+  font-size: .76rem;
+  line-height: 1.15;
+}
+
+.treatment-result-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
+  align-items: stretch;
+  gap: 52px;
+  padding: 26px 8px;
+  border-bottom: 1px solid var(--treatment-line);
+}
+
+.treatment-result,
+.treatment-steps {
+  min-width: 0;
+}
+
+.treatment-result > h4,
+.treatment-steps > h4,
+.treatment-faq > h4 {
+  font-size: 1.28rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.treatment-result-media,
+.treatment-benefit-panel,
+.treatment-carousel {
+  margin-top: 26px;
+}
+
+.treatment-result-media {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 12px;
+  border: 1px solid var(--treatment-line);
+  border-radius: 14px;
+  background: #f5f2ed;
+}
+
+.treatment-result-media img {
+  width: 100%;
+  height: min(46vw, 430px) !important;
+  max-height: 430px !important;
+  display: block;
+  object-fit: contain;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.treatment-result-media figcaption,
+.treatment-carousel .modal-result__caption {
+  margin-top: 10px;
+  color: var(--treatment-muted);
+  font-size: .72rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.treatment-carousel {
+  width: 100%;
+}
+
+.treatment-carousel .modal-carousel__viewport {
+  border: 1px solid var(--treatment-line);
+  border-radius: 14px;
+  background: #f5f2ed;
+  box-shadow: none;
+}
+
+.treatment-carousel .modal-carousel__slide {
+  padding: 12px;
+}
+
+.treatment-carousel .modal-carousel__slide img {
+  height: min(46vw, 430px) !important;
+  max-height: 430px !important;
+  object-fit: contain;
+}
+
+.treatment-carousel .modal-carousel__control {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--treatment-line);
+  box-shadow: none;
+}
+
+.treatment-result__copy {
+  max-width: 52ch;
+  margin-top: 14px !important;
+  color: var(--treatment-muted);
+  font-size: .8rem;
+  line-height: 1.6;
+}
+
+.treatment-benefit-panel {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid var(--treatment-line);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(164, 187, 158, .22), transparent 34%),
+    linear-gradient(145deg, #f8f7f2, #eef2e9);
+}
+
+.treatment-benefit-panel h5 {
+  max-width: 18ch;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  line-height: 1.15;
+}
+
+.treatment-benefit-panel ul {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.treatment-benefit-panel li {
+  position: relative;
+  padding-left: 20px;
+  color: #405448;
+  font-size: .84rem;
+  line-height: 1.5;
+}
+
+.treatment-benefit-panel li::before {
+  content: "";
+  position: absolute;
+  top: .65em;
+  left: 0;
+  width: 8px;
+  height: 1px;
+  background: #5f8069;
+}
+
+.treatment-steps {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.treatment-steps ol {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(76px, 1fr));
+  flex: 1;
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--treatment-line);
+}
+
+.treatment-steps li {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-height: 76px;
+  padding: 22px 0;
+  border-top: 1px solid var(--treatment-line);
+  color: #31483a;
+  font-size: .87rem;
+  line-height: 1.4;
+}
+
+.treatment-steps li > span {
+  color: #315840;
+  font-family: "Playfair Display", serif;
+  font-size: 2.35rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+
+.treatment-steps li > p {
+  font-weight: 500;
+}
+
+.treatment-note {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.treatment-note p {
+  color: #56665b;
+  font-size: .75rem;
+  line-height: 1.55;
+}
+
+.treatment-faq {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--treatment-line);
+}
+
+.treatment-faq > h4 {
+  margin: 0 8px 16px;
+}
+
+.treatment-faq details {
+  margin-top: 9px;
+  overflow: hidden;
+  border: 1px solid var(--treatment-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 252, .76);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+.treatment-faq details[open] {
+  border-color: rgba(48, 84, 58, .24);
+  background: #fffefb;
+}
+
+.treatment-faq summary {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  color: #294333;
+  font-size: .86rem;
+  font-weight: 650;
+  list-style: none;
+  cursor: pointer;
+}
+
+.treatment-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.treatment-faq summary::after {
+  content: ">";
+  color: #31513c;
+  font-size: 1.1rem;
+  transform: rotate(90deg);
+  transition: transform .2s ease;
+}
+
+.treatment-faq details[open] summary::after {
+  transform: rotate(-90deg);
+}
+
+.treatment-faq summary:focus-visible {
+  outline: 2px solid #6f9477;
+  outline-offset: -4px;
+  border-radius: 12px;
+}
+
+.treatment-faq details > div {
+  padding: 0 18px 18px;
+}
+
+.treatment-faq details p {
+  color: var(--treatment-muted);
+  font-size: .8rem;
+  line-height: 1.62;
+}
+
+.treatment-consult {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #f4f5ef, #eeece4);
+}
+
+.treatment-consult > svg {
+  width: 38px;
+  height: 38px;
+}
+
+.treatment-consult h4 {
+  font-family: "Manrope", sans-serif;
+  font-size: .98rem;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.treatment-consult p {
+  margin-top: 5px;
+  color: var(--treatment-muted);
+  font-size: .8rem;
+  line-height: 1.55;
+}
+
+.treatment-booking.btn {
+  width: 100%;
+  min-height: 56px;
+  margin: 20px 0 0;
+  border-radius: 14px;
+  justify-content: center;
+  text-align: center;
+}
+
+.treatment-booking-note {
+  margin: 12px 0 4px !important;
+  color: var(--treatment-muted);
+  font-size: .76rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .treatment-modal .service-modal-dialog {
+    width: calc(100vw - 20px);
+    height: calc(100dvh - 20px);
+    margin: 10px auto;
+    border-radius: 20px;
+  }
+
+  .treatment-modal .service-modal-scroll {
+    padding: 8px;
+  }
+
+  .treatment-hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "intro"
+      "media"
+      "facts"
+      "concerns";
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .treatment-hero__intro {
+    padding-right: 44px;
+  }
+
+  .treatment-hero__intro h4 {
+    overflow-wrap: anywhere;
+    font-size: clamp(1.75rem, 8.4vw, 2.25rem);
+  }
+
+  .treatment-hero__intro p {
+    margin-top: 12px;
+    font-size: .8rem;
+    line-height: 1.55;
+  }
+
+  .treatment-hero__media {
+    min-height: 230px;
+    border-radius: 14px;
+  }
+
+  .treatment-facts {
+    gap: 8px;
+  }
+
+  .treatment-concerns {
+    padding-top: 16px;
+  }
+
+  .treatment-result-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 24px 8px;
+  }
+
+  .treatment-result-media img,
+  .treatment-carousel .modal-carousel__slide img {
+    height: min(52dvh, 430px) !important;
+    max-height: none !important;
+  }
+
+  .treatment-benefit-panel {
+    min-height: 280px;
+  }
+
+  .treatment-steps ol {
+    grid-template-rows: none;
+  }
+
+  .treatment-faq {
+    padding: 24px 0;
+  }
+
+  .treatment-consult {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  .treatment-booking.btn {
+    min-height: 54px;
+  }
+}
+
+@media (max-width: 380px) {
+  .treatment-hero {
+    padding: 16px;
+  }
+
+  .treatment-hero__media {
+    min-height: 215px;
+  }
+
+  .treatment-fact strong {
+    font-size: .69rem;
+  }
+}
+
 /* Hardware service covers: editorial, image-led cards */
 </style>
   </head>
@@ -7893,6 +8514,337 @@ function closeItem(trigger){const panel=document.getElementById(trigger.getAttri
 function openItem(trigger){const panel=document.getElementById(trigger.getAttribute('aria-controls'));const icon=trigger.querySelector('.faq-icon');trigger.setAttribute('aria-expanded','true');if(icon)icon.textContent='×';if(panel){panel.hidden=false;panel.style.maxHeight=`${panel.scrollHeight}px`;}}
 faqTriggers.forEach((trigger)=>{trigger.addEventListener('click',()=>{const isOpen=trigger.getAttribute('aria-expanded')==='true';faqTriggers.forEach((other)=>{if(other!==trigger)closeItem(other);});if(isOpen)closeItem(trigger);else openItem(trigger);});});
 
+const editorialServiceData = {
+  biorev: {
+    title: 'Биоревитализация',
+    tagline: 'Интенсивное увлажнение и восстановление качества кожи, когда одного домашнего ухода уже недостаточно.',
+    cover: { src: 'biorevitalization-cover-optimized.jpg', alt: 'Увлажнённая и сияющая кожа после биоревитализации', width: 1448, height: 1086 },
+    facts: ['Глубокое увлажнение', 'Плотность и сияние', 'Индивидуальный протокол'],
+    concerns: ['Сухость и обезвоженность', 'Тусклый тон', 'Мелкие морщины', 'Следы усталости', 'Тонкая кожа'],
+    resultTitle: 'До и после',
+    results: [
+      { src: 'biorev-pdrn-before-after.jpg', alt: 'До и после биоревитализации с PDRN', caption: 'Результат биоревитализации с PDRN', width: 1024, height: 1280 }
+    ],
+    resultCopy: 'Кожа может выглядеть более увлажнённой, плотной и свежей. Выраженность результата и количество процедур зависят от исходного состояния кожи и выбранного протокола.',
+    steps: ['Консультация и оценка состояния кожи', 'Очищение и подготовка зоны', 'Введение выбранного препарата', 'Рекомендации и план дальнейшего ухода'],
+    note: 'Препарат, зоны и курс определяются после оценки обезвоженности, плотности кожи и индивидуальных показаний.',
+    faq: [
+      { q: 'Что будет сразу после процедуры?', a: 'После инъекционной биоревитализации возможны небольшие папулы, покраснение или чувствительность. Врач заранее объяснит ожидаемую реакцию и правила восстановления.' },
+      { q: 'Сколько процедур потребуется?', a: 'Количество и интервалы зависят от задачи, состояния кожи и препарата. Иногда достаточно поддерживающей процедуры, в других случаях врач рекомендует курс.' },
+      { q: 'Как подбирается препарат?', a: 'Учитываются возраст, плотность, обезвоженность и зона работы. В протоколах могут использоваться Novacutan, Filorga NCTF, Meso-Wharton, Meso-Xanthin, Revi, Belotero Revive, JaluPro, Nucleofill и Plinest.' }
+    ],
+    consultTitle: 'Кожа выглядит уставшей и обезвоженной?',
+    consultText: 'На консультации определим, нужна ли коже биоревитализация, и подберём деликатный протокол без лишних процедур.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Врач определит показания, препарат, зоны и количество процедур.'
+  },
+  lipo: {
+    title: 'Липолитики',
+    tagline: 'Точечная работа с локальными жировыми отложениями, которые сложно скорректировать только питанием и уходом.',
+    cover: { src: 'lipolytics-cover-v2.jpg', alt: 'Липолитическая коррекция локальной зоны', width: 1570, height: 1001 },
+    facts: ['Локальная коррекция', 'Более чёткий контур', 'Только по показаниям'],
+    concerns: ['Второй подбородок', 'Нечёткий овал', 'Локальные жировые ловушки', 'Небольшие объёмы на теле'],
+    resultTitle: 'До и после',
+    results: [
+      { src: 'lipolytics-before-after.png', alt: 'До и после курса липолитической коррекции', caption: 'Результат работы с локальной зоной', width: 1158, height: 1148 }
+    ],
+    resultCopy: 'Процедура может помочь уменьшить локальный объём и сделать контур аккуратнее. Это не метод общего снижения веса: зона и целесообразность коррекции оцениваются очно.',
+    steps: ['Оценка зоны и толщины жировой складки', 'Разметка и подготовка кожи', 'Введение препарата по выбранной схеме', 'Контроль реакции и рекомендации'],
+    note: 'Липолитики применяются только локально и только при наличии показаний. Итоговая схема зависит от зоны и особенностей тканей.',
+    faq: [
+      { q: 'Когда можно оценивать результат?', a: 'Изменения развиваются постепенно. Срок оценки зависит от зоны, препарата и индивидуальной реакции, поэтому контроль проводят не сразу после процедуры.' },
+      { q: 'Понадобится ли курс?', a: 'Иногда требуется несколько процедур с интервалами. Точное количество определяет врач после осмотра и оценки динамики.' },
+      { q: 'Как выбираются зона и препарат?', a: 'Врач оценивает объём, качество кожи, противопоказания и ожидаемый результат. Препарат и дозировка подбираются индивидуально.' }
+    ],
+    consultTitle: 'Беспокоит локальный объём или второй подбородок?',
+    consultText: 'Оценим, действительно ли в этой зоне показаны липолитики, или более предсказуемым будет другой метод коррекции.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Метод, препарат и количество процедур определяются после очного осмотра.'
+  },
+  collagen: {
+    title: 'Коллагенотерапия',
+    tagline: 'Постепенное укрепление тканей и улучшение плотности кожи за счёт стимуляции собственного коллагена.',
+    cover: { src: 'collagen-therapy-cover-v2.jpg', alt: 'Плотная и ухоженная кожа после коллагенотерапии', width: 1570, height: 1001 },
+    facts: ['Собственный коллаген', 'Постепенный эффект', 'Лицо и тело'],
+    concerns: ['Снижение плотности', 'Дряблость кожи', 'Изменение овала', 'Рубцы и постакне', 'Тонкая кожа вокруг глаз'],
+    resultTitle: 'До и после',
+    results: [
+      { src: 'polymilactic-acid-before-after.jpg', alt: 'До и после коллагеностимуляции полимолочной кислотой', caption: 'Коллагеностимуляция полимолочной кислотой', width: 960, height: 960 },
+      { src: 'collagen-before-after.png', alt: 'До и после коллагенотерапии в области вокруг глаз', caption: 'Работа с качеством кожи вокруг глаз', width: 1306, height: 1269 },
+      { src: 'collagen-scars-before-after.jpeg', alt: 'До и после работы с рубцами', caption: 'Работа с рельефом и рубцовыми изменениями', width: 1320, height: 1132 }
+    ],
+    resultCopy: 'Кожа может постепенно становиться более плотной и упругой, а рельеф — ровнее. Результат развивается не мгновенно и зависит от выбранного препарата и способности тканей к восстановлению.',
+    steps: ['Диагностика качества и объёма тканей', 'Выбор препарата и техники', 'Проведение процедуры по разметке', 'Контроль и план наблюдения'],
+    note: 'Коллагеностимуляция не должна менять лицо до неузнаваемости: задача протокола — укрепить ткани и сохранить естественные пропорции.',
+    faq: [
+      { q: 'Когда появляется результат?', a: 'Эффект формируется постепенно по мере ремоделирования тканей. Сроки зависят от препарата, зоны и индивидуальной реакции.' },
+      { q: 'Какие препараты используются?', a: 'По показаниям могут применяться Radiesse, Gana, Collost 7%, Collost 15%, Микроколлост и Сферогель. Выбор делает врач после осмотра.' },
+      { q: 'Можно ли работать с рубцами?', a: 'Да, некоторые протоколы применяются для улучшения рельефа и качества тканей в зоне рубцов. Возможность и ожидаемый объём коррекции оцениваются индивидуально.' }
+    ],
+    consultTitle: 'Хотите укрепить кожу без резкой смены черт лица?',
+    consultText: 'Определим, нужна ли стимуляция коллагена, и выберем метод с учётом плотности тканей и желаемого темпа результата.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Препарат, техника и количество процедур подбираются индивидуально.'
+  },
+  plasma: {
+    title: 'Плазмотерапия',
+    tagline: 'Процедура с собственной плазмой пациента для поддержки естественных процессов восстановления кожи или волос.',
+    cover: { src: 'plasma-therapy-cover.jpg', alt: 'Плазмотерапия кожи головы', width: 1024, height: 1536, position: 'center 28%' },
+    facts: ['Собственная плазма', 'Кожа и волосы', 'По результатам диагностики'],
+    concerns: ['Выпадение и истончение волос', 'Снижение густоты', 'Тусклая кожа', 'Замедленное восстановление', 'Снижение тонуса'],
+    resultTitle: 'Что даёт процедура',
+    resultLead: 'Поддержка естественного восстановления кожи и волос',
+    benefits: ['Работа с качеством кожи и микроциркуляцией', 'Поддержка комплексного лечения выпадения волос', 'Восстановительные протоколы после оценки показаний'],
+    resultCopy: 'Плазмотерапия не заменяет диагностику причин выпадения волос или изменений кожи. Она включается в план только тогда, когда соответствует вашей задаче.',
+    steps: ['Консультация и определение показаний', 'Забор небольшого объёма крови', 'Подготовка плазмы в центрифуге', 'Введение в выбранную зону и рекомендации'],
+    note: 'Для работы с волосами важно сначала уточнить причину выпадения: иногда необходимы анализы и коррекция выявленных факторов.',
+    faq: [
+      { q: 'Что вводится во время процедуры?', a: 'Используется подготовленная аутологичная плазма самого пациента. Дополнительные комплексы рассматриваются отдельно и только по показаниям.' },
+      { q: 'Подойдёт ли процедура при выпадении волос?', a: 'Плазмотерапия может быть частью комплексного плана, но сначала важно определить тип и возможные причины выпадения волос.' },
+      { q: 'Сколько процедур потребуется?', a: 'Схема зависит от зоны, задачи и динамики. Количество процедур и интервалы врач определяет индивидуально.' }
+    ],
+    consultTitle: 'Беспокоит качество кожи или выпадение волос?',
+    consultText: 'Начнём не с процедуры, а с оценки причин и показаний, чтобы плазмотерапия была обоснованной частью плана.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Зона, курс и необходимость дополнительной диагностики определяются врачом.'
+  },
+  rf: {
+    title: 'RF-микроигольчатый лифтинг',
+    tagline: 'Глубокое аппаратное обновление для более плотной, ровной и подтянутой кожи лица или тела.',
+    cover: { src: 'rf-lifting-cover.jpg', alt: 'Процедура RF-микроигольчатого лифтинга', width: 1536, height: 1024 },
+    facts: ['Глубокое обновление', 'Плотность и рельеф', 'Лицо и тело'],
+    concerns: ['Снижение плотности', 'Расширенные поры', 'Постакне и рубцы', 'Неровная текстура', 'Дряблость кожи'],
+    resultTitle: 'До и после',
+    results: [
+      { src: 'rf-microneedle-before-after-cropped.jpeg', alt: 'До и после RF-микроигольчатого лифтинга лица', caption: 'Результат RF-микроигольчатого — анфас', width: 720, height: 800 },
+      { src: 'rf-microneedle-before-after-profile.jpeg', alt: 'До и после RF-микроигольчатого лифтинга в профиль', caption: 'Результат RF-микроигольчатого — профиль', width: 1280, height: 848 },
+      { src: 'rf-microneedle-knee-before-after.webp', alt: 'До и после RF-микроигольчатого лифтинга коленей', caption: 'Работа с качеством кожи в области коленей', width: 1248, height: 1122 }
+    ],
+    resultCopy: 'Кожа может стать более плотной и ровной, поры и следы постакне — менее заметными. Изменения развиваются постепенно, по мере обновления и ремоделирования тканей.',
+    steps: ['Диагностика кожи и выбор параметров', 'Очищение и подготовка зоны', 'Обработка кожи аппаратом Vivace', 'Восстановительный уход и рекомендации'],
+    note: 'Глубина и интенсивность воздействия настраиваются индивидуально для каждой зоны и задачи.',
+    faq: [
+      { q: 'Как проходит восстановление?', a: 'Возможны покраснение, чувствительность и небольшой отёк. Срок восстановления зависит от интенсивности протокола и реакции кожи.' },
+      { q: 'Когда оценивать результат?', a: 'Первые изменения можно заметить после восстановления, но итоговый эффект развивается постепенно по мере обновления коллагенового каркаса.' },
+      { q: 'Какие зоны можно обрабатывать?', a: 'Процедуру применяют на лице и отдельных зонах тела. Возможность работы с конкретной областью определяется после осмотра.' }
+    ],
+    consultTitle: 'Хотите улучшить плотность и рельеф кожи?',
+    consultText: 'Оценим, подойдёт ли RF-микроигольчатый лифтинг именно вашей коже и какой уровень воздействия будет достаточным.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Параметры аппарата, зоны и курс определяются индивидуально.'
+  },
+  bbl: {
+    title: 'BBL-фотоомоложение',
+    tagline: 'Широкополосный импульсный свет для более ровного тона, чистого цвета и свежего вида кожи.',
+    cover: { src: 'bbl-broadband-light.webp', alt: 'Процедура BBL-фотоомоложения', width: 941, height: 1672, position: 'center 34%' },
+    facts: ['Ровный тон', 'Работа с пигментом', 'Персональные параметры'],
+    concerns: ['Пигментные пятна', 'Покраснения', 'Сосудистая сетка', 'Следы постакне', 'Неровный тон'],
+    resultTitle: 'До и после',
+    results: [
+      { src: 'bbl-before-after-front.jpeg', alt: 'До и после BBL-фотоомоложения в анфас', caption: 'Результат BBL — вид в анфас', width: 966, height: 1280 },
+      { src: 'bbl-before-after-profile.jpeg', alt: 'До и после BBL-фотоомоложения в профиль', caption: 'Результат BBL — вид в профиль', width: 960, height: 1280 }
+    ],
+    resultCopy: 'Процедура помогает сделать тон визуально ровнее, а пигментные и сосудистые проявления — менее заметными. BBL работает с качеством кожи, не меняя черты лица.',
+    steps: ['Оценка фототипа и состояния кожи', 'Очищение и защита глаз', 'Световая обработка по выбранному протоколу', 'SPF-защита и рекомендации по уходу'],
+    note: 'Параметры света и протокол выбираются с учётом фототипа, сезона, загара и конкретной задачи кожи.',
+    faq: [
+      { q: 'Можно ли делать BBL при загаре?', a: 'Свежий загар влияет на безопасность световых процедур. Врач уточнит солнечную активность, фототип и подберёт подходящее время.' },
+      { q: 'Сколько процедур потребуется?', a: 'Количество зависит от выраженности пигментации, сосудистых проявлений и реакции кожи. План составляется после диагностики.' },
+      { q: 'Как выбирается протокол?', a: 'По показаниям могут использоваться протоколы Forever Young, Forever Clear и Rosation. Параметры настраиваются индивидуально.' }
+    ],
+    consultTitle: 'Беспокоят пигментация, краснота или неровный тон?',
+    consultText: 'Определим, подходит ли вам световая коррекция и какой протокол даст коже нужный результат без лишней нагрузки.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Фототип, сезонность и противопоказания оцениваются до процедуры.'
+  },
+  ozone: {
+    title: 'Озонотерапия',
+    tagline: 'Процедура с медицинской кислородно-озоновой смесью, которая назначается только после оценки показаний и задачи.',
+    cover: { src: 'ozone-therapy-cover.webp', alt: 'Процедура озонотерапии', width: 1536, height: 1024 },
+    facts: ['Медицинская смесь', 'Локальная работа', 'Строго по показаниям'],
+    concerns: ['Отёчность и пастозность', 'Тусклый вид кожи', 'Локальные зоны', 'Воспалительные элементы', 'Восстановление после процедур'],
+    resultTitle: 'До и после',
+    results: [
+      { src: 'ozone-before-after-jawline.webp', alt: 'До и после озонотерапии нижней трети лица', caption: 'Результат работы с нижней третью лица', width: 1320, height: 658 }
+    ],
+    resultCopy: 'Внешний результат зависит от зоны, показаний и сочетания с другими методами. Озонотерапия не является универсальной процедурой и включается в план только после консультации.',
+    steps: ['Консультация и оценка показаний', 'Выбор зоны и способа воздействия', 'Проведение процедуры по протоколу', 'Контроль реакции и рекомендации'],
+    note: 'Состав, концентрация, способ введения и необходимость курса определяются медицинским специалистом индивидуально.',
+    faq: [
+      { q: 'Что используется в процедуре?', a: 'Применяется медицинская кислородно-озоновая смесь. Параметры процедуры и способ применения зависят от показаний.' },
+      { q: 'Какой результат можно ожидать?', a: 'Цель и ожидаемый эффект обсуждаются заранее для конкретной зоны. Результат индивидуален и не может быть гарантирован одинаково для всех.' },
+      { q: 'Понадобится ли курс?', a: 'Это зависит от задачи и реакции тканей. Решение о количестве процедур принимается после очной оценки и наблюдения динамики.' }
+    ],
+    consultTitle: 'Хотите понять, подходит ли вам озонотерапия?',
+    consultText: 'Разберём запрос и честно определим, есть ли показания или лучше выбрать другой, более предсказуемый метод.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Процедура проводится только после оценки показаний и противопоказаний.'
+  },
+  massage: {
+    title: 'Массаж лица',
+    tagline: 'Мануальная работа с отёчностью и мышечным напряжением для более свежего вида и расслабленного выражения лица.',
+    cover: { src: 'facial-massage-cover.jpg', alt: 'Профессиональный массаж лица', width: 1536, height: 1024 },
+    facts: ['Без инъекций', 'Лимфодренаж', 'Расслабление мышц'],
+    concerns: ['Отёчность лица', 'Напряжение жевательных мышц', 'Нечёткий овал', 'Тусклый тон', 'Усталый вид'],
+    resultTitle: 'Что даёт массаж',
+    resultLead: 'Лицо выглядит более свежим и отдохнувшим',
+    benefits: ['Уменьшение пастозности и ощущения тяжести', 'Расслабление мышц лица, шеи и жевательной зоны', 'Поддержка микроциркуляции и более чёткого овала'],
+    resultCopy: 'Выраженность эффекта зависит от причины отёчности, тонуса мышц и регулярности процедур. Массаж не заменяет медицинскую диагностику при стойких отёках.',
+    steps: ['Оценка отёчности и мышечного тонуса', 'Подготовка кожи и выбор техники', 'Массаж лица, шеи и выбранных зон', 'Завершающий уход и домашние рекомендации'],
+    note: 'Техника и интенсивность подбираются по состоянию кожи, мышц и самочувствию в день процедуры.',
+    faq: [
+      { q: 'Больно ли во время массажа?', a: 'Процедура должна оставаться комфортной. Интенсивность регулируется, особенно при чувствительности и напряжении жевательных мышц.' },
+      { q: 'Нужен ли курс?', a: 'Разовая процедура может дать ощущение лёгкости и свежести, а для устойчивой работы обычно составляют индивидуальный график.' },
+      { q: 'Есть ли противопоказания?', a: 'Да. При острых воспалениях, повреждениях кожи и некоторых состояниях массаж откладывают. Решение принимается после консультации.' }
+    ],
+    consultTitle: 'Лицо выглядит отёчным или напряжённым?',
+    consultText: 'Определим, какая техника подойдёт вам и можно ли получить нужный эффект без более интенсивных процедур.',
+    cta: 'Записаться на массаж лица',
+    ctaNote: 'Техника и график процедур подбираются индивидуально.'
+  },
+  iv: {
+    title: 'IV-терапия',
+    tagline: 'Медицинская инфузионная поддержка по показаниям, когда важны не универсальные коктейли, а понятная цель и безопасный состав.',
+    cover: { src: 'iv-therapy-cover.jpg', alt: 'IV-терапия в комфортной обстановке', width: 1536, height: 1024 },
+    facts: ['По показаниям', 'Индивидуальный состав', 'Медицинский контроль'],
+    concerns: ['Подтверждённые дефициты', 'Высокая нагрузка и стресс', 'Замедленное восстановление', 'Частые перелёты', 'Снижение ресурса'],
+    resultTitle: 'Что даёт программа',
+    resultLead: 'Адресная поддержка вместо случайного набора витаминов',
+    benefits: ['Состав с учётом анамнеза, анализов и совместимости', 'Контролируемое введение назначенных компонентов', 'План восстановления с понятной целью и наблюдением'],
+    resultCopy: 'IV-терапия не назначается только по желанию «попробовать капельницу». Сначала оцениваются показания, риски и возможность решить задачу другими способами.',
+    steps: ['Сбор анамнеза и уточнение задачи', 'Оценка анализов и противопоказаний', 'Подбор состава и проведение инфузии', 'Контроль самочувствия и дальнейший план'],
+    note: 'Витамины, микроэлементы, аминокислоты и инфузионные растворы применяются только по назначению специалиста.',
+    faq: [
+      { q: 'Нужны ли анализы перед процедурой?', a: 'Это зависит от цели и состава. Врач определит, какие данные действительно нужны, и не будет назначать исследования без необходимости.' },
+      { q: 'Как подбирается состав?', a: 'Учитываются жалобы, анамнез, принимаемые препараты, подтверждённые дефициты и противопоказания. Универсального состава для всех нет.' },
+      { q: 'Сколько капельниц потребуется?', a: 'Иногда показана одна инфузия, иногда курс, а иногда IV-терапия не требуется. Решение принимается после медицинской оценки.' }
+    ],
+    consultTitle: 'Хотите восстановить ресурс, но не знаете, с чего начать?',
+    consultText: 'Сначала разберём состояние и цели, затем определим, нужна ли инфузионная поддержка или достаточно другого плана.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Состав и формат IV-терапии определяются только после оценки показаний.'
+  },
+  antistress: {
+    title: 'Антистресс-программа',
+    tagline: 'Персональный план восстановления сна, энергии и устойчивости к нагрузкам без обещаний мгновенной перезагрузки.',
+    cover: { src: 'antistress-cover.jpg', alt: 'Антистресс-программа восстановления', width: 1536, height: 1024 },
+    facts: ['Сон и режим', 'Снижение перегрузки', 'Динамическое сопровождение'],
+    concerns: ['Хроническая усталость', 'Нарушение сна', 'Внутреннее напряжение', 'Высокая нагрузка', 'Сложное восстановление'],
+    resultTitle: 'Что даёт программа',
+    resultLead: 'Понятный маршрут возвращения к устойчивому режиму',
+    benefits: ['Выявление факторов, которые поддерживают усталость', 'Коррекция режима, питания и восстановительных привычек', 'Наблюдение динамики и последовательная корректировка плана'],
+    resultCopy: 'Программа не подменяет лечение тревожных, депрессивных или других медицинских состояний. При необходимости рекомендуется консультация профильного специалиста.',
+    steps: ['Разбор самочувствия, сна и нагрузки', 'Определение ключевых факторов истощения', 'Составление реалистичного плана восстановления', 'Сопровождение и корректировка по динамике'],
+    note: 'Нутрициологические и восстановительные рекомендации подбираются с учётом анамнеза, образа жизни и текущих назначений.',
+    faq: [
+      { q: 'Что входит в программу?', a: 'Разбор режима, питания, сна, нагрузки и факторов восстановления. Состав программы зависит от того, что действительно влияет на ваше состояние.' },
+      { q: 'Нужно ли сдавать анализы?', a: 'Только если результаты могут повлиять на решение. Необходимость исследований обсуждается после первичного разбора.' },
+      { q: 'Когда можно почувствовать изменения?', a: 'Сроки индивидуальны и зависят от причины усталости, последовательности выполнения рекомендаций и сопутствующих состояний.' }
+    ],
+    consultTitle: 'Устали жить в режиме постоянного напряжения?',
+    consultText: 'Разберём, что забирает ресурс именно у вас, и составим план, который можно встроить в реальную жизнь.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Программа формируется индивидуально и не заменяет лечение профильных состояний.'
+  },
+  detox: {
+    title: 'Детокс и восстановление',
+    tagline: 'Мягкая работа с режимом, питанием и отёчностью без жёстких чисток, голодания и универсальных схем.',
+    cover: { src: 'detox-cover.jpg', alt: 'Программа мягкого восстановления ресурса', width: 1536, height: 1024 },
+    facts: ['Без жёстких схем', 'Работа с привычками', 'Устойчивый результат'],
+    concerns: ['Отёчность', 'Нерегулярное питание', 'Ощущение тяжести', 'Низкий уровень энергии', 'Восстановление после стресса'],
+    resultTitle: 'Что даёт программа',
+    resultLead: 'Не «очищение от токсинов», а возвращение к физиологичному режиму',
+    benefits: ['Анализ питания, воды, сна и ежедневной нагрузки', 'Мягкая коррекция привычек без экстремальных ограничений', 'Поддержка пищеварительного комфорта и общего самочувствия'],
+    resultCopy: 'Организм не нуждается в агрессивных «чистках». Задача программы — убрать перегружающие факторы и поддержать естественные процессы с учётом состояния здоровья.',
+    steps: ['Разбор жалоб, рациона и режима', 'Определение основных перегружающих факторов', 'Составление безопасного плана изменений', 'Контроль самочувствия и корректировка'],
+    note: 'При выраженной отёчности, боли или резком ухудшении самочувствия сначала необходима медицинская диагностика.',
+    faq: [
+      { q: 'Что здесь означает «детокс»?', a: 'Это не выведение мифических токсинов и не голодание. Мы работаем с режимом, рационом, водой, восстановлением и факторами, которые влияют на самочувствие.' },
+      { q: 'Будут ли строгие ограничения?', a: 'Нет. План должен быть безопасным и выполнимым. Изменения вводятся постепенно и только там, где они действительно нужны.' },
+      { q: 'Нужны ли добавки или препараты?', a: 'Только при обоснованных показаниях. Нутрицевтики и другие средства не назначаются автоматически всем участникам программы.' }
+    ],
+    consultTitle: 'Хотите восстановить лёгкость без очередной жёсткой диеты?',
+    consultText: 'Разберём причины перегрузки и соберём спокойный план, который поддержит самочувствие, а не добавит стресс.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Рекомендации составляются с учётом анамнеза и текущего состояния.'
+  },
+  program: {
+    title: 'Персональное сопровождение',
+    tagline: 'Долгосрочный план для тех, кому важны не разовые рекомендации, а понятная система и поддержка в динамике.',
+    cover: { src: 'personal-program-cover.jpg', alt: 'Персональная консультация и сопровождение', width: 1536, height: 1024 },
+    facts: ['Комплексный разбор', 'План под вашу жизнь', 'Контроль динамики'],
+    concerns: ['Хроническая усталость', 'Снижение энергии', 'Состояние кожи и волос', 'Вес и пищевые привычки', 'Подозрение на дефициты'],
+    resultTitle: 'Что даёт сопровождение',
+    resultLead: 'Система решений вместо разрозненных советов',
+    benefits: ['Разбор анализов и текущих назначений без дублирования', 'Персональные рекомендации по питанию и образу жизни', 'Промежуточный контроль и корректировка стратегии'],
+    resultCopy: 'Цель сопровождения — не идеальный режим на неделю, а устойчивые изменения, которые подходят вашему образу жизни и могут поддерживаться долго.',
+    steps: ['Подробная консультация и сбор анамнеза', 'Анализ текущего состояния и данных', 'Формирование приоритетов и плана', 'Сопровождение, контроль и корректировка'],
+    note: 'Добавки и корректирующие схемы рассматриваются только после оценки питания, анализов, лекарств и реальной необходимости.',
+    faq: [
+      { q: 'Что входит в сопровождение?', a: 'Глубокий разбор запроса, персональные рекомендации, приоритизация шагов и контроль динамики. Конкретный формат зависит от задачи.' },
+      { q: 'Нужно ли заранее сдавать анализы?', a: 'Нет. Сначала оцениваются уже имеющиеся данные, после чего определяется, нужна ли дополнительная диагностика.' },
+      { q: 'Как долго длится программа?', a: 'Продолжительность зависит от количества задач и необходимой глубины сопровождения. Формат и точки контроля согласуются заранее.' }
+    ],
+    consultTitle: 'Слишком много советов, но нет понятной системы?',
+    consultText: 'Соберём приоритеты, уберём лишнее и выстроим последовательный план, который подходит именно вашей жизни.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Формат сопровождения и объём рекомендаций определяются после первичной встречи.'
+  }
+};
+
+const editorialFactIcons = [
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.5-5 9-5 9 5 9 5-3.5 5-9 5-9-5-9-5Z"/><circle cx="12" cy="12" r="2.5"/></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z"/><path d="m18.5 14 .8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg>'
+];
+
+function editorialImageAttributes(image) {
+  const dimensions = image.width && image.height ? ` width="${image.width}" height="${image.height}"` : '';
+  return `src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"${dimensions}`;
+}
+
+function editorialResultMarkup(key, service) {
+  if (!service.results?.length) {
+    return `<div class="treatment-benefit-panel"><h5>${service.resultLead}</h5><ul>${service.benefits.map((benefit) => `<li>${benefit}</li>`).join('')}</ul></div>`;
+  }
+
+  if (service.results.length === 1) {
+    const image = service.results[0];
+    return `<figure class="treatment-result-media"><img ${editorialImageAttributes(image)}><figcaption>${image.caption}</figcaption></figure>`;
+  }
+
+  const slides = service.results.map((image, index) => `<figure class="modal-carousel__slide${index === 0 ? ' is-active' : ''}"><img ${editorialImageAttributes(image)}><figcaption class="modal-result__caption">${image.caption}</figcaption></figure>`).join('');
+  return `<div class="modal-carousel modal-carousel--compact treatment-carousel" data-carousel="editorial-${key}"><button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото ${service.title}">‹</button><div class="modal-carousel__viewport">${slides}</div><button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото ${service.title}">›</button><div class="modal-carousel__dots" aria-label="Фотографии результатов ${service.title}"></div></div>`;
+}
+
+function buildEditorialServiceModal(key, service) {
+  const modal = document.getElementById(`modal-${key}`);
+  const content = modal?.querySelector('.service-modal-content');
+  if (!modal || !content) return;
+
+  modal.classList.add('treatment-modal');
+  content.className = 'service-modal-content treatment-editorial';
+  content.innerHTML = `
+    <section class="treatment-hero" aria-labelledby="${key}-editorial-title">
+      <div class="treatment-hero__intro"><h4 id="${key}-editorial-title">${service.title}</h4><p>${service.tagline}</p></div>
+      <figure class="treatment-hero__media"><img ${editorialImageAttributes(service.cover)}${service.cover.position ? ` style="object-position:${service.cover.position}"` : ''}></figure>
+      <div class="treatment-facts" aria-label="Особенности услуги">${service.facts.map((fact, index) => `<div class="treatment-fact">${editorialFactIcons[index]}<strong>${fact}</strong></div>`).join('')}</div>
+      <div class="treatment-concerns"><p>Подойдёт, если вас беспокоят:</p><ul>${service.concerns.map((concern) => `<li>${concern}</li>`).join('')}</ul></div>
+    </section>
+    <section class="treatment-result-layout">
+      <div class="treatment-result"><h4>${service.resultTitle}</h4>${editorialResultMarkup(key, service)}<p class="treatment-result__copy">${service.resultCopy}</p></div>
+      <aside class="treatment-steps" aria-labelledby="${key}-steps-title"><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol><div class="treatment-note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div></aside>
+    </section>
+    <section class="treatment-faq" aria-labelledby="${key}-faq-title"><h4 id="${key}-faq-title">Что важно знать</h4>${service.faq.map((item) => `<details><summary><span>${item.q}</span></summary><div><p>${item.a}</p></div></details>`).join('')}</section>
+    <section class="treatment-consult"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg><div><h4>${service.consultTitle}</h4><p>${service.consultText}</p></div></section>
+    <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified treatment-booking">${service.cta}</a>
+    <p class="treatment-booking-note">${service.ctaNote}</p>`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  Object.entries(editorialServiceData).forEach(([key, service]) => buildEditorialServiceModal(key, service));
+});
+
 const modalButtons = document.querySelectorAll('.service-modal-open');
 let activeModal = null;
 let lastFocused = null;
@@ -7900,7 +8852,7 @@ let modalBackgroundState = [];
 function prepareModalStructure(modal) {
   const content = modal.querySelector('.service-modal-content');
   if (!content) return;
-  if (modal.id === 'modal-peel' || modal.id === 'modal-contour' || modal.id === 'modal-botox') return;
+  if (modal.matches('.treatment-modal, #modal-peel, #modal-clean, #modal-contour, #modal-botox')) return;
   content.classList.add('service-modal-content--linear');
   const bookingLink = content.querySelector('a.btn');
   if (!bookingLink || bookingLink.closest('.modal-booking-card')) return;
@@ -8065,7 +9017,7 @@ function prepareModalShell(modal) {
 }
 function prepareModalFooter(modal) {
   const dialog = modal.querySelector('.service-modal-dialog');
-  if (modal.id === 'modal-peel' || modal.id === 'modal-contour' || modal.id === 'modal-botox') return;
+  if (modal.matches('.treatment-modal, #modal-peel, #modal-clean, #modal-contour, #modal-botox')) return;
   const bookingLink = dialog?.querySelector('.service-modal-content a.btn');
   if (!dialog || !bookingLink || dialog.querySelector(':scope > .service-modal-footer')) return;
 
@@ -8144,7 +9096,7 @@ function restoreModalBackground() {
 function resetModalView(modal) {
   const scroll = modal.querySelector('.service-modal-scroll');
   if (scroll) scroll.scrollTop = 0;
-  modal.querySelectorAll('.peel-faq details, .contour-editorial__faq details, .botox-faq details').forEach((details) => {
+  modal.querySelectorAll('.peel-faq details, .contour-editorial__faq details, .botox-faq details, .treatment-faq details').forEach((details) => {
     details.open = false;
   });
   modal.querySelector('.modal-carousel__dots button')?.click();
@@ -8158,7 +9110,7 @@ function openModal(modal){
   if(!modal) return;
   prepareModalStructure(modal);
   // Preserve dedicated editorial layouts without rewrapping their content.
-  if (modal.id !== 'modal-peel' && modal.id !== 'modal-contour' && modal.id !== 'modal-botox') decorateModalDetails(modal);
+  if (!modal.matches('.treatment-modal, #modal-peel, #modal-clean, #modal-contour, #modal-botox')) decorateModalDetails(modal);
   modal.querySelectorAll('.modal-carousel').forEach(initCarousel);
   prepareModalSummary(modal);
   prepareModalAccordions(modal);
@@ -9134,19 +10086,24 @@ if ('IntersectionObserver' in window) {
           <section class="peel-result-layout">
             <div class="peel-result">
               <h4>До и после</h4>
-              <div class="peel-comparison" role="group" aria-label="Результат курса пилинга до и после">
-                <figure>
-                  <div class="peel-comparison__crop">
-                    <img class="peel-comparison__before" src="peeling-before-after.jpeg" alt="Кожа до курса пилинга" loading="lazy" decoding="async" width="1320" height="1171" />
-                  </div>
-                  <figcaption>До</figcaption>
-                </figure>
-                <figure>
-                  <div class="peel-comparison__crop">
-                    <img class="peel-comparison__after" src="peeling-before-after.jpeg" alt="Кожа после курса пилинга" loading="lazy" decoding="async" width="1320" height="1171" />
-                  </div>
-                  <figcaption>После</figcaption>
-                </figure>
+              <div class="modal-carousel modal-carousel--compact" data-carousel="peeling-results">
+                <button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото результата пилинга">‹</button>
+                <div class="modal-carousel__viewport">
+                  <figure class="modal-carousel__slide is-active">
+                    <img src="peeling-before-after.jpeg" alt="До и после курса пилинга: выравнивание тона кожи" loading="lazy" decoding="async" width="1320" height="1171" />
+                    <figcaption class="modal-result__caption">До и после курса пилинга</figcaption>
+                  </figure>
+                  <figure class="modal-carousel__slide">
+                    <img src="peeling-before-after-eye-area.jpeg" alt="До и после пилинга: кожа в области глаз и щёк" loading="lazy" decoding="async" width="1320" height="2346" />
+                    <figcaption class="modal-result__caption">Результат пилинга — область глаз и щёк</figcaption>
+                  </figure>
+                  <figure class="modal-carousel__slide">
+                    <img src="peeling-before-after-skin-texture.jpeg" alt="До и после пилинга: улучшение текстуры и сияния кожи" loading="lazy" decoding="async" width="1320" height="2346" />
+                    <figcaption class="modal-result__caption">Результат пилинга — текстура и сияние кожи</figcaption>
+                  </figure>
+                </div>
+                <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото результата пилинга">›</button>
+                <div class="modal-carousel__dots" aria-label="Фотографии результатов пилинга"></div>
               </div>
               <p class="peel-result__copy">После курса кожа выглядит более ровной и свежей, а пигментация и следы постакне заметно смягчаются.</p>
             </div>
@@ -9225,28 +10182,105 @@ if ('IntersectionObserver' in window) {
       <div class="service-modal-dialog" tabindex="-1">
         <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
         <h3 id="modal-clean-title">Чистки</h3>
-        <div class="service-modal-content">
-          <section class="modal-detail-card modal-detail-card--intro">
-            <h4>Услуга</h4>
-            <p>Чистка лица для деликатного очищения кожи и восстановления баланса.</p>
-          </section>
-          <section class="modal-detail-card">
-            <h4>До / после фото</h4>
-            <figure class="modal-result__media">
-              <img src="facial-cleansing-cover.jpg" alt="Фото процедуры чистки лица" loading="lazy" width="1536" height="1024" />
-              <figcaption class="modal-result__caption">Фото процедуры. Реальные пары до/после будут добавлены отдельно.</figcaption>
+        <div class="service-modal-content peel-editorial">
+          <section class="peel-hero" aria-labelledby="clean-editorial-title">
+            <div class="peel-hero__intro">
+              <h4 id="clean-editorial-title">Чистка лица</h4>
+              <p>Профессиональный уход для чистых пор, свежего тона и ощущения комфорта без перегрузки кожи.</p>
+            </div>
+            <figure class="peel-hero__media">
+              <img src="facial-cleansing-cover.jpg" alt="Профессиональная чистка кожи лица" loading="lazy" decoding="async" width="1536" height="1024" />
             </figure>
+            <div class="peel-facts" aria-label="Особенности процедуры">
+              <div class="peel-fact">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Zm0 4v5l3 2" /></svg>
+                <strong>Чистые поры</strong>
+                <span>и гладкий рельеф</span>
+              </div>
+              <div class="peel-fact">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 13-7 7-9-9V4h7l9 9ZM8 8h.01" /></svg>
+                <strong>Свежий тон</strong>
+                <span>и ухоженный вид</span>
+              </div>
+              <div class="peel-fact">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5.5 21a6.5 6.5 0 0 1 13 0" /></svg>
+                <strong>Подбор</strong>
+                <span>по состоянию кожи</span>
+              </div>
+            </div>
+            <div class="peel-concerns">
+              <p>Подойдёт, если вас беспокоят:</p>
+              <ul>
+                <li>Загрязнённые и расширенные поры</li>
+                <li>Жирный блеск</li>
+                <li>Неровный микрорельеф</li>
+                <li>Тусклый цвет лица</li>
+                <li>Единичные воспаления</li>
+              </ul>
+            </div>
           </section>
-          <section class="modal-detail-card">
-            <h4>Описание услуги</h4>
-            <p>Подходит для очищения пор, снижения воспалений и улучшения внешнего вида кожи без лишней травматизации.</p>
+
+          <section class="peel-result-layout">
+            <div class="peel-result">
+              <h4>До и после</h4>
+              <div class="modal-carousel modal-carousel--compact" data-carousel="facial-cleansing">
+                <button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото чистки лица">‹</button>
+                <div class="modal-carousel__viewport">
+                  <figure class="modal-carousel__slide is-active">
+                    <img src="facial-cleansing-before-after-face.jpeg" alt="До и после чистки лица: общий вид кожи" loading="lazy" width="1319" height="1254" />
+                    <figcaption class="modal-result__caption">Общий вид кожи</figcaption>
+                  </figure>
+                  <figure class="modal-carousel__slide">
+                    <img src="facial-cleansing-before-after-nose.jpeg" alt="До и после чистки лица: очищение пор в области носа" loading="lazy" width="1320" height="1310" />
+                    <figcaption class="modal-result__caption">Очищение пор в области носа</figcaption>
+                  </figure>
+                  <figure class="modal-carousel__slide">
+                    <img src="facial-cleansing-before-after-eyes.jpeg" alt="До и после чистки лица: область вокруг глаз и носа" loading="lazy" width="1320" height="2346" />
+                    <figcaption class="modal-result__caption">Область вокруг глаз и носа</figcaption>
+                  </figure>
+                </div>
+                <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото чистки лица">›</button>
+                <div class="modal-carousel__dots" aria-label="Фотографии результатов чистки лица"></div>
+              </div>
+              <p class="peel-result__copy">После процедуры кожа выглядит более чистой и гладкой, поры — аккуратнее, а лицо приобретает свежий, ухоженный вид. Интенсивность очищения всегда определяется состоянием кожи.</p>
+            </div>
+
+            <aside class="peel-steps" aria-labelledby="clean-steps-title">
+              <h4 id="clean-steps-title">Как проходит процедура</h4>
+              <ol>
+                <li><span>01</span><p>Диагностика и подготовка кожи</p></li>
+                <li><span>02</span><p>Основной этап очищения по показаниям</p></li>
+                <li><span>03</span><p>Успокаивающий и восстанавливающий уход</p></li>
+              </ol>
+              <div class="peel-note">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5m0-8h.01" /></svg>
+                <p>Формат процедуры и средства подбираются индивидуально после оценки чувствительности, жирности и текущего состояния кожи.</p>
+              </div>
+            </aside>
           </section>
-          <section class="modal-detail-card">
-            <h4>Препараты</h4>
-            <p>Очищающие, успокаивающие и восстановительные средства подбираются индивидуально.</p>
+
+          <section class="peel-faq" aria-labelledby="clean-faq-title">
+            <h4 id="clean-faq-title">Что важно знать</h4>
+            <details>
+              <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v13H4zM8 4v6m8-6v6" /></svg><span>Как подбирается чистка?</span></summary>
+              <div><p>Вид и интенсивность очищения определяем после консультации: учитываем чувствительность кожи, наличие воспалений, плотность себума и ваши задачи.</p></div>
+            </details>
+            <details>
+              <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M8 7l4-4 4 4m-8 10 4 4 4-4" /></svg><span>Какой результат можно получить?</span></summary>
+              <div><ul class="peel-faq__result-list"><li>Более чистые и аккуратные поры</li><li>Гладкий микрорельеф</li><li>Уменьшение жирного блеска</li><li>Свежий и ровный вид кожи</li><li>Ощущение лёгкости и комфорта</li></ul><p>Чистка — это не агрессивное «до скрипа», а бережная работа с кожей и её защитным барьером.</p></div>
+            </details>
+            <details>
+              <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.4 5 5.6.8-4 3.9.9 5.6-4.9-2.7-4.9 2.7.9-5.6-4-3.9 5.6-.8L12 3Z" /></svg><span>Какие средства используются?</span></summary>
+              <div><p>Очищающие, успокаивающие и восстанавливающие средства подбираются по состоянию кожи. Домой вы получите понятные рекомендации по уходу и восстановлению.</p></div>
+            </details>
           </section>
-          <p>Перечень препаратов и индивидуальный протокол по этой процедуре подбирается на консультации с учётом ваших задач и противопоказаний.</p>
-          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">Записаться</a>
+
+          <section class="peel-consult">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z" /><path d="M8 12h.01M12 12h.01M16 12h.01" /></svg>
+            <div><h4>Не знаете, какая чистка подойдёт?</h4><p>Определим подходящий формат на консультации и составим комфортный протокол для вашей кожи.</p></div>
+          </section>
+          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified peel-booking">Записаться на чистку лица</a>
+          <p class="peel-booking-note">Подберём процедуру и домашний уход индивидуально.</p>
         </div>
       </div>
     </div>
