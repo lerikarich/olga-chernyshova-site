@@ -5,3 +5,13 @@
 TZ_for_client_meeting.md
 *.heic
 *.png
+
+# PNG assets referenced by the published site.
+!hero-olga-new.png
+!bbl-broadband-light.png
+!botox-before-after.png
+!collagen-before-after.png
+!lipolytics-before-after.png
+!reviews/
+!reviews/clean/
+!reviews/clean/*.png

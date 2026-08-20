@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Marck+Script&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -3141,17 +3141,6 @@ li,
   box-shadow: none;
 }
 
-.process-grid article:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  top: 17px;
-  left: 44px;
-  width: calc(100% + var(--process-gap) - 44px);
-  height: 1px;
-  background: rgba(69, 99, 75, .22);
-}
-
 .process-grid h3 {
   position: relative;
   z-index: 1;
@@ -3207,14 +3196,6 @@ li,
 
   .process-grid article:last-child {
     padding-bottom: 0;
-  }
-
-  .process-grid article:not(:last-child)::after {
-    top: 34px;
-    bottom: 0;
-    left: 16px;
-    width: 1px;
-    height: auto;
   }
 
   .process-grid h3 {
@@ -3789,7 +3770,7 @@ li,
   align-self: stretch;
   width: calc(100% + var(--hero-edge) + 90px) !important;
   max-width: none !important;
-  height: auto !important;
+  height: min(720px, calc(100svh - 150px)) !important;
   min-height: calc(100svh - 82px) !important;
   margin: 0 calc(var(--hero-edge) * -1) 0 -90px !important;
   overflow: hidden !important;
@@ -4231,6 +4212,7 @@ li,
 }
 
 .modal-carousel__slide {
+  position: relative;
   display: none;
   margin: 0;
   padding: 12px;
@@ -6040,6 +6022,78 @@ li,
   line-height: 1.55;
 }
 
+/* Peelings: stronger hierarchy without changing the editorial layout. */
+#modal-peel .peel-editorial {
+  --peel-ink: #143d29;
+  --peel-copy: #354b3e;
+  --peel-muted: #56685d;
+}
+
+#modal-peel .peel-hero__intro h4,
+#modal-peel .peel-result h4,
+#modal-peel .peel-steps h4,
+#modal-peel .peel-faq > h4 {
+  color: var(--peel-ink);
+  font-weight: 700;
+}
+
+#modal-peel .peel-hero__intro p {
+  color: #344b3d;
+}
+
+#modal-peel .peel-concerns {
+  padding: 16px 18px 18px;
+  border: 1px solid rgba(28, 75, 47, .13);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(233, 241, 231, .94), rgba(221, 234, 222, .72));
+}
+
+#modal-peel .peel-concerns > p {
+  color: var(--peel-ink);
+  font-size: .9rem;
+}
+
+#modal-peel .peel-concerns li {
+  border-color: rgba(28, 75, 47, .14);
+  color: #294936;
+  background: rgba(255, 255, 252, .78);
+}
+
+#modal-peel .peel-result__copy {
+  color: #53665a;
+  font-size: .84rem;
+  line-height: 1.65;
+}
+
+#modal-peel .peel-steps ol {
+  padding: 0 20px;
+  overflow: hidden;
+  border: 1px solid rgba(28, 75, 47, .12);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(168, 194, 165, .2), transparent 42%),
+    linear-gradient(145deg, rgba(246, 248, 242, .96), rgba(226, 236, 224, .78));
+}
+
+#modal-peel .peel-steps li:first-child {
+  border-top: 0;
+}
+
+#modal-peel .peel-steps li > span {
+  color: #17462f;
+  font-weight: 500;
+}
+
+#modal-peel .peel-steps li > p {
+  color: #2d4536;
+  font-weight: 600;
+}
+
+#modal-peel .peel-note p {
+  color: #4e6255;
+  font-size: .8rem;
+}
+
 :is(#modal-peel, #modal-clean) .peel-faq {
   padding: 26px 0;
   border-bottom: 1px solid var(--peel-line);
@@ -6240,6 +6294,14 @@ li,
 
   :is(#modal-peel, #modal-clean) .peel-steps {
     padding: 0;
+  }
+
+  #modal-peel .peel-concerns {
+    padding: 16px;
+  }
+
+  #modal-peel .peel-steps ol {
+    padding: 0 16px;
   }
 
   :is(#modal-peel, #modal-clean) .peel-faq {
@@ -6875,20 +6937,27 @@ li,
 #modal-contour .contour-editorial__hero {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr);
-  grid-template-areas:
-    "intro cover"
-    "facts cover"
-    "zones cover";
-  gap: 22px 28px;
-  padding: 26px;
+  grid-template-areas: "copy cover";
+  align-items: stretch;
+  gap: 28px;
+  padding: 40px 44px;
   border: 1px solid var(--contour-line);
   border-radius: 18px;
   background: var(--contour-card);
 }
 
+#modal-contour .contour-editorial__copy {
+  grid-area: copy;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: start;
+}
+
 #modal-contour .contour-editorial__intro {
   grid-area: intro;
-  align-self: end;
+  align-self: start;
   padding-right: 14px;
 }
 
@@ -6901,7 +6970,7 @@ li,
 
 #modal-contour .contour-editorial__intro p {
   max-width: 48ch;
-  margin-top: 16px;
+  margin-top: 22px;
   color: #2e4436;
   font-size: .96rem;
   line-height: 1.62;
@@ -6910,6 +6979,8 @@ li,
 #modal-contour .contour-editorial__cover {
   grid-area: cover;
   min-height: 430px;
+  aspect-ratio: 1003 / 1568;
+  align-self: start;
   margin: 0;
   overflow: hidden;
   border-radius: 16px;
@@ -6930,14 +7001,15 @@ li,
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+  margin-top: 34px;
 }
 
 #modal-contour .contour-editorial__facts > div {
   min-width: 0;
-  display: grid;
-  justify-items: center;
-  align-content: start;
-  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
 }
 
@@ -6953,6 +7025,10 @@ li,
   stroke-linejoin: round;
 }
 
+#modal-contour .contour-editorial__facts svg {
+  margin-bottom: 12px;
+}
+
 #modal-contour .contour-editorial__facts strong {
   color: #263c2e;
   font-size: .78rem;
@@ -6961,6 +7037,7 @@ li,
 }
 
 #modal-contour .contour-editorial__facts span {
+  margin-top: 4px;
   color: var(--contour-muted);
   font-size: .74rem;
   line-height: 1.25;
@@ -6968,8 +7045,9 @@ li,
 
 #modal-contour .contour-editorial__zones {
   grid-area: zones;
-  align-self: end;
-  padding-top: 18px;
+  align-self: start;
+  margin-top: 48px;
+  padding-top: 26px;
   border-top: 1px solid var(--contour-line);
 }
 
@@ -6982,8 +7060,8 @@ li,
 #modal-contour .contour-editorial__zones ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 12px 0 0;
+  gap: 10px 8px;
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -7001,7 +7079,7 @@ li,
 #modal-contour .contour-editorial__result {
   display: grid;
   grid-template-columns: minmax(230px, .68fr) minmax(0, 1.32fr);
-  align-items: center;
+  align-items: start;
   gap: 28px;
   padding: 28px 8px;
   border-bottom: 1px solid var(--contour-line);
@@ -7310,6 +7388,36 @@ li,
   text-align: center;
 }
 
+@media (min-width: 721px) and (max-width: 860px) {
+  #modal-contour .contour-editorial__hero {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, .9fr);
+    gap: 24px;
+    padding: 32px;
+  }
+
+  #modal-contour .contour-editorial__intro {
+    padding-right: 0;
+  }
+
+  #modal-contour .contour-editorial__intro h4 {
+    font-size: clamp(2rem, 5vw, 2.6rem);
+  }
+
+  #modal-contour .contour-editorial__facts {
+    gap: 8px;
+    margin-top: 30px;
+  }
+
+  #modal-contour .contour-editorial__zones {
+    margin-top: 40px;
+    padding-top: 22px;
+  }
+
+  #modal-contour .contour-editorial__zones ul {
+    margin-top: 14px;
+  }
+}
+
 @media (max-width: 720px) {
   #modal-contour .service-modal-dialog {
     width: calc(100vw - 20px);
@@ -7337,6 +7445,10 @@ li,
     padding: 18px;
   }
 
+  #modal-contour .contour-editorial__copy {
+    display: contents;
+  }
+
   #modal-contour .contour-editorial__intro {
     align-self: center;
     padding-right: 0;
@@ -7360,9 +7472,11 @@ li,
 
   #modal-contour .contour-editorial__facts {
     gap: 8px;
+    margin-top: 0;
   }
 
   #modal-contour .contour-editorial__zones {
+    margin-top: 0;
     padding-top: 16px;
   }
 
@@ -7997,8 +8111,10 @@ li,
   }
 
   .treatment-hero__intro h4 {
-    overflow-wrap: anywhere;
-    font-size: clamp(1.75rem, 8.4vw, 2.25rem);
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: auto;
+    font-size: clamp(1.6rem, 7.6vw, 2.05rem);
   }
 
   .treatment-hero__intro p {
@@ -8073,6 +8189,2929 @@ li,
 }
 
 /* Hardware service covers: editorial, image-led cards */
+/* Peelings: premium hierarchy refinement, scoped to the peeling modal. */
+#modal-peel {
+  --peel-green-deep: #143f2e;
+  --peel-green-forest: #1e5a40;
+  --peel-green-sage: #55765f;
+  --peel-gold-muted: #a68a59;
+  --peel-text-main: #263d34;
+  --peel-text-muted: #64756b;
+  --peel-soft-border: rgba(20, 63, 46, .1);
+}
+
+#modal-peel .service-modal-header {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: auto;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 0 12px;
+  background: transparent;
+}
+
+#modal-peel .service-modal-header h3 {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  clip-path: none;
+  white-space: normal;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.25rem, 5vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -.035em;
+  background: linear-gradient(115deg, #123d2b 0%, #1e5a40 48%, #8b7651 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#modal-peel .service-modal-header .service-modal-close {
+  position: static;
+  flex: 0 0 auto;
+}
+
+#modal-peel .peel-editorial {
+  color: var(--peel-text-main);
+}
+
+#modal-peel .peel-editorial h4 {
+  font-size: clamp(2rem, 3vw, 2.875rem);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  background: linear-gradient(100deg, #163f2e 0%, #2f6248 65%, #7a684b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#modal-peel .peel-editorial p,
+#modal-peel .peel-editorial li {
+  color: var(--peel-text-main);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+#modal-peel .peel-hero__intro p,
+#modal-peel .peel-result__copy,
+#modal-peel .peel-note p,
+#modal-peel .peel-faq details p,
+#modal-peel .peel-booking-note {
+  color: var(--peel-text-muted);
+}
+
+#modal-peel .peel-hero,
+#modal-peel .peel-concerns,
+#modal-peel .peel-steps ol,
+#modal-peel .peel-consult {
+  border-color: var(--peel-soft-border);
+}
+
+#modal-peel .peel-concerns {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(207, 226, 211, .65), transparent 45%),
+    linear-gradient(135deg, #f8faf5 0%, #eef5eb 50%, #e3eee2 100%);
+  box-shadow: 0 12px 40px rgba(24, 55, 42, .05);
+}
+
+#modal-peel .peel-concerns > p {
+  color: #8a7049;
+  font-weight: 700;
+}
+
+#modal-peel .peel-concerns li {
+  color: var(--peel-green-deep);
+  background: rgba(255, 255, 252, .68);
+}
+
+#modal-peel .peel-hero__media,
+#modal-peel .peel-comparison__crop,
+#modal-peel .modal-carousel__viewport {
+  border-radius: 20px;
+}
+
+#modal-peel .peel-fact svg,
+#modal-peel .peel-note svg,
+#modal-peel .peel-faq summary svg,
+#modal-peel .peel-consult > svg {
+  stroke: #234f3a;
+}
+
+#modal-peel .peel-fact strong,
+#modal-peel .peel-steps li > p,
+#modal-peel .peel-faq summary {
+  color: var(--peel-text-main);
+}
+
+#modal-peel .peel-steps ol {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(207, 226, 211, .45), transparent 45%),
+    linear-gradient(135deg, #f8faf5 0%, #eef5eb 50%, #e3eee2 100%);
+  box-shadow: 0 12px 40px rgba(24, 55, 42, .05);
+}
+
+#modal-peel .peel-booking.btn,
+#modal-peel .peel-faq details,
+#modal-peel .peel-concerns li,
+#modal-peel .peel-steps li,
+#modal-peel .peel-consult {
+  transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
+}
+
+#modal-peel .peel-booking.btn:hover,
+#modal-peel .peel-faq details:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  #modal-peel .service-modal-header {
+    min-height: 48px;
+    padding-bottom: 8px;
+  }
+
+  #modal-peel .service-modal-header h3 {
+    margin: 0;
+    font-size: clamp(2.7rem, 12vw, 3.5rem) !important;
+  }
+
+  #modal-peel .peel-editorial h4 {
+    font-size: clamp(2rem, 8.5vw, 2.45rem);
+  }
+
+  #modal-peel .peel-editorial p,
+  #modal-peel .peel-editorial li {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  #modal-peel .peel-hero__media,
+  #modal-peel .modal-carousel__viewport {
+    border-radius: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #modal-peel .peel-booking.btn,
+  #modal-peel .peel-faq details,
+  #modal-peel .peel-concerns li,
+  #modal-peel .peel-steps li,
+  #modal-peel .peel-consult {
+    transition: none;
+  }
+}
+
+/* Foreground portrait hero composition. */
+.hero.section {
+  min-height: calc(100svh - 82px) !important;
+  background:
+    linear-gradient(90deg, rgba(247,235,225,.88) 0%, rgba(247,235,225,.58) 48%, rgba(247,235,225,.12) 100%),
+    url("background-beauty.jpeg") center / cover no-repeat !important;
+}
+.hero .container.hero-ref {
+  position: relative;
+  width: min(100% - 80px,1260px) !important;
+  min-height: calc(100svh - 82px);
+  display: block !important;
+}
+.hero-ref .hero-content {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 0;
+  width: min(58%,710px);
+  max-width: none !important;
+  padding: clamp(34px,4vw,62px) clamp(34px,4.2vw,74px) !important;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255,255,255,.56);
+  border-radius: 34px;
+  background: rgba(255,247,241,.68);
+  box-shadow: 0 24px 70px rgba(104,67,48,.16);
+  backdrop-filter: blur(12px);
+}
+.hero-ref .hero-visual {
+  position: absolute;
+  z-index: 5;
+  inset: 0 -30px 0 34%;
+  width: auto !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 0 34px 0 0;
+  pointer-events: none;
+}
+.hero-ref .hero-visual img {
+  position: absolute !important;
+  inset: 0 0 0 auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 26% !important;
+  transform: scale(1.62) !important;
+  transform-origin: 52% 28% !important;
+  filter: contrast(1.02) saturate(.95) drop-shadow(-18px 22px 34px rgba(94,55,38,.16)) !important;
+  -webkit-mask-image: linear-gradient(90deg,transparent 0%,rgba(0,0,0,.36) 10%,rgba(0,0,0,.88) 24%,#000 38%,#000 100%) !important;
+  mask-image: linear-gradient(90deg,transparent 0%,rgba(0,0,0,.36) 10%,rgba(0,0,0,.88) 24%,#000 38%,#000 100%) !important;
+}
+.hero-ref .hero-script { color: #365943 !important; }
+.hero-ref h1,.hero-ref .hero-subcity,.hero-ref .lead { color: #3f352d !important; }
+@media (max-width: 980px) {
+  .hero.section { min-height: auto !important; padding: 42px 0 0 !important; background-position: 38% center !important; }
+  .hero .container.hero-ref { width: min(100% - 32px,720px) !important; min-height: 0; }
+  .hero-ref .hero-content { position: relative; top: auto; left: auto; width: 100%; transform: none; padding: 34px 28px !important; }
+  .hero-ref .hero-visual { position: relative; inset: auto; width: calc(100% + 32px) !important; height: min(720px,112vw) !important; min-height: 500px !important; margin: 0 -16px !important; overflow: hidden !important; border-radius: 0; }
+  .hero-ref .hero-visual img { object-position: 50% 30% !important; transform: scale(1.28) !important; transform-origin: 52% 30% !important; -webkit-mask-image: linear-gradient(180deg,transparent 0%,rgba(0,0,0,.72) 16%,#000 30%,#000 100%) !important; mask-image: linear-gradient(180deg,transparent 0%,rgba(0,0,0,.72) 16%,#000 30%,#000 100%) !important; }
+}
+@media (max-width: 620px) {
+  .hero-ref .hero-content { padding: 28px 22px !important; border-radius: 24px; }
+  .hero-ref h1 { white-space: normal !important; }
+  .hero-ref .hero-visual { height: 122vw !important; min-height: 430px !important; }
+}
+
+/* Background canvas + independent Olga screen. Keep the site's content unchanged. */
+body {
+  background:
+    linear-gradient(rgba(54, 39, 30, .36), rgba(54, 39, 30, .36)),
+    url("site-background.jpeg") center / cover fixed no-repeat !important;
+}
+.site-header,
+main,
+.site-footer {
+  width: min(1280px, calc(100% - 32px));
+  margin-inline: auto;
+}
+.site-header {
+  margin-top: 16px;
+  border-radius: 26px 26px 0 0;
+  overflow: visible;
+}
+main {
+  overflow: visible;
+  background: transparent !important;
+  box-shadow: none;
+}
+.site-footer {
+  border-radius: 0 0 26px 26px;
+  overflow: hidden;
+}
+.hero.section {
+  min-height: 0 !important;
+  padding: 76px 0 84px !important;
+  display: block !important;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, #fbfaf6 0%, #f7f4ee 100%) !important;
+}
+.hero .container.hero-ref {
+  width: min(1180px, 92vw) !important;
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, .88fr) !important;
+  gap: clamp(30px, 5vw, 86px) !important;
+  align-items: center !important;
+}
+.hero-ref .hero-content {
+  position: relative !important;
+  inset: auto !important;
+  z-index: 1 !important;
+  width: auto !important;
+  max-width: 680px !important;
+  padding: 0 !important;
+  transform: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.hero-ref .hero-visual {
+  position: relative !important;
+  inset: auto !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 30px !important;
+  background: #eee7df !important;
+  box-shadow: 0 22px 46px rgba(83, 55, 39, .18);
+  pointer-events: auto;
+}
+.hero-ref .hero-visual img {
+  position: relative !important;
+  inset: auto !important;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  transform: none !important;
+  transform-origin: center !important;
+  filter: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+@media (max-width: 980px) {
+  body { background-attachment: scroll !important; }
+  .site-header, main, .site-footer { width: min(100% - 20px, 760px); }
+  .site-header { margin-top: 10px; border-radius: 18px 18px 0 0; }
+  main { border-radius: 0 0 18px 18px; }
+  .hero.section { padding: 54px 0 64px !important; }
+  .hero .container.hero-ref { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .hero-ref .hero-content { order: 1 !important; }
+  .hero-ref .hero-visual { order: 2 !important; width: min(100%, 520px) !important; margin-inline: auto !important; }
+}
+@media (max-width: 620px) {
+  .site-header, main, .site-footer { width: calc(100% - 12px); }
+  .hero.section { padding: 38px 0 48px !important; }
+  .hero .container.hero-ref { width: min(100% - 32px, 760px) !important; }
+  .hero-ref .hero-visual { border-radius: 22px !important; }
+}
+.hero-ref .hero-visual {
+  height: min(720px, calc(100svh - 150px)) !important;
+}
+@media (max-width: 980px) {
+  .hero-ref .hero-visual { height: min(720px, 112vw) !important; }
+}
+
+/* First screen: Olga's real portrait fills the hero like an editorial cover. */
+.hero.section {
+  position: relative !important;
+  min-height: min(720px, calc(100svh - 82px)) !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  overflow: hidden !important;
+  background: #a99d95 !important;
+}
+.hero.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(31,25,26,.72) 0%, rgba(31,25,26,.48) 29%, rgba(31,25,26,.10) 54%, rgba(31,25,26,0) 78%),
+    linear-gradient(0deg, rgba(25,23,24,.16), transparent 34%);
+}
+.hero .container.hero-ref {
+  position: relative !important;
+  z-index: 3 !important;
+  width: min(1180px, 92vw) !important;
+  min-height: min(720px, calc(100svh - 82px)) !important;
+  display: block !important;
+}
+.hero-ref .hero-content {
+  position: relative !important;
+  z-index: 4 !important;
+  width: min(560px, 62vw) !important;
+  max-width: 560px !important;
+  padding: clamp(54px, 8vw, 110px) 0 !important;
+  color: #fff !important;
+}
+.hero-ref .hero-script,
+.hero-ref h1,
+.hero-ref .hero-subcity,
+.hero-ref .lead,
+.hero-ref .hero-badges strong,
+.hero-ref .hero-badges small { color: #fff !important; }
+.hero-ref .hero-visual {
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+  background: #a99d95 !important;
+}
+.hero-ref .hero-visual img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  object-position: 52% 24% !important;
+  transform: scale(1.04) !important;
+  filter: saturate(.86) contrast(.98) brightness(.92) !important;
+}
+@media (max-width: 980px) {
+  .hero.section { min-height: 680px !important; }
+  .hero .container.hero-ref { min-height: 680px !important; }
+  .hero-ref .hero-content { width: min(560px, 90vw) !important; padding-top: 54px !important; }
+  .hero-ref .hero-visual { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; }
+  .hero-ref .hero-visual img { object-position: 50% 24% !important; }
+}
+@media (max-width: 620px) {
+  .hero.section, .hero .container.hero-ref { min-height: 640px !important; }
+  .hero-ref .hero-content { width: 88vw !important; padding-top: 42px !important; }
+  .hero-ref .hero-visual img { object-position: 50% 20% !important; }
+}
+
+/* Keep the copy clear of Olga's face and let the image breathe on the right. */
+.hero.section::before {
+  background:
+    linear-gradient(90deg, rgba(31,25,26,.48) 0%, rgba(31,25,26,.25) 28%, rgba(31,25,26,.04) 58%, transparent 82%),
+    linear-gradient(0deg, rgba(25,23,24,.10), transparent 34%) !important;
+}
+.hero-ref .hero-content {
+  width: min(520px, 44vw) !important;
+  max-width: 520px !important;
+}
+.hero-ref .hero-visual img {
+  left: 40% !important;
+  right: auto !important;
+  width: 60% !important;
+  object-position: center 24% !important;
+}
+@media (max-width: 980px) {
+  .hero-ref .hero-content { width: min(520px, 78vw) !important; }
+  .hero-ref .hero-visual img { left: 26% !important; width: 74% !important; object-position: center 22% !important; }
+}
+@media (max-width: 620px) {
+  .hero-ref .hero-content { width: 86vw !important; }
+  .hero-ref .hero-visual img { left: 12% !important; width: 88% !important; }
+}
+
+/* Final editorial hero: one warm canvas, with the portrait softly dissolving into it. */
+.hero.section {
+  min-height: min(720px, calc(100svh - 82px)) !important;
+  background:
+    radial-gradient(ellipse 52% 90% at 82% 44%, rgba(235,224,214,.58), transparent 72%),
+    linear-gradient(110deg, #cfc5bb 0%, #d9cec4 48%, #e6d9ce 100%) !important;
+}
+.hero.section::before {
+  background:
+    linear-gradient(90deg, rgba(77,64,55,.42) 0%, rgba(77,64,55,.18) 24%, rgba(77,64,55,.03) 52%, transparent 76%),
+    linear-gradient(0deg, rgba(55,43,35,.08), transparent 40%) !important;
+}
+.hero .container.hero-ref {
+  min-height: min(720px, calc(100svh - 82px)) !important;
+  width: min(1240px, 92vw) !important;
+}
+.hero-ref .hero-content {
+  width: min(560px, 47vw) !important;
+  max-width: 560px !important;
+  padding: clamp(56px, 8vw, 112px) 0 !important;
+}
+.hero-ref .hero-visual {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.hero-ref .hero-visual img {
+  left: 32% !important;
+  right: auto !important;
+  width: 68% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 12% !important;
+  transform: none !important;
+  filter: saturate(.82) contrast(.96) brightness(.94) !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.14) 8%, rgba(0,0,0,.72) 23%, #000 38%, #000 100%) !important;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.14) 8%, rgba(0,0,0,.72) 23%, #000 38%, #000 100%) !important;
+}
+.hero-ref .hero-badges {
+  width: min(100%, 560px) !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  align-items: start !important;
+}
+#hero .hero-ref .hero-badges span,
+#hero .hero-ref .hero-badges span:first-child,
+#hero .hero-ref .hero-badges span:last-child {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 16px 0 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 4px !important;
+  border: 0 !important;
+  border-right: 1px solid rgba(255,255,255,.28) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  white-space: normal !important;
+}
+#hero .hero-ref .hero-badges span:last-child { border-right: 0 !important; }
+.hero-ref .hero-badges strong,
+.hero-ref .hero-badges small {
+  color: #fff !important;
+  white-space: normal !important;
+  line-height: 1.25 !important;
+}
+.hero-ref .hero-actions {
+  width: min(100%, 540px) !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+@media (max-width: 980px) {
+  .hero.section, .hero .container.hero-ref { min-height: 680px !important; }
+  .hero-ref .hero-content { width: min(560px, 78vw) !important; padding-top: 52px !important; }
+  .hero-ref .hero-visual img { left: 23% !important; width: 77% !important; object-position: 50% 10% !important; }
+  .hero-ref .hero-badges { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 14px !important; }
+}
+@media (max-width: 620px) {
+  .hero.section, .hero .container.hero-ref { min-height: 680px !important; }
+  .hero-ref .hero-content { width: 88vw !important; padding-top: 42px !important; }
+  .hero-ref .hero-visual img { left: 8% !important; width: 92% !important; object-position: 50% 9% !important; }
+  .hero-ref .hero-badges { grid-template-columns: 1fr !important; gap: 14px !important; }
+  #hero .hero-ref .hero-badges span,
+  #hero .hero-ref .hero-badges span:first-child,
+  #hero .hero-ref .hero-badges span:last-child { padding: 0 0 12px !important; border-right: 0 !important; border-bottom: 1px solid rgba(255,255,255,.24) !important; }
+  #hero .hero-ref .hero-badges span:last-child { border-bottom: 0 !important; }
+  .hero-ref .hero-actions { grid-template-columns: 1fr !important; }
+}
+
+/* Premium editorial balance: wider copy, substantial portrait, no hard split. */
+.hero.section {
+  background:
+    radial-gradient(ellipse 48% 90% at 78% 42%, rgba(244,234,225,.72), transparent 72%),
+    linear-gradient(108deg, #d3c6ba 0%, #ded2c7 46%, #e8dcd2 100%) !important;
+}
+.hero.section::before {
+  background:
+    linear-gradient(90deg, rgba(244,235,226,.42) 0%, rgba(244,235,226,.18) 34%, rgba(244,235,226,.04) 61%, transparent 82%),
+    linear-gradient(0deg, rgba(60,45,36,.07), transparent 44%) !important;
+}
+.hero .container.hero-ref {
+  width: min(1320px, 94vw) !important;
+  min-height: min(740px, calc(100svh - 82px)) !important;
+}
+.hero-ref .hero-content {
+  width: min(610px, 48vw) !important;
+  max-width: 610px !important;
+  padding: clamp(68px, 9vw, 128px) 0 clamp(68px, 8vw, 112px) clamp(18px, 3vw, 54px) !important;
+  color: #3c332d !important;
+}
+.hero-ref .hero-script,
+.hero-ref h1,
+.hero-ref .hero-subcity,
+.hero-ref .lead { color: #3c332d !important; }
+.hero-ref .hero-script { margin-bottom: 28px !important; letter-spacing: .14em !important; }
+.hero-ref h1 {
+  font-size: clamp(4rem, 5vw, 5.7rem) !important;
+  line-height: .98 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.28);
+}
+.hero-ref .hero-subcity {
+  margin-top: 38px !important;
+  font-size: clamp(1.15rem, 1.5vw, 1.48rem) !important;
+  line-height: 1.55 !important;
+}
+.hero-ref .lead {
+  margin-top: 30px !important;
+  margin-bottom: 0 !important;
+  font-size: clamp(1rem, 1.2vw, 1.16rem) !important;
+  line-height: 1.65 !important;
+  max-width: 46ch !important;
+}
+.hero-ref .hero-badges {
+  width: min(100%, 610px) !important;
+  margin-top: 46px !important;
+  gap: 28px !important;
+}
+#hero .hero-ref .hero-badges span,
+#hero .hero-ref .hero-badges span:first-child,
+#hero .hero-ref .hero-badges span:last-child {
+  padding-right: 22px !important;
+  border-right-color: rgba(60,51,45,.2) !important;
+}
+.hero-ref .hero-badges strong,
+.hero-ref .hero-badges small { color: #365943 !important; }
+.hero-ref .hero-badges strong { font-size: 1rem !important; }
+.hero-ref .hero-badges small { font-size: .95rem !important; }
+.hero-ref .hero-actions {
+  width: min(100%, 580px) !important;
+  margin-top: 46px !important;
+  gap: 18px !important;
+}
+.hero-ref .hero-visual img {
+  left: 30% !important;
+  width: 70% !important;
+  object-position: 50% 12% !important;
+  filter: saturate(.82) contrast(.96) brightness(.97) !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.12) 10%, rgba(0,0,0,.72) 26%, #000 40%, #000 100%) !important;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.12) 10%, rgba(0,0,0,.72) 26%, #000 40%, #000 100%) !important;
+}
+@media (max-width: 980px) {
+  .hero .container.hero-ref { width: min(100% - 32px, 760px) !important; }
+  .hero-ref .hero-content { width: min(100%, 620px) !important; padding: 58px 0 22px !important; }
+  .hero-ref h1 { font-size: clamp(3.2rem, 10vw, 4.8rem) !important; }
+  .hero-ref .hero-subcity { margin-top: 28px !important; }
+  .hero-ref .hero-badges { margin-top: 34px !important; }
+  .hero-ref .hero-actions { margin-top: 34px !important; }
+  .hero-ref .hero-visual img { left: 18% !important; width: 82% !important; object-position: 50% 10% !important; }
+}
+@media (max-width: 620px) {
+  .hero-ref .hero-content { padding: 42px 0 18px !important; }
+  .hero-ref h1 { font-size: clamp(2.7rem, 12vw, 4rem) !important; }
+  .hero-ref .hero-badges { margin-top: 30px !important; gap: 14px !important; }
+  .hero-ref .hero-actions { margin-top: 30px !important; }
+  .hero-ref .hero-visual img { left: 8% !important; width: 92% !important; }
+}
+
+/* Editorial screen system: the existing site content is composed like a series of premium boards. */
+main > .section:not(.hero):not(.cta) {
+  position: relative;
+  width: calc(100% - 48px);
+  margin: 24px auto;
+  min-height: clamp(520px, 72vh, 780px);
+  overflow: hidden;
+  border-radius: 32px;
+  background: rgba(250,247,242,.88);
+  box-shadow: 0 22px 64px rgba(69,55,44,.10);
+}
+main > .section:not(.hero):not(.cta)::before,
+main > .section:not(.hero):not(.cta)::after { pointer-events: none; }
+#inject.torn-top::before,
+#hardware.torn-top::before,
+#esthetic.torn-top::before,
+#biohacking.torn-top::before,
+#education.torn-top::before,
+#reviews.torn-top::before { display: none !important; }
+#trust {
+  background:
+    radial-gradient(circle at 80% 18%, rgba(210,225,204,.58), transparent 35%),
+    linear-gradient(135deg, rgba(248,244,238,.96), rgba(235,228,219,.84)) !important;
+}
+#trust::after {
+  content: "01";
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  color: rgba(77,105,78,.22);
+  font: 700 clamp(3rem, 7vw, 7rem)/1 "Playfair Display", serif;
+}
+#trust .trust-layout {
+  position: relative;
+  z-index: 1;
+  min-height: clamp(520px, 72vh, 780px);
+  grid-template-columns: minmax(0,.84fr) minmax(340px,1.16fr);
+  gap: clamp(34px, 6vw, 92px);
+  align-items: center;
+}
+#trust .trust-content { padding: 56px 0 56px 28px; }
+#trust .trust-visual {
+  transform: rotate(2.2deg) translateY(8px);
+  border: 12px solid rgba(255,255,255,.72);
+  box-shadow: 0 24px 52px rgba(73,56,44,.18);
+}
+#trust .trust-visual img { aspect-ratio: 4 / 5; object-fit: cover; }
+#how-it-works {
+  background:
+    linear-gradient(135deg, rgba(222,233,218,.92), rgba(246,241,235,.9)) !important;
+}
+#how-it-works::after {
+  content: "02";
+  position: absolute;
+  right: 34px;
+  bottom: 18px;
+  color: rgba(63,101,73,.18);
+  font: 700 clamp(4rem, 10vw, 9rem)/1 "Playfair Display", serif;
+}
+#how-it-works .process-wrap { position: relative; z-index: 1; padding-top: clamp(58px, 8vw, 110px); }
+#how-it-works .process-grid { gap: 28px; align-items: stretch; }
+#how-it-works .process-grid article {
+  min-height: 210px;
+  padding: 30px 28px;
+  border: 1px solid rgba(78,111,83,.16);
+  border-radius: 22px;
+  background: rgba(255,255,255,.62);
+  box-shadow: 0 16px 34px rgba(57,87,64,.09);
+}
+#how-it-works .process-grid article:nth-child(2) { transform: translateY(32px); background: rgba(255,255,255,.78); }
+#how-it-works .process-grid article:nth-child(3) { transform: translateY(10px); }
+#inject, #esthetic {
+  background:
+    linear-gradient(110deg, rgba(248,241,234,.95), rgba(255,250,246,.82)) !important;
+}
+#hardware, #biohacking {
+  background:
+    linear-gradient(110deg, rgba(235,242,231,.94), rgba(248,245,239,.84)) !important;
+}
+#inject::after, #hardware::after, #esthetic::after, #biohacking::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: -80px;
+  top: -90px;
+  border-radius: 50%;
+  background: rgba(205,218,197,.26);
+  filter: blur(2px);
+}
+#inject .container, #hardware .container, #esthetic .container, #biohacking .container {
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(52px, 7vw, 90px);
+  padding-bottom: clamp(52px, 7vw, 90px);
+}
+#inject .cards-grid, #hardware .cards-grid, #esthetic .cards-grid, #biohacking .cards-grid {
+  gap: clamp(18px, 2.6vw, 34px);
+  align-items: start;
+}
+#inject .service-card, #hardware .service-card, #esthetic .service-card, #biohacking .service-card {
+  border: 1px solid rgba(88,129,87,.12);
+  border-radius: 26px;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 18px 42px rgba(70,57,45,.09);
+}
+#inject .service-card:nth-child(2), #esthetic .service-card:nth-child(2) { transform: translateY(34px); }
+#inject .service-card:nth-child(5), #hardware .service-card:nth-child(3) { transform: translateY(18px) rotate(1deg); }
+#hardware .service-card:nth-child(2), #biohacking .service-card:nth-child(3) { transform: translateY(26px); }
+#biohacking .service-card:nth-child(4) { transform: translateY(52px) rotate(-1deg); }
+#inject .service-media, #hardware .service-media, #esthetic .service-media, #biohacking .service-media {
+  border-radius: 20px;
+  overflow: hidden;
+}
+#inject .service-media img, #hardware .service-media img, #esthetic .service-media img, #biohacking .service-media img {
+  transition: transform .45s ease;
+}
+#inject .service-card:hover img, #hardware .service-card:hover img, #esthetic .service-card:hover img, #biohacking .service-card:hover img { transform: scale(1.045); }
+#education {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(218,190,168,.48), transparent 30%),
+    linear-gradient(135deg, rgba(246,240,233,.96), rgba(232,239,228,.9)) !important;
+}
+#reviews { background: rgba(244,238,232,.94) !important; }
+#recommend { background: rgba(232,240,229,.92) !important; }
+@media (max-width: 760px) {
+  main > .section:not(.hero):not(.cta) { width: calc(100% - 20px); margin: 12px auto; border-radius: 24px; min-height: 0; }
+  #trust .trust-layout { min-height: 0; grid-template-columns: 1fr; gap: 26px; }
+  #trust .trust-content { padding: 42px 18px 0; }
+  #trust .trust-visual { transform: none; border-width: 8px; }
+  #how-it-works .process-wrap, #inject .container, #hardware .container, #esthetic .container, #biohacking .container { padding-top: 48px; padding-bottom: 48px; }
+  #how-it-works .process-grid article:nth-child(2), #how-it-works .process-grid article:nth-child(3),
+  #inject .service-card:nth-child(2), #inject .service-card:nth-child(5), #hardware .service-card:nth-child(2), #hardware .service-card:nth-child(3), #esthetic .service-card:nth-child(2), #biohacking .service-card:nth-child(3), #biohacking .service-card:nth-child(4) { transform: none; }
+}
+
+/* Narrower editorial page: reveal more of the photographic background around it. */
+.site-header,
+main,
+.site-footer {
+  width: min(1180px, calc(100% - 140px)) !important;
+}
+main > .section:not(.hero):not(.cta) {
+  width: calc(100% - 32px) !important;
+  min-height: clamp(460px, 62vh, 680px) !important;
+  margin: 18px auto !important;
+}
+main > .section:not(.hero):not(.cta) .container {
+  width: min(1040px, calc(100% - 72px)) !important;
+}
+#trust .trust-layout,
+#how-it-works .process-wrap,
+#education .education-lux,
+#reviews .container,
+#recommend .recommend-wrap {
+  width: min(1040px, calc(100% - 72px)) !important;
+}
+#trust .trust-layout { min-height: clamp(460px, 62vh, 680px) !important; }
+.hero .container.hero-ref {
+  width: min(1120px, calc(100% - 72px)) !important;
+}
+@media (max-width: 980px) {
+  .site-header, main, .site-footer { width: calc(100% - 44px) !important; }
+  main > .section:not(.hero):not(.cta) { width: calc(100% - 20px) !important; min-height: 0 !important; }
+  main > .section:not(.hero):not(.cta) .container,
+  #trust .trust-layout, #how-it-works .process-wrap, #education .education-lux,
+  #reviews .container, #recommend .recommend-wrap { width: min(100% - 40px, 760px) !important; }
+  .hero .container.hero-ref { width: min(100% - 40px, 760px) !important; }
+}
+@media (max-width: 620px) {
+  .site-header, main, .site-footer { width: calc(100% - 16px) !important; }
+}
+
+/* Hero vertical rhythm: identity higher, actions anchored lower. */
+@media (min-width: 981px) {
+  .hero-ref .hero-content {
+    min-height: min(740px, calc(100svh - 82px)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-top: clamp(42px, 5vw, 72px) !important;
+    padding-bottom: clamp(46px, 5vw, 72px) !important;
+  }
+  .hero-ref .hero-script { margin-top: 0 !important; margin-bottom: 20px !important; }
+  .hero-ref h1 { margin-bottom: 0 !important; }
+  .hero-ref .hero-subcity { margin-top: 28px !important; }
+  .hero-ref .lead { margin-top: 24px !important; }
+  .hero-ref .hero-badges { margin-top: 32px !important; }
+  .hero-ref .hero-actions {
+    margin-top: auto !important;
+    padding-top: 34px !important;
+  }
+}
+@media (max-width: 980px) {
+  .hero-ref .hero-content { min-height: 0 !important; display: block !important; }
+  .hero-ref .hero-actions { margin-top: 34px !important; padding-top: 0 !important; }
+}
+
+/* Final hero hierarchy: compact 60%-height content composition. */
+.hero.section::before {
+  background: linear-gradient(
+    90deg,
+    rgba(244,238,230,.94) 0%,
+    rgba(244,238,230,.86) 27%,
+    rgba(244,238,230,.48) 46%,
+    rgba(244,238,230,.12) 61%,
+    transparent 74%
+  ) !important;
+}
+.hero .container.hero-ref { width: 100% !important; max-width: none !important; }
+.hero-ref .hero-content {
+  min-height: 0 !important;
+  width: min(630px, 48vw) !important;
+  max-width: 630px !important;
+  display: block !important;
+  padding: clamp(76px, 14vh, 112px) 0 clamp(48px, 7vh, 68px) clamp(54px, 7.5vw, 96px) !important;
+  color: #35312d !important;
+}
+.hero-ref .hero-script {
+  margin: 0 0 18px !important;
+  color: #365b47 !important;
+  font-size: clamp(.76rem, .85vw, .9rem) !important;
+  font-weight: 650 !important;
+  letter-spacing: .15em !important;
+}
+.hero-ref h1 {
+  width: min(100%, 630px) !important;
+  margin: 0 !important;
+  color: #2f493a !important;
+  font-size: clamp(3.8rem, 4.7vw, 5.25rem) !important;
+  line-height: .86 !important;
+  font-weight: 500 !important;
+  letter-spacing: -.045em !important;
+  white-space: normal !important;
+  text-shadow: none !important;
+}
+.hero-ref h1 span { display: block; }
+.hero-ref h1 span + span { margin-top: .08em; }
+.hero-ref .hero-subcity {
+  width: min(100%, 590px) !important;
+  margin: 24px 0 0 !important;
+  color: #35312d !important;
+  font-size: clamp(1.02rem, 1.2vw, 1.2rem) !important;
+  line-height: 1.52 !important;
+  font-weight: 450 !important;
+}
+.hero-ref .lead { display: none !important; }
+.hero-ref .hero-badges {
+  width: min(100%, 620px) !important;
+  margin: 26px 0 0 !important;
+  display: grid !important;
+  grid-template-columns: .9fr 1.2fr 1.4fr !important;
+  gap: 18px !important;
+}
+#hero .hero-ref .hero-badges span,
+#hero .hero-ref .hero-badges span:first-child,
+#hero .hero-ref .hero-badges span:last-child {
+  min-height: 0 !important;
+  padding: 0 14px 0 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: .34em !important;
+  border: 0 !important;
+  border-right: 1px solid rgba(54,91,71,.22) !important;
+  background: transparent !important;
+}
+#hero .hero-ref .hero-badges span:last-child { border-right: 0 !important; }
+.hero-ref .hero-badges strong,
+.hero-ref .hero-badges small {
+  color: #365b47 !important;
+  font-size: clamp(.76rem, .83vw, .9rem) !important;
+  line-height: 1.3 !important;
+  white-space: normal !important;
+}
+.hero-ref .hero-badges strong { font-weight: 700 !important; }
+.hero-ref .hero-badges small { font-weight: 450 !important; }
+.hero-ref .hero-actions {
+  width: min(100%, 540px) !important;
+  margin: 28px 0 0 !important;
+  padding: 0 !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+.hero-ref .hero-visual img {
+  left: 34% !important;
+  width: 66% !important;
+  object-position: 50% 10% !important;
+}
+@media (max-width: 980px) {
+  .hero-ref .hero-content {
+    width: min(100%, 620px) !important;
+    padding: 54px 26px 42px !important;
+  }
+  .hero-ref h1 { font-size: clamp(3.3rem, 10vw, 4.7rem) !important; }
+  .hero-ref .hero-visual img { left: 22% !important; width: 78% !important; }
+}
+@media (max-width: 620px) {
+  .hero-ref .hero-content { padding: 42px 20px 36px !important; }
+  .hero-ref h1 { font-size: clamp(2.85rem, 13vw, 4rem) !important; }
+  .hero-ref .hero-badges { grid-template-columns: 1fr !important; gap: 10px !important; }
+  #hero .hero-ref .hero-badges span,
+  #hero .hero-ref .hero-badges span:first-child,
+  #hero .hero-ref .hero-badges span:last-child { padding: 0 0 10px !important; border-right: 0 !important; border-bottom: 1px solid rgba(54,91,71,.18) !important; }
+  #hero .hero-ref .hero-badges span:last-child { border-bottom: 0 !important; }
+  .hero-ref .hero-actions { grid-template-columns: 1fr !important; }
+}
+
+/* Compact booking screen; remove oversized decorative slide numerals. */
+#trust::after,
+#how-it-works::after {
+  display: none !important;
+  content: none !important;
+}
+#how-it-works {
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+#how-it-works .process-wrap {
+  min-height: 0 !important;
+  padding-top: 52px !important;
+  padding-bottom: 56px !important;
+}
+#how-it-works .section-title { margin-bottom: 12px !important; }
+#how-it-works .process-subtitle { margin-bottom: 36px !important; }
+#how-it-works .process-grid {
+  gap: 24px !important;
+  align-items: stretch !important;
+}
+#how-it-works .process-grid article,
+#how-it-works .process-grid article:nth-child(2),
+#how-it-works .process-grid article:nth-child(3) {
+  min-height: 190px !important;
+  padding: 26px 26px !important;
+  transform: none !important;
+}
+#how-it-works .process-btn { margin-top: 34px !important; }
+@media (max-width: 760px) {
+  #how-it-works .process-wrap { padding-top: 40px !important; padding-bottom: 44px !important; }
+  #how-it-works .process-subtitle { margin-bottom: 28px !important; }
+  #how-it-works .process-grid article,
+  #how-it-works .process-grid article:nth-child(2),
+  #how-it-works .process-grid article:nth-child(3) { min-height: 0 !important; }
+}
+
+/* Remove stacked legacy top spacing from all service screens. */
+#inject.section,
+#hardware.section,
+#esthetic.section,
+#biohacking.section,
+#inject.torn-top.section,
+#hardware.torn-top.section,
+#esthetic.torn-top.section,
+#biohacking.torn-top.section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+#inject .container,
+#hardware .container,
+#esthetic .container,
+#biohacking .container {
+  padding-top: 42px !important;
+  padding-bottom: 58px !important;
+}
+#inject .section-title,
+#hardware .section-title,
+#esthetic .section-title,
+#biohacking .section-title {
+  margin-top: 0 !important;
+  margin-bottom: 32px !important;
+}
+@media (max-width: 760px) {
+  #inject .container, #hardware .container, #esthetic .container, #biohacking .container {
+    padding-top: 34px !important;
+    padding-bottom: 42px !important;
+  }
+}
+
+/* Content-driven section heights: remove empty vertical space site-wide. */
+main > .section:not(.hero),
+main > .section:not(.hero):not(.cta) {
+  min-height: 0 !important;
+}
+#trust.section,
+#how-it-works.section,
+#inject.section,
+#hardware.section,
+#esthetic.section,
+#biohacking.section,
+#cta.section,
+#education.section,
+#reviews.section,
+#recommend.section {
+  min-height: 0 !important;
+}
+#trust .trust-layout {
+  min-height: 0 !important;
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+#trust .trust-content { padding-top: 0 !important; padding-bottom: 0 !important; }
+#inject .service-card,
+#hardware .service-card,
+#esthetic .service-card,
+#biohacking .service-card,
+#inject .service-card:nth-child(2),
+#inject .service-card:nth-child(5),
+#hardware .service-card:nth-child(2),
+#hardware .service-card:nth-child(3),
+#esthetic .service-card:nth-child(2),
+#biohacking .service-card:nth-child(3),
+#biohacking .service-card:nth-child(4) {
+  transform: none !important;
+}
+#cta.section {
+  padding-top: 46px !important;
+  padding-bottom: 46px !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Quiet before/after galleries: no nested white card or decorative frame. */
+.service-modal .service-modal-content .modal-carousel__viewport {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.service-modal .service-modal-content .modal-result__media,
+.service-modal .treatment-result-media {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.service-modal .service-modal-content .modal-result__media img,
+.service-modal .treatment-result-media img,
+.service-modal .treatment-result-crop {
+  background: transparent !important;
+}
+.service-modal-content .modal-detail-card--gallery,
+.service-modal-content .modal-detail-card:has(> .modal-result__media),
+.service-modal-content .modal-detail-card:has(> .modal-carousel) {
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.service-modal-content .modal-detail-card--gallery::before,
+.service-modal-content .modal-detail-card:has(> .modal-result__media)::before,
+.service-modal-content .modal-detail-card:has(> .modal-carousel)::before {
+  display: none !important;
+}
+.service-modal .modal-carousel__slide {
+  padding: 0 !important;
+  background: transparent !important;
+}
+.service-modal .modal-carousel__slide img {
+  background: transparent !important;
+}
+.service-modal .modal-result__caption::before {
+  display: none !important;
+}
+:is(#modal-peel, #modal-clean) .peel-result > .modal-carousel {
+  margin-top: 18px !important;
+}
+:is(#modal-peel, #modal-clean) .modal-carousel__viewport {
+  overflow: visible !important;
+  border-radius: 0 !important;
+}
+:is(#modal-peel, #modal-clean) .modal-carousel__slide img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: min(70vh, 640px) !important;
+  margin-inline: auto !important;
+  border-radius: 16px !important;
+  object-fit: contain !important;
+}
+:is(#modal-peel, #modal-clean) .modal-carousel__slide .modal-result__caption {
+  margin-top: 14px !important;
+  padding-inline: 8px !important;
+}
+#education.section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+#education .education-lux {
+  padding-top: 52px !important;
+  padding-bottom: 56px !important;
+}
+#reviews.section {
+  height: auto;
+  min-height: 0 !important;
+  padding-top: 56px !important;
+  padding-bottom: 68px !important;
+}
+
+/* Real review screenshots in a restrained, consistent gallery. */
+#reviews .section-title {
+  margin-bottom: 8px !important;
+}
+#reviews .reviews-intro {
+  max-width: 610px;
+  margin: 0 0 44px;
+  color: #657065;
+  font-size: 0.98rem;
+}
+#reviews .reviews-slider {
+  gap: 12px;
+}
+#reviews .reviews-track {
+  gap: 16px;
+}
+#reviews .review-slide {
+  position: relative;
+  height: 350px;
+  min-height: 0;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(71, 101, 76, .16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .56);
+  box-shadow: 0 12px 28px rgba(70, 57, 45, .07);
+}
+#reviews .review-screenshot {
+  display: block;
+  width: 100%;
+  height: 332px;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f5f1ec;
+}
+#reviews .review-screenshot img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  transition: transform .35s ease;
+}
+#reviews .review-screenshot:hover img { transform: scale(1.018); }
+#reviews .review-screenshot:focus-visible {
+  outline: 3px solid #588157;
+  outline-offset: 3px;
+}
+#reviews .reviews-nav {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,.76);
+}
+@media (max-width: 680px) {
+  #reviews.section { padding-top: 48px !important; padding-bottom: 56px !important; }
+  #reviews .reviews-intro { margin-bottom: 28px; }
+}
+#recommend.recommend-accordion,
+#recommend.section {
+  padding-top: 54px !important;
+  padding-bottom: 58px !important;
+}
+#contacts.luxury-footer {
+  min-height: 0 !important;
+}
+@media (max-width: 760px) {
+  #trust .trust-layout { padding-top: 38px !important; padding-bottom: 38px !important; }
+  #cta.section, #reviews.section { padding-top: 40px !important; padding-bottom: 40px !important; }
+  #education .education-lux { padding-top: 42px !important; padding-bottom: 44px !important; }
+  #recommend.recommend-accordion, #recommend.section { padding-top: 42px !important; padding-bottom: 46px !important; }
+}
+
+/* Compact final consultation screen. */
+#contacts.luxury-footer {
+  min-height: 0 !important;
+  padding: 20px 28px 14px !important;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden !important;
+  border-radius: 32px !important;
+}
+#contacts .luxury-kicker { font-size: 12px !important; }
+#contacts .luxury-footer-main h2 {
+  margin-top: 4px !important;
+  font-size: clamp(1.9rem, 3vw, 2.65rem) !important;
+  line-height: 1.04 !important;
+}
+#contacts .luxury-sub {
+  margin-top: 8px !important;
+  font-size: clamp(1rem, 1.45vw, 1.25rem) !important;
+  line-height: 1.25 !important;
+}
+#contacts .luxury-main-btn {
+  width: 280px !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  margin-top: 14px !important;
+  font-size: 17px !important;
+}
+#contacts .luxury-legal {
+  margin-top: 14px !important;
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+}
+@media (min-width: 761px) {
+  #contacts .luxury-sub {
+    white-space: nowrap;
+    font-size: clamp(.95rem, 1.25vw, 1.1rem) !important;
+  }
+}
+@media (max-width: 760px) {
+  #contacts.luxury-footer {
+    padding: 18px 16px 14px !important;
+    border-radius: 24px !important;
+  }
+  #contacts .luxury-main-btn { width: min(100%, 280px) !important; }
+  #contacts .luxury-main-btn { margin-top: 12px !important; }
+  #contacts .luxury-legal { margin-top: 14px !important; }
+}
+
+/* Unified public-page typography: one scale for all section screens. */
+:root {
+  --page-section-title: clamp(1.9rem, 2.4vw, 2.35rem);
+  --page-section-title-mobile: clamp(1.55rem, 6vw, 1.9rem);
+  --page-section-copy: clamp(.96rem, 1.08vw, 1.06rem);
+  --page-card-title: clamp(1.2rem, 1.45vw, 1.48rem);
+}
+
+main > .section:not(.hero) .section-title,
+#trust .trust-title,
+#education .education-title,
+#recommend .recommend-title,
+#how-it-works .section-title {
+  font-family: "Playfair Display", serif !important;
+  font-size: var(--page-section-title) !important;
+  font-weight: 600 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.025em !important;
+}
+
+#recommend .recommend-title {
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  white-space: normal !important;
+}
+
+main > .section:not(.hero) .section-subtitle,
+#how-it-works .process-subtitle,
+#education .education-subtitle,
+#recommend .recommend-head p:not(.recommend-kicker) {
+  font-family: "Manrope", sans-serif !important;
+  font-size: var(--page-section-copy) !important;
+  font-weight: 400 !important;
+  line-height: 1.58 !important;
+}
+
+#inject .service-card h3,
+#hardware .service-card h3,
+#esthetic .service-card h3,
+#biohacking .service-card h3 {
+  font-family: "Manrope", sans-serif !important;
+  font-size: var(--page-card-title) !important;
+  line-height: 1.2 !important;
+}
+
+#how-it-works .process-grid h3,
+#recommend .faq-trigger {
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(1.05rem, 1.3vw, 1.22rem) !important;
+  line-height: 1.25 !important;
+}
+
+#recommend .recommend-cta h3,
+#cta .cta-box h2 {
+  font-family: "Playfair Display", serif !important;
+  font-size: clamp(1.65rem, 2.2vw, 2rem) !important;
+  line-height: 1.12 !important;
+}
+
+@media (max-width: 760px) {
+  main > .section:not(.hero) .section-title,
+  #trust .trust-title,
+  #education .education-title,
+  #recommend .recommend-title,
+  #how-it-works .section-title {
+    font-size: var(--page-section-title-mobile) !important;
+  }
+
+  #inject .service-card h3,
+  #hardware .service-card h3,
+  #esthetic .service-card h3,
+  #biohacking .service-card h3 {
+    font-size: clamp(1.25rem, 6vw, 1.5rem) !important;
+  }
+}
+
+/* Education section: match the compact rhythm of the other sections. */
+#education .education-lux {
+  padding: 38px 28px 40px !important;
+}
+#education .education-kicker {
+  margin-bottom: 8px !important;
+}
+#education .education-subtitle {
+  margin: 12px auto 20px !important;
+  line-height: 1.45 !important;
+}
+#education .education-grid {
+  gap: 18px;
+  align-items: start;
+}
+#education .education-cards {
+  gap: 14px;
+  align-content: start;
+}
+#education .education-card {
+  padding: 22px;
+  border-radius: 20px;
+}
+#education .education-card h3 {
+  margin-bottom: 6px;
+  font-size: clamp(1.05rem, 1.25vw, 1.25rem);
+  line-height: 1.2;
+}
+#education .education-card p {
+  font-size: .95rem;
+  line-height: 1.45;
+}
+#education .education-result {
+  display: block;
+  padding: 24px;
+  border-radius: 24px;
+}
+#education .education-result h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+  line-height: 1.2;
+}
+#education .education-result li {
+  font-size: .96rem;
+  line-height: 1.45;
+}
+#education .education-format-title {
+  margin-top: 16px;
+}
+#education .education-format-note {
+  margin: 8px 0 12px;
+}
+#education .education-btn-side {
+  height: 52px;
+  min-height: 52px;
+}
+@media (max-width: 760px) {
+  #education .education-lux {
+    padding: 32px 18px 34px !important;
+  }
+  #education .education-card {
+    padding: 18px;
+  }
+  #education .education-result {
+    padding: 20px;
+  }
+}
+
+/* Stronger visual anchor for the consultation call-to-action. */
+#cta .cta-box {
+  background:
+    radial-gradient(circle at 10% 8%, rgba(156, 187, 151, .32), transparent 38%),
+    radial-gradient(circle at 92% 92%, rgba(112, 149, 117, .26), transparent 40%),
+    linear-gradient(135deg, #234437 0%, #315b49 52%, #25483b 100%) !important;
+  border-color: rgba(255, 255, 255, .18) !important;
+  box-shadow: 0 24px 60px rgba(33, 66, 53, .22) !important;
+  color: #fff;
+}
+#cta .cta-box h2 {
+  color: #fff !important;
+}
+#cta .cta-box p {
+  color: rgba(255, 255, 255, .9) !important;
+}
+#cta .cta-box small {
+  color: rgba(255, 255, 255, .72) !important;
+}
+#cta .cta-box .btn {
+  background: #f2eee6 !important;
+  color: #294a3b !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .16) !important;
+}
+
+/* Independent navigation pills instead of a single divided text row. */
+@media (min-width: 1160px) {
+  .site-nav {
+    gap: 7px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .site-nav > a,
+  .site-nav > .nav-services {
+    padding: 0 !important;
+  }
+
+  .site-nav > * + *::before {
+    display: none !important;
+  }
+
+  .site-nav > a,
+  .site-nav > .nav-services > .services-toggle {
+    min-height: 40px;
+    padding: 8px 12px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(54, 89, 67, .13);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .46);
+    color: #526157;
+    line-height: 1.15;
+    white-space: nowrap;
+    transition: color .22s ease, background-color .22s ease, border-color .22s ease, transform .22s ease;
+  }
+
+  .site-nav > a:hover,
+  .site-nav > .nav-services:hover > .services-toggle,
+  .site-nav > .nav-services.open > .services-toggle {
+    color: #2f523f;
+    border-color: rgba(54, 89, 67, .25);
+    background: rgba(222, 233, 217, .72);
+    transform: translateY(-1px);
+  }
+
+  .site-nav > a:focus-visible,
+  .site-nav > .nav-services > .services-toggle:focus-visible {
+    outline: 2px solid rgba(54, 89, 67, .35);
+    outline-offset: 2px;
+  }
+}
+
+@media (max-width: 1159px) {
+  .site-nav {
+    gap: 8px !important;
+  }
+
+  .site-nav > a,
+  .site-nav > .nav-services > .services-toggle {
+    min-height: 46px;
+    padding: 10px 14px !important;
+    border: 1px solid rgba(54, 89, 67, .13);
+    border-radius: 14px;
+    background: rgba(247, 248, 244, .92);
+  }
+}
+
+/* Separate the navigation bar from the first screen. */
+.site-header {
+  margin: 16px auto 14px !important;
+  border: 1px solid rgba(255, 255, 255, .5) !important;
+  border-radius: 26px !important;
+  background: linear-gradient(110deg, rgba(249, 247, 241, .94), rgba(238, 239, 232, .9), rgba(243, 228, 222, .9)) !important;
+  box-shadow: 0 14px 38px rgba(44, 35, 29, .12) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+/* Keep the header typography and inner spacing consistent. */
+.site-header .nav-wrap {
+  width: 100% !important;
+  padding-left: 24px !important;
+  padding-right: 18px !important;
+}
+
+.site-header .logo {
+  font-family: "Manrope", sans-serif !important;
+  font-size: 1.08rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -.02em !important;
+}
+
+main {
+  margin-top: 0 !important;
+}
+
+.hero.section {
+  border-radius: 30px !important;
+  box-shadow: 0 24px 54px rgba(44, 35, 29, .14) !important;
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    border-radius: 20px !important;
+  }
+
+  .hero.section {
+    border-radius: 24px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    margin-top: 6px !important;
+    margin-bottom: 8px !important;
+    border-radius: 18px !important;
+  }
+
+  .site-header .nav-wrap {
+    padding-left: 12px !important;
+    padding-right: 10px !important;
+  }
+
+  .site-header .logo {
+    font-size: .98rem !important;
+  }
+
+  .hero.section {
+    border-radius: 20px !important;
+  }
+}
+
+/* Desktop hero alignment: one-line name, proof at shoulder level, actions below. */
+@media (min-width: 981px) {
+  .hero-ref .hero-content {
+    width: min(760px, 65vw) !important;
+    max-width: 760px !important;
+    min-height: min(740px, calc(100svh - 82px)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: clamp(64px, 8vh, 88px) 0 52px clamp(54px, 7.5vw, 96px) !important;
+  }
+
+  .hero-ref h1 {
+    width: 100% !important;
+    font-size: clamp(3.05rem, 4.4vw, 4.25rem) !important;
+    line-height: .96 !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-ref h1 span {
+    display: inline !important;
+  }
+
+  .hero-ref h1 span + span {
+    margin-top: 0 !important;
+    margin-left: .16em !important;
+  }
+
+  .hero-ref .hero-badges {
+    /* Align the credentials with Olga's shoulder line. */
+    margin-top: clamp(200px, 25vh, 240px) !important;
+  }
+
+  .hero-ref .hero-actions {
+    /* Align the primary booking action with Olga's chest. */
+    margin-top: 42px !important;
+  }
+}
+
+/* Hero polish: depth, clearer hierarchy, and a tighter connection to the portrait. */
+.hero.section {
+  background:
+    radial-gradient(ellipse 72% 86% at 42% 40%, #e8e0d8 0%, #e5ddd5 52%, #dcd5ce 100%) !important;
+}
+
+.hero.section::before {
+  background:
+    linear-gradient(90deg, rgba(247, 241, 235, .35) 0%, rgba(247, 241, 235, .1) 46%, rgba(202, 192, 181, .06) 100%) !important;
+}
+
+@media (min-width: 981px) {
+  .hero.section::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: clamp(270px, 28vw, 430px);
+    height: clamp(280px, 36vh, 420px);
+    left: 45%;
+    top: 29%;
+    pointer-events: none;
+    border-radius: 55% 45% 60% 40% / 46% 55% 45% 54%;
+    background: radial-gradient(circle at 35% 36%, rgba(74, 107, 92, .14), rgba(74, 107, 92, .07) 48%, transparent 72%);
+    filter: blur(3px);
+    transform: rotate(-16deg);
+  }
+
+  .hero-ref .hero-content {
+    width: min(720px, 61vw) !important;
+    max-width: 720px !important;
+    padding-top: clamp(32px, 4.5vh, 48px) !important;
+  }
+
+  .hero-ref .hero-visual img {
+    left: 26% !important;
+    width: 74% !important;
+    object-position: 52% 10% !important;
+  }
+
+  .hero-ref .hero-badges {
+    margin-top: clamp(48px, 6vh, 62px) !important;
+  }
+
+  .hero-ref .hero-actions {
+    margin-top: clamp(62px, 8vh, 86px) !important;
+  }
+}
+
+.hero-ref .hero-script {
+  color: #405448 !important;
+  font-size: clamp(.84rem, .95vw, 1rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: .11em !important;
+}
+
+.hero-ref h1 {
+  position: relative;
+}
+
+.hero-ref h1::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin: 14px 0 22px;
+  background: #4a6b5c;
+  border-radius: 999px;
+}
+
+.hero-ref .hero-subcity {
+  margin-top: 0 !important;
+}
+
+.hero-ref .hero-badges strong,
+.hero-ref .hero-badges small {
+  color: #2f4f3f !important;
+  font-weight: 500 !important;
+}
+
+.hero-ref .hero-badges strong {
+  font-weight: 700 !important;
+}
+
+#hero .hero-ref .hero-badges span,
+#hero .hero-ref .hero-badges span:first-child,
+#hero .hero-ref .hero-badges span:last-child {
+  border-right-color: rgba(47, 79, 63, .4) !important;
+}
+
+.hero-ref .hero-actions .btn-unified,
+.hero-ref .hero-actions .hero-outline-btn {
+  min-height: 60px !important;
+  border-radius: 999px !important;
+}
+
+.hero-ref .hero-actions .hero-outline-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 2px solid #4a6b5c !important;
+  background: rgba(255, 255, 255, .9) !important;
+  color: #4a6b5c !important;
+  font-weight: 700 !important;
+  transition: all .3s ease !important;
+}
+
+.hero-ref .hero-actions .hero-outline-btn:hover,
+.hero-ref .hero-actions .hero-outline-btn:focus-visible {
+  background: #4a6b5c !important;
+  color: #fff !important;
+  border-color: #4a6b5c !important;
+}
+
+@media (max-width: 980px) {
+  .hero.section {
+    background: linear-gradient(145deg, #e9e1d9, #ddd6cf) !important;
+  }
+
+  .hero.section::after { display: none; }
+
+  .hero-ref .hero-badges {
+    margin-top: 44px !important;
+  }
+
+  .hero-ref .hero-actions {
+    margin-top: 46px !important;
+  }
+}
+
+@media (min-width: 621px) and (max-width: 980px) {
+  .hero.section::before {
+    background: linear-gradient(90deg, rgba(238, 231, 222, .9) 0%, rgba(238, 231, 222, .8) 52%, rgba(238, 231, 222, .16) 75%, transparent 100%) !important;
+  }
+
+  .hero-ref .hero-content {
+    width: min(60%, 470px) !important;
+    padding-left: 26px !important;
+  }
+
+  .hero-ref h1 {
+    font-size: clamp(3rem, 7.2vw, 4rem) !important;
+  }
+
+  .hero-ref .hero-subcity {
+    max-width: 28rem !important;
+  }
+
+  .hero-ref .hero-badges {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  #hero .hero-ref .hero-badges span,
+  #hero .hero-ref .hero-badges span:first-child,
+  #hero .hero-ref .hero-badges span:last-child {
+    padding: 0 0 9px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(47, 79, 63, .25) !important;
+  }
+
+  #hero .hero-ref .hero-badges span:last-child { border-bottom: 0 !important; }
+
+  .hero-ref .hero-actions {
+    width: min(100%, 360px) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-ref .hero-visual img { left: 36% !important; width: 64% !important; }
+}
+
+@media (max-width: 620px) {
+  .hero-ref h1::after {
+    width: 62px;
+    margin: 12px 0 18px;
+  }
+
+  .hero-ref .hero-actions { margin-top: 34px !important; }
+}
+
+/* Clear emerald hero message. */
+.hero-ref .hero-subcity {
+  max-width: 530px !important;
+  margin: 0 !important;
+  color: #2f5f4b !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(1.1rem, 1.38vw, 1.42rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.42 !important;
+  letter-spacing: .012em !important;
+  transform: none !important;
+}
+
+.hero-ref .hero-subcity-line {
+  display: block !important;
+  white-space: nowrap !important;
+}
+
+.hero-ref .hero-subcity-line + .hero-subcity-line {
+  margin: 0 !important;
+}
+
+.hero-ref .hero-actions .hero-outline-btn {
+  color: #4a6b5c !important;
+}
+
+@media (min-width: 981px) {
+  .hero-ref .hero-badges {
+    width: min(100%, 390px) !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: clamp(42px, 5.5vh, 52px) !important;
+    text-align: left !important;
+  }
+
+  #hero .hero-ref .hero-badges span,
+  #hero .hero-ref .hero-badges span:first-child,
+  #hero .hero-ref .hero-badges span:last-child {
+    display: block !important;
+    padding: 0 0 10px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(47, 79, 63, .28) !important;
+  }
+
+  #hero .hero-ref .hero-badges span:last-child {
+    padding-bottom: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  .hero-ref .hero-badges strong,
+  .hero-ref .hero-badges small {
+    display: inline !important;
+  }
+
+  .hero-ref .hero-badges small::before {
+    content: " — " !important;
+  }
+
+  /* "Косметология +" already has its own "+", a second dash before
+     "нутрициология" reads as a typo — use a plain space there instead. */
+  .hero-ref .hero-badges span:nth-child(3) small::before {
+    content: " " !important;
+  }
+
+  .hero-ref .hero-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: min(100%, 390px) !important;
+    margin-top: clamp(38px, 5vh, 52px) !important;
+  }
+
+  .hero-ref .hero-actions .btn-unified,
+  .hero-ref .hero-actions .hero-outline-btn {
+    min-width: 0 !important;
+    width: 100% !important;
+    padding-inline: 10px !important;
+    font-size: .9rem !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-ref .hero-subcity {
+    margin-left: 0 !important;
+    font-size: clamp(1.05rem, 2.7vw, 1.25rem) !important;
+    line-height: 1.42 !important;
+  }
+
+  .hero-ref .hero-subcity-line + .hero-subcity-line { margin-left: 0 !important; }
+}
+
+@media (max-width: 620px) {
+  .hero-ref .hero-subcity {
+    font-size: clamp(1.32rem, 6.2vw, 1.65rem) !important;
+    line-height: 1.26 !important;
+  }
+
+  .hero-ref .hero-subcity-line {
+    white-space: normal !important;
+  }
+}
+
+/* Keep the key credentials comfortably readable at every screen size. */
+#hero .hero-ref .hero-badges strong {
+  font-size: clamp(1.04rem, 1.18vw, 1.18rem) !important;
+}
+#hero .hero-ref .hero-badges small {
+  font-size: clamp(1rem, 1.12vw, 1.12rem) !important;
+}
+
+/* Premium navigation: calm text links, with only the booking action as a button. */
+@media (min-width: 1160px) {
+  .site-nav {
+    gap: 20px !important;
+  }
+
+  .site-nav > a,
+  .site-nav > .nav-services > .services-toggle {
+    min-height: auto !important;
+    padding: 7px 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #526157 !important;
+    font-size: .88rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .site-nav > a:hover,
+  .site-nav > .nav-services:hover > .services-toggle,
+  .site-nav > .nav-services.open > .services-toggle {
+    color: #2f523f !important;
+    background: transparent !important;
+    transform: none !important;
+  }
+
+  .site-nav > a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    margin-top: 4px;
+    background: currentColor;
+    transition: width .2s ease;
+  }
+
+  .site-nav > a:hover::after,
+  .site-nav > a:focus-visible::after {
+    width: 100%;
+  }
+}
+
+/* Softer, more architectural corners for the page's main surfaces and actions. */
+.site-header {
+  border-radius: 20px !important;
+}
+
+#hero.hero.section {
+  border-radius: 22px !important;
+  overflow: hidden;
+}
+
+#hero .hero-ref h1::after {
+  display: none !important;
+}
+
+.btn,
+.btn-unified,
+.hero-outline-btn {
+  border-radius: 14px !important;
+}
+
+/* One clear hero action, with services as a quiet supporting link. */
+#hero .hero-ref .hero-actions {
+  display: flex !important;
+  width: auto !important;
+  grid-template-columns: none !important;
+  align-items: center !important;
+  gap: 26px !important;
+}
+
+#hero .hero-ref .hero-actions .btn-unified {
+  width: auto !important;
+  min-height: 56px !important;
+  padding-inline: 22px !important;
+}
+
+#hero .hero-ref .hero-text-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 0;
+  color: #355c46;
+  font-size: .96rem;
+  font-weight: 700;
+  line-height: 1.25;
+  transition: color .2s ease, transform .2s ease;
+}
+
+#hero .hero-ref .hero-text-link:hover,
+#hero .hero-ref .hero-text-link:focus-visible {
+  color: #1f4833;
+  transform: translateY(1px);
+}
+
+@media (max-width: 620px) {
+  .site-header { border-radius: 18px !important; }
+  #hero.hero.section { border-radius: 20px !important; }
+  #hero .hero-ref .hero-actions { align-items: flex-start !important; gap: 18px !important; }
+  #hero .hero-ref .hero-actions .btn-unified { width: 100% !important; }
+}
+
+/* Final modal consistency pass. */
+#modal-peel .service-modal-header {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  z-index: 5;
+  width: 44px !important;
+  min-height: 44px !important;
+  display: block !important;
+  padding: 0 !important;
+}
+
+#modal-peel .service-modal-header h3 {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+#modal-peel .service-modal-header .service-modal-close {
+  position: static !important;
+}
+
+#modal-rf .service-modal-dialog,
+#modal-lipo .service-modal-dialog {
+  width: min(980px, calc(100vw - 32px)) !important;
+  max-width: 980px !important;
+}
+
+#modal-rf .service-modal-content,
+#modal-lipo .service-modal-content {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+}
+
+#modal-botox .botox-editorial {
+  padding: 0 !important;
+}
+
+#modal-contour .contour-editorial__intro h4,
+#modal-botox .botox-hero__intro h4,
+:is(#modal-peel, #modal-clean) .peel-hero__intro h4,
+.treatment-modal .treatment-hero__intro h4 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.025em !important;
+}
+
+@media (max-width: 720px) {
+  #modal-contour .contour-editorial__intro h4,
+  #modal-botox .botox-hero__intro h4,
+  :is(#modal-peel, #modal-clean) .peel-hero__intro h4 {
+    font-size: clamp(2rem, 9vw, 2.35rem) !important;
+  }
+
+  .treatment-modal .treatment-hero__intro h4 {
+    font-size: clamp(1.6rem, 7.6vw, 2.05rem) !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: auto !important;
+  }
+}
+
+/* Reviews: lighter glass surface with a compact position counter. */
+#reviews.section {
+  background: rgba(244, 238, 232, .62) !important;
+  border: 1px solid rgba(255, 255, 255, .48);
+  box-shadow: 0 18px 48px rgba(69, 55, 44, .075) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(.9);
+  backdrop-filter: blur(14px) saturate(.9);
+}
+
+#reviews .reviews-intro {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  text-align: center;
+}
+
+#reviews .review-slide {
+  background: rgba(250, 248, 245, .78) !important;
+  border-color: rgba(91, 78, 68, .11) !important;
+  box-shadow: 0 10px 24px rgba(70, 57, 45, .045) !important;
+}
+
+#reviews .review-screenshot {
+  background: #f7f4ef !important;
+}
+
+#reviews .review-screenshot img {
+  filter: none;
+}
+
+#reviews .review-slide--compact {
+  align-self: center;
+}
+
+#reviews .review-slide--compact .review-screenshot {
+  background: transparent !important;
+}
+
+#reviews .reviews-nav {
+  border-color: rgba(91, 78, 68, .12) !important;
+  background: rgba(250, 248, 245, .9) !important;
+  box-shadow: 0 7px 18px rgba(70, 57, 45, .05) !important;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* Reviews rail: calm continuous motion on desktop, controlled carousel on mobile. */
+#reviews .reviews-slider {
+  display: block !important;
+}
+
+#reviews .reviews-controls {
+  display: none;
+}
+
+#reviews .reviews-track-wrap {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 34px, #000 calc(100% - 34px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 34px, #000 calc(100% - 34px), transparent 100%);
+}
+
+#reviews .reviews-track {
+  width: max-content;
+  align-items: center;
+  gap: 16px !important;
+  transition: none !important;
+  will-change: transform;
+}
+
+#reviews .review-slide {
+  flex: 0 0 clamp(270px, 25vw, 310px) !important;
+}
+
+#reviews .review-slide--compact {
+  flex-basis: clamp(500px, 52vw, 620px) !important;
+}
+
+@media (max-width: 767px) {
+  #reviews.section {
+    padding-top: 48px !important;
+    padding-bottom: 56px !important;
+  }
+
+  #reviews .reviews-intro {
+    margin-bottom: 28px !important;
+  }
+
+  #reviews .reviews-track-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+    touch-action: pan-x pan-y;
+    transition: height .25s ease;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  #reviews .reviews-track-wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  #reviews .reviews-track {
+    width: 100%;
+    align-items: flex-start;
+    gap: 14px !important;
+    transform: none !important;
+  }
+
+  #reviews .review-slide,
+  #reviews .review-slide--compact {
+    flex: 0 0 100% !important;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    align-self: flex-start;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 7px;
+  }
+
+  #reviews .review-screenshot,
+  #reviews .review-slide--compact .review-screenshot {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: auto;
+  }
+
+  #reviews .review-screenshot img,
+  #reviews .review-slide--compact .review-screenshot img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: min(64svh, 560px);
+    object-fit: contain;
+  }
+
+  #reviews .reviews-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  #reviews .reviews-controls[hidden] {
+    display: none;
+  }
+
+  #reviews .reviews-controls .reviews-nav {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    place-items: center;
+    padding: 0 0 3px;
+    border: 1px solid rgba(66, 100, 79, .25) !important;
+    border-radius: 50%;
+    background: rgba(250, 248, 245, .82) !important;
+    color: #315544;
+    box-shadow: 0 7px 18px rgba(70, 57, 45, .05) !important;
+    font-size: 1.65rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  #reviews .reviews-controls .reviews-nav:focus-visible {
+    outline: 2px solid #588157;
+    outline-offset: 3px;
+  }
+
+  #reviews .reviews-controls .reviews-nav:disabled {
+    opacity: .34;
+    cursor: default;
+    box-shadow: none !important;
+  }
+
+  #reviews .reviews-position {
+    min-width: 58px;
+    color: #51665a;
+    font-size: .92rem;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #reviews .reviews-track-wrap {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    scrollbar-width: none;
+  }
+
+  #reviews .reviews-track-wrap::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+#hero .hero-ref .hero-subcity.hero__tagline {
+  max-width: 490px !important;
+  margin: 26px 0 0 !important;
+  color: #2f5f4b !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(24px, 1.8vw, 28px) !important;
+  line-height: 1.28 !important;
+  font-weight: 500 !important;
+  letter-spacing: -.02em !important;
+  text-align: left !important;
+  transform: none !important;
+}
+
+#hero .hero-ref .hero__tagline strong {
+  color: inherit;
+  font-weight: 600;
+}
+
+@media (min-width: 981px) {
+  #hero .hero-ref .hero-content {
+    width: min(640px, 55vw) !important;
+    max-width: 640px !important;
+    margin-top: 0 !important;
+    padding-top: clamp(42px, 5vh, 52px) !important;
+  }
+
+  #hero .hero-ref h1 {
+    margin-bottom: 0 !important;
+    font-size: clamp(3rem, 4vw, 4rem) !important;
+    transform: none !important;
+  }
+
+  #hero .hero-ref .hero-script {
+    margin-bottom: 24px !important;
+    transform: none !important;
+  }
+
+  #hero .hero-ref .hero-badges {
+    margin-top: clamp(50px, 6.4vh, 58px) !important;
+  }
+}
+
+@media (max-width: 980px) {
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    max-width: min(420px, 42vw) !important;
+    margin-top: 24px !important;
+    font-size: clamp(22px, 3.2vw, 27px) !important;
+  }
+
+  #hero .hero-ref .hero__tagline .hero-subcity-line {
+    display: inline !important;
+    white-space: normal !important;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1100px) {
+  #hero .hero-ref .hero-content {
+    width: min(540px, 53vw) !important;
+    max-width: 540px !important;
+  }
+
+  #hero .hero-ref h1 {
+    font-size: clamp(2.7rem, 4.2vw, 3rem) !important;
+  }
+
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    max-width: 340px !important;
+    font-size: 22px !important;
+  }
+
+  #hero .hero-ref .hero__tagline .hero-subcity-line {
+    white-space: normal !important;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 980px) {
+  #hero .hero-ref h1 {
+    font-size: clamp(2.7rem, 6vw, 3.3rem) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    max-width: 100% !important;
+    margin-top: 22px !important;
+    font-size: clamp(22px, 6vw, 26px) !important;
+    line-height: 1.3 !important;
+  }
+
+  #hero .hero-ref .hero-badges {
+    display: none !important;
+  }
+
+  #hero .hero-ref .hero-actions {
+    margin-top: 30px !important;
+  }
+
+  #reviews.section {
+    background: rgba(244, 238, 232, .7) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(.92);
+    backdrop-filter: blur(10px) saturate(.92);
+  }
+
+  #reviews .reviews-intro {
+    text-align: left;
+  }
+}
+
+/* Compact appointment journey: keep the three steps, remove empty height. */
+#how-it-works .process-wrap {
+  padding-top: 36px !important;
+  padding-bottom: 38px !important;
+}
+
+#how-it-works .section-title {
+  margin: 0 0 8px !important;
+}
+
+#how-it-works .process-subtitle {
+  margin: 0 auto 20px !important;
+}
+
+#how-it-works .process-grid {
+  margin: 22px 0 0 !important;
+  gap: 18px !important;
+}
+
+#how-it-works .process-grid article,
+#how-it-works .process-grid article:nth-child(2),
+#how-it-works .process-grid article:nth-child(3) {
+  min-height: 0 !important;
+  padding: 18px 20px !important;
+}
+
+#how-it-works .process-grid h3 {
+  gap: 10px !important;
+}
+
+#how-it-works .process-grid p {
+  margin-top: 7px !important;
+  line-height: 1.45 !important;
+}
+
+#how-it-works .process-btn {
+  margin-top: 22px !important;
+}
+
+@media (max-width: 760px) {
+  #how-it-works .process-wrap {
+    padding-top: 28px !important;
+    padding-bottom: 32px !important;
+  }
+
+  #how-it-works .process-subtitle {
+    margin-bottom: 16px !important;
+  }
+
+  #how-it-works .process-grid {
+    margin-top: 18px !important;
+    gap: 12px !important;
+  }
+
+  #how-it-works .process-grid article,
+  #how-it-works .process-grid article:nth-child(2),
+  #how-it-works .process-grid article:nth-child(3) {
+    padding: 15px 17px !important;
+  }
+
+  #how-it-works .process-btn {
+    margin-top: 20px !important;
+  }
+}
+
+/* ==========================================================================
+   Site fixes — August 2026
+   1) Hero: photo and copy no longer overlap on mobile; on desktop/tablet the
+      copy is nudged down and the leftover empty space below the button is
+      trimmed (kept modest so the copy still clears the portrait).
+   2) "01/02/03" process steps: number is vertically centred against the
+      whole text block, title + paragraph share the same left edge.
+   ========================================================================== */
+
+/* --- Hero: reduce empty space below the CTA, nudge copy down (desktop/tablet) ---
+   #hero-prefixed selectors are needed to beat an earlier ID-specific rule
+   (@media (min-width:1200px) #hero.hero.section { height:743px !important }). */
+@media (min-width: 761px) {
+  #hero.hero.section,
+  .hero .container.hero-ref,
+  #hero .container.hero-ref,
+  #hero .hero-visual {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #hero .hero-ref .hero-content,
+  .hero-ref .hero-content {
+    min-height: 0 !important;
+    padding-top: clamp(90px, 10vh, 130px) !important;
+    padding-bottom: clamp(28px, 4vh, 44px) !important;
+  }
+}
+
+/* --- Hero: stacked, non-overlapping layout on mobile ---------------------- */
+@media (max-width: 760px) {
+  .hero.section {
+    display: block !important;
+    position: relative !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: linear-gradient(180deg, #ece2d6 0%, #f4efe8 100%) !important;
+  }
+
+  .hero.section::before {
+    display: none !important;
+  }
+
+  .hero .container.hero-ref {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    position: static !important;
+    width: 100% !important;
+    min-height: 0 !important;
+  }
+
+  .hero-ref .hero-visual {
+    position: relative !important;
+    order: 1 !important;
+    inset: auto !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    height: 82vw !important;
+    min-height: 300px !important;
+    max-height: 420px !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .hero-ref .hero-visual img {
+    position: absolute !important;
+    inset: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 50% 16% !important;
+    transform: none !important;
+    filter: saturate(.92) contrast(.98) brightness(1) !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  .hero-ref .hero-content {
+    order: 2 !important;
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 26px 20px 36px !important;
+    color: #2c261f !important;
+  }
+
+  .hero-ref .hero-script,
+  .hero-ref h1,
+  .hero-ref .hero-subcity,
+  .hero-ref .lead {
+    color: #2c261f !important;
+    text-shadow: none !important;
+  }
+
+  .hero-ref .hero-badges strong,
+  .hero-ref .hero-badges small {
+    color: #365943 !important;
+  }
+}
+
+/* --- Process steps: number centred, title/text on one left edge ---------- */
+@media (max-width: 767px) {
+  .process-grid h3 {
+    display: contents !important;
+  }
+
+  .process-number {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: center !important;
+    justify-self: start !important;
+  }
+
+  .process-grid h3 > span:last-child {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: end !important;
+  }
+
+  .process-grid p {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    align-self: start !important;
+    margin-top: 4px !important;
+  }
+}
+
+/* ==========================================================================
+   Карточки услуг на десктопе: компактнее окно и фото, меньше пустоты.
+   Причина исходной проблемы — у обложек стоял портретный aspect-ratio
+   (1003/1568 и т.п.) вместе с min-height, из-за чего фото растягивалось
+   почти на 1100px и тянуло за собой всю высоту окна.
+   ========================================================================== */
+@media (min-width: 861px) {
+  /* Само окно — уже и с меньшим отступом сверху */
+  #modal-contour .service-modal-dialog,
+  #modal-botox .service-modal-dialog,
+  :is(#modal-peel, #modal-clean) .service-modal-dialog,
+  .treatment-modal .service-modal-dialog,
+  #modal-rf .service-modal-dialog,
+  #modal-lipo .service-modal-dialog {
+    width: min(860px, calc(100vw - 48px)) !important;
+    max-width: min(860px, calc(100vw - 48px)) !important;
+    margin: 4vh auto !important;
+    max-height: 90vh !important;
+  }
+
+  /* Обложка тянется по высоте текста — высоту блока задаёт текст,
+     поэтому пустого места не остаётся ни под фото, ни рядом с ним. */
+  #modal-contour .contour-editorial__cover,
+  #modal-botox .botox-hero__media,
+  :is(#modal-peel, #modal-clean) .peel-hero__media,
+  .treatment-modal .treatment-hero__media {
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    align-self: stretch !important;
+  }
+
+  /* Верхний блок карточки — колонка с фото уже, меньше внутренних полей */
+  #modal-contour .contour-editorial__hero,
+  #modal-botox .botox-hero,
+  :is(#modal-peel, #modal-clean) .peel-hero,
+  .treatment-modal .treatment-hero {
+    grid-template-columns: minmax(0, 1fr) 250px !important;
+    gap: 22px !important;
+    padding: 26px 28px !important;
+  }
+
+  /* «Контурная пластика» — в одну строку (было max-width: 8.5ch,
+     из-за чего заголовок принудительно переносился после первого слова). */
+  #modal-contour .contour-editorial__intro h4 {
+    max-width: none !important;
+    white-space: nowrap !important;
+    font-size: clamp(1.75rem, 2.6vw, 2.3rem) !important;
+  }
+}
+
+/* ==========================================================================
+   «Как проходит процедура» — отдельный блок во всю ширину внизу карточки,
+   как это уже сделано в «Контурной пластике». Раньше в остальных карточках
+   шаги стояли узкой колонкой справа от блока «До и после».
+   ========================================================================== */
+@media (min-width: 861px) {
+  .treatment-modal .treatment-result-layout,
+  #modal-botox .botox-result-layout,
+  :is(#modal-peel, #modal-clean) .peel-result-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 26px !important;
+  }
+
+  /* «До и после» больше не растягивается на всю ширину */
+  .treatment-modal .treatment-result-media,
+  .treatment-modal .treatment-carousel,
+  .treatment-modal .treatment-benefit-panel,
+  #modal-botox .botox-result-media,
+  #modal-botox .botox-carousel,
+  :is(#modal-peel, #modal-clean) .peel-result-media,
+  :is(#modal-peel, #modal-clean) .peel-carousel {
+    max-width: 620px !important;
+  }
+
+  .treatment-modal .treatment-steps,
+  #modal-botox .botox-steps,
+  :is(#modal-peel, #modal-clean) .peel-steps {
+    align-self: stretch !important;
+    padding-top: 24px !important;
+    border-top: 1px solid rgba(61, 92, 70, .16) !important;
+  }
+
+  /* Шаги — в строку, стиль как в «Контурной пластике» */
+  .treatment-modal .treatment-steps ol,
+  #modal-botox .botox-steps ol,
+  :is(#modal-peel, #modal-clean) .peel-steps ol {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 18px !important;
+    margin: 22px 0 0 !important;
+    padding: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  .treatment-modal .treatment-steps li,
+  #modal-botox .botox-steps li,
+  :is(#modal-peel, #modal-clean) .peel-steps li {
+    flex: 1 1 150px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    border-top: 0 !important;
+  }
+
+  .treatment-modal .treatment-steps li > span,
+  #modal-botox .botox-steps li > span,
+  :is(#modal-peel, #modal-clean) .peel-steps li > span {
+    font-size: 2.1rem !important;
+    line-height: 1 !important;
+  }
+
+  .treatment-modal .treatment-steps li > p,
+  #modal-botox .botox-steps li > p,
+  :is(#modal-peel, #modal-clean) .peel-steps li > p {
+    font-size: .75rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Примечание под шагами — во всю ширину блока */
+  .treatment-modal .treatment-steps .treatment-note,
+  :is(#modal-peel, #modal-clean) .peel-steps .peel-note {
+    margin-top: 20px !important;
+  }
+}
+/* ==========================================================================
+   Readability and service-card consistency pass — August 2026
+   Keeps the existing glass aesthetic while protecting copy over photography.
+   ========================================================================== */
+:root {
+  --glass-surface: rgba(255, 255, 255, 0.84);
+  --service-lavender: rgba(242, 237, 248, 0.94);
+  --service-blush: rgba(249, 237, 240, 0.94);
+  --service-milk: rgba(252, 248, 240, 0.95);
+  --surface-text: #2f4036;
+}
+
+.site-header {
+  background: linear-gradient(110deg, rgba(251, 248, 242, 0.94), rgba(241, 245, 238, 0.91), rgba(245, 234, 231, 0.9));
+  border-color: rgba(67, 94, 73, 0.18);
+  -webkit-backdrop-filter: blur(16px) saturate(1.04);
+  backdrop-filter: blur(16px) saturate(1.04);
+}
+
+.hero-content {
+  background: linear-gradient(135deg, rgba(255, 252, 248, 0.9), rgba(248, 245, 239, 0.78));
+}
+
+.process-grid article,
+.education-card,
+.review-slide,
+#recommend .faq,
+.faq-item,
+.cta-box,
+.education-lux {
+  background-color: rgba(255, 252, 248, 0.88);
+  border-color: rgba(69, 95, 75, 0.17);
+}
+
+#inject .cards-grid,
+#hardware .cards-grid,
+#esthetic .cards-grid,
+#biohacking .cards-grid {
+  align-items: stretch;
+}
+
+#inject .cards-grid .service-card,
+#hardware .cards-grid .service-card,
+#esthetic .cards-grid .service-card,
+#biohacking .cards-grid .service-card {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 14px 14px 16px;
+  border: 1px solid rgba(83, 101, 88, 0.14);
+  border-radius: 26px;
+  color: var(--surface-text);
+  box-shadow: 0 18px 44px rgba(66, 55, 48, 0.09);
+  transform: none;
+  overflow: hidden;
+}
+
+#inject .cards-grid .service-card:nth-child(3n + 1),
+#hardware .cards-grid .service-card:nth-child(3n + 1),
+#esthetic .cards-grid .service-card:nth-child(3n + 1),
+#biohacking .cards-grid .service-card:nth-child(3n + 1) {
+  background: linear-gradient(155deg, var(--service-lavender), rgba(255, 253, 250, 0.88));
+}
+
+#inject .cards-grid .service-card:nth-child(3n + 2),
+#hardware .cards-grid .service-card:nth-child(3n + 2),
+#esthetic .cards-grid .service-card:nth-child(3n + 2),
+#biohacking .cards-grid .service-card:nth-child(3n + 2) {
+  background: linear-gradient(155deg, var(--service-blush), rgba(255, 252, 248, 0.9));
+}
+
+#inject .cards-grid .service-card:nth-child(3n),
+#hardware .cards-grid .service-card:nth-child(3n),
+#esthetic .cards-grid .service-card:nth-child(3n),
+#biohacking .cards-grid .service-card:nth-child(3n) {
+  background: linear-gradient(155deg, var(--service-milk), rgba(249, 244, 236, 0.9));
+}
+
+#inject .service-card .service-media,
+#hardware .service-card .service-media,
+#esthetic .service-card .service-media,
+#biohacking .service-card .service-media {
+  width: 100%;
+  margin: 0 0 16px;
+  border-radius: 19px;
+}
+
+#inject .service-card h3,
+#hardware .service-card h3,
+#esthetic .service-card h3,
+#biohacking .service-card h3 {
+  min-height: 2.35em;
+  margin: 0 0 10px;
+  color: #29392f;
+  font-size: clamp(1.2rem, 1.55vw, 1.48rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+#inject .service-card p,
+#hardware .service-card p,
+#esthetic .service-card p,
+#biohacking .service-card p {
+  margin: 0 0 18px;
+  color: #4f5f55;
+  font-size: 0.98rem;
+  line-height: 1.52;
+  text-align: left;
+}
+
+#inject .service-card .details-btn,
+#hardware .service-card .details-btn,
+#esthetic .service-card .details-btn,
+#biohacking .service-card .details-btn {
+  margin-top: auto;
+  border-color: rgba(73, 112, 79, 0.44);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #inject .cards-grid .service-card:hover,
+  #hardware .cards-grid .service-card:hover,
+  #esthetic .cards-grid .service-card:hover,
+  #biohacking .cards-grid .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 52px rgba(66, 55, 48, 0.12);
+  }
+}
+
+@media (max-width: 760px) {
+  #hero .container.hero-ref {
+    gap: 0 !important;
+  }
+
+  #hero .hero-ref .hero-visual {
+    height: clamp(292px, 80vw, 352px) !important;
+    min-height: 292px !important;
+  }
+
+  #hero .hero-ref .hero-visual img {
+    object-position: 50% 14% !important;
+  }
+
+  #hero .hero-ref .hero-content {
+    padding: 22px 20px 28px !important;
+  }
+
+  #hero .hero-ref h1 {
+    font-size: clamp(2.55rem, 12vw, 3.2rem) !important;
+    line-height: 0.92 !important;
+  }
+
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    margin-top: 18px !important;
+    font-size: clamp(1.18rem, 5.2vw, 1.38rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  #hero .hero-ref .hero-actions {
+    margin-top: 22px !important;
+    gap: 12px !important;
+  }
+
+  #inject .cards-grid .service-card,
+  #hardware .cards-grid .service-card,
+  #esthetic .cards-grid .service-card,
+  #biohacking .cards-grid .service-card {
+    padding: 10px 10px 16px;
+    border-radius: 24px;
+  }
+
+  #inject .service-card h3,
+  #hardware .service-card h3,
+  #esthetic .service-card h3,
+  #biohacking .service-card h3 {
+    min-height: 0;
+    margin: 0 8px 8px;
+    font-size: clamp(1.28rem, 6.2vw, 1.55rem);
+  }
+
+  #inject .service-card p,
+  #hardware .service-card p,
+  #esthetic .service-card p,
+  #biohacking .service-card p {
+    margin: 0 8px 16px;
+    font-size: 0.94rem;
+  }
+}
+
+@media (max-width: 360px) {
+  #hero .hero-ref .hero-content {
+    padding-inline: 16px !important;
+  }
+
+  #hero .hero-ref .hero-script {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.09em !important;
+  }
+
+  #hero .hero-ref .hero-actions .btn-unified {
+    min-height: 52px !important;
+    height: 52px !important;
+    padding-inline: 14px !important;
+    font-size: 0.86rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #inject .service-card,
+  #hardware .service-card,
+  #esthetic .service-card,
+  #biohacking .service-card,
+  #inject .service-media img,
+  #hardware .service-media img,
+  #esthetic .service-media img,
+  #biohacking .service-media img {
+    transition: none;
+  }
+}
 </style>
   </head>
   <body>
@@ -8083,7 +11122,7 @@ li,
           <span></span><span></span><span></span>
         </button>
         <nav class="site-nav" aria-label="Основная навигация">
-          <a href="#trust">Почему мне доверяют</a>
+          <a href="#trust">Обо мне</a>
           <div class="nav-services">
             <button class="services-toggle" type="button" aria-expanded="false">Услуги</button>
             <div class="services-menu">
@@ -8093,9 +11132,8 @@ li,
               <a href="#biohacking">Биохакинг и восстановление</a>
             </div>
           </div>
-          <a href="#education">Обучение</a>
           <a href="#reviews">Отзывы</a>
-          <a href="#recommend">Рекомендации после процедур</a>
+          <a href="#education">Обучение</a>
           <a href="#contacts">Контакты</a>
         </nav>
         <a
@@ -8113,10 +11151,11 @@ li,
         <div class="container hero-grid hero-ref">
           <div class="hero-content reveal">
             <p class="hero-script">КОСМЕТОЛОГ • НУТРИЦИОЛОГ</p>
-            <h1>Ольга Чернышова</h1>
-            <p class="hero-subcity">
-              <span class="hero-subcity-line">Комплексный подход к коже: косметология,</span>
-              <span class="hero-subcity-line">питание и восстановление ресурса организма.</span>
+            <h1><span>Ольга</span><span>Чернышова</span></h1>
+            <p class="hero-subcity hero__tagline">
+              <span class="hero-subcity-line"><strong>Комплексный подход к коже:</strong></span>
+              <span class="hero-subcity-line">косметология, питание</span>
+              <span class="hero-subcity-line">и восстановление ресурса организма.</span>
             </p>
 
             <p class="lead">Я помогаю подобрать безопасную и эффективную стратегию ухода, процедур и восстановления, чтобы кожа выглядела свежей, здоровой и естественной.</p>
@@ -8128,15 +11167,14 @@ li,
             </div>
 
             <div class="hero-actions">
-              <a target="_blank" rel="noopener noreferrer" href="https://wa.me/79636716596" class="btn btn-primary btn-unified">Записаться →</a>
-              <a href="#inject" class="hero-outline-btn">Посмотреть услуги</a>
+              <a target="_blank" rel="noopener noreferrer" href="https://wa.me/79636716596" class="btn btn-primary btn-unified">Записаться на консультацию</a>
+              <a href="#inject" class="hero-text-link">Посмотреть услуги</a>
             </div>
           </div>
 
           <div class="hero-visual reveal">
             <picture>
-              <source srcset="hero-photo-fixed.webp" type="image/webp" />
-              <img src="hero-photo-fixed.jpg" alt="Фото Ольги Чернышовой" loading="eager" fetchpriority="high" decoding="async" width="1200" height="1500" />
+              <img src="hero-olga-new.png" alt="Фото Ольги Чернышовой" loading="eager" fetchpriority="high" decoding="async" width="1024" height="1536" />
             </picture>
           </div>
         </div>
@@ -8270,7 +11308,7 @@ li,
             <article class="card reveal service-card"><div class="service-media service-photo"><img src="peeling-cover.jpg" alt="Нанесение профессионального пилинга на кожу лица" loading="lazy" width="1536" height="1024" /></div>
               <h3>Пилинги</h3><p>Выравнивание тона и микрорельефа кожи с учетом ее состояния и сезонности.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-peel">подробнее</button></article>
             <article class="card reveal service-card"><div class="service-media service-photo"><img src="facial-cleansing-cover.jpg" alt="Ультразвуковая чистка кожи лица" loading="lazy" width="1536" height="1024" /></div>
-              <h3>Чистки</h3><p>Бережное очищение и восстановление баланса кожи без травматизации.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-clean">подробнее</button></article>
+              <h3>Чистка лица</h3><p>Бережное очищение и восстановление баланса кожи без травматизации.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-clean">подробнее</button></article>
             <article class="card reveal service-card"><div class="service-media service-photo"><img src="facial-massage-cover.jpg" alt="Скульптурирующий массаж лица и шеи" loading="lazy" width="1536" height="1024" /></div>
               <h3>Массаж лица</h3><p>Мануальные техники для лимфодренажа, расслабления и выразительного овала лица.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-massage">подробнее</button></article>
           </div>
@@ -8287,7 +11325,7 @@ li,
             <article class="card reveal service-card"><div class="service-media service-photo"><img src="iv-therapy-cover.jpg" alt="Восстановительная IV-терапия в комфортной обстановке" loading="lazy" width="1536" height="1024" /></div>
               <h3>IV-терапия / капельницы восстановления</h3><p>Персональные инфузионные протоколы для восполнения дефицитов и повышения жизненного тонуса.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-iv">подробнее</button></article>
             <article class="card reveal service-card"><div class="service-media service-photo"><img src="antistress-cover.jpg" alt="Антистресс-программа для отдыха и восстановления" loading="lazy" width="1536" height="1024" /></div>
-              <h3>Антистресс программы</h3><p>Снижение хронической усталости и поддержка нервной системы через сбалансированный подход.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-antistress">подробнее</button></article>
+              <h3>Антистресс-программы</h3><p>Снижение хронической усталости и поддержка нервной системы через сбалансированный подход.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-antistress">подробнее</button></article>
             <article class="card reveal service-card"><div class="service-media service-photo"><img src="detox-cover.jpg" alt="Детокс-программа и восстановление водного баланса" loading="lazy" width="1536" height="1024" /></div>
               <h3>Детокс и восстановление ресурса</h3><p>Программы мягкого очищения и перезагрузки организма для устойчивого самочувствия.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-detox">подробнее</button></article>
             <article class="card reveal service-card"><div class="service-media service-photo"><img src="personal-program-cover.jpg" alt="Персональная консультация и программа сопровождения" loading="lazy" width="1536" height="1024" /></div>
@@ -8361,35 +11399,98 @@ li,
       <section class="section torn-top" id="reviews">
         <div class="container">
           <h2 class="section-title reveal">Отзывы</h2>
+          <p class="reviews-intro reveal">Настоящие сообщения от клиентов — без фона чата и лишних деталей.<br />Нажмите на отзыв, чтобы рассмотреть его крупнее.</p>
           <div class="reviews-slider reveal" aria-label="Слайдер отзывов">
-            <button class="reviews-nav prev" type="button" aria-label="Предыдущий отзыв">‹</button>
             <div class="reviews-track-wrap">
               <div class="reviews-track" id="reviewsTrack">
                 <article class="review-slide">
-                  <p>«После курса процедур кожа стала заметно плотнее и свежее. Особенно ценю бережный подход и честные рекомендации.»</p>
-                  <span>Клиент, 34 года</span>
+                  <a class="review-screenshot" href="reviews/clean/review-mezo-message.png" target="_blank" rel="noopener" aria-label="Открыть отзыв о мезотерапии крупнее">
+                    <img src="reviews/clean/review-mezo-message.png" alt="Отзыв клиентки о результате процедуры" loading="lazy" />
+                  </a>
                 </article>
                 <article class="review-slide">
-                  <p>«Очень спокойная атмосфера и понятный план работы. Результат естественный, без эффекта “переколотого” лица.»</p>
-                  <span>Клиент, 41 год</span>
+                  <a class="review-screenshot" href="reviews/clean/review-lips-result.png" target="_blank" rel="noopener" aria-label="Открыть отзыв о результате коррекции губ крупнее">
+                    <img src="reviews/clean/review-lips-result.png" alt="Фото результата коррекции губ и отзыв клиентки" loading="lazy" />
+                  </a>
                 </article>
                 <article class="review-slide">
-                  <p>«С первого приема почувствовала доверие. Все объяснили подробно, сопровождение после процедуры на высоком уровне.»</p>
-                  <span>Клиент, 29 лет</span>
+                  <a class="review-screenshot" href="reviews/clean/review-contour-message.png" target="_blank" rel="noopener" aria-label="Открыть отзыв о контурной пластике крупнее">
+                    <img src="reviews/clean/review-contour-message.png" alt="Отзыв клиентки о контурной пластике лица" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide review-slide--compact" style="--review-ratio: 1152 / 650;">
+                  <a class="review-screenshot" href="reviews/clean/review-lips-messages.png" target="_blank" rel="noopener" aria-label="Открыть отзыв о губах крупнее">
+                    <img src="reviews/clean/review-lips-messages.png" alt="Настоящие сообщения клиентки о результате коррекции губ" loading="lazy" />
+                  </a>
                 </article>
                 <article class="review-slide">
-                  <p>«Мне понравился комплексный подход: не только процедура, но и рекомендации по восстановлению и уходу.»</p>
-                  <span>Клиент, 37 лет</span>
+                  <a class="review-screenshot" href="reviews/clean/review-botox-result.png" target="_blank" rel="noopener" aria-label="Открыть отзыв о ботулинотерапии крупнее">
+                    <img src="reviews/clean/review-botox-result.png" alt="Фото результата и отзыв клиентки о ботулинотерапии" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide review-slide--compact" style="--review-ratio: 1067 / 275;">
+                  <a class="review-screenshot" href="reviews/clean/review-forehead-message.png" target="_blank" rel="noopener" aria-label="Открыть отзыв о результате процедуры крупнее">
+                    <img src="reviews/clean/review-forehead-message.png" alt="Отзыв клиентки о результате процедуры в области лба" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide review-slide--compact" style="--review-ratio: 912 / 486;">
+                  <a class="review-screenshot" href="reviews/clean/review-face-transformation.png" target="_blank" rel="noopener" aria-label="Открыть отзыв о преображении лица крупнее">
+                    <img src="reviews/clean/review-face-transformation.png" alt="Отзыв клиентки о преображении лица и качестве кожи" loading="lazy" />
+                  </a>
                 </article>
                 <article class="review-slide">
-                  <p>«Результат естественный и аккуратный. Вижу разницу, но лицо остается моим — это было важно.»</p>
-                  <span>Клиент, 32 года</span>
+                  <a class="review-screenshot" href="reviews/clean/review-skin-story.png" target="_blank" rel="noopener" aria-label="Открыть отзывы о качестве кожи крупнее">
+                    <img src="reviews/clean/review-skin-story.png" alt="Подборка отзывов клиентки о качестве кожи" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide">
+                  <a class="review-screenshot" href="reviews/clean/review-skin-result.png" target="_blank" rel="noopener" aria-label="Открыть отзыв с фото результата крупнее">
+                    <img src="reviews/clean/review-skin-result.png" alt="Фото результата и отзыв клиентки о состоянии кожи" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide">
+                  <a class="review-screenshot" href="reviews/clean/review-skin-care.png" target="_blank" rel="noopener" aria-label="Открыть отзыв об уходе за кожей крупнее">
+                    <img src="reviews/clean/review-skin-care.png" alt="Подборка отзывов клиентки об уходе за кожей" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide">
+                  <a class="review-screenshot" href="reviews/clean/review-peeling-long.png" target="_blank" rel="noopener" aria-label="Открыть подробный отзыв о пилинге крупнее">
+                    <img src="reviews/clean/review-peeling-long.png" alt="Подробный отзыв клиентки о результате пилинга" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide review-slide--compact" style="--review-ratio: 915 / 300;">
+                  <a class="review-screenshot" href="reviews/clean/review-lips-short.png" target="_blank" rel="noopener" aria-label="Открыть отзыв о губах крупнее">
+                    <img src="reviews/clean/review-lips-short.png" alt="Короткий отзыв клиентки о результате коррекции губ" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide">
+                  <a class="review-screenshot" href="reviews/clean/review-lips-two-months.png" target="_blank" rel="noopener" aria-label="Открыть отзыв с фото губ крупнее">
+                    <img src="reviews/clean/review-lips-two-months.png" alt="Фото результата коррекции губ и отзыв через два месяца" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide">
+                  <a class="review-screenshot" href="reviews/clean/review-lips-before-after.png" target="_blank" rel="noopener" aria-label="Открыть отзыв с фото губ до и после крупнее">
+                    <img src="reviews/clean/review-lips-before-after.png" alt="Фото губ до и после коррекции с отзывом клиентки" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide">
+                  <a class="review-screenshot" href="reviews/clean/review-public-collection-one.png" target="_blank" rel="noopener" aria-label="Открыть подборку публичных отзывов крупнее">
+                    <img src="reviews/clean/review-public-collection-one.png" alt="Подборка публичных отзывов клиентов" loading="lazy" />
+                  </a>
+                </article>
+                <article class="review-slide">
+                  <a class="review-screenshot" href="reviews/clean/review-public-collection-two.png" target="_blank" rel="noopener" aria-label="Открыть подборку публичных отзывов крупнее">
+                    <img src="reviews/clean/review-public-collection-two.png" alt="Ещё одна подборка публичных отзывов клиентов" loading="lazy" />
+                  </a>
                 </article>
               </div>
             </div>
+          </div>
+          <div class="reviews-controls" id="reviewsControls" aria-label="Навигация по отзывам" hidden>
+            <button class="reviews-nav prev" type="button" aria-label="Предыдущий отзыв">‹</button>
+            <span class="reviews-position" id="reviewsPosition" aria-live="polite">1 / 16</span>
             <button class="reviews-nav next" type="button" aria-label="Следующий отзыв">›</button>
           </div>
-          <div class="reviews-dots" id="reviewsDots" aria-label="Навигация по отзывам"></div>
         </div>
       </section>
       <section class="section recommend-accordion" id="recommend">
@@ -8552,7 +11653,8 @@ const editorialServiceData = {
     concerns: ['Сухость и обезвоженность', 'Тусклый тон', 'Мелкие морщины', 'Следы усталости', 'Тонкая кожа'],
     resultTitle: 'До и после',
     results: [
-      { src: 'biorev-pdrn-before-after.jpg', alt: 'До и после биоревитализации с PDRN', caption: 'Результат биоревитализации с PDRN', width: 1024, height: 1280 }
+      { src: 'biorev-pdrn-before-after.jpg', alt: 'До и после биоревитализации с PDRN', caption: 'Результат биоревитализации с PDRN', width: 1024, height: 1280 },
+      { src: 'biorevitalization-procedure-new.png', alt: 'Кожа лица с папулами сразу после процедуры биоревитализации', caption: 'Состояние кожи сразу после биоревитализации', width: 1122, height: 1402 }
     ],
     resultCopy: 'Кожа может выглядеть более увлажнённой, плотной и свежей. Выраженность результата и количество процедур зависят от исходного состояния кожи и выбранного протокола.',
     steps: ['Консультация и оценка состояния кожи', 'Очищение и подготовка зоны', 'Введение выбранного препарата', 'Рекомендации и план дальнейшего ухода'],
@@ -8670,7 +11772,7 @@ const editorialServiceData = {
     concerns: ['Пигментные пятна', 'Покраснения', 'Сосудистая сетка', 'Следы постакне', 'Неровный тон'],
     resultTitle: 'До и после',
     results: [
-      { src: 'bbl-before-after-front.jpeg', alt: 'До и после BBL-фотоомоложения в анфас', caption: 'Результат BBL — вид в анфас', width: 966, height: 1280 },
+      { src: 'bbl-before-after-front-clean.webp', alt: 'До и после BBL-фотоомоложения в анфас', caption: 'Результат BBL — вид в анфас', width: 1089, height: 1444 },
       { src: 'bbl-before-after-profile.jpeg', alt: 'До и после BBL-фотоомоложения в профиль', caption: 'Результат BBL — вид в профиль', width: 960, height: 1280 }
     ],
     resultCopy: 'Процедура помогает сделать тон визуально ровнее, а пигментные и сосудистые проявления — менее заметными. BBL работает с качеством кожи, не меняя черты лица.',
@@ -8733,7 +11835,7 @@ const editorialServiceData = {
     ctaNote: 'Техника и график процедур подбираются индивидуально.'
   },
   iv: {
-    title: 'IV-терапия',
+    title: 'IV-терапия / капельницы восстановления',
     tagline: 'Медицинская инфузионная поддержка по показаниям, когда важны не универсальные коктейли, а понятная цель и безопасный состав.',
     cover: { src: 'iv-therapy-cover.jpg', alt: 'IV-терапия в комфортной обстановке', width: 1536, height: 1024 },
     facts: ['По показаниям', 'Индивидуальный состав', 'Медицинский контроль'],
@@ -8755,7 +11857,7 @@ const editorialServiceData = {
     ctaNote: 'Состав и формат IV-терапии определяются только после оценки показаний.'
   },
   antistress: {
-    title: 'Антистресс-программа',
+    title: 'Антистресс-программы',
     tagline: 'Персональный план восстановления сна, энергии и устойчивости к нагрузкам без обещаний мгновенной перезагрузки.',
     cover: { src: 'antistress-cover.jpg', alt: 'Антистресс-программа восстановления', width: 1536, height: 1024 },
     facts: ['Сон и режим', 'Снижение перегрузки', 'Динамическое сопровождение'],
@@ -8777,7 +11879,7 @@ const editorialServiceData = {
     ctaNote: 'Программа формируется индивидуально и не заменяет лечение профильных состояний.'
   },
   detox: {
-    title: 'Детокс и восстановление',
+    title: 'Детокс и восстановление ресурса',
     tagline: 'Мягкая работа с режимом, питанием и отёчностью без жёстких чисток, голодания и универсальных схем.',
     cover: { src: 'detox-cover.jpg', alt: 'Программа мягкого восстановления ресурса', width: 1536, height: 1024 },
     facts: ['Без жёстких схем', 'Работа с привычками', 'Устойчивый результат'],
@@ -8799,7 +11901,7 @@ const editorialServiceData = {
     ctaNote: 'Рекомендации составляются с учётом анамнеза и текущего состояния.'
   },
   program: {
-    title: 'Персональное сопровождение',
+    title: 'Персональные программы сопровождения',
     tagline: 'Долгосрочный план для тех, кому важны не разовые рекомендации, а понятная система и поддержка в динамике.',
     cover: { src: 'personal-program-cover.jpg', alt: 'Персональная консультация и сопровождение', width: 1536, height: 1024 },
     facts: ['Комплексный разбор', 'План под вашу жизнь', 'Контроль динамики'],
@@ -9190,81 +12292,147 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach((el) => el.classList.add('visible'));
 }
 
-// Reviews slider
+// Reviews: continuous desktop rail and a one-card mobile carousel.
 (function () {
   const track = document.getElementById('reviewsTrack');
-  const dotsWrap = document.getElementById('reviewsDots');
+  const wrap = track?.parentElement;
+  const slider = track?.closest('.reviews-slider');
+  const controls = document.getElementById('reviewsControls');
+  const position = document.getElementById('reviewsPosition');
   const prev = document.querySelector('.reviews-nav.prev');
   const next = document.querySelector('.reviews-nav.next');
-  if (!track || !dotsWrap) return;
+  if (!track || !wrap || !slider) return;
 
-  const slides = Array.from(track.children);
-  let index = 0;
+  const originals = Array.from(track.children);
+  const mobileView = window.matchMedia('(max-width: 767px)');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  function perView() {
-    if (window.innerWidth >= 1120) return 3;
-    if (window.innerWidth >= 760) return 2;
-    return 1;
-  }
+  if (originals.length < 2) return;
 
-  function maxIndex() {
-    return Math.max(0, slides.length - perView());
-  }
+  if (mobileView.matches) {
+    let currentIndex = 0;
+    let scrollFrame = 0;
 
-  function renderDots() {
-    dotsWrap.innerHTML = '';
-    for (let i = 0; i <= maxIndex(); i += 1) {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = i === index ? 'active' : '';
-      b.setAttribute('aria-label', `Слайд ${i + 1}`);
-      b.addEventListener('click', () => {
-        index = i;
-        update();
+    if (controls) controls.hidden = false;
+
+    function updateMobileCarousel(index, shouldScroll) {
+      currentIndex = Math.max(0, Math.min(index, originals.length - 1));
+      const activeSlide = originals[currentIndex];
+
+      if (shouldScroll) {
+        wrap.scrollTo({
+          left: activeSlide.offsetLeft,
+          behavior: reduceMotion.matches ? 'auto' : 'smooth'
+        });
+      }
+
+      wrap.style.height = `${activeSlide.offsetHeight}px`;
+      if (position) position.textContent = `${currentIndex + 1} / ${originals.length}`;
+      if (prev) prev.disabled = currentIndex === 0;
+      if (next) next.disabled = currentIndex === originals.length - 1;
+    }
+
+    function findNearestSlide() {
+      let nearestIndex = 0;
+      let nearestDistance = Infinity;
+      originals.forEach((slide, index) => {
+        const distance = Math.abs(slide.offsetLeft - wrap.scrollLeft);
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          nearestIndex = index;
+        }
       });
-      dotsWrap.appendChild(b);
+      updateMobileCarousel(nearestIndex, false);
+    }
+
+    prev?.addEventListener('click', () => updateMobileCarousel(currentIndex - 1, true));
+    next?.addEventListener('click', () => updateMobileCarousel(currentIndex + 1, true));
+    wrap.addEventListener('scroll', () => {
+      cancelAnimationFrame(scrollFrame);
+      scrollFrame = requestAnimationFrame(findNearestSlide);
+    }, { passive: true });
+
+    const mobileResizeObserver = new ResizeObserver(() => updateMobileCarousel(currentIndex, false));
+    originals.forEach((slide) => mobileResizeObserver.observe(slide));
+    originals.forEach((slide) => {
+      const image = slide.querySelector('img');
+      if (image && !image.complete) image.addEventListener('load', () => updateMobileCarousel(currentIndex, false), { once: true });
+    });
+
+    updateMobileCarousel(0, false);
+    return;
+  }
+
+  if (controls) controls.hidden = true;
+  if (reduceMotion.matches) return;
+
+  originals.forEach((slide) => {
+    const clone = slide.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('a, button, [tabindex]').forEach((item) => item.setAttribute('tabindex', '-1'));
+    track.appendChild(clone);
+  });
+
+  let cycleWidth = 0;
+  let offset = 0;
+  let previousTime = 0;
+  let isVisible = false;
+  const pauseReasons = new Set();
+
+  function measure() {
+    const first = track.children[0];
+    const repeatedFirst = track.children[originals.length];
+    if (!first || !repeatedFirst) return;
+    cycleWidth = repeatedFirst.offsetLeft - first.offsetLeft;
+    if (cycleWidth > 0) {
+      while (-offset >= cycleWidth) offset += cycleWidth;
+      while (offset > 0) offset -= cycleWidth;
     }
   }
 
-  function update() {
-    const pct = 100 / perView();
-    track.style.transform = `translateX(-${index * pct}%)`;
-    const dots = dotsWrap.querySelectorAll('button');
-    dots.forEach((d, i) => d.classList.toggle('active', i === index));
-    if (prev) prev.disabled = index <= 0;
-    if (next) next.disabled = index >= maxIndex();
+  function setPause(reason, shouldPause) {
+    if (shouldPause) pauseReasons.add(reason);
+    else pauseReasons.delete(reason);
   }
 
-  prev?.addEventListener('click', () => {
-    index = Math.max(0, index - 1);
-    update();
+  slider.addEventListener('mouseenter', () => setPause('hover', true));
+  slider.addEventListener('mouseleave', () => setPause('hover', false));
+  slider.addEventListener('focusin', () => setPause('focus', true));
+  slider.addEventListener('focusout', (event) => {
+    if (!slider.contains(event.relatedTarget)) setPause('focus', false);
   });
+  slider.addEventListener('pointerdown', () => setPause('pointer', true));
+  window.addEventListener('pointerup', () => setPause('pointer', false));
+  window.addEventListener('pointercancel', () => setPause('pointer', false));
+  document.addEventListener('visibilitychange', () => setPause('page', document.hidden));
 
-  next?.addEventListener('click', () => {
-    index = Math.min(maxIndex(), index + 1);
-    update();
-  });
+  const visibilityObserver = new IntersectionObserver((entries) => {
+    isVisible = entries[0]?.isIntersecting === true;
+  }, { threshold: 0.08 });
+  visibilityObserver.observe(slider);
 
-  enableHorizontalSwipe(
-    track.parentElement,
-    () => {
-      index = Math.max(0, index - 1);
-      update();
-    },
-    () => {
-      index = Math.min(maxIndex(), index + 1);
-      update();
+  const resizeObserver = new ResizeObserver(measure);
+  resizeObserver.observe(wrap);
+  resizeObserver.observe(track);
+  window.addEventListener('load', measure, { once: true });
+  measure();
+
+  function animate(time) {
+    if (!previousTime) previousTime = time;
+    const delta = Math.min(50, time - previousTime);
+    previousTime = time;
+
+    if (isVisible && pauseReasons.size === 0 && cycleWidth > 0) {
+      const speed = window.innerWidth <= 680 ? 19 : 24;
+      offset -= speed * (delta / 1000);
+      if (-offset >= cycleWidth) offset += cycleWidth;
+      track.style.transform = `translate3d(${offset}px, 0, 0)`;
     }
-  );
 
-  window.addEventListener('resize', () => {
-    index = Math.min(index, maxIndex());
-    renderDots();
-    update();
-  });
+    requestAnimationFrame(animate);
+  }
 
-  renderDots();
-  update();
+  requestAnimationFrame(animate);
 })();
 
 // First-visit gift: show once per browser tab, then lead to the matching service.
@@ -9338,38 +12506,40 @@ if ('IntersectionObserver' in window) {
         <h3 id="modal-contour-title">Контурная пластика</h3>
         <div class="service-modal-content service-modal-content--contour contour-editorial">
           <section class="contour-editorial__hero" aria-labelledby="contour-editorial-title">
-            <div class="contour-editorial__intro">
-              <h4 id="contour-editorial-title">Контурная пластика</h4>
-              <p>Контурная пластика для губ, скул, подбородка и других зон лица с индивидуальным подбором препарата под анатомию и задачу пациента.</p>
+            <div class="contour-editorial__copy">
+              <div class="contour-editorial__intro">
+                <h4 id="contour-editorial-title">Контурная пластика</h4>
+                <p>Контурная пластика для губ, скул, подбородка и других зон лица с индивидуальным подбором препарата под анатомию и задачу пациента.</p>
+              </div>
+              <div class="contour-editorial__facts" aria-label="Особенности контурной пластики">
+                <div>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12c2-4 5-6 8-6s6 2 8 6c-2 4-5 6-8 6s-6-2-8-6Z" /><circle cx="12" cy="12" r="2.5" /></svg>
+                  <strong>Гармонизация</strong><span>пропорций</span>
+                </div>
+                <div>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c2.5 2.5 5 3.5 7 3.5s4.5-1 7-3.5M7 9h.01M17 9h.01" /><circle cx="12" cy="12" r="9" /></svg>
+                  <strong>Естественная</strong><span>мимика</span>
+                </div>
+                <div>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5.5 21a6.5 6.5 0 0 1 13 0" /></svg>
+                  <strong>Подбор</strong><span>индивидуально</span>
+                </div>
+              </div>
+              <div class="contour-editorial__zones">
+                <p>Зоны коррекции:</p>
+                <ul>
+                  <li>Губы</li>
+                  <li>Скулы</li>
+                  <li>Подбородок</li>
+                  <li>Носогубные складки</li>
+                  <li>Углы нижней челюсти</li>
+                  <li>Носослёзная борозда</li>
+                </ul>
+              </div>
             </div>
             <figure class="contour-editorial__cover">
               <img src="contour-plastic-cover.jpg" alt="Контурная пластика лица с индивидуальным подбором зоны коррекции" loading="lazy" decoding="async" width="1003" height="1568" />
             </figure>
-            <div class="contour-editorial__facts" aria-label="Особенности контурной пластики">
-              <div>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12c2-4 5-6 8-6s6 2 8 6c-2 4-5 6-8 6s-6-2-8-6Z" /><circle cx="12" cy="12" r="2.5" /></svg>
-                <strong>Гармонизация</strong><span>пропорций</span>
-              </div>
-              <div>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c2.5 2.5 5 3.5 7 3.5s4.5-1 7-3.5M7 9h.01M17 9h.01" /><circle cx="12" cy="12" r="9" /></svg>
-                <strong>Естественная</strong><span>мимика</span>
-              </div>
-              <div>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5.5 21a6.5 6.5 0 0 1 13 0" /></svg>
-                <strong>Подбор</strong><span>индивидуально</span>
-              </div>
-            </div>
-            <div class="contour-editorial__zones">
-              <p>Зоны коррекции:</p>
-              <ul>
-                <li>Губы</li>
-                <li>Скулы</li>
-                <li>Подбородок</li>
-                <li>Носогубные складки</li>
-                <li>Углы нижней челюсти</li>
-                <li>Носослёзная борозда</li>
-              </ul>
-            </div>
           </section>
 
           <section class="contour-editorial__result" aria-labelledby="contour-result-title">
@@ -9386,20 +12556,60 @@ if ('IntersectionObserver' in window) {
               <button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото контурной пластики">‹</button>
               <div class="modal-carousel__viewport">
                 <figure class="modal-carousel__slide is-active">
-                  <img src="contour-plastic-olga-01.jpeg" alt="До и после контурной пластики губ — Dr. Olga_cosmetolog" loading="lazy" decoding="async" width="1320" height="2346" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики — Dr. Olga_cosmetolog</figcaption>
+                  <img src="contour-plastic-olga-01-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики — губы</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
-                  <img src="contour-plastic-olga-02.jpeg" alt="До и после контурной пластики губ — Dr. Olga_cosmetolog" loading="lazy" decoding="async" width="1320" height="2346" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики — Dr. Olga_cosmetolog</figcaption>
+                  <img src="contour-plastic-olga-02-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики — губы</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
-                  <img src="contour-plastic-olga-03.jpeg" alt="До и после контурной пластики губ — Dr. Olga_cosmetolog" loading="lazy" decoding="async" width="720" height="1280" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики — Dr. Olga_cosmetolog</figcaption>
+                  <img src="contour-plastic-olga-03-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики — губы</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
-                  <img src="contour-plastic-olga-04.jpeg" alt="До и после контурной пластики губ — Dr. Olga_cosmetolog" loading="lazy" decoding="async" width="720" height="1280" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики — Dr. Olga_cosmetolog</figcaption>
+                  <img src="contour-plastic-olga-04-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики — губы</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-before-after.jpeg" alt="До и после контурной пластики губ: естественный объем и более четкий контур" loading="lazy" decoding="async" width="917" height="1280" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики губ</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-cheeks-before-after-clean.jpeg" alt="До и после контурной пластики скул: более выраженный объем и гармоничный профиль" loading="lazy" decoding="async" width="1271" height="1237" />
+                  <figcaption class="modal-result__caption">Результат контурной пластики скул</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-profile-before-after-clean.jpeg" alt="До и после контурной пластики: коррекция профиля и губ" loading="lazy" decoding="async" width="1122" height="1402" />
+                  <figcaption class="modal-result__caption">Контурная пластика — коррекция профиля</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-new-before-after-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — до и после</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-01-clean.jpeg" alt="До и после контурной пластики губ: более выраженный объем и контур" loading="lazy" decoding="async" width="941" height="1672" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 1</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-02.webp" alt="До и после контурной пластики губ: естественная коррекция формы" loading="lazy" decoding="async" width="1000" height="1778" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 2</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-03.webp" alt="До и после контурной пластики губ: гармоничный объем" loading="lazy" decoding="async" width="954" height="1662" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 3</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-04.webp" alt="До и после контурной пластики губ: деликатная коррекция объема" loading="lazy" decoding="async" width="1000" height="1752" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 4</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-05-clean.jpeg" alt="До и после контурной пластики губ: коррекция формы и объема" loading="lazy" decoding="async" width="941" height="1672" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 5</figcaption>
+                </figure>
+                <figure class="modal-carousel__slide">
+                  <img src="contour-lips-result-06-clean.jpeg" alt="До и после контурной пластики губ: естественный объем и четкий контур" loading="lazy" decoding="async" width="941" height="1672" />
+                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 6</figcaption>
                 </figure>
               </div>
               <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото контурной пластики">›</button>
@@ -10184,7 +13394,7 @@ if ('IntersectionObserver' in window) {
       <div class="service-modal-backdrop" data-close="service-modal"></div>
       <div class="service-modal-dialog" tabindex="-1">
         <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
-        <h3 id="modal-clean-title">Чистки</h3>
+        <h3 id="modal-clean-title">Чистка лица</h3>
         <div class="service-modal-content peel-editorial">
           <section class="peel-hero" aria-labelledby="clean-editorial-title">
             <div class="peel-hero__intro">
@@ -10361,7 +13571,7 @@ if ('IntersectionObserver' in window) {
       <div class="service-modal-backdrop" data-close="service-modal"></div>
       <div class="service-modal-dialog" tabindex="-1">
         <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
-        <h3 id="modal-antistress-title">Антистресс программы</h3>
+        <h3 id="modal-antistress-title">Антистресс-программы</h3>
         <div class="service-modal-content">
           <section class="modal-detail-card modal-detail-card--intro">
             <h4>Услуга</h4>
