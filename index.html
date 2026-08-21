@@ -13491,6 +13491,17 @@ body::after {
   text-align: left !important;
 }
 
+:is(
+  .service-modal-content .result-summary__copy,
+  .service-modal-content .result-summary__note,
+  .service-modal-content .result-summary__note p,
+  .service-modal-content .peel-result__copy,
+  #modal-contour .contour-editorial__note,
+  #modal-contour .contour-editorial__note p
+) {
+  text-align: left !important;
+}
+
 </style>
   </head>
   <body>
@@ -14196,7 +14207,8 @@ const editorialServiceData = {
     concerns: ['Отёчность лица', 'Напряжение жевательных мышц', 'Нечёткий овал', 'Тусклый тон', 'Усталый вид'],
     resultTitle: 'До и после',
     results: [
-      { src: 'facial-massage-before-after.jpeg', alt: 'До и после массажа лица: профиль и более свежий вид кожи', caption: 'Результат массажа лица — профиль', width: 1320, height: 2346, crop: true }
+      { src: 'facial-massage-before-after.jpeg', alt: 'До и после массажа лица: профиль и более свежий вид кожи', caption: 'Результат массажа лица — профиль', width: 1320, height: 2346, crop: true },
+      { src: 'massage-result-phone.png', alt: 'Результат массажа лица: более свежий вид и работа с мимикой', caption: 'Результат массажа лица — работа с мимикой и овалом', width: 1086, height: 1448 }
     ],
     resultCopy: 'Выраженность эффекта зависит от причины отёчности, тонуса мышц и регулярности процедур. Массаж не заменяет медицинскую диагностику при стойких отёках.',
     steps: ['Оценка отёчности и мышечного тонуса', 'Подготовка кожи и выбор техники', 'Массаж лица, шеи и выбранных зон', 'Завершающий уход и домашние рекомендации'],
