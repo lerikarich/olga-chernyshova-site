@@ -13477,6 +13477,20 @@ body::after {
   text-align: left !important;
 }
 
+/* Keep every results label on the same left edge across all service cards. */
+:is(
+  .service-modal-content .result-summary__eyebrow,
+  .service-modal-content .result-summary > h4,
+  .service-modal-content .result-gallery > h4,
+  .service-modal-content .treatment-result > h4,
+  #modal-botox .botox-result > h4,
+  :is(#modal-peel, #modal-clean) .peel-result > h4,
+  #modal-contour .contour-editorial__result-copy > span,
+  #modal-contour .contour-editorial__result-copy > h4
+) {
+  text-align: left !important;
+}
+
 </style>
   </head>
   <body>
