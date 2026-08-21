@@ -13159,6 +13159,54 @@ body::after {
   }
 }
 
+/* Mobile hero order: copy, portrait, facts, then actions. */
+@media (max-width: 767px) {
+  #hero .container.hero-ref {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #hero .hero-ref .hero-content {
+    display: contents !important;
+  }
+
+  #hero .hero-ref .hero-script,
+  #hero .hero-ref h1,
+  #hero .hero-ref .hero-subcity.hero__tagline,
+  #hero .hero-ref .hero-visual,
+  #hero .hero-ref .hero-badges,
+  #hero .hero-ref .hero-actions {
+    width: 100% !important;
+  }
+
+  #hero .hero-ref .hero-script { order: 1 !important; }
+  #hero .hero-ref h1 { order: 2 !important; }
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    order: 3 !important;
+    max-width: none !important;
+    margin: 12px 0 0 !important;
+    font-size: clamp(.92rem, 4.4vw, 1.08rem) !important;
+    line-height: 1.22 !important;
+  }
+
+  #hero .hero-ref .hero-visual {
+    order: 4 !important;
+    height: clamp(280px, 78vw, 350px) !important;
+    min-height: 280px !important;
+    margin: 18px 0 0 !important;
+  }
+
+  #hero .hero-ref .hero-badges {
+    order: 5 !important;
+    margin-top: 18px !important;
+  }
+
+  #hero .hero-ref .hero-actions {
+    order: 6 !important;
+    margin-top: 20px !important;
+  }
+}
+
 </style>
   </head>
   <body>
