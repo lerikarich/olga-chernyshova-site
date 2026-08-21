@@ -13288,6 +13288,59 @@ body::after {
   padding-bottom: 8px !important;
 }
 
+/* Result cards: consistent left alignment and stronger editorial headings. */
+.result-summary,
+.result-gallery,
+#modal-botox .botox-result,
+:is(#modal-peel, #modal-clean) .peel-result {
+  text-align: left !important;
+}
+
+.result-summary__eyebrow,
+.result-summary h4,
+.result-gallery > h4,
+#modal-botox .botox-result > h4,
+:is(#modal-peel, #modal-clean) .peel-result > h4 {
+  text-align: left !important;
+  font-family: "Playfair Display", serif !important;
+}
+
+.result-summary__eyebrow {
+  font-family: "Manrope", sans-serif !important;
+}
+
+.result-summary h4,
+.result-gallery > h4,
+#modal-botox .botox-result > h4,
+:is(#modal-peel, #modal-clean) .peel-result > h4 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -.035em !important;
+}
+
+@media (min-width: 721px) {
+  .result-showcase,
+  #modal-botox .botox-result-layout,
+  :is(#modal-peel, #modal-clean) .peel-result-layout {
+    grid-template-columns: minmax(0, 1.3fr) minmax(250px, .7fr) !important;
+  }
+
+  .result-gallery,
+  #modal-botox .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .result-gallery .modal-carousel,
+  .result-gallery .treatment-result-media,
+  #modal-botox .botox-result .modal-carousel,
+  :is(#modal-peel, #modal-clean) .peel-result .modal-carousel {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
 </style>
   </head>
   <body>
