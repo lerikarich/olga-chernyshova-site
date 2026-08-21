@@ -13567,6 +13567,41 @@ body::after {
   }
 }
 
+/* Mobile hero: keep every line visible and frame Olga's face clearly. */
+@media (max-width: 767px) {
+  #hero .hero-ref h1 {
+    width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    width: 100% !important;
+    max-width: none !important;
+    overflow: visible !important;
+    font-size: clamp(.94rem, 4.2vw, 1.08rem) !important;
+    line-height: 1.28 !important;
+    text-wrap: pretty !important;
+  }
+
+  #hero .hero-ref .hero-subcity-line {
+    display: block !important;
+    white-space: normal !important;
+  }
+
+  #hero .hero-ref .hero-visual {
+    height: clamp(320px, 92vw, 390px) !important;
+    min-height: 320px !important;
+  }
+
+  #hero .hero-ref .hero-visual img {
+    object-position: center 20% !important;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.94) 8%, #000 16%, #000 92%, rgba(0,0,0,.72) 98%, transparent 100%) !important;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.94) 8%, #000 16%, #000 92%, rgba(0,0,0,.72) 98%, transparent 100%) !important;
+  }
+}
+
 </style>
   </head>
   <body>
