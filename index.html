@@ -13547,6 +13547,51 @@ body::after {
   }
 }
 
+/* Shared desktop rule: results copy left, before/after gallery right. */
+@media (min-width: 721px) {
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) {
+    grid-template-columns: minmax(250px, .82fr) minmax(0, 1.18fr) !important;
+    grid-template-areas: "summary gallery" !important;
+  }
+
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) > .result-summary {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) > :is(.result-gallery, .botox-result, .peel-result) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  #modal-contour .contour-editorial__result {
+    grid-template-columns: minmax(250px, .82fr) minmax(0, 1.18fr) !important;
+  }
+
+  #modal-contour .contour-editorial__result-copy {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    padding: 0 0 0 8px !important;
+  }
+
+  #modal-contour .contour-editorial__carousel {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+}
+
 /* Botox card keeps the results copy on the left and the gallery on the right. */
 @media (min-width: 721px) {
   #modal-botox .botox-result-layout {
