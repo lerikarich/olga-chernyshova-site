@@ -13207,6 +13207,62 @@ body::after {
   }
 }
 
+/* Before/after cards: desktop gallery left, explanatory copy right. */
+@media (min-width: 721px) {
+  .result-showcase,
+  #modal-botox .botox-result-layout,
+  :is(#modal-peel, #modal-clean) .peel-result-layout {
+    grid-template-columns: minmax(0, 1.18fr) minmax(250px, .82fr) !important;
+  }
+
+  .result-showcase > .result-gallery,
+  #modal-botox .botox-result-layout > .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result-layout > .peel-result {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .result-showcase > .result-summary,
+  #modal-botox .botox-result-layout > .result-summary,
+  :is(#modal-peel, #modal-clean) .peel-result-layout > .result-summary {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  #modal-botox .botox-result-layout,
+  :is(#modal-peel, #modal-clean) .peel-result-layout {
+    grid-template-areas:
+      "gallery summary"
+      "steps steps" !important;
+  }
+
+  .result-showcase:hover,
+  #modal-botox .botox-result-layout:hover,
+  :is(#modal-peel, #modal-clean) .peel-result-layout:hover {
+    box-shadow: 0 20px 52px rgba(44, 79, 58, .12);
+  }
+
+  .result-gallery .modal-carousel,
+  .result-gallery .treatment-result-media,
+  #modal-botox .botox-result .modal-carousel,
+  :is(#modal-peel, #modal-clean) .peel-result .modal-carousel {
+    transition: filter .25s ease, box-shadow .25s ease;
+  }
+
+  .result-gallery:hover .modal-carousel,
+  .result-gallery:hover .treatment-result-media,
+  #modal-botox .botox-result:hover .modal-carousel,
+  :is(#modal-peel, #modal-clean) .peel-result:hover .modal-carousel {
+    filter: brightness(1.04) saturate(1.03);
+  }
+
+  .result-summary :is(.btn, .btn-primary, .btn-unified, .details-btn):hover {
+    background: #588157 !important;
+    color: #fff !important;
+    box-shadow: 0 12px 28px rgba(49, 85, 68, .2);
+  }
+}
+
 </style>
   </head>
   <body>
