@@ -13516,6 +13516,12 @@ body::after {
   backdrop-filter: none !important;
 }
 
+/* The dialog itself receives focus programmatically; it is not an interactive control. */
+.gift-popup__dialog:focus,
+.gift-popup__dialog:focus-visible {
+  outline: none !important;
+}
+
 /* Procedure steps must size to their content, not stretch through the modal. */
 #modal-botox .botox-steps {
   align-self: start !important;
