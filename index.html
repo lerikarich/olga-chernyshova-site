@@ -13263,6 +13263,31 @@ body::after {
   }
 }
 
+/* Compact the procedure-steps section: prevent an oversized empty track. */
+.treatment-steps-section {
+  height: auto !important;
+  min-height: 0 !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.treatment-steps-section .treatment-steps,
+.treatment-steps-section .treatment-steps ol {
+  height: auto !important;
+  min-height: 0 !important;
+  align-content: start !important;
+}
+
+.treatment-steps-section .treatment-steps ol {
+  margin-top: 16px !important;
+}
+
+.treatment-steps-section .treatment-steps li {
+  min-height: 0 !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
 </style>
   </head>
   <body>
