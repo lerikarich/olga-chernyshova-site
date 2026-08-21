@@ -13510,6 +13510,25 @@ body::after {
   backdrop-filter: none !important;
 }
 
+/* Procedure steps must size to their content, not stretch through the modal. */
+#modal-botox .botox-steps {
+  align-self: start !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+#modal-botox .botox-steps ol {
+  flex: 0 0 auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  grid-template-rows: none !important;
+}
+
+#modal-botox .botox-steps li {
+  min-height: 0 !important;
+  padding: 8px 0 !important;
+}
+
 /* Botox card keeps the results copy on the left and the gallery on the right. */
 @media (min-width: 721px) {
   #modal-botox .botox-result-layout {
