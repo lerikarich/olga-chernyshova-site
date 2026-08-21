@@ -13859,6 +13859,50 @@ body::after {
   }
 }
 
+/* Mobile service cards: the compact ozone rhythm, with portrait covers kept secondary. */
+@media (max-width: 760px) {
+  #inject .service-card--plasma .service-media.service-photo,
+  #hardware .service-card--bbl .service-media.service-photo {
+    height: min(42vw, 170px) !important;
+    max-height: 170px !important;
+  }
+
+  #inject .service-card--plasma .service-media img {
+    object-position: center 28% !important;
+  }
+
+  #hardware .service-card--bbl .service-media img {
+    object-position: center 34% !important;
+  }
+}
+
+@media (max-width: 720px) {
+  /* Keep the long Botox heading safely inside the same compact frame as ozone therapy. */
+  #modal-botox .botox-hero__intro h4 {
+    max-width: 100% !important;
+    font-size: clamp(1.48rem, 7vw, 1.78rem) !important;
+    line-height: 1.06 !important;
+    letter-spacing: -.035em !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Portrait covers remain clearly visible but do not dominate the mobile treatment cards. */
+  :is(#modal-plasma, #modal-bbl) .treatment-hero__media {
+    height: min(42vw, 165px) !important;
+    min-height: 0 !important;
+    max-height: 165px !important;
+    align-self: start !important;
+  }
+
+  #modal-plasma .treatment-hero__media img {
+    object-position: center 28% !important;
+  }
+
+  #modal-bbl .treatment-hero__media img {
+    object-position: center 34% !important;
+  }
+}
+
 </style>
   </head>
   <body>
@@ -13988,7 +14032,7 @@ body::after {
               <p>Деликатная коррекция объемов и гармонизация черт лица с сохранением естественности.</p>
               <button class="details-btn service-modal-open" type="button" data-modal="modal-contour">подробнее</button>
             </article>
-            <article class="card reveal service-card">
+            <article class="card reveal service-card service-card--botox">
               <div class="service-media service-photo">
                 <img src="botox-cover.jpg" alt="Ботулинотерапия лица" loading="lazy" width="972" height="1619" />
               </div>
@@ -14020,7 +14064,7 @@ body::after {
               <p>Стимуляция плотности и упругости кожи для мягкого омолаживающего эффекта.</p>
               <button class="details-btn service-modal-open" type="button" data-modal="modal-collagen">подробнее</button>
             </article>
-            <article class="card reveal service-card">
+            <article class="card reveal service-card service-card--plasma">
               <div class="service-media service-photo">
                 <img src="plasma-therapy-cover.jpg" alt="Плазмотерапия кожи головы" loading="lazy" width="1024" height="1536" />
               </div>
@@ -14038,7 +14082,7 @@ body::after {
           <div class="cards-grid three-col">
             <article class="card reveal service-card"><div class="service-media service-photo"><picture><source srcset="rf-lifting-cover.webp" type="image/webp" /><img src="rf-lifting-cover.jpg" alt="Процедура RF-микроигольчатого лифтинга на аппарате Vivace" loading="lazy" decoding="async" width="1536" height="1024" /></picture></div>
               <h3>RF-микроигольчатый лифтинг</h3><p>Глубокое обновление, уплотнение и подтяжка кожи с помощью микроигл и RF-энергии.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-rf">подробнее</button></article>
-            <article class="card reveal service-card"><div class="service-media service-photo"><picture><source srcset="bbl-broadband-light.webp" type="image/webp" /><img src="bbl-broadband-light.png" alt="Процедура BBL для кожи лица" loading="lazy" decoding="async" width="941" height="1672" /></picture></div>
+            <article class="card reveal service-card service-card--bbl"><div class="service-media service-photo"><picture><source srcset="bbl-broadband-light.webp" type="image/webp" /><img src="bbl-broadband-light.png" alt="Процедура BBL для кожи лица" loading="lazy" decoding="async" width="941" height="1672" /></picture></div>
               <h3>BBL-фотоомоложение</h3><p>Широкополосный импульсный свет для ровного тона, сияния и улучшения качества кожи.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-bbl">подробнее</button></article>
             <article class="card reveal service-card" id="service-ozone" tabindex="-1"><div class="service-media service-photo"><picture><source srcset="ozone-therapy-cover.webp" type="image/webp" /><img src="ozone-therapy-cover.jpg" alt="Процедура озонотерапии для улучшения качества кожи" loading="lazy" decoding="async" width="1536" height="1024" /></picture></div>
               <h3>Озонотерапия</h3><p>Поддержка микроциркуляции и метаболизма кожи для здорового и ровного тона.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-ozone">подробнее</button></article>
