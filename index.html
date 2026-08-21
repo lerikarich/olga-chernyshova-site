@@ -13433,6 +13433,43 @@ body::after {
   }
 }
 
+/* Contour results: keep the photo on the left and the explanation on the right,
+   matching the shared before/after card pattern. */
+@media (min-width: 721px) {
+  #modal-contour .contour-editorial__result {
+    grid-template-columns: minmax(0, 1.32fr) minmax(260px, .68fr) !important;
+    align-items: start;
+  }
+
+  #modal-contour .contour-editorial__carousel {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+  }
+
+  #modal-contour .contour-editorial__result-copy {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 8px 0 0;
+  }
+}
+
+@media (max-width: 720px) {
+  #modal-contour .contour-editorial__result {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  #modal-contour .contour-editorial__carousel {
+    order: 1;
+    width: 100%;
+  }
+
+  #modal-contour .contour-editorial__result-copy {
+    order: 2;
+  }
+}
+
 </style>
   </head>
   <body>
@@ -14875,7 +14912,7 @@ if ('IntersectionObserver' in window) {
           <section class="contour-editorial__result" aria-labelledby="contour-result-title">
             <div class="contour-editorial__result-copy">
               <span>Результаты</span>
-              <h4 id="contour-result-title">Естественная коррекция объёмов и пропорций</h4>
+              <h4 id="contour-result-title">Естественная коррекция<br>объёмов и пропорций.</h4>
               <p>Процедура помогает скорректировать объемы, улучшить пропорции лица, смягчить возрастные изменения и сохранить естественную мимику.</p>
               <div class="contour-editorial__note">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5m0-8h.01" /></svg>
