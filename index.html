@@ -13779,6 +13779,62 @@ body::after {
   }
 }
 
+/* Final mobile compactness and complete hero label. */
+@media (max-width: 767px) {
+  #hero .hero-ref .hero-script {
+    width: max-content !important;
+    max-width: 100% !important;
+    margin: 0 0 8px !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    font-size: clamp(.62rem, 3.1vw, .78rem) !important;
+    letter-spacing: .08em !important;
+  }
+
+  #hero .hero-ref .hero-actions {
+    gap: 10px !important;
+    margin-top: 14px !important;
+  }
+
+  #hero .hero-ref .hero-actions .btn-unified,
+  #hero .hero-ref .hero-actions .hero-text-link {
+    min-height: 44px !important;
+    height: 44px !important;
+    padding: 0 14px !important;
+    font-size: .76rem !important;
+  }
+
+  #hero .hero-ref .hero-visual {
+    height: clamp(290px, 78vw, 330px) !important;
+    min-height: 290px !important;
+    margin-top: 12px !important;
+  }
+
+  #hero .hero-ref .hero-badges {
+    margin-top: 12px !important;
+  }
+
+  .treatment-modal .treatment-result-showcase,
+  .treatment-modal .treatment-result-layout {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  #modal-botox .botox-hero__media {
+    height: 140px !important;
+    min-height: 140px !important;
+    max-height: 140px !important;
+  }
+
+  #modal-botox .botox-hero__media img {
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 22% !important;
+  }
+}
+
 </style>
   </head>
   <body>
