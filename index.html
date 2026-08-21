@@ -13341,6 +13341,97 @@ body::after {
   }
 }
 
+/* Fixed procedure-steps pattern shared by every result card. */
+.treatment-steps-section,
+#modal-botox .botox-steps,
+:is(#modal-peel, #modal-clean) .peel-steps {
+  width: 100% !important;
+  border-top: 1px solid rgba(48, 79, 59, .18) !important;
+  border-bottom: 1px solid rgba(48, 79, 59, .18) !important;
+  padding: 26px 0 24px !important;
+}
+
+.treatment-steps-section .treatment-steps,
+#modal-botox .botox-steps,
+:is(#modal-peel, #modal-clean) .peel-steps {
+  width: 100% !important;
+}
+
+.treatment-steps-section .treatment-steps > h4,
+#modal-botox .botox-steps > h4,
+:is(#modal-peel, #modal-clean) .peel-steps > h4 {
+  margin: 0 !important;
+  color: #173d2a !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: clamp(2rem, 3.2vw, 2.8rem) !important;
+  line-height: 1.05 !important;
+  text-align: left !important;
+}
+
+.treatment-steps-section .treatment-steps ol,
+#modal-botox .botox-steps ol,
+:is(#modal-peel, #modal-clean) .peel-steps ol {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 2vw, 30px) !important;
+  margin: 34px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.treatment-steps-section .treatment-steps li,
+#modal-botox .botox-steps li,
+:is(#modal-peel, #modal-clean) .peel-steps li {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 14px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.treatment-steps-section .treatment-steps li > span,
+#modal-botox .botox-steps li > span,
+:is(#modal-peel, #modal-clean) .peel-steps li > span {
+  color: #315840 !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: clamp(2.5rem, 4vw, 3.5rem) !important;
+  line-height: .9 !important;
+}
+
+.treatment-steps-section .treatment-steps li > p,
+#modal-botox .botox-steps li > p,
+:is(#modal-peel, #modal-clean) .peel-steps li > p {
+  margin: 0 !important;
+  color: #42564a !important;
+  font-size: clamp(.82rem, 1.15vw, 1.05rem) !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+
+@media (max-width: 720px) {
+  .treatment-steps-section,
+  #modal-botox .botox-steps,
+  :is(#modal-peel, #modal-clean) .peel-steps {
+    padding: 22px 0 !important;
+  }
+
+  .treatment-steps-section .treatment-steps ol,
+  #modal-botox .botox-steps ol,
+  :is(#modal-peel, #modal-clean) .peel-steps ol {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px !important;
+    margin-top: 24px !important;
+  }
+
+  .treatment-steps-section .treatment-steps li,
+  #modal-botox .botox-steps li,
+  :is(#modal-peel, #modal-clean) .peel-steps li {
+    grid-template-columns: 54px minmax(0, 1fr) !important;
+  }
+}
+
 </style>
   </head>
   <body>
