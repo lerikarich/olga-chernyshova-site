@@ -13508,6 +13508,26 @@ body::after {
   backdrop-filter: none !important;
 }
 
+/* Botox card keeps the results copy on the left and the gallery on the right. */
+@media (min-width: 721px) {
+  #modal-botox .botox-result-layout {
+    grid-template-columns: minmax(250px, .82fr) minmax(0, 1.18fr) !important;
+    grid-template-areas:
+      "summary gallery"
+      "steps steps" !important;
+  }
+
+  #modal-botox .botox-result-layout > .result-summary {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  #modal-botox .botox-result-layout > .botox-result {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+}
+
 </style>
   </head>
   <body>
