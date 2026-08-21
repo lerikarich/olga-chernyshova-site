@@ -13528,6 +13528,45 @@ body::after {
   }
 }
 
+/* Compact, consistent typography for every service result card. */
+:is(
+  .service-modal-content .result-summary h4,
+  .service-modal-content .result-gallery > h4,
+  .service-modal-content .treatment-result > h4,
+  #modal-botox .botox-result > h4,
+  :is(#modal-peel, #modal-clean) .peel-result > h4,
+  #modal-contour .contour-editorial__result-copy h4
+) {
+  font-family: "Playfair Display", serif !important;
+  font-size: clamp(1.45rem, 2.4vw, 2.1rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.025em !important;
+}
+
+:is(
+  .service-modal-content .result-summary__copy,
+  .service-modal-content .result-summary__note p,
+  #modal-contour .contour-editorial__result-copy > p,
+  #modal-contour .contour-editorial__note p
+) {
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(.84rem, 1.1vw, 1rem) !important;
+  line-height: 1.55 !important;
+}
+
+@media (max-width: 720px) {
+  :is(
+    .service-modal-content .result-summary h4,
+    .service-modal-content .result-gallery > h4,
+    .service-modal-content .treatment-result > h4,
+    #modal-botox .botox-result > h4,
+    :is(#modal-peel, #modal-clean) .peel-result > h4,
+    #modal-contour .contour-editorial__result-copy h4
+  ) {
+    font-size: clamp(1.2rem, 6.5vw, 1.7rem) !important;
+  }
+}
+
 </style>
   </head>
   <body>
