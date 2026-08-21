@@ -13529,6 +13529,24 @@ body::after {
   padding: 8px 0 !important;
 }
 
+/* Biorevitalization: results copy left, before/after gallery right. */
+@media (min-width: 721px) {
+  #modal-biorev .treatment-result-showcase {
+    grid-template-columns: minmax(250px, .82fr) minmax(0, 1.18fr) !important;
+    grid-template-areas: "summary gallery" !important;
+  }
+
+  #modal-biorev .treatment-result-showcase > .result-summary {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  #modal-biorev .treatment-result-showcase > .result-gallery {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+}
+
 /* Botox card keeps the results copy on the left and the gallery on the right. */
 @media (min-width: 721px) {
   #modal-botox .botox-result-layout {
