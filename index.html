@@ -13433,6 +13433,56 @@ body::after {
   }
 }
 
+/* Unified green heading surfaces across every service detail card. */
+:is(.treatment-modal, #modal-botox, #modal-peel, #modal-clean, #modal-contour) :is(
+  .treatment-hero__intro h4,
+  .botox-hero__intro h4,
+  .treatment-result > h4,
+  .result-gallery > h4,
+  .result-summary > h4,
+  .botox-result > h4,
+  .treatment-steps > h4,
+  .botox-steps > h4,
+  .peel-steps > h4,
+  .treatment-faq > h4,
+  .botox-faq > h4,
+  .peel-faq > h4,
+  .treatment-consult h4,
+  .botox-consult h4,
+  .peel-consult h4
+) {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: .28em .62em;
+  border-radius: 12px;
+  background: #315840;
+  color: #fff;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+:is(.treatment-modal, #modal-botox, #modal-peel, #modal-clean, #modal-contour) :is(
+  .result-summary > h4,
+  .result-gallery > h4,
+  .treatment-result > h4
+) {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.08;
+}
+
+@media (max-width: 720px) {
+  :is(.treatment-modal, #modal-botox, #modal-peel, #modal-clean, #modal-contour) :is(
+    .treatment-hero__intro h4,
+    .botox-hero__intro h4,
+    .result-summary > h4,
+    .result-gallery > h4,
+    .treatment-result > h4
+  ) {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+  }
+}
+
 </style>
   </head>
   <body>
