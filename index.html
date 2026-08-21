@@ -13731,6 +13731,54 @@ body::after {
   }
 }
 
+/* Mobile result cards: remove stretched grid rows and excess vertical gaps. */
+@media (max-width: 720px) {
+  :is(
+    .treatment-modal .treatment-result-layout,
+    .treatment-modal .treatment-result-showcase,
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) {
+    grid-auto-rows: auto !important;
+    align-items: start !important;
+    row-gap: 18px !important;
+  }
+
+  :is(
+    .treatment-modal .result-summary,
+    .treatment-modal .result-gallery,
+    .result-summary,
+    .result-gallery,
+    #modal-botox .botox-result,
+    :is(#modal-peel, #modal-clean) .peel-result
+  ) {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+}
+
+/* Massage result: crop the source image's dark beige bands and use a light frame. */
+#modal-massage .treatment-result-crop {
+  height: min(46vw, 430px) !important;
+  aspect-ratio: .8 / 1 !important;
+  background: #f5f2ed !important;
+}
+
+#modal-massage .treatment-result-crop img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: #f5f2ed !important;
+}
+
+@media (max-width: 720px) {
+  #modal-massage .treatment-result-crop {
+    height: min(96vw, 420px) !important;
+  }
+}
+
 </style>
   </head>
   <body>
