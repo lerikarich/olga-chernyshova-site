@@ -4886,7 +4886,11 @@ li,
 }
 
 /* Gift offer for first-time visitors. */
-.gift-popup[hidden] { display: none; }
+.gift-popup[hidden] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
 .gift-popup {
   position: fixed;
   inset: 0;
@@ -15244,13 +15248,19 @@ if ('IntersectionObserver' in window) {
   const actionButtons = popup?.querySelectorAll('[data-gift-action]') || [];
   const sessionKey = 'olga-gift-seen';
   let giftLastFocused = null;
+  let giftTimer = null;
 
   if (!popup || !dialog || !target) return;
 
   function closeGift() {
+    if (giftTimer) window.clearTimeout(giftTimer);
+    giftTimer = null;
     popup.hidden = true;
+    popup.setAttribute('aria-hidden', 'true');
+    popup.inert = true;
     document.body.classList.remove('modal-open');
     try { sessionStorage.setItem(sessionKey, '1'); } catch (error) { /* Storage may be unavailable. */ }
+    try { localStorage.setItem(sessionKey, '1'); } catch (error) { /* Storage may be unavailable. */ }
     giftLastFocused?.focus?.();
   }
 
@@ -15258,6 +15268,8 @@ if ('IntersectionObserver' in window) {
     if (activeModal || !popup.hidden) return;
     giftLastFocused = document.activeElement;
     popup.hidden = false;
+    popup.removeAttribute('aria-hidden');
+    popup.inert = false;
     document.body.classList.add('modal-open');
     dialog.focus();
   }
@@ -15290,10 +15302,11 @@ if ('IntersectionObserver' in window) {
 
   let alreadySeen = false;
   try { alreadySeen = sessionStorage.getItem(sessionKey) === '1'; } catch (error) { /* Show normally. */ }
+  try { alreadySeen = alreadySeen || localStorage.getItem(sessionKey) === '1'; } catch (error) { /* Show normally. */ }
   // Let visitors explore the page before showing the first-visit offer.
   if (!alreadySeen) {
     const giftDelay = 20000 + Math.round(Math.random() * 10000);
-    window.setTimeout(openGift, giftDelay);
+    giftTimer = window.setTimeout(openGift, giftDelay);
   }
 })();
 
