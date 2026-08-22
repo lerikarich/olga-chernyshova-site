@@ -13829,15 +13829,16 @@ body::after {
 
 @media (max-width: 720px) {
   #modal-botox .botox-hero__media {
-    height: 140px !important;
-    min-height: 140px !important;
-    max-height: 140px !important;
+    /* Более высокий кадр сохраняет лоб, глаза и нижнюю часть лица. */
+    height: clamp(190px, 54vw, 210px) !important;
+    min-height: clamp(190px, 54vw, 210px) !important;
+    max-height: 210px !important;
   }
 
   #modal-botox .botox-hero__media img {
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center 22% !important;
+    object-position: center 10% !important;
   }
 
   #modal-botox .botox-carousel .modal-carousel__crop--relatox,
