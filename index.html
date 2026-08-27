@@ -12,23 +12,28 @@
       name="keywords"
       content="косметолог, инъекционная косметология, аппаратная косметология, биоревитализация, RF-лифтинг, Ольга Чернышова"
     />
-    <meta name="theme-color" content="#588157" />
+    <meta name="theme-color" content="#1b6b45" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Marck+Script&family=Playfair+Display:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
 :root {
-  --primary: #588157;
-  --primary-dark: #3f6b56;
-  --primary-light: #a3b18a;
+  --primary: #1b6b45;
+  --primary-dark: #0f4a2f;
+  --primary-light: #d8ded2;
   --bg-soft: #f7f9f6;
+  --title: #1b6b45;
   --text: #2f3b33;
-  --text-muted: #667468;
+  --text-muted: #4d5b50;
   --line: #d8ded2;
   --white: #ffffff;
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --shadow-card: 0 8px 20px rgba(15, 74, 47, .08);
+  --shadow-action: 0 6px 16px rgba(15, 74, 47, .22);
   --container: min(1180px, 92vw);
 }
 
@@ -54,6 +59,7 @@ h1,h2,h3,h4,p,li,button,a,span {
 
 .section-title {
   margin: 0 0 24px;
+  color: var(--title);
   font-family: "Playfair Display", serif;
   font-size: clamp(1.8rem, 2.8vw, 2.8rem);
   line-height: 1.15;
@@ -111,14 +117,14 @@ h1,h2,h3,h4,p,li,button,a,span {
 .btn:hover { transform: translateY(-2px); }
 .btn-primary,
 .btn-unified {
-  background: linear-gradient(130deg, #588157, #3f6b56);
-  color: #fff;
-  border: 1px solid rgba(88,129,87,0.22);
-  box-shadow: 0 14px 34px rgba(54,89,67,0.16);
+  background: linear-gradient(135deg, #1b6b45 0%, #0f4a2f 100%);
+  color: #ffffff;
+  border: 1px solid rgba(15,74,47,0.22);
+  box-shadow: 0 6px 16px rgba(15,74,47,.22);
 }
 .btn-primary:hover,
 .btn-unified:hover {
-  background: linear-gradient(130deg, #4f7750, #365943);
+  background: linear-gradient(135deg, #17603e 0%, #0c3f28 100%);
 }
 
 .burger {
@@ -4462,7 +4468,7 @@ li,
   content: "✦";
   display: block;
   margin-bottom: 8px;
-  color: #c3b99c;
+  color: var(--title);
   font-size: 1rem;
 }
 
@@ -4914,7 +4920,7 @@ li,
   width: min(900px, 100%);
   max-height: calc(100dvh - 36px);
   overflow: auto;
-  border: 1px solid rgba(183, 158, 105, .42);
+  border: 1px solid rgba(15, 74, 47, .28);
   border-radius: 32px;
   background: #fbfaf6;
   box-shadow: 0 32px 100px rgba(32, 49, 37, .3);
@@ -4947,7 +4953,7 @@ li,
   background:
     radial-gradient(circle at 28% 22%, rgba(255,255,255,.95) 0 4px, transparent 5px),
     radial-gradient(circle at 72% 68%, rgba(255,255,255,.7) 0 3px, transparent 4px),
-    linear-gradient(145deg, #fff1de, #f6d8c7);
+    linear-gradient(145deg, #ffffff, #f7f9f6);
 }
 .gift-popup__visual::before,
 .gift-popup__visual::after {
@@ -4955,7 +4961,7 @@ li,
   position: absolute;
   width: 260px;
   height: 260px;
-  border: 1px solid rgba(183, 158, 105, .18);
+  border: 1px solid rgba(15, 74, 47, .16);
   border-radius: 50%;
 }
 .gift-popup__visual::after { width: 340px; height: 340px; opacity: .56; }
@@ -4984,7 +4990,7 @@ li,
   border-radius: 8px 8px 18px 18px;
   background:
     linear-gradient(180deg, rgba(255,255,255,.12), transparent 22%),
-    linear-gradient(145deg, #a61d25, #7f141c);
+    linear-gradient(145deg, #1b6b45, #0f4a2f);
 }
 .gift-box__lid {
   position: absolute;
@@ -4995,7 +5001,7 @@ li,
   border-radius: 9px;
   background:
     linear-gradient(180deg, rgba(255,255,255,.14), transparent 22%),
-    linear-gradient(145deg, #c32830, #8f1920);
+    linear-gradient(145deg, #1b6b45, #0f4a2f);
 }
 .gift-box__ribbon-v {
   position: absolute;
@@ -5004,7 +5010,7 @@ li,
   bottom: 13px;
   left: 94px;
   width: 32px;
-  background: linear-gradient(90deg, #b88b2f, #f1d68b, #b07c1f);
+  background: linear-gradient(90deg, #d8ded2, #ffffff, #d8ded2);
 }
 .gift-box__bow::before,
 .gift-box__bow::after {
@@ -5014,7 +5020,7 @@ li,
   top: 14px;
   width: 68px;
   height: 54px;
-  border: 15px solid #d4af37;
+  border: 15px solid #d8ded2;
   background: transparent;
 }
 .gift-box__bow::before { left: 43px; border-radius: 55% 48% 28% 58%; transform: rotate(16deg); }
@@ -5026,7 +5032,7 @@ li,
   bottom: -26px;
   width: max-content;
   transform: translateX(-50%);
-  color: #5d4b2d;
+  color: var(--text);
   font-size: .8rem;
   font-weight: 700;
   letter-spacing: .08em;
@@ -5041,13 +5047,13 @@ li,
   align-items: center;
   gap: 9px;
   margin: 0 0 16px;
-  color: #7d5f2a;
+  color: var(--title);
   font-size: .76rem;
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-.gift-popup__eyebrow::before { content: "✦"; color: #b69757; }
+.gift-popup__eyebrow::before { content: "✦"; color: var(--title); }
 .gift-popup__title {
   margin: 0;
   color: #294635;
@@ -6915,7 +6921,7 @@ li,
   --contour-muted: #6f7d73;
   --contour-line: rgba(40, 73, 52, .13);
   --contour-soft: #f2f4ee;
-  --contour-card: rgba(255, 255, 252, .84);
+  --contour-card: linear-gradient(155deg, rgba(242, 237, 248, .92), rgba(255, 253, 250, .86));
   width: 100%;
   max-width: none;
   margin: 0;
@@ -8198,7 +8204,6 @@ li,
   --peel-green-deep: #143f2e;
   --peel-green-forest: #1e5a40;
   --peel-green-sage: #55765f;
-  --peel-gold-muted: #a68a59;
   --peel-text-main: #263d34;
   --peel-text-muted: #64756b;
   --peel-soft-border: rgba(20, 63, 46, .1);
@@ -8231,7 +8236,7 @@ li,
   font-size: clamp(3.25rem, 5vw, 4.75rem);
   line-height: 1;
   letter-spacing: -.035em;
-  background: linear-gradient(115deg, #123d2b 0%, #1e5a40 48%, #8b7651 100%);
+  background: linear-gradient(115deg, #1b6b45 0%, #0f4a2f 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -8250,7 +8255,7 @@ li,
   font-size: clamp(2rem, 3vw, 2.875rem);
   line-height: 1.05;
   letter-spacing: -.025em;
-  background: linear-gradient(100deg, #163f2e 0%, #2f6248 65%, #7a684b 100%);
+  background: linear-gradient(100deg, #1b6b45 0%, #0f4a2f 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -8286,7 +8291,7 @@ li,
 }
 
 #modal-peel .peel-concerns > p {
-  color: #8a7049;
+  color: var(--title);
   font-weight: 700;
 }
 
@@ -10343,6 +10348,7 @@ main {
   }
 
   #reviews .reviews-track-wrap {
+    height: clamp(340px, 58svh, 460px);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
@@ -10350,7 +10356,6 @@ main {
     scrollbar-width: none;
     overscroll-behavior-inline: contain;
     touch-action: pan-x pan-y;
-    transition: height .25s ease;
     -webkit-mask-image: none;
     mask-image: none;
   }
@@ -10361,7 +10366,8 @@ main {
 
   #reviews .reviews-track {
     width: 100%;
-    align-items: flex-start;
+    height: 100%;
+    align-items: stretch;
     gap: 14px !important;
     transform: none !important;
   }
@@ -10370,9 +10376,9 @@ main {
   #reviews .review-slide--compact {
     flex: 0 0 100% !important;
     width: 100%;
-    height: auto;
-    min-height: 0;
-    align-self: flex-start;
+    height: 100%;
+    min-height: 100%;
+    align-self: stretch;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     padding: 7px;
@@ -10382,8 +10388,8 @@ main {
   #reviews .review-slide--compact .review-screenshot {
     display: flex;
     width: 100%;
-    height: auto;
-    min-height: 0;
+    height: 100%;
+    min-height: 100%;
     align-items: center;
     justify-content: center;
     aspect-ratio: auto;
@@ -10392,11 +10398,11 @@ main {
   #reviews .review-screenshot img,
   #reviews .review-slide--compact .review-screenshot img {
     display: block;
-    width: auto;
+    width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 100%;
     min-height: 0;
-    max-height: min(64svh, 560px);
+    max-height: none;
     object-fit: contain;
   }
 
@@ -11641,7 +11647,7 @@ main {
     line-height: 1.22 !important;
   }
 
-  #hero .hero-ref .hero-subcity-line {
+  #hero .hero-ref .hero__tagline .hero-subcity-line {
     display: block !important;
     white-space: normal !important;
   }
@@ -13105,6 +13111,7 @@ body::after {
 
 /* Unified button language: pill shape, text only, no decorative arrows. */
 :is(button, .btn, .btn-unified, .btn-primary, .hero-text-link, .hero-outline-btn, .inline-more, .details-btn, .process-btn, .luxury-main-btn, .recommend-cta .btn) {
+  font-family: inherit;
   border-radius: 999px !important;
   transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, background-position .35s ease !important;
 }
@@ -13164,52 +13171,261 @@ body::after {
   }
 }
 
-/* Mobile hero order: copy, portrait, facts, then actions. */
+/* The benefit list remains inside the desktop hero and becomes its own block
+   only on phones, where it follows the full-screen introduction. */
+.hero-mobile-benefits { display: none; }
+
+/* Mobile hero: one photograph-led first screen. This consolidates the former
+   mobile order/portrait/compactness overrides without affecting tablet or desktop. */
 @media (max-width: 767px) {
-  #hero .container.hero-ref {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  #hero .hero-ref .hero-content {
-    display: contents !important;
-  }
-
-  #hero .hero-ref .hero-script,
-  #hero .hero-ref h1,
-  #hero .hero-ref .hero-subcity.hero__tagline,
-  #hero .hero-ref .hero-visual,
-  #hero .hero-ref .hero-badges,
-  #hero .hero-ref .hero-actions {
-    width: 100% !important;
-  }
-
-  #hero .hero-ref .hero-script { order: 1 !important; }
-  #hero .hero-ref h1 { order: 2 !important; }
-  #hero .hero-ref .hero-subcity.hero__tagline {
-    order: 3 !important;
+  #hero.hero.section {
+    position: relative;
+    width: 100vw !important;
     max-width: none !important;
-    margin: 12px 0 0 !important;
-    font-size: clamp(.92rem, 4.4vw, 1.08rem) !important;
-    line-height: 1.22 !important;
+    margin: 0 !important;
+    margin-left: calc(50% - 50vw) !important;
+    min-height: calc(100vh - 82px);
+    min-height: calc(100svh - 82px);
+    padding: 0 !important;
+    display: block;
+    overflow: hidden;
+    border-radius: 0 !important;
+    background: #e7ddd3;
+  }
+
+  #hero.hero.section::before,
+  #hero.hero.section::after {
+    content: none !important;
+  }
+
+  #hero .container.hero-ref {
+    position: relative !important;
+    width: 100% !important;
+    min-height: inherit !important;
+    margin: 0 !important;
+    padding: calc(36px + env(safe-area-inset-top)) 20px calc(12px + env(safe-area-inset-bottom)) !important;
+    display: block !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+    background: #e7ddd3 !important;
+    isolation: isolate;
+  }
+
+  #hero .container.hero-ref::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      linear-gradient(to bottom, rgba(247, 243, 237, .52) 0%, rgba(247, 243, 237, 0) 30%),
+      linear-gradient(to top, rgba(37, 72, 51, .76) 0%, rgba(52, 88, 65, .4) 35%, rgba(52, 88, 65, 0) 62%);
   }
 
   #hero .hero-ref .hero-visual {
-    order: 4 !important;
-    height: clamp(280px, 78vw, 350px) !important;
-    min-height: 280px !important;
-    margin: 18px 0 0 !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    background: #e7ddd3 !important;
+  }
+
+  #hero .hero-ref .hero-visual::before,
+  #hero .hero-ref .hero-visual::after {
+    content: none !important;
+  }
+
+  #hero .hero-ref .hero-visual picture,
+  #hero .hero-ref .hero-visual img {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    object-fit: cover !important;
+    object-position: 10% center !important;
+    transform: none !important;
+    filter: none !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  #hero .hero-ref .hero-visual img {
+    inset: auto !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 118% !important;
+    height: 118% !important;
+  }
+
+  #hero .hero-ref .hero-content {
+    position: relative !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: calc(100svh - 82px - 48px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #hero .hero-ref .hero-script {
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 0 10px !important;
+    color: #244b36 !important;
+    font-family: "Manrope", sans-serif !important;
+    font-size: clamp(.66rem, 3.1vw, .78rem) !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: .1em !important;
+    white-space: nowrap !important;
+  }
+
+  #hero .hero-ref h1 {
+    width: 100% !important;
+    order: 1;
+    margin: auto 0 0 !important;
+    color: #1e4932 !important;
+    font-family: "Playfair Display", serif !important;
+    font-size: clamp(1.7rem, 8.5vw, 2.2rem) !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    letter-spacing: -.045em !important;
+    white-space: nowrap !important;
+  }
+
+  #hero .hero-ref h1 span,
+  #hero .hero-ref h1 span + span {
+    display: inline !important;
+  }
+
+  #hero .hero-ref h1 span + span::before {
+    content: " " !important;
+  }
+
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    order: 2;
+    width: min(100%, 23ch) !important;
+    max-width: none !important;
+    margin: 8px 0 0 !important;
+    color: #fffdf9 !important;
+    font-family: "Manrope", sans-serif !important;
+    font-size: clamp(.78rem, 4vw, 1rem) !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -.025em !important;
+    text-shadow: 0 1px 12px rgba(26, 53, 38, .25);
+  }
+
+  #hero .hero-ref .hero__tagline .hero-subcity-line {
+    display: block !important;
+    white-space: nowrap !important;
   }
 
   #hero .hero-ref .hero-badges {
-    order: 5 !important;
-    margin-top: 18px !important;
+    display: grid !important;
+    order: 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 10px 0 0 !important;
+    gap: 6px !important;
+  }
+
+  #hero .hero-ref .hero-badges span,
+  #hero .hero-ref .hero-badges span:first-child,
+  #hero .hero-ref .hero-badges span:last-child {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px !important;
+    padding: 5px 4px !important;
+    border: 1px solid rgba(255, 255, 252, .82) !important;
+    border-radius: 14px !important;
+    color: var(--primary-dark) !important;
+    background: rgba(255, 255, 252, .78) !important;
+    box-shadow: 0 5px 14px rgba(35, 62, 44, .1) !important;
+    font-size: clamp(.52rem, 2.35vw, .62rem) !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+  }
+
+  #hero .hero-ref .hero-badges strong {
+    display: block !important;
+    width: 100% !important;
+    color: var(--primary-dark) !important;
+    font: inherit !important;
+    text-align: center !important;
   }
 
   #hero .hero-ref .hero-actions {
-    order: 6 !important;
-    margin-top: 20px !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    order: 4;
+    margin: 14px 0 0 !important;
+    gap: 10px !important;
   }
+
+  #hero .hero-ref .hero-actions .btn-unified,
+  #hero .hero-ref .hero-actions .hero-text-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 58px !important;
+    height: 58px !important;
+    padding: 0 18px !important;
+    border-radius: var(--radius-pill) !important;
+    font-size: .94rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  #hero .hero-ref .hero-actions .hero-text-link {
+    border: 1px solid rgba(255, 255, 252, .72) !important;
+    color: #244b36 !important;
+    background: rgba(255, 255, 252, .84) !important;
+    text-decoration: none !important;
+  }
+
+  .hero-mobile-benefits {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 720px) {
+  #hero .container.hero-ref {
+    padding-top: calc(14px + env(safe-area-inset-top)) !important;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom)) !important;
+  }
+
+  #hero .hero-ref .hero-content {
+    min-height: calc(100svh - 82px - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+  }
+
+  #hero .hero-ref h1 { font-size: clamp(2.65rem, 13vw, 3.35rem) !important; }
+  #hero .hero-ref .hero-subcity.hero__tagline { font-size: clamp(1.1rem, 5.2vw, 1.25rem) !important; }
+  #hero .hero-ref .hero-actions { margin-top: 10px !important; }
+  #hero .hero-ref .hero-actions .btn-unified,
+  #hero .hero-ref .hero-actions .hero-text-link { min-height: 54px !important; height: 54px !important; }
+  #hero .hero-ref .hero-badges { margin-top: 8px !important; }
+  #hero .hero-ref .hero-badges span { min-height: 38px !important; }
 }
 
 /* Before/after cards: desktop gallery left, explanatory copy right. */
@@ -13354,6 +13570,15 @@ body::after {
   border-top: 1px solid rgba(48, 79, 59, .18) !important;
   border-bottom: 1px solid rgba(48, 79, 59, .18) !important;
   padding: 26px 0 24px !important;
+}
+
+/* Этапы идут цельным блоком: без дублирующих линий до и после секции. */
+.treatment-modal .result-showcase,
+.treatment-modal .treatment-result-layout,
+.treatment-modal .treatment-steps-section,
+.treatment-modal .treatment-steps-section .treatment-steps {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
 }
 
 .treatment-steps-section .treatment-steps,
@@ -13667,41 +13892,6 @@ body::after {
   }
 }
 
-/* Mobile hero: keep every line visible and frame Olga's face clearly. */
-@media (max-width: 767px) {
-  #hero .hero-ref h1 {
-    width: 100% !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-  }
-
-  #hero .hero-ref .hero-subcity.hero__tagline {
-    width: 100% !important;
-    max-width: none !important;
-    overflow: visible !important;
-    font-size: clamp(.94rem, 4.2vw, 1.08rem) !important;
-    line-height: 1.28 !important;
-    text-wrap: pretty !important;
-  }
-
-  #hero .hero-ref .hero-subcity-line {
-    display: block !important;
-    white-space: normal !important;
-  }
-
-  #hero .hero-ref .hero-visual {
-    height: clamp(320px, 92vw, 390px) !important;
-    min-height: 320px !important;
-  }
-
-  #hero .hero-ref .hero-visual img {
-    object-position: center 20% !important;
-    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.94) 8%, #000 16%, #000 92%, rgba(0,0,0,.72) 98%, transparent 100%) !important;
-    mask-image: linear-gradient(180deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.94) 8%, #000 16%, #000 92%, rgba(0,0,0,.72) 98%, transparent 100%) !important;
-  }
-}
-
 /* Soft sage accent inside the contour-plasty card. */
 #modal-contour .contour-editorial {
   background:
@@ -13789,41 +13979,8 @@ body::after {
   }
 }
 
-/* Final mobile compactness and complete hero label. */
+/* Mobile treatment cards. */
 @media (max-width: 767px) {
-  #hero .hero-ref .hero-script {
-    width: max-content !important;
-    max-width: 100% !important;
-    margin: 0 0 8px !important;
-    overflow: visible !important;
-    white-space: nowrap !important;
-    font-size: clamp(.62rem, 3.1vw, .78rem) !important;
-    letter-spacing: .08em !important;
-  }
-
-  #hero .hero-ref .hero-actions {
-    gap: 10px !important;
-    margin-top: 14px !important;
-  }
-
-  #hero .hero-ref .hero-actions .btn-unified,
-  #hero .hero-ref .hero-actions .hero-text-link {
-    min-height: 44px !important;
-    height: 44px !important;
-    padding: 0 14px !important;
-    font-size: .76rem !important;
-  }
-
-  #hero .hero-ref .hero-visual {
-    height: clamp(290px, 78vw, 330px) !important;
-    min-height: 290px !important;
-    margin-top: 12px !important;
-  }
-
-  #hero .hero-ref .hero-badges {
-    margin-top: 12px !important;
-  }
-
   .treatment-modal .treatment-result-showcase,
   .treatment-modal .treatment-result-layout {
     padding-top: 16px !important;
@@ -13864,14 +14021,8 @@ body::after {
   }
 }
 
-/* Mobile service cards: the compact ozone rhythm, with portrait covers kept secondary. */
+/* Mobile service cards: keep individual crop alignment without changing card height. */
 @media (max-width: 760px) {
-  #inject .service-card--plasma .service-media.service-photo,
-  #hardware .service-card--bbl .service-media.service-photo {
-    height: min(42vw, 170px) !important;
-    max-height: 170px !important;
-  }
-
   #inject .service-card--plasma .service-media img {
     object-position: center 28% !important;
   }
@@ -13906,6 +14057,1502 @@ body::after {
   #modal-bbl .treatment-hero__media img {
     object-position: center 34% !important;
   }
+}
+
+/* Editorial parity: peel, cleansing and botox follow the contour-plasty type scale. */
+:is(#modal-peel, #modal-clean) .peel-hero__intro h4,
+#modal-botox .botox-hero__intro h4 {
+  color: #173d2a !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: clamp(2rem, 2.6vw, 2.08rem) !important;
+  font-weight: 650 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.025em !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-hero__intro p,
+#modal-botox .botox-hero__intro p {
+  color: #2e4436 !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: .96rem !important;
+  line-height: 1.62 !important;
+}
+
+#modal-peel .peel-result h4,
+#modal-peel .peel-steps h4,
+#modal-clean .peel-result h4,
+#modal-clean .peel-steps h4,
+#modal-botox .botox-result h4,
+#modal-botox .botox-steps h4 {
+  color: #173d2a !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 650 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -.025em !important;
+}
+
+#modal-peel .result-summary h4,
+#modal-clean .result-summary h4,
+#modal-botox .result-summary h4 {
+  color: #173d2a !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: clamp(1.2rem, 2vw, 1.75rem) !important;
+  font-weight: 650 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.025em !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-consult h4,
+#modal-botox .botox-consult h4 {
+  color: #173d2a !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: .98rem !important;
+  font-weight: 750 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-result-layout,
+#modal-botox .botox-result-layout {
+  gap: 28px !important;
+  padding: 28px 8px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq,
+#modal-botox .botox-faq {
+  padding: 26px 0 !important;
+  border-bottom: 1px solid rgba(40, 73, 52, .13) !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq > h4,
+#modal-botox .botox-faq > h4 {
+  margin: 0 8px 16px !important;
+  color: #173d2a !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 650 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -.025em !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq details,
+#modal-botox .botox-faq details {
+  margin-top: 9px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(40, 73, 52, .13) !important;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 252, .76) !important;
+  transform: none !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq details[open],
+#modal-botox .botox-faq details[open] {
+  border-color: rgba(48, 84, 58, .24) !important;
+  background: #fffefb !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq summary,
+#modal-botox .botox-faq summary {
+  min-height: 58px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 18px !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 14px 18px !important;
+  color: #294333 !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: .86rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  list-style: none !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq summary svg {
+  display: none !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq summary::after,
+#modal-botox .botox-faq summary::after {
+  justify-self: end;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq details > div,
+#modal-botox .botox-faq details > div {
+  padding: 0 18px 20px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq details p,
+:is(#modal-peel, #modal-clean) .peel-faq details li,
+:is(#modal-peel, #modal-clean) .peel-faq__result-list,
+#modal-botox .botox-faq details p {
+  color: #6f7d73 !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: .78rem !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 720px) {
+  :is(#modal-peel, #modal-clean) .peel-hero__intro h4,
+  #modal-botox .botox-hero__intro h4 {
+    font-size: clamp(2rem, 9vw, 2.35rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.025em !important;
+    overflow-wrap: normal !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-faq,
+  #modal-botox .botox-faq {
+    padding: 24px 0 !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-result-layout,
+  #modal-botox .botox-result-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    padding: 24px 8px !important;
+  }
+}
+
+/* Results layout: a balanced before/after gallery on the left and outcome copy on the right. */
+@media (min-width: 1025px) {
+  :is(#modal-peel, #modal-clean) .service-modal-dialog {
+    width: min(1520px, calc(100vw - 48px)) !important;
+    max-width: min(1520px, calc(100vw - 48px)) !important;
+  }
+
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.667fr) minmax(0, 1fr) !important;
+    grid-template-areas:
+      "gallery summary"
+      "steps steps" !important;
+    align-items: start !important;
+    grid-auto-rows: auto !important;
+    column-gap: clamp(60px, 5vw, 80px) !important;
+    row-gap: 24px !important;
+  }
+
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) > :is(.result-gallery, .botox-result, .peel-result) {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+    height: auto !important;
+    margin-top: 0 !important;
+  }
+
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) > .result-summary {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #modal-contour .contour-editorial__result {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.667fr) minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: clamp(60px, 5vw, 80px) !important;
+  }
+
+  #modal-contour .contour-editorial__carousel {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+    width: 100% !important;
+  }
+
+  #modal-contour .contour-editorial__result-copy {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+    padding: 0 !important;
+  }
+
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) > .result-summary {
+    padding-top: 2px !important;
+  }
+
+  .result-summary__eyebrow {
+    margin-bottom: 12px !important;
+  }
+
+  .result-summary__copy {
+    min-height: 0 !important;
+    margin-top: 14px !important;
+    font-size: clamp(.82rem, .98vw, .92rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  .result-summary__note {
+    flex-basis: auto !important;
+    min-height: 0 !important;
+    margin-top: 16px !important;
+    padding-top: 14px !important;
+  }
+
+  .result-summary__note p {
+    font-size: .72rem !important;
+    line-height: 1.48 !important;
+  }
+
+  #modal-contour .contour-editorial__result-copy > span {
+    margin-bottom: 8px !important;
+  }
+
+  #modal-contour .contour-editorial__result-copy > p {
+    margin-top: 12px !important;
+    font-size: clamp(.82rem, .98vw, .92rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  #modal-contour .contour-editorial__note {
+    margin-top: 16px !important;
+    padding-top: 14px !important;
+  }
+
+  #modal-contour .contour-editorial__note p {
+    font-size: .72rem !important;
+    line-height: 1.48 !important;
+  }
+}
+
+:is(
+  .result-showcase > .result-gallery,
+  #modal-botox .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result,
+  #modal-contour .contour-editorial__carousel
+) > h4,
+:is(#modal-botox .botox-result, :is(#modal-peel, #modal-clean) .peel-result) > h4 {
+  width: max-content !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+}
+
+:is(
+  .result-showcase > .result-gallery,
+  #modal-botox .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result,
+  #modal-contour .contour-editorial__carousel
+) .modal-carousel {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 18px 0 0 !important;
+}
+
+#modal-contour .contour-editorial__carousel {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+:is(
+  .result-showcase > .result-gallery,
+  #modal-botox .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result,
+  #modal-contour .contour-editorial__carousel
+) .modal-carousel__viewport {
+  width: 100% !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-result .modal-carousel__slide > img,
+#modal-botox .botox-result .modal-carousel__slide > img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+:is(
+  .result-showcase > .result-gallery,
+  #modal-botox .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result,
+  #modal-contour .contour-editorial__carousel
+) .modal-carousel__control {
+  position: absolute !important;
+  top: calc(50% - 22px) !important;
+  z-index: 2 !important;
+  display: grid !important;
+  place-items: center !important;
+  transform: none !important;
+}
+
+:is(
+  .result-showcase > .result-gallery,
+  #modal-botox .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result,
+  #modal-contour .contour-editorial__carousel
+) .modal-carousel__control--prev { left: 12px !important; }
+
+:is(
+  .result-showcase > .result-gallery,
+  #modal-botox .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result,
+  #modal-contour .contour-editorial__carousel
+) .modal-carousel__control--next { right: 12px !important; }
+
+:is(
+  .result-showcase > .result-gallery,
+  #modal-botox .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result,
+  #modal-contour .contour-editorial__carousel
+) .modal-carousel__dots {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 8px !important;
+}
+
+@media (max-width: 1024px) {
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "gallery"
+      "summary"
+      "steps" !important;
+    align-items: start !important;
+    grid-auto-rows: auto !important;
+    gap: 24px !important;
+  }
+
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) > :is(.result-gallery, .botox-result, .peel-result) {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    margin-top: 0 !important;
+  }
+
+  :is(
+    .result-showcase,
+    #modal-botox .botox-result-layout,
+    :is(#modal-peel, #modal-clean) .peel-result-layout
+  ) > .result-summary {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    min-height: 0 !important;
+  }
+
+  #modal-contour .contour-editorial__result {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+  }
+
+  #modal-contour .contour-editorial__carousel {
+    order: 1 !important;
+    width: 100% !important;
+  }
+
+  #modal-contour .contour-editorial__result-copy {
+    order: 2 !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+}
+
+/* Unified before/after cards: an invariant photo stage with a centred 50/50 split. */
+:is(
+  .service-modal-content .modal-carousel__slide > img,
+  .service-modal-content .treatment-result-media > img,
+  .service-modal-content .modal-result__media > img,
+  .service-modal-content .treatment-result-crop > img
+) {
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: transparent !important;
+}
+
+:is(
+  .service-modal-content .modal-carousel__slide,
+  .service-modal-content .treatment-result-media,
+  .service-modal-content .modal-result__media,
+  .service-modal-content .treatment-result-crop
+) {
+  overflow: hidden !important;
+  background: transparent !important;
+}
+
+.service-modal-content .modal-carousel__slide {
+  padding: 0 !important;
+}
+
+.service-modal-content .modal-carousel__slide > .modal-result__caption,
+.service-modal-content .treatment-result-media > figcaption,
+.service-modal-content .modal-result__media > figcaption {
+  display: grid !important;
+  min-height: 44px !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 8px 12px !important;
+}
+
+.before-after-frame {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  overflow: hidden !important;
+  background: transparent !important;
+}
+
+.before-after-frame__panel {
+  position: relative !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: auto var(--before-after-scale, 200%) !important;
+  background-position: center var(--before-after-position, 50%) !important;
+}
+
+.before-after-frame__panel + .before-after-frame__panel {
+  border-left: 1px solid rgba(255, 255, 255, .78) !important;
+}
+
+.modal-carousel__crop:has(.before-after-frame) {
+  height: auto !important;
+  aspect-ratio: 4 / 3 !important;
+  background: transparent !important;
+}
+
+/* The useful comparison area of tall editorial source files sits in the centre. */
+:is(
+  img[src$="peeling-before-after-eye-area.jpeg"],
+  img[src$="peeling-before-after-skin-texture.jpeg"],
+  img[src$="facial-massage-before-after.jpeg"]
+) {
+  object-position: center 52% !important;
+}
+
+img[src$="ozone-before-after-jawline.webp"] {
+  object-position: center 48% !important;
+}
+
+/* These editorial variants had older, more specific height and contain rules. */
+#modal-contour .contour-editorial__carousel .modal-carousel__slide > img,
+:is(#modal-peel, #modal-clean) .peel-result .modal-carousel__slide > img {
+  aspect-ratio: 4 / 3 !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+
+#modal-contour .contour-editorial__carousel :is(.modal-carousel__viewport, .modal-carousel__slide) {
+  min-height: 0 !important;
+}
+
+#modal-massage .treatment-result-crop {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: 4 / 3 !important;
+  background: transparent !important;
+}
+
+#modal-massage .treatment-result-crop > img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3 !important;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+
+/* Compact three-stage procedure block for desktop editorial modals. */
+@media (min-width: 1025px) {
+  :is(#modal-peel, #modal-clean) .peel-steps {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 1440px !important;
+    height: clamp(420px, 25vw, 460px) !important;
+    margin: 0 auto !important;
+    padding: 0 20px 24px !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-steps ol {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+    column-gap: 32px !important;
+    margin: 60px 0 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-steps li {
+    display: grid !important;
+    grid-template-columns: 80px minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 14px !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-steps li:last-child {
+    grid-template-columns: 72px minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-steps li > span {
+    white-space: nowrap !important;
+    font-size: clamp(56px, 4.8vw, 72px) !important;
+    line-height: 1 !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-steps li > p {
+    margin: 0 !important;
+    font-size: clamp(24px, 2vw, 30px) !important;
+    line-height: 1.25 !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-steps .peel-note {
+    margin-top: 80px !important;
+    padding: 0 !important;
+  }
+}
+
+/* Peels and cleansing: a compact, guided consultation flow. */
+:is(#modal-peel, #modal-clean) .service-modal-dialog {
+  width: min(1180px, calc(100vw - 40px)) !important;
+  max-width: min(1180px, calc(100vw - 40px)) !important;
+  height: auto !important;
+  max-height: min(840px, calc(100dvh - 40px)) !important;
+  margin: 20px auto !important;
+  padding: 24px !important;
+  border-radius: 24px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-editorial {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-hero {
+  order: 1;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, .8fr) !important;
+  grid-template-areas:
+    "intro media"
+    "facts media"
+    "concerns media" !important;
+  gap: 18px 28px !important;
+  padding: 28px !important;
+  border-radius: 18px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-hero__intro {
+  align-self: end;
+  padding-right: 0 !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-hero__intro h4 {
+  font-size: clamp(2rem, 3.2vw, 2.7rem) !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-hero__intro p {
+  max-width: 48ch !important;
+  margin-top: 12px !important;
+  font-size: .92rem !important;
+  line-height: 1.55 !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-hero__media {
+  min-height: 330px !important;
+  height: 100% !important;
+  border-radius: 16px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-hero__media img {
+  object-position: 58% center !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-facts {
+  gap: 10px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-fact {
+  align-content: start !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-concerns {
+  padding-top: 16px !important;
+}
+
+/* Показания пилинга остаются лёгким списком, без отдельной зелёной плашки. */
+#modal-peel .peel-concerns {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-result-layout {
+  order: 2;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  grid-template-areas: "gallery summary" !important;
+  align-items: start !important;
+  gap: 24px 32px !important;
+  padding: 4px 0 0 !important;
+  border: 0 !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-result {
+  grid-area: gallery !important;
+  margin: 0 !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-result > h4 {
+  margin-bottom: 12px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-result .modal-carousel {
+  width: min(100%, 500px) !important;
+  margin: 0 !important;
+}
+
+:is(#modal-peel, #modal-clean) .result-summary {
+  grid-area: summary !important;
+  min-height: 0 !important;
+  padding: 12px 0 0 !important;
+}
+
+:is(#modal-peel, #modal-clean) .result-summary__eyebrow {
+  margin-bottom: 10px !important;
+}
+
+:is(#modal-peel, #modal-clean) .result-summary__copy {
+  min-height: 0 !important;
+  margin-top: 12px !important;
+}
+
+:is(#modal-peel, #modal-clean) .result-summary__note {
+  min-height: 0 !important;
+  margin-top: 16px !important;
+  padding-top: 14px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-steps {
+  order: 5;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 20px 0 0 !important;
+  border-top: 1px solid rgba(48, 79, 59, .14) !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-steps h4 {
+  font-size: 1.15rem !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-steps ol {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-rows: none !important;
+  gap: 18px !important;
+  margin: 16px 0 0 !important;
+}
+
+/* Этапы — информационная строка, а не отдельная цветная карточка. */
+#modal-peel .peel-steps ol {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-steps li,
+:is(#modal-peel, #modal-clean) .peel-steps li:last-child {
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  gap: 8px !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-steps li > span {
+  font-size: 2.25rem !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-steps li > p {
+  font-size: .8rem !important;
+  line-height: 1.4 !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-steps .peel-note {
+  display: none !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-booking {
+  order: 3;
+  width: min(100%, 300px) !important;
+  min-height: 52px !important;
+  margin: 0 !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-booking-note {
+  order: 4;
+  width: auto !important;
+  margin: -10px 0 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-faq { order: 6; }
+:is(#modal-peel, #modal-clean) .peel-consult { order: 7; }
+
+/* Единый язык editorial-модалок: ритм тегов, сноски, радиусы и результаты. */
+:is(#modal-peel, #modal-clean) .peel-concerns ul {
+  justify-content: center !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-result-layout,
+#modal-botox .botox-result-layout,
+.treatment-modal .result-showcase {
+  align-items: stretch !important;
+}
+
+:is(#modal-peel, #modal-clean) .result-summary,
+#modal-botox .result-summary,
+.treatment-modal .result-summary {
+  display: flex !important;
+  min-height: 0 !important;
+  flex-direction: column !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-result-layout > .result-summary,
+#modal-botox .botox-result-layout > .result-summary,
+:is(
+  #modal-antistress,
+  #modal-bbl,
+  #modal-biorev,
+  #modal-collagen,
+  #modal-detox,
+  #modal-iv,
+  #modal-lipo,
+  #modal-massage,
+  #modal-ozone,
+  #modal-plasma,
+  #modal-program,
+  #modal-rf
+) .result-showcase > .result-summary {
+  align-self: stretch !important;
+  height: auto !important;
+}
+
+:is(#modal-peel, #modal-clean) .result-summary__note,
+#modal-botox .result-summary__note,
+.treatment-modal .result-summary__note {
+  margin-top: auto !important;
+  color: var(--text-muted) !important;
+}
+
+:is(#modal-peel, #modal-clean) .result-summary__note p,
+#modal-botox .result-summary__note p,
+.treatment-modal .result-summary__note p,
+:is(#modal-peel, #modal-clean) .peel-note p,
+#modal-botox .botox-note p,
+.treatment-modal .treatment-note p {
+  color: var(--text-muted) !important;
+}
+
+:is(#modal-peel, #modal-clean) :is(.peel-hero, .peel-faq details, .peel-consult),
+#modal-botox :is(.botox-hero, .botox-faq details, .botox-consult),
+.treatment-modal :is(.modal-detail-card, .treatment-faq details, .treatment-consult) {
+  border-radius: var(--radius-card) !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-consult,
+.treatment-modal .treatment-consult {
+  background: var(--bg-soft) !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-booking,
+#modal-botox .botox-booking,
+.treatment-modal .treatment-booking {
+  box-shadow: var(--shadow-action) !important;
+}
+
+/* Нумерация этапов: одна базовая линия, вертикальное центрирование и один разделитель. */
+:is(#modal-peel, #modal-clean) .peel-steps ol,
+#modal-botox .botox-steps ol,
+.treatment-modal .treatment-steps ol {
+  border-bottom: 1px solid var(--line) !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-steps li,
+#modal-botox .botox-steps li,
+.treatment-modal .treatment-steps li {
+  align-items: center !important;
+}
+
+:is(#modal-peel, #modal-clean) .peel-steps li > span,
+#modal-botox .botox-steps li > span,
+.treatment-modal .treatment-steps li > span {
+  transform: translateY(-.04em);
+}
+
+/* Results use one reading order in every desktop modal: visual proof on the
+   left, explanation on the right. This deliberately mirrors the contour
+   plasticity card and prevents older template rules from reversing columns. */
+@media (min-width: 1025px) {
+  .treatment-modal .result-showcase,
+  #modal-botox .botox-result-layout,
+  :is(#modal-peel, #modal-clean) .peel-result-layout {
+    grid-template-columns: minmax(0, 1.667fr) minmax(0, 1fr) !important;
+    grid-template-areas:
+      "gallery summary"
+      "steps steps" !important;
+    align-items: stretch !important;
+    column-gap: clamp(60px, 5vw, 80px) !important;
+  }
+
+  .treatment-modal .result-showcase > .result-gallery,
+  #modal-botox .botox-result-layout > .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result-layout > .peel-result {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    margin-top: 0 !important;
+  }
+
+  :is(
+    #modal-antistress,
+    #modal-bbl,
+    #modal-biorev,
+    #modal-collagen,
+    #modal-detox,
+    #modal-iv,
+    #modal-lipo,
+    #modal-massage,
+    #modal-ozone,
+    #modal-plasma,
+    #modal-program,
+    #modal-rf
+  ) .result-showcase > .result-summary,
+  #modal-botox .botox-result-layout > .result-summary,
+  :is(#modal-peel, #modal-clean) .peel-result-layout > .result-summary {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+}
+
+/* Result photography is evidence, not a decorative texture: never crop a
+   source image to force a shared 4:3 frame. Keeping its native proportion
+   preserves the full result and avoids turning a clinical photograph into a
+   partial close-up. */
+:is(
+  .service-modal-content .modal-carousel__slide > img,
+  .service-modal-content .treatment-result-media > img,
+  .service-modal-content .modal-result__media > img,
+  .service-modal-content .treatment-result-crop > img
+) {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: min(66dvh, 680px) !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  margin-inline: auto !important;
+}
+
+/* The two stacked botulinum pairs are composed from their full useful photo
+   areas. Their white source canvas remains outside the visible comparison. */
+#modal-botox .before-after-frame {
+  aspect-ratio: 4 / 3 !important;
+}
+
+/* Explicit overrides for the editorial variants, whose earlier ID-based rules
+   used to win the cascade and reinstate a 4:3 crop. */
+#modal-contour .contour-editorial__carousel .modal-carousel__slide > img,
+#modal-botox .botox-result .modal-carousel__slide > img,
+#modal-peel .peel-result .modal-carousel__slide > img,
+#modal-clean .peel-result .modal-carousel__slide > img,
+#modal-massage .treatment-result-crop > img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: min(66dvh, 680px) !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  margin-inline: auto !important;
+}
+
+@media (max-width: 720px) {
+  :is(#modal-peel, #modal-clean) .service-modal-dialog {
+    width: calc(100vw - 20px) !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: calc(100dvh - 20px) !important;
+    margin: 10px auto !important;
+    padding: 16px !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-editorial { gap: 16px !important; }
+
+  :is(#modal-peel, #modal-clean) .peel-hero {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "intro"
+      "media"
+      "facts"
+      "concerns" !important;
+    padding: 20px !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-hero__media {
+    min-height: 0 !important;
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-result-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "gallery"
+      "summary" !important;
+    gap: 20px !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-steps ol {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  :is(#modal-peel, #modal-clean) .peel-booking { width: 100% !important; }
+}
+
+/* Results hierarchy: the shared label leads the whole card, while the two
+   column headings begin on one baseline beneath it. */
+:is(
+  .treatment-modal .result-showcase,
+  #modal-botox .botox-result-layout,
+  #modal-peel .peel-result-layout,
+  #modal-clean .peel-result-layout
+) {
+  position: relative !important;
+  padding-top: 48px !important;
+}
+
+:is(
+  .treatment-modal .result-showcase,
+  #modal-botox .botox-result-layout,
+  #modal-peel .peel-result-layout,
+  #modal-clean .peel-result-layout
+) > .result-summary {
+  position: static !important;
+}
+
+:is(
+  .treatment-modal .result-showcase,
+  #modal-botox .botox-result-layout,
+  #modal-peel .peel-result-layout,
+  #modal-clean .peel-result-layout
+) .result-summary__eyebrow {
+  position: absolute !important;
+  inset: 14px auto auto 16px !important;
+  margin: 0 !important;
+  color: var(--primary-dark) !important;
+}
+
+:is(
+  .treatment-modal .result-showcase,
+  #modal-botox .botox-result-layout,
+  #modal-peel .peel-result-layout,
+  #modal-clean .peel-result-layout
+) :is(.result-gallery > h4, .botox-result > h4, .peel-result > h4, .result-summary > h4) {
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+  color: var(--primary-dark) !important;
+}
+
+/* The contour template has its own DOM structure, so it receives the same
+   hierarchy explicitly rather than relying on positional selectors. */
+#modal-contour .contour-editorial__result {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.667fr) minmax(0, 1fr) !important;
+  grid-template-areas:
+    "before copy"
+    "carousel copy" !important;
+  align-items: start !important;
+  gap: 14px clamp(60px, 5vw, 80px) !important;
+  padding-top: 48px !important;
+}
+
+#modal-contour .contour-editorial__result-copy > span {
+  position: absolute !important;
+  inset: 14px auto auto 16px !important;
+  margin: 0 !important;
+  color: var(--primary-dark) !important;
+}
+
+#modal-contour .contour-editorial__before-after-title {
+  grid-area: before !important;
+  margin: 0 !important;
+  color: var(--primary-dark) !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: clamp(1.2rem, 2vw, 1.75rem) !important;
+  font-weight: 650 !important;
+  line-height: 1.08 !important;
+}
+
+#modal-contour .contour-editorial__result-copy {
+  grid-area: copy !important;
+  align-self: stretch !important;
+  padding: 0 !important;
+}
+
+#modal-contour .contour-editorial__result-copy h4 {
+  margin: 0 0 14px !important;
+  color: var(--primary-dark) !important;
+}
+
+#modal-contour .contour-editorial__carousel {
+  grid-area: carousel !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  :is(
+    .treatment-modal .result-showcase,
+    #modal-botox .botox-result-layout,
+    #modal-peel .peel-result-layout,
+    #modal-clean .peel-result-layout
+  ) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "gallery"
+      "summary" !important;
+    gap: 20px !important;
+  }
+
+  .treatment-modal .result-showcase > .result-gallery,
+  #modal-botox .botox-result-layout > .botox-result,
+  :is(#modal-peel, #modal-clean) .peel-result-layout > .peel-result {
+    grid-area: gallery !important;
+  }
+
+  .treatment-modal .result-showcase > .result-summary,
+  #modal-botox .botox-result-layout > .result-summary,
+  :is(#modal-peel, #modal-clean) .peel-result-layout > .result-summary {
+    grid-area: summary !important;
+  }
+
+  #modal-contour .contour-editorial__result {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "before"
+      "carousel"
+      "copy" !important;
+    gap: 14px !important;
+  }
+}
+
+/* Canonical treatment modal: one component and one reading order for all 16 services. */
+.service-modal.treatment-modal .service-modal-dialog {
+  width: min(980px, calc(100vw - 32px)) !important;
+  max-height: calc(100dvh - 32px) !important;
+  margin: 16px auto !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: var(--white) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 50px rgba(15, 74, 47, .14) !important;
+}
+
+.service-modal.treatment-modal .service-modal-scroll {
+  max-height: calc(100dvh - 32px) !important;
+  padding: 0 !important;
+  overflow: auto;
+}
+
+.service-modal.treatment-modal .modal-detail-card--canonical {
+  width: 100%;
+  margin: 0;
+  color: var(--text);
+  background: var(--white);
+}
+
+.service-modal.treatment-modal .modal-detail-card--canonical > * { box-sizing: border-box; }
+
+.service-modal.treatment-modal .modal-detail-card__section {
+  padding: 28px 32px;
+  background: transparent;
+}
+
+.service-modal.treatment-modal .modal-detail-card__section + .modal-detail-card__section {
+  border-top: 1px solid var(--line);
+}
+
+.service-modal.treatment-modal .modal-detail-card__intro h3,
+.service-modal.treatment-modal .modal-detail-card__results h3,
+.service-modal.treatment-modal .modal-detail-card__steps h4,
+.service-modal.treatment-modal .modal-detail-card__faq h4 {
+  margin: 0;
+  color: var(--title) !important;
+  font-family: "Playfair Display", serif !important;
+  font-weight: 650;
+  letter-spacing: -.02em;
+}
+
+.service-modal.treatment-modal .modal-detail-card__intro h3 {
+  font-size: clamp(2rem, 3.4vw, 2.65rem) !important;
+  line-height: 1.06;
+}
+
+.service-modal.treatment-modal .modal-detail-card__intro > p {
+  max-width: 62ch;
+  margin: 12px 0 0;
+  color: var(--text) !important;
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+.service-modal.treatment-modal .modal-detail-card__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.service-modal.treatment-modal .modal-detail-card__fact {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  color: var(--text);
+  text-align: center;
+}
+
+.service-modal.treatment-modal .modal-detail-card__fact svg,
+.service-modal.treatment-modal .modal-detail-card__note svg,
+.service-modal.treatment-modal .modal-detail-card__callout > svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--title);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-modal.treatment-modal .modal-detail-card__fact strong {
+  color: var(--text);
+  font-size: .8rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.service-modal.treatment-modal .modal-detail-card__divider {
+  height: 1px;
+  margin: 24px 0 20px;
+  background: var(--line);
+}
+
+.service-modal.treatment-modal .modal-detail-card__concerns > p {
+  margin: 0;
+  color: var(--text);
+  font-size: .86rem;
+  font-weight: 700;
+}
+
+.service-modal.treatment-modal .modal-detail-card__concerns ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-modal.treatment-modal .modal-detail-card__concerns li {
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--text);
+  background: var(--bg-soft);
+  font-size: .78rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.service-modal.treatment-modal .modal-detail-card__media {
+  height: clamp(220px, 32vw, 340px);
+  margin: 24px 0 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--bg-soft);
+}
+
+.service-modal.treatment-modal .modal-detail-card__media img {
+  width: 100%;
+  height: 100%;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center;
+}
+
+.service-modal.treatment-modal .modal-detail-card__eyebrow {
+  margin: 0 0 12px;
+  color: var(--title) !important;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.service-modal.treatment-modal .modal-detail-card__result-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(28px, 5vw, 60px);
+}
+
+.service-modal.treatment-modal .modal-detail-card__result-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-modal.treatment-modal .modal-detail-card__results h3 {
+  min-height: 1.3em;
+  margin-bottom: 14px;
+  font-size: clamp(1.35rem, 2.3vw, 1.7rem) !important;
+  line-height: 1.14;
+}
+
+.service-modal.treatment-modal .modal-detail-card__result-column--copy > p {
+  margin: 0;
+  color: var(--text) !important;
+  font-size: .94rem;
+  line-height: 1.65;
+}
+
+.service-modal.treatment-modal .modal-detail-card__result-column--visual > :not(h3) {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 0;
+}
+
+.service-modal.treatment-modal .treatment-carousel,
+.service-modal.treatment-modal .treatment-result-media {
+  margin: 0;
+}
+
+.service-modal.treatment-modal .treatment-carousel .modal-carousel__viewport,
+.service-modal.treatment-modal .treatment-result-media {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: none;
+}
+
+.service-modal.treatment-modal .treatment-carousel .modal-carousel__slide,
+.service-modal.treatment-modal .treatment-result-media {
+  padding: 8px;
+}
+
+.service-modal.treatment-modal .treatment-carousel .modal-carousel__slide img,
+.service-modal.treatment-modal .treatment-result-media img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: min(46dvh, 420px) !important;
+  margin-inline: auto;
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 10px;
+  background: var(--white);
+}
+
+.service-modal.treatment-modal .treatment-carousel .modal-carousel__control {
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  color: var(--title);
+  background: var(--white);
+  box-shadow: 0 4px 12px rgba(15, 74, 47, .12);
+}
+
+.service-modal.treatment-modal .modal-result__caption,
+.service-modal.treatment-modal .treatment-result-media figcaption {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: .72rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.service-modal.treatment-modal .modal-detail-card__note {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.service-modal.treatment-modal .modal-detail-card__note svg { width: 20px; height: 20px; stroke: var(--text-muted); }
+.service-modal.treatment-modal .modal-detail-card__note p { margin: 0; color: var(--text-muted) !important; font-size: .78rem; line-height: 1.55; }
+
+.service-modal.treatment-modal .modal-detail-card__steps ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin: 18px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.service-modal.treatment-modal .modal-detail-card__steps li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 14px;
+}
+
+.service-modal.treatment-modal .modal-detail-card__steps li + li { border-left: 1px solid var(--line); }
+
+.service-modal.treatment-modal .modal-detail-card__steps li > span {
+  width: 30px;
+  height: 30px;
+  display: inline-grid;
+  flex: 0 0 30px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--title);
+  background: var(--bg-soft);
+  font-family: "Playfair Display", serif;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.service-modal.treatment-modal .modal-detail-card__steps li > p { margin: 0; color: var(--text); font-size: .8rem; line-height: 1.4; }
+
+.service-modal.treatment-modal .modal-detail-card__faq details {
+  overflow: hidden;
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg-soft);
+}
+
+.service-modal.treatment-modal .modal-detail-card__faq summary {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  color: var(--text);
+  font-size: .86rem;
+  font-weight: 650;
+  cursor: pointer;
+  list-style: none;
+}
+.service-modal.treatment-modal .modal-detail-card__faq summary::-webkit-details-marker { display: none; }
+.service-modal.treatment-modal .modal-detail-card__faq summary::after { content: "+"; color: var(--title); font-size: 1.2rem; }
+.service-modal.treatment-modal .modal-detail-card__faq details[open] summary::after { content: "−"; }
+.service-modal.treatment-modal .modal-detail-card__faq details > div { padding: 0 18px 18px; }
+.service-modal.treatment-modal .modal-detail-card__faq details p,
+.service-modal.treatment-modal .modal-detail-card__faq details li { color: var(--text-muted); font-size: .8rem; line-height: 1.58; }
+
+.service-modal.treatment-modal .modal-detail-card__callout {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 14px;
+  margin: 0 32px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: var(--bg-soft) !important;
+}
+
+.service-modal.treatment-modal .modal-detail-card__callout h4 { margin: 0; color: var(--text); font-family: "Manrope", sans-serif; font-size: .92rem; font-weight: 700; }
+.service-modal.treatment-modal .modal-detail-card__callout p { margin: 5px 0 0; color: var(--text-muted); font-size: .8rem; line-height: 1.55; }
+
+.service-modal.treatment-modal .modal-detail-card__cta { padding: 20px 32px 28px; }
+.service-modal.treatment-modal .modal-detail-card__cta .btn { width: 100%; min-height: 52px; border: 0; color: #ffffff !important; background: linear-gradient(135deg, #1b6b45 0%, #0f4a2f 100%) !important; box-shadow: 0 6px 16px rgba(15,74,47,.22) !important; }
+.service-modal.treatment-modal .modal-detail-card__cta > p { margin: 10px 0 0; color: var(--text-muted); font-size: .76rem; line-height: 1.45; text-align: center; }
+
+@media (max-width: 720px) {
+  .service-modal.treatment-modal .service-modal-dialog,
+  .service-modal.treatment-modal .service-modal-scroll { max-height: calc(100dvh - 20px) !important; }
+  .service-modal.treatment-modal .service-modal-dialog { width: calc(100vw - 20px) !important; margin: 10px auto !important; }
+  .service-modal.treatment-modal .modal-detail-card__section { padding: 22px 20px; }
+  .service-modal.treatment-modal .modal-detail-card__facts { gap: 10px; margin-top: 20px; }
+  .service-modal.treatment-modal .modal-detail-card__fact strong { font-size: .7rem; }
+  .service-modal.treatment-modal .modal-detail-card__concerns ul { grid-template-columns: 1fr; }
+  .service-modal.treatment-modal .modal-detail-card__media { height: 220px; }
+  .service-modal.treatment-modal .modal-detail-card__result-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .service-modal.treatment-modal .modal-detail-card__steps ol { grid-template-columns: 1fr; }
+  .service-modal.treatment-modal .modal-detail-card__steps li + li { border-top: 1px solid var(--line); border-left: 0; }
+  .service-modal.treatment-modal .modal-detail-card__callout { margin: 0 20px; }
+  .service-modal.treatment-modal .modal-detail-card__cta { padding: 20px; }
+}
+
+/* All service-card titles and details buttons have one canonical card language. */
+:is(#inject, #hardware, #esthetic, #biohacking) .service-card h3,
+.education-card h3 {
+  color: var(--title) !important;
+  font-family: "Playfair Display", serif !important;
+  font-weight: 650;
+}
+
+:is(#inject, #hardware, #esthetic, #biohacking) .service-card .details-btn {
+  border: 0 !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #1b6b45 0%, #0f4a2f 100%) !important;
+  box-shadow: 0 6px 16px rgba(15,74,47,.22) !important;
 }
 
 </style>
@@ -13949,9 +15596,8 @@ body::after {
             <p class="hero-script">КОСМЕТОЛОГ • НУТРИЦИОЛОГ</p>
             <h1><span>Ольга</span><span>Чернышова</span></h1>
             <p class="hero-subcity hero__tagline">
-              <span class="hero-subcity-line"><strong>Комплексный подход к коже:</strong></span>
-              <span class="hero-subcity-line"><strong>косметология, питание и</strong></span>
-              <span class="hero-subcity-line"><strong>восстановление ресурса организма.</strong></span>
+              <span class="hero-subcity-line"><strong>Комплексный подход к коже: косметология,</strong></span>
+              <span class="hero-subcity-line"><strong>питание и восстановление ресурса организма.</strong></span>
             </p>
 
             <div class="hero-badges">
@@ -13970,6 +15616,16 @@ body::after {
             <picture>
               <img src="hero-olga-blazer-hq-v2.png" alt="Ольга Чернышова в светлом пиджаке" loading="eager" fetchpriority="high" decoding="async" width="1023" height="1537" />
             </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero-mobile-benefits" aria-label="Преимущества Ольги Чернышовой">
+        <div class="container">
+          <div class="hero-badges">
+            <span><strong>8+ лет практики</strong></span>
+            <span><strong>Медицинское образование</strong></span>
+            <span><strong>Косметология + нутрициология</strong></span>
           </div>
         </div>
       </section>
@@ -14030,49 +15686,37 @@ body::after {
           <h2 class="section-title reveal">Инъекционная косметология</h2>
           <div class="cards-grid three-col">
             <article class="card reveal service-card">
-              <div class="service-media service-photo">
-                <img src="contour-plastic-cover.jpg" alt="Контурная пластика лица" loading="lazy" width="1003" height="1568" />
-              </div>
+              <div class="service-media service-photo"><picture><source srcset="contour-plastic-cover.webp" type="image/webp" /><img src="contour-plastic-cover.jpg" alt="Контурная пластика лица" loading="lazy" decoding="async" width="1003" height="1568" /></picture></div>
               <h3>Контурная пластика</h3>
               <p>Деликатная коррекция объемов и гармонизация черт лица с сохранением естественности.</p>
               <button class="details-btn service-modal-open" type="button" data-modal="modal-contour">подробнее</button>
             </article>
             <article class="card reveal service-card service-card--botox">
-              <div class="service-media service-photo">
-                <img src="botox-cover.jpg" alt="Ботулинотерапия лица" loading="lazy" width="972" height="1619" />
-              </div>
+              <div class="service-media service-photo"><picture><source srcset="botox-cover.webp" type="image/webp" /><img src="botox-cover.jpg" alt="Ботулинотерапия лица" loading="lazy" decoding="async" width="972" height="1619" /></picture></div>
               <h3>Ботулинотерапия</h3>
               <p>Смягчение мимических морщин и профилактика заломов при контролируемом результате.</p>
               <button class="details-btn service-modal-open" type="button" data-modal="modal-botox">подробнее</button>
             </article>
             <article class="card reveal service-card">
-              <div class="service-media service-photo">
-                <img src="biorevitalization-cover-optimized.jpg" alt="Увлажнённая кожа после биоревитализации" loading="lazy" width="1448" height="1086" />
-              </div>
+              <div class="service-media service-photo"><picture><source srcset="biorevitalization-cover-optimized.webp" type="image/webp" /><img src="biorevitalization-cover-optimized.jpg" alt="Увлажнённая кожа после биоревитализации" loading="lazy" decoding="async" width="1448" height="1086" /></picture></div>
               <h3>Биоревитализация</h3>
               <p>Интенсивное увлажнение кожи, восстановление тонуса и сияния изнутри.</p>
               <button class="details-btn service-modal-open" type="button" data-modal="modal-biorev">подробнее</button>
             </article>
             <article class="card reveal service-card">
-              <div class="service-media service-photo">
-                <img src="lipolytics-cover-v2.jpg" alt="Липолитическая коррекция локальных жировых отложений в области живота" loading="lazy" width="1570" height="1001" />
-              </div>
+              <div class="service-media service-photo"><picture><source srcset="lipolytics-cover-v2.webp" type="image/webp" /><img src="lipolytics-cover-v2.jpg" alt="Липолитическая коррекция локальных жировых отложений в области живота" loading="lazy" decoding="async" width="1570" height="1001" /></picture></div>
               <h3>Липолитики</h3>
               <p>Точечная работа с локальными жировыми отложениями в рамках персонального протокола.</p>
               <button class="details-btn service-modal-open" type="button" data-modal="modal-lipo">подробнее</button>
             </article>
             <article class="card reveal service-card">
-              <div class="service-media service-photo">
-                <img src="collagen-therapy-cover-v2.jpg" alt="Здоровая и упругая кожа после коллагенотерапии" loading="lazy" width="1570" height="1001" />
-              </div>
+              <div class="service-media service-photo"><picture><source srcset="collagen-therapy-cover-v2.webp" type="image/webp" /><img src="collagen-therapy-cover-v2.jpg" alt="Здоровая и упругая кожа после коллагенотерапии" loading="lazy" decoding="async" width="1570" height="1001" /></picture></div>
               <h3>Коллагенотерапия</h3>
               <p>Стимуляция плотности и упругости кожи для мягкого омолаживающего эффекта.</p>
               <button class="details-btn service-modal-open" type="button" data-modal="modal-collagen">подробнее</button>
             </article>
             <article class="card reveal service-card service-card--plasma">
-              <div class="service-media service-photo">
-                <img src="plasma-therapy-cover.jpg" alt="Плазмотерапия кожи головы" loading="lazy" width="1024" height="1536" />
-              </div>
+              <div class="service-media service-photo"><picture><source srcset="plasma-therapy-cover.webp" type="image/webp" /><img src="plasma-therapy-cover.jpg" alt="Плазмотерапия кожи головы" loading="lazy" decoding="async" width="1024" height="1536" /></picture></div>
               <h3>Плазмотерапия</h3>
               <p>Регенеративный подход для улучшения качества кожи и ускорения восстановления.</p>
               <button class="details-btn service-modal-open" type="button" data-modal="modal-plasma">подробнее</button>
@@ -14099,11 +15743,11 @@ body::after {
         <div class="container">
           <h2 class="section-title reveal">Эстетическая косметология</h2>
           <div class="cards-grid three-col">
-            <article class="card reveal service-card"><div class="service-media service-photo"><img src="peeling-cover.jpg" alt="Нанесение профессионального пилинга на кожу лица" loading="lazy" width="1536" height="1024" /></div>
+            <article class="card reveal service-card"><div class="service-media service-photo"><picture><source srcset="peeling-cover.webp" type="image/webp" /><img src="peeling-cover.jpg" alt="Нанесение профессионального пилинга на кожу лица" loading="lazy" decoding="async" width="1536" height="1024" /></picture></div>
               <h3>Пилинги</h3><p>Выравнивание тона и микрорельефа кожи с учетом ее состояния и сезонности.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-peel">подробнее</button></article>
-            <article class="card reveal service-card"><div class="service-media service-photo"><img src="facial-cleansing-cover.jpg" alt="Ультразвуковая чистка кожи лица" loading="lazy" width="1536" height="1024" /></div>
+            <article class="card reveal service-card"><div class="service-media service-photo"><picture><source srcset="facial-cleansing-cover.webp" type="image/webp" /><img src="facial-cleansing-cover.jpg" alt="Ультразвуковая чистка кожи лица" loading="lazy" decoding="async" width="1536" height="1024" /></picture></div>
               <h3>Чистка лица</h3><p>Бережное очищение и восстановление баланса кожи без травматизации.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-clean">подробнее</button></article>
-            <article class="card reveal service-card"><div class="service-media service-photo"><img src="facial-massage-cover.jpg" alt="Скульптурирующий массаж лица и шеи" loading="lazy" width="1536" height="1024" /></div>
+            <article class="card reveal service-card"><div class="service-media service-photo"><picture><source srcset="facial-massage-cover.webp" type="image/webp" /><img src="facial-massage-cover.jpg" alt="Скульптурирующий массаж лица и шеи" loading="lazy" decoding="async" width="1536" height="1024" /></picture></div>
               <h3>Массаж лица</h3><p>Мануальные техники для лимфодренажа, расслабления и выразительного овала лица.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-massage">подробнее</button></article>
           </div>
         </div>
@@ -14116,13 +15760,13 @@ body::after {
             <span>Комплексный подход к поддержанию молодости, энергии и внутреннего ресурса организма.</span>
           </p>
           <div class="cards-grid four-col">
-            <article class="card reveal service-card"><div class="service-media service-photo"><img src="iv-therapy-cover.jpg" alt="Восстановительная IV-терапия в комфортной обстановке" loading="lazy" width="1536" height="1024" /></div>
+            <article class="card reveal service-card"><div class="service-media service-photo"><picture><source srcset="iv-therapy-cover.webp" type="image/webp" /><img src="iv-therapy-cover.jpg" alt="Восстановительная IV-терапия в комфортной обстановке" loading="lazy" decoding="async" width="1536" height="1024" /></picture></div>
               <h3>IV-терапия / капельницы восстановления</h3><p>Персональные инфузионные протоколы для восполнения дефицитов и повышения жизненного тонуса.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-iv">подробнее</button></article>
-            <article class="card reveal service-card"><div class="service-media service-photo"><img src="antistress-cover.jpg" alt="Антистресс-программа для отдыха и восстановления" loading="lazy" width="1536" height="1024" /></div>
+            <article class="card reveal service-card"><div class="service-media service-photo"><picture><source srcset="antistress-cover.webp" type="image/webp" /><img src="antistress-cover.jpg" alt="Антистресс-программа для отдыха и восстановления" loading="lazy" decoding="async" width="1536" height="1024" /></picture></div>
               <h3>Антистресс-программы</h3><p>Снижение хронической усталости и поддержка нервной системы через сбалансированный подход.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-antistress">подробнее</button></article>
-            <article class="card reveal service-card"><div class="service-media service-photo"><img src="detox-cover.jpg" alt="Детокс-программа и восстановление водного баланса" loading="lazy" width="1536" height="1024" /></div>
+            <article class="card reveal service-card"><div class="service-media service-photo"><picture><source srcset="detox-cover.webp" type="image/webp" /><img src="detox-cover.jpg" alt="Детокс-программа и восстановление водного баланса" loading="lazy" decoding="async" width="1536" height="1024" /></picture></div>
               <h3>Детокс и восстановление ресурса</h3><p>Программы мягкого очищения и перезагрузки организма для устойчивого самочувствия.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-detox">подробнее</button></article>
-            <article class="card reveal service-card"><div class="service-media service-photo"><img src="personal-program-cover.jpg" alt="Персональная консультация и программа сопровождения" loading="lazy" width="1536" height="1024" /></div>
+            <article class="card reveal service-card"><div class="service-media service-photo"><picture><source srcset="personal-program-cover.webp" type="image/webp" /><img src="personal-program-cover.jpg" alt="Персональная консультация и программа сопровождения" loading="lazy" decoding="async" width="1536" height="1024" /></picture></div>
               <h3>Персональные программы сопровождения</h3><p>Долгосрочные треки наблюдения, коррекции и профилактики с учетом вашего образа жизни.</p><button class="details-btn service-modal-open" type="button" data-modal="modal-program">подробнее</button></article>
           </div>
         </div>
@@ -14439,6 +16083,100 @@ function openItem(trigger){const panel=document.getElementById(trigger.getAttrib
 faqTriggers.forEach((trigger)=>{trigger.addEventListener('click',()=>{const isOpen=trigger.getAttribute('aria-expanded')==='true';faqTriggers.forEach((other)=>{if(other!==trigger)closeItem(other);});if(isOpen)closeItem(trigger);else openItem(trigger);});});
 
 const editorialServiceData = {
+  contour: {
+    title: 'Контурная пластика',
+    tagline: 'Контурная пластика для губ, скул, подбородка и других зон лица с индивидуальным подбором препарата под анатомию и задачу пациента.',
+    cover: { src: 'contour-plastic-cover.jpg', alt: 'Контурная пластика лица с индивидуальным подбором зоны коррекции', width: 1003, height: 1568 },
+    facts: ['Гармонизация пропорций', 'Естественная мимика', 'Индивидуальный подбор'],
+    concerns: ['Губы', 'Скулы', 'Подбородок', 'Носогубные складки', 'Углы нижней челюсти', 'Носослёзная борозда'],
+    results: [
+      { src: 'contour-plastic-olga-01-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
+      { src: 'contour-plastic-olga-02-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
+      { src: 'contour-plastic-olga-03-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
+      { src: 'contour-plastic-olga-04-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
+      { src: 'contour-lips-before-after.jpeg', alt: 'До и после контурной пластики губ: естественный объём и чёткий контур', caption: 'Контурная пластика губ', width: 917, height: 1280 },
+      { src: 'contour-cheeks-before-after-clean.jpeg', alt: 'До и после контурной пластики скул: более выраженный объём и гармоничный профиль', caption: 'Контурная пластика скул', width: 1271, height: 1237 },
+      { src: 'contour-profile-before-after-clean.jpeg', alt: 'До и после контурной пластики: коррекция профиля и губ', caption: 'Контурная пластика — коррекция профиля', width: 1122, height: 1402 },
+      { src: 'contour-lips-new-before-after-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
+      { src: 'contour-lips-result-01-clean.jpeg', alt: 'До и после контурной пластики губ: более выраженный объём и контур', caption: 'Контурная пластика губ', width: 941, height: 1672 },
+      { src: 'contour-lips-result-02.webp', alt: 'До и после контурной пластики губ: естественная коррекция формы', caption: 'Контурная пластика губ', width: 1000, height: 1778 },
+      { src: 'contour-lips-result-03.webp', alt: 'До и после контурной пластики губ: гармоничный объём', caption: 'Контурная пластика губ', width: 954, height: 1662 },
+      { src: 'contour-lips-result-04.webp', alt: 'До и после контурной пластики губ: деликатная коррекция объёма', caption: 'Контурная пластика губ', width: 1000, height: 1752 },
+      { src: 'contour-lips-result-05-clean.jpeg', alt: 'До и после контурной пластики губ: коррекция формы и объёма', caption: 'Контурная пластика губ', width: 941, height: 1672 },
+      { src: 'contour-lips-result-06-clean.jpeg', alt: 'До и после контурной пластики губ: естественный объём и чёткий контур', caption: 'Контурная пластика губ', width: 941, height: 1672 }
+    ],
+    resultCopy: 'Естественная коррекция объёмов и пропорций. Процедура помогает скорректировать объёмы, улучшить пропорции лица, смягчить возрастные изменения и сохранить естественную мимику.',
+    steps: ['Консультация и оценка анатомии', 'Выбор зоны, препарата и объёма', 'Деликатная коррекция по разметке', 'Контроль и рекомендации по уходу'],
+    note: 'Выбор зоны, препарата и объёма зависит от анатомии, задачи и индивидуальных показаний.',
+    faq: [],
+    useLegacyFaq: true,
+    consultTitle: 'Не знаете, какая зона коррекции подойдёт?',
+    consultText: 'Подберём решение с учётом анатомии и желаемого результата.',
+    cta: 'Записаться на контурную пластику',
+    ctaNote: 'Зона, препарат и объём подбираются индивидуально на консультации.'
+  },
+  botox: {
+    title: 'Ботулинотерапия',
+    tagline: 'Мягкая коррекция мимических морщин с сохранением естественного выражения лица.',
+    cover: { src: 'botox-cover.jpg', alt: 'Естественный результат ботулинотерапии лица', width: 972, height: 1619 },
+    facts: ['Естественный эффект', 'Мягкая коррекция', 'Индивидуальный подбор'],
+    concerns: ['Морщины лба', 'Межбровные складки', 'Гусиные лапки', 'Хмурое выражение', 'Активная мимика'],
+    results: [
+      { src: 'botox-relatox-before-after.jpeg', alt: 'До и после ботулинотерапии Релатокс: разглаживание лба и межбровья', caption: 'Релатокс, 35 единиц. Лоб и межбровье', width: 730, height: 1280 },
+      { src: 'botox-rentox-before-after.jpeg', alt: 'До и после ботулинотерапии Рентокс', caption: 'Рентокс — до и после', width: 728, height: 1280 },
+      { src: 'botox-before-after.png', alt: 'До и после ботулинотерапии: разглаживание лба и уменьшение мимических морщин', caption: 'До и после ботулинотерапии', width: 1092, height: 1060 }
+    ],
+    resultCopy: 'Мимические морщины становятся менее выраженными, лоб и межбровье выглядят более гладкими, при этом сохраняется естественное выражение лица.',
+    steps: ['Консультация и диагностика мимики', 'Индивидуальная разметка', 'Введение препарата', 'Рекомендации и контроль результата'],
+    note: 'Зоны, дозировка и итоговый эффект зависят от активности мимики, анатомии и выбранного препарата.',
+    faq: [],
+    useLegacyFaq: true,
+    consultTitle: 'Хотите более свежий взгляд, но боитесь потерять естественную мимику?',
+    consultText: 'На консультации оценим особенности вашего лица и подберём степень коррекции, которая будет выглядеть естественно именно на вас.',
+    cta: 'Записаться на консультацию',
+    ctaNote: 'Врач определит показания, зоны коррекции, препарат и индивидуальную дозировку.'
+  },
+  peel: {
+    title: 'Пилинги',
+    tagline: 'Пилинги для обновления кожи, выравнивания тона и мягкой коррекции текстуры.',
+    cover: { src: 'peeling-cover.jpg', alt: 'Нанесение профессионального пилинга на кожу лица', width: 1536, height: 1024 },
+    facts: ['Обновление кожи', 'Ровный тон и текстура', 'Индивидуальный подбор'],
+    concerns: ['Пигментация', 'Акне и постакне', 'Неровный тон', 'Тусклый цвет лица', 'Расширенные поры'],
+    results: [
+      { src: 'peeling-before-after.jpeg', alt: 'До и после курса пилинга: выравнивание тона кожи', caption: 'До и после курса пилинга', width: 1320, height: 1171 },
+      { src: 'peeling-before-after-eye-area.jpeg', alt: 'До и после пилинга: кожа в области глаз и щёк', caption: 'Пилинг — область глаз и щёк', width: 1320, height: 2346 },
+      { src: 'peeling-before-after-skin-texture.jpeg', alt: 'До и после пилинга: улучшение текстуры и сияния кожи', caption: 'Пилинг — текстура и сияние кожи', width: 1320, height: 2346 }
+    ],
+    resultCopy: 'После курса кожа выглядит более ровной и свежей, а пигментация и следы постакне заметно смягчаются.',
+    steps: ['Диагностика и очищение кожи', 'Подбор и нанесение состава', 'Завершающий уход'],
+    note: 'Состав и интенсивность воздействия подбираются индивидуально после оценки состояния кожи.',
+    faq: [],
+    useLegacyFaq: true,
+    consultTitle: 'Не знаете, какой пилинг выбрать?',
+    consultText: 'Определим подходящий вариант на консультации.',
+    cta: 'Записаться на пилинг',
+    ctaNote: 'Подберём процедуру, протокол и препараты на консультации.'
+  },
+  clean: {
+    title: 'Чистка лица',
+    tagline: 'Профессиональный уход для чистых пор, свежего тона и ощущения комфорта без перегрузки кожи.',
+    cover: { src: 'facial-cleansing-cover.jpg', alt: 'Профессиональная чистка кожи лица', width: 1536, height: 1024 },
+    facts: ['Чистые поры и гладкий рельеф', 'Свежий тон и ухоженный вид', 'Подбор по состоянию кожи'],
+    concerns: ['Загрязнённые и расширенные поры', 'Жирный блеск', 'Неровный микрорельеф', 'Тусклый цвет лица', 'Единичные воспаления'],
+    results: [
+      { src: 'facial-cleansing-before-after-face.jpeg', alt: 'До и после чистки лица: общий вид кожи', caption: 'Общий вид кожи', width: 1319, height: 1254 },
+      { src: 'facial-cleansing-before-after-nose.jpeg', alt: 'До и после чистки лица: очищение пор в области носа', caption: 'Очищение пор в области носа', width: 1320, height: 1310 }
+    ],
+    resultCopy: 'Кожа выглядит более чистой и гладкой, поры — аккуратнее, а лицо приобретает свежий, ухоженный вид.',
+    steps: ['Диагностика и подготовка кожи', 'Основной этап очищения по показаниям', 'Успокаивающий и восстанавливающий уход'],
+    note: 'Интенсивность очищения и средства выбираются с учётом чувствительности, жирности и текущего состояния кожи.',
+    faq: [],
+    useLegacyFaq: true,
+    consultTitle: 'Не знаете, какая чистка подойдёт?',
+    consultText: 'Определим подходящий формат на консультации и составим комфортный протокол для вашей кожи.',
+    cta: 'Записаться на чистку лица',
+    ctaNote: 'Подберём процедуру и домашний уход индивидуально.'
+  },
   biorev: {
     title: 'Биоревитализация',
     tagline: 'Интенсивное увлажнение и восстановление качества кожи, когда одного домашнего ухода уже недостаточно.',
@@ -14447,7 +16185,7 @@ const editorialServiceData = {
     concerns: ['Сухость и обезвоженность', 'Тусклый тон', 'Мелкие морщины', 'Следы усталости', 'Тонкая кожа'],
     resultTitle: 'До и после',
     results: [
-      { src: 'biorev-pdrn-before-after.jpg', alt: 'До и после биоревитализации с PDRN', caption: 'Результат биоревитализации с PDRN', width: 1024, height: 1280 }
+      { src: 'biorev-pdrn-before-after.jpg', alt: 'До и после биоревитализации с PDRN', caption: 'Биоревитализация с PDRN', width: 1024, height: 1280 }
     ],
     resultCopy: 'Кожа может выглядеть более увлажнённой, плотной и свежей. Выраженность результата и количество процедур зависят от исходного состояния кожи и выбранного протокола.',
     steps: ['Консультация и оценка состояния кожи', 'Очищение и подготовка зоны', 'Введение выбранного препарата', 'Рекомендации и план дальнейшего ухода'],
@@ -14470,7 +16208,7 @@ const editorialServiceData = {
     concerns: ['Второй подбородок', 'Нечёткий овал', 'Локальные жировые ловушки', 'Небольшие объёмы на теле'],
     resultTitle: 'До и после',
     results: [
-      { src: 'lipolytics-before-after.png', alt: 'До и после курса липолитической коррекции', caption: 'Результат работы с локальной зоной', width: 1158, height: 1148 }
+      { src: 'lipolytics-before-after.png', alt: 'До и после курса липолитической коррекции', caption: 'Работа с локальной зоной', width: 1158, height: 1148 }
     ],
     resultCopy: 'Процедура может помочь уменьшить локальный объём и сделать контур аккуратнее. Это не метод общего снижения веса: зона и целесообразность коррекции оцениваются очно.',
     steps: ['Оценка зоны и толщины жировой складки', 'Разметка и подготовка кожи', 'Введение препарата по выбранной схеме', 'Контроль реакции и рекомендации'],
@@ -14540,8 +16278,8 @@ const editorialServiceData = {
     concerns: ['Снижение плотности', 'Расширенные поры', 'Постакне и рубцы', 'Неровная текстура', 'Дряблость кожи'],
     resultTitle: 'До и после',
     results: [
-      { src: 'rf-microneedle-before-after-cropped.jpeg', alt: 'До и после RF-микроигольчатого лифтинга лица', caption: 'Результат RF-микроигольчатого — анфас', width: 720, height: 800 },
-      { src: 'rf-microneedle-before-after-profile.jpeg', alt: 'До и после RF-микроигольчатого лифтинга в профиль', caption: 'Результат RF-микроигольчатого — профиль', width: 1280, height: 848 },
+      { src: 'rf-microneedle-before-after-cropped.jpeg', alt: 'До и после RF-микроигольчатого лифтинга лица', caption: 'RF-микроигольчатый лифтинг — анфас', width: 720, height: 800 },
+      { src: 'rf-microneedle-before-after-profile.jpeg', alt: 'До и после RF-микроигольчатого лифтинга в профиль', caption: 'RF-микроигольчатый лифтинг — профиль', width: 1280, height: 848 },
       { src: 'rf-microneedle-knee-before-after.webp', alt: 'До и после RF-микроигольчатого лифтинга коленей', caption: 'Работа с качеством кожи в области коленей', width: 1248, height: 1122 }
     ],
     resultCopy: 'Кожа может стать более плотной и ровной, поры и следы постакне — менее заметными. Изменения развиваются постепенно, по мере обновления и ремоделирования тканей.',
@@ -14565,8 +16303,8 @@ const editorialServiceData = {
     concerns: ['Пигментные пятна', 'Покраснения', 'Сосудистая сетка', 'Следы постакне', 'Неровный тон'],
     resultTitle: 'До и после',
     results: [
-      { src: 'bbl-before-after-front-clean.webp', alt: 'До и после BBL-фотоомоложения в анфас', caption: 'Результат BBL — вид в анфас', width: 1089, height: 1444 },
-      { src: 'bbl-before-after-profile.jpeg', alt: 'До и после BBL-фотоомоложения в профиль', caption: 'Результат BBL — вид в профиль', width: 960, height: 1280 }
+      { src: 'bbl-before-after-front-clean.webp', alt: 'До и после BBL-фотоомоложения в анфас', caption: 'BBL — вид в анфас', width: 1089, height: 1444 },
+      { src: 'bbl-before-after-profile.jpeg', alt: 'До и после BBL-фотоомоложения в профиль', caption: 'BBL — вид в профиль', width: 960, height: 1280 }
     ],
     resultCopy: 'Процедура помогает сделать тон визуально ровнее, а пигментные и сосудистые проявления — менее заметными. BBL работает с качеством кожи, не меняя черты лица.',
     steps: ['Оценка фототипа и состояния кожи', 'Очищение и защита глаз', 'Световая обработка по выбранному протоколу', 'SPF-защита и рекомендации по уходу'],
@@ -14589,7 +16327,7 @@ const editorialServiceData = {
     concerns: ['Отёчность и пастозность', 'Тусклый вид кожи', 'Локальные зоны', 'Воспалительные элементы', 'Восстановление после процедур'],
     resultTitle: 'До и после',
     results: [
-      { src: 'ozone-before-after-jawline.webp', alt: 'До и после озонотерапии нижней трети лица', caption: 'Результат работы с нижней третью лица', width: 1320, height: 658 }
+      { src: 'ozone-before-after-jawline.webp', alt: 'До и после озонотерапии нижней трети лица', caption: 'Нижняя треть лица', width: 1320, height: 658 }
     ],
     resultCopy: 'Внешний результат зависит от зоны, показаний и сочетания с другими методами. Озонотерапия не является универсальной процедурой и включается в план только после консультации.',
     steps: ['Консультация и оценка показаний', 'Выбор зоны и способа воздействия', 'Проведение процедуры по протоколу', 'Контроль реакции и рекомендации'],
@@ -14612,7 +16350,7 @@ const editorialServiceData = {
     concerns: ['Отёчность лица', 'Напряжение жевательных мышц', 'Нечёткий овал', 'Тусклый тон', 'Усталый вид'],
     resultTitle: 'До и после',
     results: [
-      { src: 'facial-massage-before-after.jpeg', alt: 'До и после массажа лица: профиль и более свежий вид кожи', caption: 'Результат массажа лица — профиль', width: 1320, height: 2346, crop: true }
+      { src: 'facial-massage-before-after.jpeg', alt: 'До и после массажа лица: профиль и более свежий вид кожи', caption: 'Массаж лица — профиль', width: 1320, height: 2346, crop: true }
     ],
     resultCopy: 'Выраженность эффекта зависит от причины отёчности, тонуса мышц и регулярности процедур. Массаж не заменяет медицинскую диагностику при стойких отёках.',
     steps: ['Оценка отёчности и мышечного тонуса', 'Подготовка кожи и выбор техники', 'Массаж лица, шеи и выбранных зон', 'Завершающий уход и домашние рекомендации'],
@@ -14748,34 +16486,37 @@ function buildEditorialServiceModal(key, service) {
   const content = modal?.querySelector('.service-modal-content');
   if (!modal || !content) return;
 
+  const legacyFaq = service.useLegacyFaq
+    ? Array.from(content.querySelectorAll('details')).map((details) => ({
+        question: details.querySelector('summary')?.textContent.trim() || '',
+        answer: details.querySelector(':scope > div')?.innerHTML || ''
+      }))
+    : service.faq;
+  const faqMarkup = legacyFaq.map((item) => `<details><summary><span>${item.question || item.q}</span></summary><div>${item.answer || `<p>${item.a}</p>`}</div></details>`).join('');
+  const hasPhotos = Boolean(service.results?.length);
+
   modal.classList.add('treatment-modal');
-  content.className = 'service-modal-content treatment-editorial';
+  content.className = 'service-modal-content modal-detail-card modal-detail-card--canonical';
   content.innerHTML = `
-    <section class="treatment-hero" aria-labelledby="${key}-editorial-title">
-      <div class="treatment-hero__intro"><h4 id="${key}-editorial-title">${service.title}</h4><p>${service.tagline}</p></div>
-      <figure class="treatment-hero__media"><img ${editorialImageAttributes(service.cover)}${service.cover.position ? ` style="object-position:${service.cover.position}"` : ''}></figure>
-      <div class="treatment-facts" aria-label="Особенности услуги">${service.facts.map((fact, index) => `<div class="treatment-fact">${editorialFactIcons[index]}<strong>${fact}</strong></div>`).join('')}</div>
-      <div class="treatment-concerns"><p>Подойдёт, если вас беспокоят:</p><ul>${service.concerns.map((concern) => `<li>${concern}</li>`).join('')}</ul></div>
+    <section class="modal-detail-card__section modal-detail-card__overview" aria-labelledby="${key}-editorial-title">
+      <div class="modal-detail-card__intro"><h3 id="${key}-editorial-title">${service.title}</h3><p>${service.tagline}</p></div>
+      <div class="modal-detail-card__facts" aria-label="Особенности услуги">${service.facts.map((fact, index) => `<div class="modal-detail-card__fact">${editorialFactIcons[index]}<strong>${fact}</strong></div>`).join('')}</div>
+      <div class="modal-detail-card__divider" aria-hidden="true"></div>
+      <div class="modal-detail-card__concerns"><p>Подойдёт, если вас беспокоят:</p><ul>${service.concerns.map((concern) => `<li>${concern}</li>`).join('')}</ul></div>
+      <figure class="modal-detail-card__media"><img ${editorialImageAttributes(service.cover)}${service.cover.position ? ` style="object-position:${service.cover.position}"` : ''}></figure>
     </section>
-    ${service.results?.length ? `
-    <section class="result-showcase treatment-result-showcase" aria-label="Результаты процедуры">
-      <div class="result-summary">
-        <p class="result-summary__eyebrow">Результаты</p>
-        <h4>Что получает клиент</h4>
-        <p class="result-summary__copy">${service.resultCopy}</p>
-        <div class="result-summary__note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div>
+    <section class="modal-detail-card__section modal-detail-card__results" aria-label="Результаты процедуры">
+      <p class="modal-detail-card__eyebrow">Результаты</p>
+      <div class="modal-detail-card__result-grid">
+        <div class="modal-detail-card__result-column modal-detail-card__result-column--visual"><h3>${hasPhotos ? 'До и после' : (service.resultTitle || 'Результаты')}</h3>${editorialResultMarkup(key, service)}</div>
+        <div class="modal-detail-card__result-column modal-detail-card__result-column--copy"><h3>Что получает клиент</h3><p>${service.resultCopy}</p></div>
       </div>
-      <div class="result-gallery treatment-result"><h4>${service.resultTitle}</h4>${editorialResultMarkup(key, service)}</div>
+      <div class="modal-detail-card__note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div>
     </section>
-    <section class="treatment-steps-section"><aside class="treatment-steps" aria-labelledby="${key}-steps-title"><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol></aside></section>` : `
-    <section class="treatment-result-layout">
-      <div class="treatment-result"><h4>${service.resultTitle}</h4>${editorialResultMarkup(key, service)}<p class="treatment-result__copy">${service.resultCopy}</p></div>
-      <aside class="treatment-steps" aria-labelledby="${key}-steps-title"><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol><div class="treatment-note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div></aside>
-    </section>`}
-    <section class="treatment-faq" aria-labelledby="${key}-faq-title"><h4 id="${key}-faq-title">Что важно знать</h4>${service.faq.map((item) => `<details><summary><span>${item.q}</span></summary><div><p>${item.a}</p></div></details>`).join('')}</section>
-    <section class="treatment-consult"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg><div><h4>${service.consultTitle}</h4><p>${service.consultText}</p></div></section>
-    <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified treatment-booking">${service.cta}</a>
-    <p class="treatment-booking-note">${service.ctaNote}</p>`;
+    <section class="modal-detail-card__section modal-detail-card__steps" aria-labelledby="${key}-steps-title"><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol></section>
+    <section class="modal-detail-card__section modal-detail-card__faq" aria-labelledby="${key}-faq-title"><h4 id="${key}-faq-title">Что важно знать</h4>${faqMarkup}</section>
+    <section class="modal-detail-card__callout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg><div><h4>${service.consultTitle}</h4><p>${service.consultText}</p></div></section>
+    <div class="modal-detail-card__cta"><a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">${service.cta}</a><p>${service.ctaNote}</p></div>`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14873,6 +16614,45 @@ function enableHorizontalSwipe(target, onPrevious, onNext) {
   }, { passive: true });
   target.dataset.swipeReady = 'true';
 }
+
+/* Some source files place the "before" and "after" frames one above another.
+   Split those pairs into equal side-by-side panels without changing the original image files. */
+const stackedBeforeAfterPairs = {
+  /* The useful photos occupy a small central band in these tall source files.
+     These positions target that band exactly; the old values exposed the blank
+     canvas above/below the photographs and cut both frames at the split. */
+  'botox-relatox-before-after.jpeg': { scale: '500%', before: '55%', after: '28%' },
+  'botox-rentox-before-after.jpeg': { scale: '500%', before: '66%', after: '36%' },
+  'botox-before-after.png': { scale: '200%', before: '0%', after: '100%' }
+};
+
+function prepareBeforeAfterFrames(modal) {
+  modal.querySelectorAll('img[src]').forEach((image) => {
+    const source = image.getAttribute('src')?.split('/').pop();
+    const settings = source ? stackedBeforeAfterPairs[source] : null;
+    if (!settings || image.closest('.before-after-frame')) return;
+
+    const frame = document.createElement('div');
+    frame.className = 'before-after-frame';
+    frame.style.setProperty('--before-after-scale', settings.scale);
+    frame.setAttribute('role', 'img');
+    frame.setAttribute('aria-label', image.alt || 'Результат до и после');
+
+    const before = document.createElement('span');
+    before.className = 'before-after-frame__panel before-after-frame__panel--before';
+    const after = document.createElement('span');
+    after.className = 'before-after-frame__panel before-after-frame__panel--after';
+    const imageUrl = image.currentSrc || image.src;
+    before.style.backgroundImage = `url("${imageUrl}")`;
+    after.style.backgroundImage = `url("${imageUrl}")`;
+    before.style.setProperty('--before-after-position', settings.before);
+    after.style.setProperty('--before-after-position', settings.after);
+
+    image.replaceWith(frame);
+    frame.append(before, after);
+  });
+}
+
 function initCarousel(carousel) {
   if (!carousel || carousel.dataset.initialized === 'true') return;
   const slides = Array.from(carousel.querySelectorAll('.modal-carousel__slide'));
@@ -15048,6 +16828,7 @@ function openModal(modal){
   prepareModalStructure(modal);
   // Preserve dedicated editorial layouts without rewrapping their content.
   if (!modal.matches('.treatment-modal, #modal-peel, #modal-clean, #modal-contour, #modal-botox')) decorateModalDetails(modal);
+  prepareBeforeAfterFrames(modal);
   modal.querySelectorAll('.modal-carousel').forEach(initCarousel);
   prepareModalSummary(modal);
   prepareModalAccordions(modal);
@@ -15064,6 +16845,10 @@ function openModal(modal){
 }
 function closeModal(){if(!activeModal) return; activeModal.hidden=true; document.body.classList.remove('modal-open'); restoreModalBackground(); if(lastFocused) lastFocused.focus(); activeModal=null;}
 modalButtons.forEach((btn)=>btn.addEventListener('click',()=>openModal(document.getElementById(btn.dataset.modal))));
+window.addEventListener('load', () => {
+  const qaModal = new URLSearchParams(window.location.search).get('qa-modal');
+  if (qaModal) window.setTimeout(() => openModal(document.getElementById(`modal-${qaModal}`)), 0);
+}, { once: true });
 document.addEventListener('click',(e)=>{if(e.target instanceof HTMLElement && e.target.dataset.close==='service-modal') closeModal();});
 document.addEventListener('keydown',(e)=>{
   if (!activeModal) return;
@@ -15130,7 +16915,6 @@ if ('IntersectionObserver' in window) {
         });
       }
 
-      wrap.style.height = `${activeSlide.offsetHeight}px`;
       if (position) position.textContent = `${currentIndex + 1} / ${originals.length}`;
       if (prev) prev.disabled = currentIndex === 0;
       if (next) next.disabled = currentIndex === originals.length - 1;
@@ -15155,13 +16939,6 @@ if ('IntersectionObserver' in window) {
       cancelAnimationFrame(scrollFrame);
       scrollFrame = requestAnimationFrame(findNearestSlide);
     }, { passive: true });
-
-    const mobileResizeObserver = new ResizeObserver(() => updateMobileCarousel(currentIndex, false));
-    originals.forEach((slide) => mobileResizeObserver.observe(slide));
-    originals.forEach((slide) => {
-      const image = slide.querySelector('img');
-      if (image && !image.complete) image.addEventListener('load', () => updateMobileCarousel(currentIndex, false), { once: true });
-    });
 
     updateMobileCarousel(0, false);
     return;
@@ -15358,39 +17135,40 @@ if ('IntersectionObserver' in window) {
           <section class="contour-editorial__result" aria-labelledby="contour-result-title">
             <div class="contour-editorial__result-copy">
               <span>Результаты</span>
-              <h4 id="contour-result-title">Естественная коррекция<br>объёмов и пропорций.</h4>
-              <p>Процедура помогает скорректировать объемы, улучшить пропорции лица, смягчить возрастные изменения и сохранить естественную мимику.</p>
+              <h4 id="contour-result-title">Что получает клиент</h4>
+              <p>Естественная коррекция объёмов и пропорций. Процедура помогает скорректировать объемы, улучшить пропорции лица, смягчить возрастные изменения и сохранить естественную мимику.</p>
               <div class="contour-editorial__note">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5m0-8h.01" /></svg>
                 <p>Результат и выбор препарата зависят от анатомии, зоны коррекции и индивидуальной задачи.</p>
               </div>
             </div>
+            <h4 class="contour-editorial__before-after-title">До и после</h4>
             <div class="modal-carousel modal-carousel--compact contour-carousel contour-editorial__carousel" data-carousel="contour-results">
               <button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото контурной пластики">‹</button>
               <div class="modal-carousel__viewport">
                 <figure class="modal-carousel__slide is-active">
                   <img src="contour-plastic-olga-01-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики — губы</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-plastic-olga-02-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики — губы</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-plastic-olga-03-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики — губы</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-plastic-olga-04-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики — губы</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-before-after.jpeg" alt="До и после контурной пластики губ: естественный объем и более четкий контур" loading="lazy" decoding="async" width="917" height="1280" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики губ</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-cheeks-before-after-clean.jpeg" alt="До и после контурной пластики скул: более выраженный объем и гармоничный профиль" loading="lazy" decoding="async" width="1271" height="1237" />
-                  <figcaption class="modal-result__caption">Результат контурной пластики скул</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика скул</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-profile-before-after-clean.jpeg" alt="До и после контурной пластики: коррекция профиля и губ" loading="lazy" decoding="async" width="1122" height="1402" />
@@ -15398,31 +17176,31 @@ if ('IntersectionObserver' in window) {
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-new-before-after-clean.jpeg" alt="До и после контурной пластики губ" loading="lazy" decoding="async" width="941" height="1672" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — до и после</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-result-01-clean.jpeg" alt="До и после контурной пластики губ: более выраженный объем и контур" loading="lazy" decoding="async" width="941" height="1672" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 1</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-result-02.webp" alt="До и после контурной пластики губ: естественная коррекция формы" loading="lazy" decoding="async" width="1000" height="1778" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 2</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-result-03.webp" alt="До и после контурной пластики губ: гармоничный объем" loading="lazy" decoding="async" width="954" height="1662" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 3</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-result-04.webp" alt="До и после контурной пластики губ: деликатная коррекция объема" loading="lazy" decoding="async" width="1000" height="1752" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 4</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-result-05-clean.jpeg" alt="До и после контурной пластики губ: коррекция формы и объема" loading="lazy" decoding="async" width="941" height="1672" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 5</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
                 <figure class="modal-carousel__slide">
                   <img src="contour-lips-result-06-clean.jpeg" alt="До и после контурной пластики губ: естественный объем и четкий контур" loading="lazy" decoding="async" width="941" height="1672" />
-                  <figcaption class="modal-result__caption">Контурная пластика губ — результат 6</figcaption>
+                  <figcaption class="modal-result__caption">Контурная пластика губ</figcaption>
                 </figure>
               </div>
               <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото контурной пластики">›</button>
@@ -15758,7 +17536,7 @@ if ('IntersectionObserver' in window) {
             <h4>Фото процедуры</h4>
             <figure class="modal-result__media">
               <img src="plasma-therapy-cover.jpg" alt="Фото процедуры плазмотерапии" loading="lazy" width="1024" height="1536" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
+              <figcaption class="modal-result__caption">Иллюстрация процедуры. Фотографии до/после будут добавлены отдельно.</figcaption>
             </figure>
           </section>
           <section class="modal-detail-card">
@@ -15898,96 +17676,6 @@ if ('IntersectionObserver' in window) {
         </div>
       </div>
     </div>
-    <div class="service-modal" id="modal-smas" role="dialog" aria-modal="true" aria-labelledby="modal-smas-title" hidden>
-      <div class="service-modal-backdrop" data-close="service-modal"></div>
-      <div class="service-modal-dialog" tabindex="-1">
-        <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
-        <h3 id="modal-smas-title">SMAS-лифтинг</h3>
-        <div class="service-modal-content">
-          <section class="modal-detail-card modal-detail-card--intro">
-            <h4>Услуга</h4>
-            <p>SMAS-протокол для выраженного лифтинг-эффекта и улучшения овала лица.</p>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Фото процедуры</h4>
-            <figure class="modal-result__media">
-              <img src="rf-lifting-cover.jpg" alt="Фото процедуры SMAS-протокола" loading="lazy" width="1320" height="1440" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
-            </figure>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Описание услуги</h4>
-            <p>Процедура помогает укрепить ткани, сделать контуры лица более четкими и визуально подтянутыми.</p>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Препараты</h4>
-            <p>Протокол подбирается индивидуально на консультации.</p>
-          </section>
-          <p>Перечень препаратов и индивидуальный протокол по этой процедуре подбирается на консультации с учётом ваших задач и противопоказаний.</p>
-          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">Записаться</a>
-        </div>
-      </div>
-    </div>
-    <div class="service-modal" id="modal-ems" role="dialog" aria-modal="true" aria-labelledby="modal-ems-title" hidden>
-      <div class="service-modal-backdrop" data-close="service-modal"></div>
-      <div class="service-modal-dialog" tabindex="-1">
-        <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
-        <h3 id="modal-ems-title">EMS-протокол</h3>
-        <div class="service-modal-content">
-          <section class="modal-detail-card modal-detail-card--intro">
-            <h4>Услуга</h4>
-            <p>EMS-протокол для активации мышц и поддержки тонуса тканей.</p>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Фото процедуры</h4>
-            <figure class="modal-result__media">
-              <img src="hero-photo-fixed.webp" alt="Фото процедуры EMS-протокола" loading="lazy" decoding="async" width="1200" height="1500" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
-            </figure>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Описание услуги</h4>
-            <p>Процедура помогает укрепить мышечный каркас и поддержать форму лица или тела в зависимости от зоны воздействия.</p>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Препараты</h4>
-            <p>Протокол подбирается индивидуально на консультации.</p>
-          </section>
-          <p>Перечень препаратов и индивидуальный протокол по этой процедуре подбирается на консультации с учётом ваших задач и противопоказаний.</p>
-          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">Записаться</a>
-        </div>
-      </div>
-    </div>
-    <div class="service-modal" id="modal-laser" role="dialog" aria-modal="true" aria-labelledby="modal-laser-title" hidden>
-      <div class="service-modal-backdrop" data-close="service-modal"></div>
-      <div class="service-modal-dialog" tabindex="-1">
-        <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
-        <h3 id="modal-laser-title">Лазерные процедуры</h3>
-        <div class="service-modal-content">
-          <section class="modal-detail-card modal-detail-card--intro">
-            <h4>Услуга</h4>
-            <p>Лазерный протокол для обновления и выравнивания кожи.</p>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Фото процедуры</h4>
-            <figure class="modal-result__media">
-              <img src="facial-cleansing-cover.jpg" alt="Фото процедуры лазерного протокола" loading="lazy" width="1536" height="1024" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
-            </figure>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Описание услуги</h4>
-            <p>Подходит для деликатного обновления кожи, улучшения ее текстуры и визуального выравнивания тона.</p>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Препараты</h4>
-            <p>Подбираются индивидуально на консультации.</p>
-          </section>
-          <p>Перечень препаратов и индивидуальный протокол по этой процедуре подбирается на консультации с учётом ваших задач и противопоказаний.</p>
-          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">Записаться</a>
-        </div>
-      </div>
-    </div>
     <div class="service-modal" id="modal-ozone" role="dialog" aria-modal="true" aria-labelledby="modal-ozone-title" hidden>
       <div class="service-modal-backdrop" data-close="service-modal"></div>
       <div class="service-modal-dialog" tabindex="-1">
@@ -16028,36 +17716,6 @@ if ('IntersectionObserver' in window) {
             <h4>Препараты</h4>
             <p>Медицинская кислородно-озоновая смесь.</p>
           </section>
-          <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">Записаться</a>
-        </div>
-      </div>
-    </div>
-    <div class="service-modal" id="modal-vacrf" role="dialog" aria-modal="true" aria-labelledby="modal-vacrf-title" hidden>
-      <div class="service-modal-backdrop" data-close="service-modal"></div>
-      <div class="service-modal-dialog" tabindex="-1">
-        <button class="service-modal-close" type="button" data-close="service-modal" aria-label="Закрыть">×</button>
-        <h3 id="modal-vacrf-title">Vacu RF</h3>
-        <div class="service-modal-content">
-          <section class="modal-detail-card modal-detail-card--intro">
-            <h4>Услуга</h4>
-            <p>Vacu RF-протокол для комплексного улучшения качества кожи и рельефа тканей.</p>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Фото процедуры</h4>
-            <figure class="modal-result__media">
-              <img src="rf-lifting-cover.jpg" alt="Фото процедуры Vacu RF-протокола" loading="lazy" width="1320" height="1440" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
-            </figure>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Описание услуги</h4>
-            <p>Процедура объединяет аппаратный и восстановительный подход для более заметного и аккуратного результата.</p>
-          </section>
-          <section class="modal-detail-card">
-            <h4>Препараты</h4>
-            <p>Протокол подбирается индивидуально на консультации.</p>
-          </section>
-          <p>Перечень препаратов и индивидуальный протокол по этой процедуре подбирается на консультации с учётом ваших задач и противопоказаний.</p>
           <a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">Записаться</a>
         </div>
       </div>
@@ -16123,11 +17781,11 @@ if ('IntersectionObserver' in window) {
                   </figure>
                   <figure class="modal-carousel__slide">
                     <img src="peeling-before-after-eye-area.jpeg" alt="До и после пилинга: кожа в области глаз и щёк" loading="lazy" decoding="async" width="1320" height="2346" />
-                    <figcaption class="modal-result__caption">Результат пилинга — область глаз и щёк</figcaption>
+                    <figcaption class="modal-result__caption">Пилинг — область глаз и щёк</figcaption>
                   </figure>
                   <figure class="modal-carousel__slide">
                     <img src="peeling-before-after-skin-texture.jpeg" alt="До и после пилинга: улучшение текстуры и сияния кожи" loading="lazy" decoding="async" width="1320" height="2346" />
-                    <figcaption class="modal-result__caption">Результат пилинга — текстура и сияние кожи</figcaption>
+                    <figcaption class="modal-result__caption">Пилинг — текстура и сияние кожи</figcaption>
                   </figure>
                 </div>
                 <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото результата пилинга">›</button>
@@ -16135,19 +17793,20 @@ if ('IntersectionObserver' in window) {
               </div>
             </div>
 
-            <aside class="peel-steps" aria-labelledby="peel-steps-title">
-              <h4 id="peel-steps-title">Как проходит процедура</h4>
-              <ol>
-                <li><span>01</span><p>Диагностика и очищение кожи</p></li>
-                <li><span>02</span><p>Подбор и нанесение состава</p></li>
-                <li><span>03</span><p>Завершающий уход</p></li>
-              </ol>
-              <div class="peel-note">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5m0-8h.01" /></svg>
-                <p>Состав и интенсивность воздействия подбираются индивидуально после оценки состояния кожи.</p>
-              </div>
-            </aside>
           </section>
+
+          <aside class="peel-steps" aria-labelledby="peel-steps-title">
+            <h4 id="peel-steps-title">Как проходит процедура</h4>
+            <ol>
+              <li><span>01</span><p>Диагностика и очищение кожи</p></li>
+              <li><span>02</span><p>Подбор и нанесение состава</p></li>
+              <li><span>03</span><p>Завершающий уход</p></li>
+            </ol>
+            <div class="peel-note">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5m0-8h.01" /></svg>
+              <p>Состав и интенсивность воздействия подбираются индивидуально после оценки состояния кожи.</p>
+            </div>
+          </aside>
 
           <section class="peel-faq" aria-labelledby="peel-faq-title">
             <h4 id="peel-faq-title">Что важно знать</h4>
@@ -16220,12 +17879,12 @@ if ('IntersectionObserver' in window) {
             </figure>
             <div class="peel-facts" aria-label="Особенности процедуры">
               <div class="peel-fact">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Zm0 4v5l3 2" /></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><circle cx="9" cy="9" r=".75" /><circle cx="15" cy="10" r=".75" /><circle cx="11" cy="15" r=".75" /><circle cx="15" cy="15" r=".75" /></svg>
                 <strong>Чистые поры</strong>
                 <span>и гладкий рельеф</span>
               </div>
               <div class="peel-fact">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 13-7 7-9-9V4h7l9 9ZM8 8h.01" /></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z" /><path d="m18.5 14 .8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z" /></svg>
                 <strong>Свежий тон</strong>
                 <span>и ухоженный вид</span>
               </div>
@@ -16267,29 +17926,26 @@ if ('IntersectionObserver' in window) {
                     <img src="facial-cleansing-before-after-nose.jpeg" alt="До и после чистки лица: очищение пор в области носа" loading="lazy" width="1320" height="1310" />
                     <figcaption class="modal-result__caption">Очищение пор в области носа</figcaption>
                   </figure>
-                  <figure class="modal-carousel__slide">
-                    <img src="facial-cleansing-before-after-eyes.jpeg" alt="До и после чистки лица: область вокруг глаз и носа" loading="lazy" width="1320" height="2346" />
-                    <figcaption class="modal-result__caption">Область вокруг глаз и носа</figcaption>
-                  </figure>
                 </div>
                 <button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото чистки лица">›</button>
                 <div class="modal-carousel__dots" aria-label="Фотографии результатов чистки лица"></div>
               </div>
             </div>
 
-            <aside class="peel-steps" aria-labelledby="clean-steps-title">
-              <h4 id="clean-steps-title">Как проходит процедура</h4>
-              <ol>
-                <li><span>01</span><p>Диагностика и подготовка кожи</p></li>
-                <li><span>02</span><p>Основной этап очищения по показаниям</p></li>
-                <li><span>03</span><p>Успокаивающий и восстанавливающий уход</p></li>
-              </ol>
-              <div class="peel-note">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5m0-8h.01" /></svg>
-                <p>Формат процедуры и средства подбираются индивидуально после оценки чувствительности, жирности и текущего состояния кожи.</p>
-              </div>
-            </aside>
           </section>
+
+          <aside class="peel-steps" aria-labelledby="clean-steps-title">
+            <h4 id="clean-steps-title">Как проходит процедура</h4>
+            <ol>
+              <li><span>01</span><p>Диагностика и подготовка кожи</p></li>
+              <li><span>02</span><p>Основной этап очищения по показаниям</p></li>
+              <li><span>03</span><p>Успокаивающий и&nbsp;восстанавливающий уход</p></li>
+            </ol>
+            <div class="peel-note">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5m0-8h.01" /></svg>
+              <p>Формат процедуры и средства подбираются индивидуально после оценки чувствительности, жирности и текущего состояния кожи.</p>
+            </div>
+          </aside>
 
           <section class="peel-faq" aria-labelledby="clean-faq-title">
             <h4 id="clean-faq-title">Что важно знать</h4>
@@ -16330,7 +17986,7 @@ if ('IntersectionObserver' in window) {
             <h4>Фото процедуры</h4>
             <figure class="modal-result__media">
               <img src="facial-massage-cover.jpg" alt="Фото процедуры массажа лица" loading="lazy" width="1536" height="1024" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
+              <figcaption class="modal-result__caption">Иллюстрация процедуры. Фотографии до/после будут добавлены отдельно.</figcaption>
             </figure>
           </section>
           <section class="modal-detail-card">
@@ -16365,7 +18021,7 @@ if ('IntersectionObserver' in window) {
             <h4>Фото процедуры</h4>
             <figure class="modal-result__media">
               <img src="iv-therapy-cover.jpg" alt="Фото процедуры IV-терапии" loading="lazy" width="1536" height="1024" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
+              <figcaption class="modal-result__caption">Иллюстрация процедуры. Фотографии до/после будут добавлены отдельно.</figcaption>
             </figure>
           </section>
           <section class="modal-detail-card">
@@ -16400,7 +18056,7 @@ if ('IntersectionObserver' in window) {
             <h4>Фото процедуры</h4>
             <figure class="modal-result__media">
               <img src="antistress-cover.jpg" alt="Фото процедуры антистресс-программы" loading="lazy" width="1536" height="1024" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
+              <figcaption class="modal-result__caption">Иллюстрация процедуры. Фотографии до/после будут добавлены отдельно.</figcaption>
             </figure>
           </section>
           <section class="modal-detail-card">
@@ -16433,7 +18089,7 @@ if ('IntersectionObserver' in window) {
             <h4>Фото процедуры</h4>
             <figure class="modal-result__media">
               <img src="detox-cover.jpg" alt="Фото процедуры detox-программы" loading="lazy" width="1536" height="1024" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
+              <figcaption class="modal-result__caption">Иллюстрация процедуры. Фотографии до/после будут добавлены отдельно.</figcaption>
             </figure>
           </section>
           <section class="modal-detail-card">
@@ -16466,7 +18122,7 @@ if ('IntersectionObserver' in window) {
             <h4>Фото процедуры</h4>
             <figure class="modal-result__media">
               <img src="personal-program-cover.jpg" alt="Фото процедуры персональной программы" loading="lazy" width="1536" height="1024" />
-              <figcaption class="modal-result__caption">Иллюстрация процедуры. Реальные пары результатов будут добавлены отдельно.</figcaption>
+              <figcaption class="modal-result__caption">Иллюстрация процедуры. Фотографии до/после будут добавлены отдельно.</figcaption>
             </figure>
           </section>
           <section class="modal-detail-card">
