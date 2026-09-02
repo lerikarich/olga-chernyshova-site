@@ -15991,6 +15991,37 @@ img[src$="ozone-before-after-jawline.webp"] {
 }
 
 @media (min-width: 721px) and (max-width: 1199px) {
+  .service-modal.treatment-modal .modal-detail-card__overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.16fr) minmax(300px, .84fr);
+    grid-template-areas:
+      "intro media"
+      "facts media"
+      "concerns media";
+    column-gap: clamp(28px, 4vw, 44px);
+    align-items: start;
+  }
+
+  .service-modal.treatment-modal .modal-detail-card__intro { grid-area: intro; }
+  .service-modal.treatment-modal .modal-detail-card__facts { grid-area: facts; }
+  .service-modal.treatment-modal .modal-detail-card__concerns { grid-area: concerns; }
+  .service-modal.treatment-modal .modal-detail-card__media {
+    grid-area: media;
+    align-self: stretch;
+    height: auto;
+    min-height: 440px;
+    margin: 0;
+  }
+
+  .service-modal.treatment-modal .modal-detail-card__divider { display: none; }
+  .service-modal.treatment-modal .modal-detail-card__facts { margin-top: 28px; }
+  .service-modal.treatment-modal .modal-detail-card__concerns {
+    margin-top: 28px;
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--bg-soft);
+  }
+
   #modal-contour.service-modal.treatment-modal .modal-detail-card__overview {
     display: grid;
     min-height: 0;
@@ -16023,6 +16054,24 @@ img[src$="ozone-before-after-jawline.webp"] {
 
   #modal-contour.service-modal.treatment-modal .modal-detail-card__intro h3 {
     white-space: normal;
+  }
+}
+
+@media (min-width: 721px) {
+  .service-modal.treatment-modal .modal-detail-card__overview {
+    grid-template-columns: minmax(0, 1.16fr) minmax(300px, .84fr);
+    column-gap: clamp(28px, 4vw, 44px);
+  }
+
+  .service-modal.treatment-modal .modal-detail-card__divider { display: none; }
+
+  .service-modal.treatment-modal .modal-detail-card__facts { margin-top: 28px; }
+
+  .service-modal.treatment-modal .modal-detail-card__concerns {
+    margin-top: 28px;
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--bg-soft);
   }
 }
 
