@@ -15724,6 +15724,34 @@ img[src$="ozone-before-after-jawline.webp"] {
 .service-modal.treatment-modal .modal-detail-card__faq details p,
 .service-modal.treatment-modal .modal-detail-card__faq details li { color: var(--text-muted); font-size: .8rem; line-height: 1.58; }
 
+/* The contour FAQ body comes from the legacy template. Reset its old
+   typography so every answer in the canonical accordion has one voice. */
+#modal-contour.service-modal.treatment-modal .modal-detail-card__faq details * {
+  font-family: "Manrope", sans-serif !important;
+}
+
+#modal-contour.service-modal.treatment-modal .modal-detail-card__faq details p,
+#modal-contour.service-modal.treatment-modal .modal-detail-card__faq details li {
+  margin: 0 !important;
+  color: var(--text-muted) !important;
+  font-size: .88rem !important;
+  line-height: 1.58 !important;
+}
+
+#modal-contour.service-modal.treatment-modal .modal-detail-card__faq details h5 {
+  margin: 0 0 6px !important;
+  color: var(--text) !important;
+  font-size: .92rem !important;
+  font-weight: 700 !important;
+  line-height: 1.38 !important;
+}
+
+#modal-contour.service-modal.treatment-modal .modal-detail-card__faq .contour-product + .contour-product {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top-color: var(--line);
+}
+
 .service-modal.treatment-modal .modal-detail-card__callout {
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr);
