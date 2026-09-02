@@ -11092,6 +11092,107 @@ main {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1199px) {
+  #hero.hero.section {
+    min-height: auto !important;
+    padding: 12px 0 18px !important;
+    background: transparent !important;
+  }
+
+  #hero .container.hero-ref {
+    position: relative !important;
+    width: min(100% - 40px, 1120px) !important;
+    min-height: clamp(600px, calc(100svh - 110px), 680px) !important;
+    display: block !important;
+    overflow: hidden !important;
+    border-radius: 30px !important;
+    background: linear-gradient(104deg, #f5f0e9 0%, #eee3d9 56%, #e6d8cd 100%) !important;
+  }
+
+  #hero .hero-ref .hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+    width: 58% !important;
+    min-height: clamp(600px, calc(100svh - 110px), 680px) !important;
+    margin: 0 !important;
+    padding: 56px 24px 54px clamp(36px, 5vw, 60px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    transform: none !important;
+  }
+
+  #hero .hero-ref h1 {
+    font-size: clamp(3.25rem, 5vw, 4rem) !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  #hero .hero-ref h1 span { display: inline !important; }
+  #hero .hero-ref h1 span + span::before { content: " " !important; }
+
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    margin-top: 30px !important;
+    font-size: clamp(1.65rem, 2.6vw, 2rem) !important;
+    line-height: 1.14 !important;
+  }
+
+  #hero .hero-ref .hero-badges {
+    width: min(100%, 620px) !important;
+    margin-top: 24px !important;
+    grid-template-columns: repeat(2, max-content) !important;
+    row-gap: 8px !important;
+  }
+
+  #hero .hero-ref .hero-badges span:nth-child(3) {
+    grid-column: 1 / -1 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  #hero .hero-ref .hero-actions {
+    width: min(100%, 540px) !important;
+    margin-top: 42px !important;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr) !important;
+    gap: 14px !important;
+  }
+
+  #hero .hero-ref .hero-actions .btn-unified,
+  #hero .hero-ref .hero-actions .hero-text-link {
+    height: 58px !important;
+    min-height: 58px !important;
+    font-size: .95rem !important;
+  }
+
+  #hero .hero-ref .hero-visual {
+    position: absolute !important;
+    z-index: 1 !important;
+    inset: 0 0 0 auto !important;
+    width: 44% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+  }
+
+  #hero .hero-ref .hero-visual picture,
+  #hero .hero-ref .hero-visual img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  #hero .hero-ref .hero-visual img {
+    object-fit: cover !important;
+    object-position: 56% 22% !important;
+    transform: none !important;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.22) 22%, rgba(0,0,0,.72) 50%, #000 76%) !important;
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.22) 22%, rgba(0,0,0,.72) 50%, #000 76%) !important;
+  }
+}
+
 @media (max-width: 360px) {
   #hero .hero-ref .hero-content {
     padding-inline: 16px !important;
@@ -11583,7 +11684,9 @@ main {
   #hero .hero-ref .hero-visual {
     order: 2 !important;
     width: min(100%, 560px) !important;
-    min-height: 520px !important;
+    /* The card ends shortly after the actions: the portrait remains a backdrop,
+       not a reason for a large empty band under the buttons. */
+    min-height: 430px !important;
     height: 64svh !important;
     margin-inline: auto !important;
     overflow: hidden !important;
@@ -12526,8 +12629,8 @@ main {
     width: 100vw !important;
     max-width: 100vw !important;
     margin: 0 0 0 calc(50% - 50vw) !important;
-    min-height: calc(100svh - 88px) !important;
-    padding: 12px 0 20px !important;
+    min-height: auto !important;
+    padding: 4px 0 8px !important;
     background: transparent !important;
     box-shadow: none !important;
   }
@@ -12535,7 +12638,7 @@ main {
   #hero .container.hero-ref {
     width: calc(100% - 32px) !important;
     max-width: none !important;
-    min-height: calc(100svh - 120px) !important;
+    min-height: 520px !important;
     border-radius: 30px !important;
     background:
       radial-gradient(circle at 82% 16%, rgba(255, 250, 244, .3), transparent 34%),
@@ -12550,7 +12653,11 @@ main {
     z-index: 4 !important;
     width: 54% !important;
     max-width: none !important;
-    padding: clamp(52px, 7vh, 80px) 24px clamp(44px, 6vh, 68px) clamp(48px, 4vw, 64px) !important;
+    min-height: 430px !important;
+    padding: 18px 24px 18px clamp(38px, 3vw, 50px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
     background: transparent !important;
     border: 0 !important;
     border-radius: 0 !important;
@@ -12562,9 +12669,10 @@ main {
   #hero .hero-ref .hero-subcity.hero__tagline {
     width: 100% !important;
     max-width: none !important;
-    font-size: clamp(1.65rem, 1.7vw, 1.95rem) !important;
-    line-height: 1.08 !important;
+    font-size: clamp(1.52rem, 1.5vw, 1.74rem) !important;
+    line-height: 1.04 !important;
     text-wrap: initial !important;
+    margin-top: 14px !important;
   }
 
   #hero .hero-ref .hero-subcity-line {
@@ -12577,7 +12685,8 @@ main {
     max-width: 900px !important;
     grid-template-columns: repeat(2, max-content) !important;
     column-gap: 0 !important;
-    row-gap: 12px !important;
+    row-gap: 6px !important;
+    margin-top: 14px !important;
     justify-content: start !important;
   }
 
@@ -12595,24 +12704,25 @@ main {
   }
 
   #hero .hero-ref .hero-badges strong {
-    font-size: clamp(.86rem, .88vw, 1rem) !important;
+    font-size: clamp(.84rem, .82vw, .94rem) !important;
     font-weight: 650 !important;
     white-space: nowrap !important;
   }
 
   #hero .hero-ref .hero-actions {
     width: min(100%, 520px) !important;
+    margin-top: 20px !important;
     margin-left: 0 !important;
     align-self: flex-start !important;
     justify-self: start !important;
     grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr) !important;
-    gap: 12px !important;
+    gap: 10px !important;
   }
 
   #hero .hero-ref .hero-actions .btn-unified,
   #hero .hero-ref .hero-actions .hero-text-link {
-    min-height: 48px !important;
-    height: 48px !important;
+    min-height: 46px !important;
+    height: 46px !important;
     padding: 0 18px !important;
     font-size: .82rem !important;
   }
@@ -13126,31 +13236,33 @@ body::after {
   transform: translateY(1px) !important;
 }
 
-/* Hero reference composition: larger waist-up portrait with copy sitting lower. */
+/* Desktop hero: a compact composition — content finishes just below the actions. */
 @media (min-width: 901px) {
   #hero .container.hero-ref {
-    min-height: clamp(680px, calc(100svh - 108px), 850px) !important;
+    min-height: 460px !important;
   }
 
   #hero .hero-ref .hero-content {
     width: 54% !important;
-    padding-top: clamp(92px, 11vh, 126px) !important;
+    min-height: 0 !important;
+    padding-top: 26px !important;
+    padding-bottom: 24px !important;
     padding-left: clamp(40px, 4vw, 58px) !important;
-    transform: translateY(clamp(-46px, -4vh, -24px)) !important;
+    transform: none !important;
   }
 
   #hero .hero-ref .hero-subcity.hero__tagline {
-    margin-top: clamp(27px, 4vh, 46px) !important;
+    margin-top: 16px !important;
     margin-bottom: 0 !important;
   }
 
   #hero .hero-ref .hero-badges {
-    margin-top: clamp(9px, 1.2vh, 13px) !important;
-    row-gap: clamp(18px, 2.2vh, 26px) !important;
+    margin-top: 12px !important;
+    row-gap: 8px !important;
   }
 
   #hero .hero-ref .hero-actions {
-    margin-top: clamp(28px, 4vh, 44px) !important;
+    margin-top: 18px !important;
   }
 
   #hero .hero-ref .hero-visual {
@@ -14493,7 +14605,7 @@ body::after {
   }
 }
 
-/* Unified before/after cards: an invariant photo stage with a centred 50/50 split. */
+/* Before/after photos preserve their original frame: no forced crop or distortion. */
 :is(
   .service-modal-content .modal-carousel__slide > img,
   .service-modal-content .treatment-result-media > img,
@@ -14502,12 +14614,12 @@ body::after {
 ) {
   display: block !important;
   width: 100% !important;
-  aspect-ratio: 4 / 3 !important;
   height: auto !important;
   max-height: none !important;
-  object-fit: cover !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
   object-position: center center !important;
-  background: transparent !important;
+  background: var(--bg-soft) !important;
 }
 
 :is(
@@ -14517,7 +14629,7 @@ body::after {
   .service-modal-content .treatment-result-crop
 ) {
   overflow: hidden !important;
-  background: transparent !important;
+  background: var(--bg-soft) !important;
 }
 
 .service-modal-content .modal-carousel__slide {
@@ -14530,7 +14642,7 @@ body::after {
   display: grid !important;
   min-height: 44px !important;
   align-items: center !important;
-  margin: 0 !important;
+  margin: 20px 0 0 !important;
   padding: 8px 12px !important;
 }
 
@@ -14538,7 +14650,7 @@ body::after {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
   width: 100% !important;
-  aspect-ratio: 4 / 3 !important;
+  aspect-ratio: auto !important;
   overflow: hidden !important;
   background: transparent !important;
 }
@@ -14560,7 +14672,7 @@ body::after {
 
 .modal-carousel__crop:has(.before-after-frame) {
   height: auto !important;
-  aspect-ratio: 4 / 3 !important;
+  aspect-ratio: auto !important;
   background: transparent !important;
 }
 
@@ -14580,11 +14692,11 @@ img[src$="ozone-before-after-jawline.webp"] {
 /* These editorial variants had older, more specific height and contain rules. */
 #modal-contour .contour-editorial__carousel .modal-carousel__slide > img,
 :is(#modal-peel, #modal-clean) .peel-result .modal-carousel__slide > img {
-  aspect-ratio: 4 / 3 !important;
+  aspect-ratio: auto !important;
   height: auto !important;
   max-height: none !important;
-  object-fit: cover !important;
-  background: transparent !important;
+  object-fit: contain !important;
+  background: var(--bg-soft) !important;
 }
 
 #modal-contour .contour-editorial__carousel :is(.modal-carousel__viewport, .modal-carousel__slide) {
@@ -14595,16 +14707,16 @@ img[src$="ozone-before-after-jawline.webp"] {
   width: 100% !important;
   height: auto !important;
   max-height: none !important;
-  aspect-ratio: 4 / 3 !important;
-  background: transparent !important;
+  aspect-ratio: auto !important;
+  background: var(--bg-soft) !important;
 }
 
 #modal-massage .treatment-result-crop > img {
   width: 100% !important;
   height: auto !important;
-  aspect-ratio: 4 / 3 !important;
-  object-fit: cover !important;
-  background: transparent !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  background: var(--bg-soft) !important;
 }
 
 /* Compact three-stage procedure block for desktop editorial modals. */
@@ -15351,9 +15463,9 @@ img[src$="ozone-before-after-jawline.webp"] {
 
 .service-modal.treatment-modal .modal-detail-card__result-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: stretch;
-  gap: clamp(28px, 5vw, 60px);
+  grid-template-columns: minmax(0, 1.65fr) minmax(330px, .8fr);
+  align-items: start;
+  gap: clamp(32px, 4vw, 56px);
 }
 
 .service-modal.treatment-modal .modal-detail-card__result-column {
@@ -15369,22 +15481,44 @@ img[src$="ozone-before-after-jawline.webp"] {
   line-height: 1.14;
 }
 
+.service-modal.treatment-modal .modal-detail-card__result-column--visual > h3 {
+  font-size: clamp(1.48rem, 2.45vw, 1.86rem) !important;
+}
+
+.service-modal.treatment-modal .modal-detail-card__result-column--copy > h3 {
+  font-size: clamp(1.3rem, 2vw, 1.55rem) !important;
+}
+
 .service-modal.treatment-modal .modal-detail-card__result-column--copy > p {
+  max-width: 420px;
   margin: 0;
   color: var(--text) !important;
   font-size: .94rem;
-  line-height: 1.65;
+  line-height: 1.45;
 }
 
 .service-modal.treatment-modal .modal-detail-card__result-column--visual > :not(h3) {
   flex: 1 1 auto;
+  width: min(100%, 680px);
   min-height: 0;
   margin-top: 0;
+}
+
+#modal-contour.service-modal.treatment-modal .treatment-carousel .modal-carousel__dots {
+  display: none;
 }
 
 .service-modal.treatment-modal .treatment-carousel,
 .service-modal.treatment-modal .treatment-result-media {
   margin: 0;
+}
+
+/* The controls belong to the photograph, not to two separate grid columns.
+   This returns their width to the evidence image while keeping the arrows
+   light and close to the visual edges. */
+.service-modal.treatment-modal .treatment-carousel {
+  position: relative;
+  display: block;
 }
 
 .service-modal.treatment-modal .treatment-carousel .modal-carousel__viewport,
@@ -15393,19 +15527,23 @@ img[src$="ozone-before-after-jawline.webp"] {
   border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--white);
+  padding-inline: clamp(20px, 2vw, 36px);
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
   box-shadow: none;
 }
 
 .service-modal.treatment-modal .treatment-carousel .modal-carousel__slide,
 .service-modal.treatment-modal .treatment-result-media {
-  padding: 8px;
+  padding: 0;
 }
 
 .service-modal.treatment-modal .treatment-carousel .modal-carousel__slide img,
 .service-modal.treatment-modal .treatment-result-media img {
   width: 100% !important;
   height: auto !important;
-  max-height: min(46dvh, 420px) !important;
+  max-height: min(60dvh, 620px) !important;
   margin-inline: auto;
   object-fit: contain !important;
   object-position: center !important;
@@ -15414,6 +15552,8 @@ img[src$="ozone-before-after-jawline.webp"] {
 }
 
 .service-modal.treatment-modal .treatment-carousel .modal-carousel__control {
+  position: absolute;
+  top: calc((100% - 44px) / 2);
   z-index: 2;
   width: 38px;
   height: 38px;
@@ -15423,9 +15563,18 @@ img[src$="ozone-before-after-jawline.webp"] {
   box-shadow: 0 4px 12px rgba(15, 74, 47, .12);
 }
 
+.service-modal.treatment-modal .treatment-carousel .modal-carousel__control--prev { left: 12px; }
+.service-modal.treatment-modal .treatment-carousel .modal-carousel__control--next { right: 12px; }
+
+.service-modal.treatment-modal .treatment-carousel .modal-carousel__dots {
+  justify-content: center;
+  gap: 0;
+  margin-top: 0;
+}
+
 .service-modal.treatment-modal .modal-result__caption,
 .service-modal.treatment-modal .treatment-result-media figcaption {
-  margin: 8px 0 0;
+  margin: 18px 0 0 !important;
   color: var(--text-muted);
   font-size: .72rem;
   line-height: 1.4;
@@ -15524,6 +15673,26 @@ img[src$="ozone-before-after-jawline.webp"] {
 .service-modal.treatment-modal .modal-detail-card__cta .btn { width: 100%; min-height: 52px; border: 0; color: #ffffff !important; background: linear-gradient(135deg, #1b6b45 0%, #0f4a2f 100%) !important; box-shadow: 0 6px 16px rgba(15,74,47,.22) !important; }
 .service-modal.treatment-modal .modal-detail-card__cta > p { margin: 10px 0 0; color: var(--text-muted); font-size: .76rem; line-height: 1.45; text-align: center; }
 
+@media (min-width: 1025px) {
+  :is(
+    #modal-contour, #modal-botox, #modal-biorev, #modal-lipo,
+    #modal-collagen, #modal-plasma, #modal-rf, #modal-bbl,
+    #modal-ozone, #modal-peel, #modal-clean, #modal-massage,
+    #modal-iv, #modal-antistress, #modal-detox, #modal-program
+  ) .service-modal-dialog {
+    width: min(1180px, calc(100vw - 48px)) !important;
+    max-width: min(1180px, calc(100vw - 48px)) !important;
+  }
+
+  .service-modal.treatment-modal .modal-detail-card__result-column--copy {
+    max-width: 420px;
+  }
+
+  .service-modal.treatment-modal .modal-detail-card__result-column--visual {
+    width: 100%;
+  }
+}
+
 @media (max-width: 720px) {
   .service-modal.treatment-modal .service-modal-dialog,
   .service-modal.treatment-modal .service-modal-scroll { max-height: calc(100dvh - 20px) !important; }
@@ -15555,39 +15724,164 @@ img[src$="ozone-before-after-jawline.webp"] {
   box-shadow: 0 6px 16px rgba(15,74,47,.22) !important;
 }
 
-/* Final polish, 2026-08-31:
-   - remove pale corner glow from the hero portrait and make the image brighter;
-   - keep the procedure photo on the right in unified modal cards on desktop. */
-@media (min-width: 901px) {
-  #hero .container.hero-ref {
-    overflow: hidden !important;
-  }
-
-  #hero .hero-ref .hero-visual {
-    right: 0 !important;
-    width: 52% !important;
-    border-radius: 0 30px 30px 0 !important;
-    overflow: hidden !important;
+/* Final desktop hero: one generous editorial canvas, not a split card. */
+@media (min-width: 1200px) {
+  #hero.hero.section {
+    min-height: auto !important;
+    padding: 10px 0 20px !important;
     background: transparent !important;
   }
 
-  #hero .hero-ref .hero-visual::after {
-    display: none !important;
+  #hero .container.hero-ref {
+    position: relative !important;
+    width: min(1680px, calc(100% - 64px)) !important;
+    min-height: clamp(680px, calc(100svh - 112px), 760px) !important;
+    margin-inline: auto !important;
+    display: block !important;
+    overflow: hidden !important;
+    border-radius: 34px !important;
+    background:
+      radial-gradient(circle at 74% 14%, rgba(255, 250, 245, .38), transparent 31%),
+      linear-gradient(104deg, #f5f0e9 0%, #eee3d9 54%, #e6d8cd 100%) !important;
+    box-shadow: 0 22px 60px rgba(38, 48, 33, .10) !important;
   }
 
-  #hero .hero-ref .hero-visual picture {
-    border-radius: inherit !important;
+  #hero .hero-ref .hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+    width: min(54%, 820px) !important;
+    max-width: none !important;
+    min-height: clamp(680px, calc(100svh - 112px), 760px) !important;
+    margin: 0 !important;
+    padding: clamp(64px, 8vh, 88px) 24px clamp(60px, 7vh, 80px) clamp(58px, 5.5vw, 96px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    transform: none !important;
+    background: transparent !important;
+  }
+
+  #hero .hero-ref .hero-script {
+    margin: 0 0 clamp(20px, 1.6vw, 28px) !important;
+    font-size: clamp(.875rem, .9vw, 1rem) !important;
+    font-weight: 650 !important;
+    letter-spacing: .14em !important;
+  }
+
+  #hero .hero-ref h1 {
+    width: auto !important;
+    margin: 0 0 clamp(48px, 4vw, 64px) !important;
+    font-size: clamp(3.25rem, 4vw, 4.4rem) !important;
+    line-height: 1 !important;
+    letter-spacing: -.04em !important;
+    white-space: nowrap !important;
+  }
+
+  #hero .hero-ref h1 span { display: inline !important; }
+  #hero .hero-ref h1 span + span { margin: 0 !important; }
+  #hero .hero-ref h1 span + span::before { content: " " !important; }
+
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    width: min(100%, 760px) !important;
+    max-width: 760px !important;
+    margin: 0 !important;
+    font-size: clamp(1.875rem, 2.05vw, 2.35rem) !important;
+    line-height: 1.1 !important;
+    color: var(--title) !important;
+  }
+
+  #hero .hero-ref .hero-badges {
+    width: auto !important;
+    max-width: none !important;
+    margin: 36px 0 0 !important;
+    grid-template-columns: repeat(2, max-content) !important;
+    column-gap: 0 !important;
+    row-gap: 18px !important;
+  }
+
+  #hero .hero-ref .hero-badges span,
+  #hero .hero-ref .hero-badges span:first-child,
+  #hero .hero-ref .hero-badges span:last-child {
+    min-height: 0 !important;
+    padding: 0 20px 0 0 !important;
+    border: 0 !important;
+    border-right: 1px solid rgba(27, 107, 69, .25) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  #hero .hero-ref .hero-badges span:nth-child(2) {
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+    border-right: 0 !important;
+  }
+
+  #hero .hero-ref .hero-badges span:nth-child(3) {
+    grid-column: 1 / -1 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  #hero .hero-ref .hero-badges strong {
+    font-size: clamp(1rem, 1vw, 1.125rem) !important;
+    line-height: 1.3 !important;
+    font-weight: 650 !important;
+  }
+
+  #hero .hero-ref .hero-actions {
+    width: auto !important;
+    margin: clamp(60px, 5vw, 80px) 0 0 !important;
+    grid-template-columns: minmax(320px, 350px) minmax(260px, 300px) !important;
+    gap: 16px !important;
+  }
+
+  #hero .hero-ref .hero-actions .btn-unified,
+  #hero .hero-ref .hero-actions .hero-text-link {
+    height: 62px !important;
+    min-height: 62px !important;
+    padding: 0 26px !important;
+    font-size: 1rem !important;
+  }
+
+  #hero .hero-ref .hero-visual {
+    position: absolute !important;
+    z-index: 1 !important;
+    inset: 0 0 0 auto !important;
+    width: 44% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
     overflow: hidden !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  #hero .hero-ref .hero-visual::before,
+  #hero .hero-ref .hero-visual::after { display: none !important; }
+
+  #hero .hero-ref .hero-visual picture {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
   }
 
   #hero .hero-ref .hero-visual img {
-    top: -1% !important;
-    right: 0 !important;
-    width: 100% !important;
-    height: 110% !important;
-    object-fit: contain !important;
-    object-position: right center !important;
-    filter: brightness(1.07) saturate(1.05) contrast(1.02) !important;
+    position: absolute !important;
+    inset: 0 -4% 0 auto !important;
+    width: 110% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: 56% 22% !important;
+    filter: brightness(1.06) saturate(1.04) contrast(1.01) !important;
+    transform: none !important;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 20%, rgba(0,0,0,.62) 39%, rgba(0,0,0,.94) 57%, #000 68%) !important;
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 20%, rgba(0,0,0,.62) 39%, rgba(0,0,0,.94) 57%, #000 68%) !important;
   }
 
   .service-modal.treatment-modal .modal-detail-card__overview {
@@ -15619,9 +15913,158 @@ img[src$="ozone-before-after-jawline.webp"] {
   .service-modal.treatment-modal .modal-detail-card__media img {
     object-position: center center !important;
   }
+
+  /* Contour plastic: a compact information-led composition with a restrained
+     procedural photo on the right. */
+  #modal-contour.service-modal.treatment-modal .service-modal-dialog {
+    width: min(82vw, 1080px) !important;
+    max-width: min(82vw, 1080px) !important;
+    max-height: 88dvh !important;
+    margin: auto !important;
+  }
+
+  #modal-contour.service-modal.treatment-modal .service-modal-scroll {
+    max-height: 88dvh !important;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__section,
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__callout,
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__cta {
+    background: transparent;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__overview {
+    position: relative;
+    display: block;
+    min-height: 554px;
+    padding: 30px 444px 24px 36px;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__facts {
+    margin-top: 34px;
+    gap: 18px;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__divider {
+    margin: 32px 0 22px;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__concerns ul {
+    margin-top: 14px;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__media {
+    position: absolute;
+    top: 28px;
+    right: 40px;
+    width: 360px !important;
+    max-width: 360px !important;
+    height: 500px !important;
+    min-height: 500px !important;
+    margin: 0 !important;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__intro h3 {
+    font-size: clamp(42px, 3.2vw, 56px) !important;
+    white-space: nowrap;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 52% center !important;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__section:not(.modal-detail-card__overview) {
+    padding: 22px 36px;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__result-column--visual > :not(h3),
+  #modal-contour.service-modal.treatment-modal .treatment-carousel {
+    width: min(100%, 560px);
+  }
+
+  #modal-contour.service-modal.treatment-modal .treatment-carousel .modal-carousel__slide img {
+    max-height: 520px !important;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1199px) {
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__overview {
+    display: grid;
+    min-height: 0;
+    padding: 28px 30px;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+    grid-template-areas:
+      "intro media"
+      "facts media"
+      "divider media"
+      "concerns media";
+    column-gap: 32px;
+    align-items: start;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__intro { grid-area: intro; }
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__facts { grid-area: facts; }
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__divider { grid-area: divider; }
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__concerns { grid-area: concerns; }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__media {
+    position: static;
+    grid-area: media;
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 480px !important;
+    min-height: 480px !important;
+    justify-self: end;
+    align-self: start;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__intro h3 {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__overview {
+    display: grid;
+    min-height: 0;
+    padding: 28px 34px;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    grid-template-areas:
+      "intro media"
+      "facts media"
+      "divider media"
+      "concerns media";
+    column-gap: 40px;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__media {
+    position: static;
+    grid-area: media;
+    width: 340px !important;
+    max-width: 340px !important;
+    height: 480px !important;
+    min-height: 480px !important;
+    justify-self: end;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__intro h3 {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 900px) {
+  .service-modal.treatment-modal .modal-detail-card__result-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .service-modal.treatment-modal .modal-detail-card__result-column--visual > :not(h3) {
+    width: min(100%, 680px);
+  }
+
   #hero .hero-ref .hero-visual::after {
     display: none !important;
   }
@@ -16166,13 +16609,13 @@ const editorialServiceData = {
     facts: ['Гармонизация пропорций', 'Естественная мимика', 'Индивидуальный подбор'],
     concerns: ['Губы', 'Скулы', 'Подбородок', 'Носогубные складки', 'Углы нижней челюсти', 'Носослёзная борозда'],
     results: [
+      { src: 'contour-cheeks-before-after-clean.jpeg', alt: 'До и после контурной пластики скул: более выраженный объём и гармоничный профиль', caption: 'Контурная пластика скул', width: 1271, height: 1237 },
+      { src: 'contour-profile-before-after-clean.jpeg', alt: 'До и после контурной пластики: коррекция профиля и губ', caption: 'Контурная пластика — коррекция профиля', width: 1122, height: 1402 },
       { src: 'contour-plastic-olga-01-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
       { src: 'contour-plastic-olga-02-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
       { src: 'contour-plastic-olga-03-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
       { src: 'contour-plastic-olga-04-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
       { src: 'contour-lips-before-after.jpeg', alt: 'До и после контурной пластики губ: естественный объём и чёткий контур', caption: 'Контурная пластика губ', width: 917, height: 1280 },
-      { src: 'contour-cheeks-before-after-clean.jpeg', alt: 'До и после контурной пластики скул: более выраженный объём и гармоничный профиль', caption: 'Контурная пластика скул', width: 1271, height: 1237 },
-      { src: 'contour-profile-before-after-clean.jpeg', alt: 'До и после контурной пластики: коррекция профиля и губ', caption: 'Контурная пластика — коррекция профиля', width: 1122, height: 1402 },
       { src: 'contour-lips-new-before-after-clean.jpeg', alt: 'До и после контурной пластики губ', caption: 'Контурная пластика губ', width: 941, height: 1672 },
       { src: 'contour-lips-result-01-clean.jpeg', alt: 'До и после контурной пластики губ: более выраженный объём и контур', caption: 'Контурная пластика губ', width: 941, height: 1672 },
       { src: 'contour-lips-result-02.webp', alt: 'До и после контурной пластики губ: естественная коррекция формы', caption: 'Контурная пластика губ', width: 1000, height: 1778 },
@@ -16542,6 +16985,11 @@ function editorialImageAttributes(image) {
   return `src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"${dimensions}`;
 }
 
+function buildResultCarousel(key, title, images, suffix = '') {
+  const slides = images.map((image, index) => `<figure class="modal-carousel__slide${index === 0 ? ' is-active' : ''}"><img ${editorialImageAttributes(image)}><figcaption class="modal-result__caption">${image.caption}</figcaption></figure>`).join('');
+  return `<div class="modal-carousel modal-carousel--compact treatment-carousel" data-carousel="editorial-${key}${suffix}"><button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото ${title}">‹</button><div class="modal-carousel__viewport">${slides}</div><button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото ${title}">›</button><div class="modal-carousel__dots" aria-label="Фотографии результатов ${title}"></div></div>`;
+}
+
 function editorialResultMarkup(key, service) {
   if (!service.results?.length) {
     return `<div class="treatment-benefit-panel"><h5>${service.resultLead}</h5><ul>${service.benefits.map((benefit) => `<li>${benefit}</li>`).join('')}</ul></div>`;
@@ -16553,8 +17001,7 @@ function editorialResultMarkup(key, service) {
     return `<figure class="treatment-result-media">${media}<figcaption>${image.caption}</figcaption></figure>`;
   }
 
-  const slides = service.results.map((image, index) => `<figure class="modal-carousel__slide${index === 0 ? ' is-active' : ''}"><img ${editorialImageAttributes(image)}><figcaption class="modal-result__caption">${image.caption}</figcaption></figure>`).join('');
-  return `<div class="modal-carousel modal-carousel--compact treatment-carousel" data-carousel="editorial-${key}"><button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото ${service.title}">‹</button><div class="modal-carousel__viewport">${slides}</div><button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото ${service.title}">›</button><div class="modal-carousel__dots" aria-label="Фотографии результатов ${service.title}"></div></div>`;
+  return buildResultCarousel(key, service.title, service.results);
 }
 
 function buildEditorialServiceModal(key, service) {
@@ -16590,9 +17037,10 @@ function buildEditorialServiceModal(key, service) {
       <div class="modal-detail-card__note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div>
     </section>
     <section class="modal-detail-card__section modal-detail-card__steps" aria-labelledby="${key}-steps-title"><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol></section>
-    <section class="modal-detail-card__section modal-detail-card__faq" aria-labelledby="${key}-faq-title"><h4 id="${key}-faq-title">Что важно знать</h4>${faqMarkup}</section>
+    ${faqMarkup ? `<section class="modal-detail-card__section modal-detail-card__faq" aria-labelledby="${key}-faq-title"><h4 id="${key}-faq-title">Что важно знать</h4>${faqMarkup}</section>` : ''}
     <section class="modal-detail-card__callout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg><div><h4>${service.consultTitle}</h4><p>${service.consultText}</p></div></section>
     <div class="modal-detail-card__cta"><a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">${service.cta}</a><p>${service.ctaNote}</p></div>`;
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16691,16 +17139,8 @@ function enableHorizontalSwipe(target, onPrevious, onNext) {
   target.dataset.swipeReady = 'true';
 }
 
-/* Some source files place the "before" and "after" frames one above another.
-   Split those pairs into equal side-by-side panels without changing the original image files. */
-const stackedBeforeAfterPairs = {
-  /* The useful photos occupy a small central band in these tall source files.
-     These positions target that band exactly; the old values exposed the blank
-     canvas above/below the photographs and cut both frames at the split. */
-  'botox-relatox-before-after.jpeg': { scale: '500%', before: '55%', after: '28%' },
-  'botox-rentox-before-after.jpeg': { scale: '500%', before: '66%', after: '36%' },
-  'botox-before-after.png': { scale: '200%', before: '0%', after: '100%' }
-};
+/* Keep original comparison files intact: visual proof is never cropped by script. */
+const stackedBeforeAfterPairs = {};
 
 function prepareBeforeAfterFrames(modal) {
   modal.querySelectorAll('img[src]').forEach((image) => {
