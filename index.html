@@ -15621,71 +15621,76 @@ img[src$="ozone-before-after-jawline.webp"] {
 .service-modal.treatment-modal .modal-detail-card__note p { margin: 0; color: var(--text-muted) !important; font-size: .78rem; line-height: 1.55; }
 
 .service-modal.treatment-modal .modal-detail-card__steps {
-  margin: 0 20px;
-  padding: 26px 24px 28px;
-  border-radius: 20px;
-  background: var(--bg-soft);
+  margin: 0;
+  padding: 34px 32px 36px;
+  border-top: 1px solid var(--line);
+  background: var(--white);
 }
 
-.service-modal.treatment-modal .modal-detail-card__section + .modal-detail-card__steps {
-  border-top: 0;
+.service-modal.treatment-modal .modal-detail-card__section + .modal-detail-card__steps { border-top: 1px solid var(--line); }
+
+.service-modal.treatment-modal .modal-detail-card__steps > .modal-detail-card__eyebrow {
+  margin: 0 0 8px;
 }
 
 .service-modal.treatment-modal .modal-detail-card__steps h4 {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
-}
-
-.service-modal.treatment-modal .modal-detail-card__steps h4::after {
-  content: "";
-  height: 1px;
-  flex: 1 1 auto;
-  background: var(--line);
+  font-size: clamp(1.55rem, 2.5vw, 2.1rem);
+  line-height: 1.12;
 }
 
 .service-modal.treatment-modal .modal-detail-card__steps ol {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 12px;
-  margin: 20px 0 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(36px, 6vw, 88px);
+  row-gap: 32px;
+  margin: 30px 0 0;
   padding: 0;
   border: 0;
   list-style: none;
 }
 
 .service-modal.treatment-modal .modal-detail-card__steps li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
   min-width: 0;
-  min-height: 82px;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: #eaf2e8;
-  box-shadow: 0 6px 14px rgba(15, 74, 47, .05);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-.service-modal.treatment-modal .modal-detail-card__steps li + li { border-left: 1px solid var(--line); }
+.service-modal.treatment-modal .modal-detail-card__steps li + li { border-left: 0; }
 
 .service-modal.treatment-modal .modal-detail-card__steps li > span {
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
   display: inline-grid;
-  flex: 0 0 36px;
   place-items: center;
+  border: 2px solid var(--primary);
   border-radius: 50%;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  font-family: "Playfair Display", serif;
-  font-size: .8rem;
-  font-weight: 700;
+  color: var(--primary);
+  background: var(--white);
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 750;
   line-height: 1;
 }
 
-.service-modal.treatment-modal .modal-detail-card__steps li > p { margin: 0; color: var(--text); font-size: .84rem; font-weight: 650; line-height: 1.38; }
+.service-modal.treatment-modal .modal-detail-card__steps li > p {
+  margin: 4px 0 0;
+  color: var(--text);
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.42;
+}
+
+@media (max-width: 620px) {
+  .service-modal.treatment-modal .modal-detail-card__steps { padding: 28px 20px 30px; }
+  .service-modal.treatment-modal .modal-detail-card__steps ol { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+}
 
 .service-modal.treatment-modal .modal-detail-card__faq details {
   overflow: hidden;
@@ -17150,7 +17155,7 @@ function buildEditorialServiceModal(key, service) {
       </div>
       <div class="modal-detail-card__note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div>
     </section>
-    <section class="modal-detail-card__section modal-detail-card__steps" aria-labelledby="${key}-steps-title"><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol></section>
+    <section class="modal-detail-card__section modal-detail-card__steps" aria-labelledby="${key}-steps-title"><p class="modal-detail-card__eyebrow">Процесс</p><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol></section>
     ${faqMarkup ? `<section class="modal-detail-card__section modal-detail-card__faq" aria-labelledby="${key}-faq-title"><h4 id="${key}-faq-title">Что важно знать</h4>${faqMarkup}</section>` : ''}
     <section class="modal-detail-card__callout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg><div><h4>${service.consultTitle}</h4><p>${service.consultText}</p></div></section>
     <div class="modal-detail-card__cta"><a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">${service.cta}</a><p>${service.ctaNote}</p></div>`;
