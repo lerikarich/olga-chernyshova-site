@@ -15468,6 +15468,10 @@ img[src$="ozone-before-after-jawline.webp"] {
   gap: clamp(32px, 4vw, 56px);
 }
 
+.service-modal.treatment-modal .modal-detail-card__result-grid--solo {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .service-modal.treatment-modal .modal-detail-card__result-column {
   min-width: 0;
   display: flex;
@@ -17013,6 +17017,7 @@ const editorialServiceData = {
     resultLead: 'Адресная поддержка вместо случайного набора витаминов',
     benefits: ['Состав с учётом анамнеза, анализов и совместимости', 'Контролируемое введение назначенных компонентов', 'План восстановления с понятной целью и наблюдением'],
     resultCopy: 'IV-терапия не назначается только по желанию «попробовать капельницу». Сначала оцениваются показания, риски и возможность решить задачу другими способами.',
+    hideResultCopy: true,
     steps: ['Сбор анамнеза и уточнение задачи', 'Оценка анализов и противопоказаний', 'Подбор состава и проведение инфузии', 'Контроль самочувствия и дальнейший план'],
     note: 'Витамины, микроэлементы, аминокислоты и инфузионные растворы применяются только по назначению специалиста.',
     faq: [
@@ -17035,6 +17040,7 @@ const editorialServiceData = {
     resultLead: 'Понятный маршрут возвращения к устойчивому режиму',
     benefits: ['Выявление факторов, которые поддерживают усталость', 'Коррекция режима, питания и восстановительных привычек', 'Наблюдение динамики и последовательная корректировка плана'],
     resultCopy: 'Программа не подменяет лечение тревожных, депрессивных или других медицинских состояний. При необходимости рекомендуется консультация профильного специалиста.',
+    hideResultCopy: true,
     steps: ['Разбор самочувствия, сна и нагрузки', 'Определение ключевых факторов истощения', 'Составление реалистичного плана восстановления', 'Сопровождение и корректировка по динамике'],
     note: 'Нутрициологические и восстановительные рекомендации подбираются с учётом анамнеза, образа жизни и текущих назначений.',
     faq: [
@@ -17057,6 +17063,7 @@ const editorialServiceData = {
     resultLead: 'Не «очищение от токсинов», а возвращение к физиологичному режиму',
     benefits: ['Анализ питания, воды, сна и ежедневной нагрузки', 'Мягкая коррекция привычек без экстремальных ограничений', 'Поддержка пищеварительного комфорта и общего самочувствия'],
     resultCopy: 'Организм не нуждается в агрессивных «чистках». Задача программы — убрать перегружающие факторы и поддержать естественные процессы с учётом состояния здоровья.',
+    hideResultCopy: true,
     steps: ['Разбор жалоб, рациона и режима', 'Определение основных перегружающих факторов', 'Составление безопасного плана изменений', 'Контроль самочувствия и корректировка'],
     note: 'При выраженной отёчности, боли или резком ухудшении самочувствия сначала необходима медицинская диагностика.',
     faq: [
@@ -17079,6 +17086,7 @@ const editorialServiceData = {
     resultLead: 'Система решений вместо разрозненных советов',
     benefits: ['Разбор анализов и текущих назначений без дублирования', 'Персональные рекомендации по питанию и образу жизни', 'Промежуточный контроль и корректировка стратегии'],
     resultCopy: 'Цель сопровождения — не идеальный режим на неделю, а устойчивые изменения, которые подходят вашему образу жизни и могут поддерживаться долго.',
+    hideResultCopy: true,
     steps: ['Подробная консультация и сбор анамнеза', 'Анализ текущего состояния и данных', 'Формирование приоритетов и плана', 'Сопровождение, контроль и корректировка'],
     note: 'Добавки и корректирующие схемы рассматриваются только после оценки питания, анализов, лекарств и реальной необходимости.',
     faq: [
@@ -17149,9 +17157,9 @@ function buildEditorialServiceModal(key, service) {
     </section>
     <section class="modal-detail-card__section modal-detail-card__results" aria-label="Результаты процедуры">
       <p class="modal-detail-card__eyebrow">Результаты</p>
-      <div class="modal-detail-card__result-grid">
+      <div class="modal-detail-card__result-grid${service.hideResultCopy ? ' modal-detail-card__result-grid--solo' : ''}">
         <div class="modal-detail-card__result-column modal-detail-card__result-column--visual"><h3>${hasPhotos ? 'До и после' : (service.resultTitle || 'Результаты')}</h3>${editorialResultMarkup(key, service)}</div>
-        <div class="modal-detail-card__result-column modal-detail-card__result-column--copy"><h3>Что получает клиент</h3>${service.resultItems ? `<ul class="modal-detail-card__result-list">${service.resultItems.map((item) => `<li>${item}</li>`).join('')}</ul>` : `<p>${service.resultCopy}</p>`}</div>
+        ${service.hideResultCopy ? '' : `<div class="modal-detail-card__result-column modal-detail-card__result-column--copy"><h3>Что получает клиент</h3>${service.resultItems ? `<ul class="modal-detail-card__result-list">${service.resultItems.map((item) => `<li>${item}</li>`).join('')}</ul>` : `<p>${service.resultCopy}</p>`}</div>`}
       </div>
       <div class="modal-detail-card__note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div>
     </section>
