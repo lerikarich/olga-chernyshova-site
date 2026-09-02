@@ -17155,7 +17155,7 @@ function buildEditorialServiceModal(key, service) {
       </div>
       <div class="modal-detail-card__note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div>
     </section>
-    <section class="modal-detail-card__section modal-detail-card__steps" aria-labelledby="${key}-steps-title"><p class="modal-detail-card__eyebrow">Процесс</p><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol></section>
+    <section class="modal-detail-card__section modal-detail-card__steps" aria-labelledby="${key}-steps-title"><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol></section>
     ${faqMarkup ? `<section class="modal-detail-card__section modal-detail-card__faq" aria-labelledby="${key}-faq-title"><h4 id="${key}-faq-title">Что важно знать</h4>${faqMarkup}</section>` : ''}
     <section class="modal-detail-card__callout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg><div><h4>${service.consultTitle}</h4><p>${service.consultText}</p></div></section>
     <div class="modal-detail-card__cta"><a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">${service.cta}</a><p>${service.ctaNote}</p></div>`;
