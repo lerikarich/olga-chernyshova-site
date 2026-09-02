@@ -15493,8 +15493,37 @@ img[src$="ozone-before-after-jawline.webp"] {
   max-width: 420px;
   margin: 0;
   color: var(--text) !important;
-  font-size: .94rem;
-  line-height: 1.45;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.55;
+}
+
+.service-modal.treatment-modal .modal-detail-card__result-list {
+  display: grid;
+  gap: 12px;
+  max-width: 440px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-modal.treatment-modal .modal-detail-card__result-list li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--text);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  font-weight: 600;
+  line-height: 1.42;
+}
+
+.service-modal.treatment-modal .modal-detail-card__result-list li::before {
+  content: "";
+  position: absolute;
+  top: .55em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary);
 }
 
 .service-modal.treatment-modal .modal-detail-card__result-column--visual > :not(h3) {
@@ -16704,6 +16733,12 @@ const editorialServiceData = {
       { src: 'contour-lips-result-06-clean.jpeg', alt: 'До и после контурной пластики губ: естественный объём и чёткий контур', caption: 'Контурная пластика губ', width: 941, height: 1672 }
     ],
     resultCopy: 'Естественная коррекция объёмов и пропорций. Процедура помогает скорректировать объёмы, улучшить пропорции лица, смягчить возрастные изменения и сохранить естественную мимику.',
+    resultItems: [
+      'Естественная коррекция объёмов и пропорций',
+      'Более гармоничные черты лица',
+      'Смягчение возрастных изменений',
+      'Сохранение живой, естественной мимики'
+    ],
     steps: ['Консультация и оценка анатомии', 'Выбор зоны, препарата и объёма', 'Деликатная коррекция по разметке', 'Контроль и рекомендации по уходу'],
     note: 'Выбор зоны, препарата и объёма зависит от анатомии, задачи и индивидуальных показаний.',
     faq: [],
@@ -17111,7 +17146,7 @@ function buildEditorialServiceModal(key, service) {
       <p class="modal-detail-card__eyebrow">Результаты</p>
       <div class="modal-detail-card__result-grid">
         <div class="modal-detail-card__result-column modal-detail-card__result-column--visual"><h3>${hasPhotos ? 'До и после' : (service.resultTitle || 'Результаты')}</h3>${editorialResultMarkup(key, service)}</div>
-        <div class="modal-detail-card__result-column modal-detail-card__result-column--copy"><h3>Что получает клиент</h3><p>${service.resultCopy}</p></div>
+        <div class="modal-detail-card__result-column modal-detail-card__result-column--copy"><h3>Что получает клиент</h3>${service.resultItems ? `<ul class="modal-detail-card__result-list">${service.resultItems.map((item) => `<li>${item}</li>`).join('')}</ul>` : `<p>${service.resultCopy}</p>`}</div>
       </div>
       <div class="modal-detail-card__note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div>
     </section>
