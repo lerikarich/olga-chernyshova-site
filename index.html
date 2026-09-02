@@ -15591,42 +15591,72 @@ img[src$="ozone-before-after-jawline.webp"] {
 .service-modal.treatment-modal .modal-detail-card__note svg { width: 20px; height: 20px; stroke: var(--text-muted); }
 .service-modal.treatment-modal .modal-detail-card__note p { margin: 0; color: var(--text-muted) !important; font-size: .78rem; line-height: 1.55; }
 
+.service-modal.treatment-modal .modal-detail-card__steps {
+  margin: 0 20px;
+  padding: 26px 24px 28px;
+  border-radius: 20px;
+  background: var(--bg-soft);
+}
+
+.service-modal.treatment-modal .modal-detail-card__section + .modal-detail-card__steps {
+  border-top: 0;
+}
+
+.service-modal.treatment-modal .modal-detail-card__steps h4 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+
+.service-modal.treatment-modal .modal-detail-card__steps h4::after {
+  content: "";
+  height: 1px;
+  flex: 1 1 auto;
+  background: var(--line);
+}
+
 .service-modal.treatment-modal .modal-detail-card__steps ol {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  margin: 18px 0 0;
+  gap: 12px;
+  margin: 20px 0 0;
   padding: 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border: 0;
   list-style: none;
 }
 
 .service-modal.treatment-modal .modal-detail-card__steps li {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
-  padding: 14px;
+  min-height: 82px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 6px 14px rgba(15, 74, 47, .05);
 }
 
 .service-modal.treatment-modal .modal-detail-card__steps li + li { border-left: 1px solid var(--line); }
 
 .service-modal.treatment-modal .modal-detail-card__steps li > span {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   display: inline-grid;
-  flex: 0 0 30px;
+  flex: 0 0 36px;
   place-items: center;
   border-radius: 50%;
-  color: var(--title);
-  background: var(--bg-soft);
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   font-family: "Playfair Display", serif;
-  font-size: .78rem;
+  font-size: .8rem;
   font-weight: 700;
   line-height: 1;
 }
 
-.service-modal.treatment-modal .modal-detail-card__steps li > p { margin: 0; color: var(--text); font-size: .8rem; line-height: 1.4; }
+.service-modal.treatment-modal .modal-detail-card__steps li > p { margin: 0; color: var(--text); font-size: .84rem; font-weight: 650; line-height: 1.38; }
 
 .service-modal.treatment-modal .modal-detail-card__faq details {
   overflow: hidden;
