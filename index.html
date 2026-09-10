@@ -15493,12 +15493,35 @@ img[src$="ozone-before-after-jawline.webp"] {
   font-size: clamp(1.3rem, 2vw, 1.55rem) !important;
 }
 
+#modal-massage.service-modal.treatment-modal .modal-detail-card__result-column--copy > h3 {
+  font-size: clamp(1.48rem, 2.45vw, 1.86rem) !important;
+}
+
+#modal-massage.service-modal.treatment-modal .modal-detail-card__faq > h4 {
+  font-size: clamp(1.48rem, 2.45vw, 1.86rem) !important;
+}
+
+/* One heading scale for every treatment-card section: result, client benefit,
+   procedure steps and FAQ all carry the same visual weight. */
+.service-modal.treatment-modal .modal-detail-card__result-column--visual > h3,
+.service-modal.treatment-modal .modal-detail-card__result-column--copy > h3,
+.service-modal.treatment-modal .modal-detail-card__steps > h4,
+.service-modal.treatment-modal .modal-detail-card__faq > h4 {
+  font-size: clamp(1.48rem, 2.45vw, 1.86rem) !important;
+  line-height: 1.14;
+}
+
 .service-modal.treatment-modal .modal-detail-card__result-column--copy > p {
   max-width: 420px;
   margin: 0;
   color: var(--text) !important;
   font-size: clamp(1rem, 1.25vw, 1.12rem);
   line-height: 1.55;
+}
+
+.service-modal.treatment-modal .modal-detail-card__result-column--copy > .modal-detail-card__result-lead {
+  margin: 0 0 14px;
+  font-weight: 600;
 }
 
 .service-modal.treatment-modal .modal-detail-card__result-list {
@@ -16219,6 +16242,349 @@ img[src$="ozone-before-after-jawline.webp"] {
   }
 }
 
+/* Desktop procedure cards: keep the information column compact instead of
+   stretching its grid rows to match the height of the photo. */
+@media (min-width: 721px) {
+  .service-modal.treatment-modal .modal-detail-card__overview {
+    align-content: start;
+  }
+
+  .service-modal.treatment-modal .modal-detail-card__intro > p {
+    /* Give the headline room to breathe, then pull the feature row closer
+       so the upper block stays balanced instead of becoming taller. */
+    margin-top: clamp(40px, 3.2vw, 48px) !important;
+  }
+
+  .service-modal.treatment-modal .modal-detail-card__facts {
+    margin-top: 22px !important;
+  }
+
+  #modal-contour.service-modal.treatment-modal .modal-detail-card__facts {
+    margin-top: 22px !important;
+  }
+
+  .service-modal.treatment-modal .modal-detail-card__concerns {
+    margin-top: 22px;
+  }
+}
+
+/* Botox results: let the clinical before/after images carry the section.
+   Supporting text remains alongside (or below on mobile), never above the photo. */
+#modal-botox .botox-result-layout {
+  padding-top: 0 !important;
+}
+
+#modal-botox .botox-result > h4,
+#modal-botox .botox-result-layout .result-summary__eyebrow,
+#modal-botox .botox-result .modal-result__caption {
+  display: none !important;
+}
+
+#modal-botox .botox-carousel {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+#modal-botox .botox-carousel .modal-carousel__viewport {
+  border: 0 !important;
+  border-radius: 18px !important;
+  background: transparent !important;
+}
+
+#modal-botox .botox-carousel .modal-carousel__slide {
+  padding: 0 !important;
+}
+
+#modal-botox .botox-carousel .modal-carousel__crop,
+#modal-botox .botox-carousel .modal-carousel__crop img,
+#modal-botox .botox-carousel .modal-carousel__slide > img {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* The modal is rebuilt into the canonical treatment layout when it opens.
+   Keep the same photo-first composition in that rendered version. */
+#modal-botox .modal-detail-card__results .modal-result__caption {
+  display: grid !important;
+  min-height: 50px !important;
+  place-items: center;
+  margin: 0 !important;
+  padding: 10px 16px !important;
+  color: #516258 !important;
+  font-size: .76rem !important;
+  line-height: 1.4;
+  text-align: center;
+}
+
+#modal-botox .modal-detail-card__results .modal-carousel__slide > img {
+  border-radius: 16px 16px 0 0 !important;
+}
+
+#modal-botox .modal-detail-card__results .treatment-carousel {
+  width: min(100%, 720px) !important;
+  margin: 0 !important;
+}
+
+#modal-botox .modal-detail-card__results .modal-carousel__viewport {
+  border: 0 !important;
+  border-radius: 18px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#modal-botox .modal-detail-card__results .modal-carousel__slide {
+  padding: 0 !important;
+}
+
+#modal-botox .modal-detail-card__results .modal-carousel__slide > img {
+  display: block;
+  width: 100% !important;
+  max-width: 720px !important;
+  height: auto !important;
+  margin: 0 auto !important;
+}
+
+@media (min-width: 721px) {
+  #modal-botox .modal-detail-card__result-grid {
+    grid-template-columns: minmax(0, 1.45fr) minmax(240px, 1fr) !important;
+    column-gap: 24px !important;
+  }
+}
+
+/* Massage result: crop the coloured source canvas, keeping only the useful
+   before/after area in the visible photo. */
+#modal-massage .treatment-result-crop {
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: 1 / 1 !important;
+  background: var(--bg-soft) !important;
+}
+
+#modal-massage .treatment-result-crop > img {
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Plasma results: a quieter editorial composition with a tactile, warm surface. */
+#modal-plasma.service-modal.treatment-modal .modal-detail-card__result-column--visual > h3 {
+  max-width: 16ch;
+  margin: 0 0 22px !important;
+  color: #1c573c !important;
+  font-size: clamp(1.48rem, 2.45vw, 1.86rem) !important;
+  line-height: 1.14 !important;
+  letter-spacing: -.035em;
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program).service-modal.treatment-modal .modal-detail-card__result-column--visual > .plasma-outcome {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 52px);
+  border: 1px solid rgba(35, 86, 58, .18);
+  border-radius: 28px 72px 28px 28px;
+  background:
+    radial-gradient(ellipse 42% 85% at 100% 8%, rgba(141, 179, 145, .3), transparent 72%),
+    linear-gradient(132deg, #f9f7f1 0%, #eef3ea 100%);
+  box-shadow: 0 18px 42px rgba(32, 72, 48, .08);
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -82px;
+  bottom: -128px;
+  width: 330px;
+  height: 330px;
+  border: 1px solid rgba(43, 102, 69, .18);
+  border-radius: 44% 56% 62% 38% / 52% 37% 63% 48%;
+  transform: rotate(-18deg);
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  color: #397052;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__meta::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome h5 {
+  max-width: 28ch;
+  margin: 0 auto;
+  color: #213f2e;
+  font-size: clamp(1.55rem, 2.5vw, 2.35rem);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+  text-align: center;
+}
+
+/* Keep the Detox programme promise balanced in two lines on desktop. */
+#modal-detox .plasma-outcome h5 {
+  max-width: 38ch;
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: clamp(34px, 5vw, 62px);
+  border-top: 1px solid rgba(43, 88, 62, .18);
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__item {
+  min-width: 0;
+  padding: 20px 24px 0 0;
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__item + .plasma-outcome__item {
+  padding-left: 24px;
+  border-left: 1px solid rgba(43, 88, 62, .18);
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__item > span {
+  display: block;
+  margin-bottom: 13px;
+  color: #2f7652;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+:is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__item p {
+  margin: 0;
+  color: #405448;
+  font-size: clamp(.86rem, 1.1vw, 1rem);
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  :is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome {
+    padding: 26px 22px;
+    border-radius: 22px 48px 22px 22px;
+  }
+
+  :is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__grid {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+
+  :is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__item {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px 0 0;
+  }
+
+  :is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__item + .plasma-outcome__item {
+    margin-top: 16px;
+    padding-left: 0;
+    border-top: 1px solid rgba(43, 88, 62, .14);
+    border-left: 0;
+  }
+
+  :is(#modal-plasma, #modal-iv, #modal-antistress, #modal-detox, #modal-program) .plasma-outcome__item > span {
+    margin: 2px 0 0;
+  }
+}
+
+/* Detox programme: three equal, centered benefit cards with a consistent icon language. */
+#modal-detox.service-modal.treatment-modal .modal-detail-card__result-column--visual > h3 {
+  text-align: center;
+}
+
+#modal-detox.service-modal.treatment-modal .modal-detail-card__result-column--visual > .detox-outcome {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+#modal-detox .detox-outcome {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 24px);
+}
+
+#modal-detox .detox-outcome__item {
+  min-width: 0;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 24px;
+  border: 1px solid rgba(45, 81, 60, .12);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #faf8f2, #f1eee5);
+  box-shadow: 0 12px 30px rgba(48, 72, 55, .05);
+  text-align: center;
+}
+
+#modal-detox .detox-outcome__icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 24px;
+  border-radius: 18px;
+  color: #fdfcf7;
+  background: #193e2e;
+}
+
+#modal-detox .detox-outcome__icon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+#modal-detox .detox-outcome__item p {
+  max-width: 18ch;
+  margin: 0;
+  color: #405448;
+  font-size: clamp(1rem, 1.35vw, 1.22rem);
+  font-weight: 650;
+  line-height: 1.45;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  #modal-detox .detox-outcome {
+    grid-template-columns: 1fr;
+  }
+
+  #modal-detox .detox-outcome__item {
+    min-height: 0;
+    padding: 24px 20px;
+  }
+}
+
 </style>
   </head>
   <body>
@@ -16278,6 +16644,8 @@ img[src$="ozone-before-after-jawline.webp"] {
 
           <div class="hero-visual reveal">
             <picture>
+              <source srcset="hero-olga-blazer-hq-v2.avif" type="image/avif" />
+              <source srcset="hero-olga-blazer-hq-v2.webp" type="image/webp" />
               <img src="hero-olga-blazer-hq-v2.png" alt="Ольга Чернышова в светлом пиджаке" loading="eager" fetchpriority="high" decoding="async" width="1023" height="1537" />
             </picture>
           </div>
@@ -16779,6 +17147,7 @@ const editorialServiceData = {
     steps: ['Консультация и оценка анатомии', 'Выбор зоны, препарата и объёма', 'Деликатная коррекция по разметке', 'Контроль и рекомендации по уходу'],
     note: 'Выбор зоны, препарата и объёма зависит от анатомии, задачи и индивидуальных показаний.',
     faq: [],
+    faqTitle: 'Препараты, с которыми я работаю',
     useLegacyFaq: true,
     consultTitle: 'Не знаете, какая зона коррекции подойдёт?',
     consultText: 'Подберём решение с учётом анатомии и желаемого результата.',
@@ -16792,9 +17161,16 @@ const editorialServiceData = {
     facts: ['Естественный эффект', 'Мягкая коррекция', 'Индивидуальный подбор'],
     concerns: ['Морщины лба', 'Межбровные складки', 'Гусиные лапки', 'Хмурое выражение', 'Активная мимика'],
     results: [
-      { src: 'botox-relatox-before-after.jpeg', alt: 'До и после ботулинотерапии Релатокс: разглаживание лба и межбровья', caption: 'Релатокс, 35 единиц. Лоб и межбровье', width: 730, height: 1280 },
-      { src: 'botox-rentox-before-after.jpeg', alt: 'До и после ботулинотерапии Рентокс', caption: 'Рентокс — до и после', width: 728, height: 1280 },
+      { src: 'botox-relatox-before-after-clean.jpeg', alt: 'До и после ботулинотерапии Релатокс: разглаживание лба и межбровья', caption: 'Релатокс, 35 единиц. Лоб и межбровье', width: 548, height: 549 },
+      { src: 'botox-rentox-before-after-clean.jpeg', alt: 'До и после ботулинотерапии Рентокс', caption: 'Рентокс — до и после', width: 502, height: 510 },
       { src: 'botox-before-after.png', alt: 'До и после ботулинотерапии: разглаживание лба и уменьшение мимических морщин', caption: 'До и после ботулинотерапии', width: 1092, height: 1060 }
+    ],
+    resultItems: [
+      'Разглаживаются морщины на лбу и в межбровье',
+      'Смягчаются «гусиные лапки» у глаз',
+      'Уходит привычка хмуриться — лицо выглядит спокойным, а не уставшим или сердитым',
+      'Взгляд становится более открытым, брови — приподнятыми',
+      'Мимика сохраняется — эмоции остаются живыми, лицо не «замирает»'
     ],
     resultCopy: 'Мимические морщины становятся менее выраженными, лоб и межбровье выглядят более гладкими, при этом сохраняется естественное выражение лица.',
     steps: ['Консультация и диагностика мимики', 'Индивидуальная разметка', 'Введение препарата', 'Рекомендации и контроль результата'],
@@ -16817,6 +17193,13 @@ const editorialServiceData = {
       { src: 'peeling-before-after-eye-area.jpeg', alt: 'До и после пилинга: кожа в области глаз и щёк', caption: 'Пилинг — область глаз и щёк', width: 1320, height: 2346 },
       { src: 'peeling-before-after-skin-texture.jpeg', alt: 'До и после пилинга: улучшение текстуры и сияния кожи', caption: 'Пилинг — текстура и сияние кожи', width: 1320, height: 2346 }
     ],
+    resultItems: [
+      'Кожа становится ровной, гладкой и сияющей',
+      'Бледнеет пигментация и следы постакне',
+      'Сужаются поры, уходит тусклость и неровный тон',
+      'Смягчаются мелкие морщинки',
+      'Нормализуется работа сальных желёз, меньше высыпаний'
+    ],
     resultCopy: 'После курса кожа выглядит более ровной и свежей, а пигментация и следы постакне заметно смягчаются.',
     steps: ['Диагностика и очищение кожи', 'Подбор и нанесение состава', 'Завершающий уход'],
     note: 'Состав и интенсивность воздействия подбираются индивидуально после оценки состояния кожи.',
@@ -16837,6 +17220,13 @@ const editorialServiceData = {
       { src: 'facial-cleansing-before-after-face.jpeg', alt: 'До и после чистки лица: общий вид кожи', caption: 'Общий вид кожи', width: 1319, height: 1254 },
       { src: 'facial-cleansing-before-after-nose.jpeg', alt: 'До и после чистки лица: очищение пор в области носа', caption: 'Очищение пор в области носа', width: 1320, height: 1310 }
     ],
+    resultItems: [
+      'Кожа становится чище и глаже, уходит ощущение «забитости»',
+      'Поры выглядят аккуратнее, чёрные точки менее заметны',
+      'Выравнивается рельеф и тон, лицо выглядит свежим и ухоженным',
+      'Меньше новых высыпаний — сальные пробки не превращаются в воспаления',
+      'Уходовые средства работают лучше, макияж ложится ровнее'
+    ],
     resultCopy: 'Кожа выглядит более чистой и гладкой, поры — аккуратнее, а лицо приобретает свежий, ухоженный вид.',
     steps: ['Диагностика и подготовка кожи', 'Основной этап очищения по показаниям', 'Успокаивающий и восстанавливающий уход'],
     note: 'Интенсивность очищения и средства выбираются с учётом чувствительности, жирности и текущего состояния кожи.',
@@ -16856,6 +17246,13 @@ const editorialServiceData = {
     resultTitle: 'До и после',
     results: [
       { src: 'biorev-pdrn-before-after.jpg', alt: 'До и после биоревитализации с PDRN', caption: 'Биоревитализация с PDRN', width: 1024, height: 1280 }
+    ],
+    resultItems: [
+      'Кожа насыщается влагой изнутри, уходит стянутость и сухость',
+      'Разглаживаются мелкие «сухие» морщинки, особенно вокруг глаз',
+      'Возвращается сияние — лицо перестаёт выглядеть тусклым и уставшим',
+      'Выравнивается рельеф и тон, кожа становится более гладкой на ощупь',
+      'Повышается упругость и плотность, кожа лучше держит форму'
     ],
     resultCopy: 'Кожа может выглядеть более увлажнённой, плотной и свежей. Выраженность результата и количество процедур зависят от исходного состояния кожи и выбранного протокола.',
     steps: ['Консультация и оценка состояния кожи', 'Очищение и подготовка зоны', 'Введение выбранного препарата', 'Рекомендации и план дальнейшего ухода'],
@@ -16879,6 +17276,13 @@ const editorialServiceData = {
     resultTitle: 'До и после',
     results: [
       { src: 'lipolytics-before-after.png', alt: 'До и после курса липолитической коррекции', caption: 'Работа с локальной зоной', width: 1158, height: 1148 }
+    ],
+    resultItems: [
+      'Локальный объём в зоне коррекции может уменьшиться',
+      'Контур становится аккуратнее — челюсть, подбородок, талия',
+      'Сглаживаются «валики», которые плохо поддаются спорту и питанию',
+      'Силуэт выглядит более собранным, одежда садится ровнее',
+      'Кожа в зоне работы подтягивается, рельеф выравнивается'
     ],
     resultCopy: 'Процедура может помочь уменьшить локальный объём и сделать контур аккуратнее. Это не метод общего снижения веса: зона и целесообразность коррекции оцениваются очно.',
     steps: ['Оценка зоны и толщины жировой складки', 'Разметка и подготовка кожи', 'Введение препарата по выбранной схеме', 'Контроль реакции и рекомендации'],
@@ -16905,6 +17309,13 @@ const editorialServiceData = {
       { src: 'collagen-before-after.png', alt: 'До и после коллагенотерапии в области вокруг глаз', caption: 'Работа с качеством кожи вокруг глаз', width: 1306, height: 1269 },
       { src: 'collagen-scars-before-after.jpeg', alt: 'До и после работы с рубцами', caption: 'Работа с рельефом и рубцовыми изменениями', width: 1320, height: 1132 }
     ],
+    resultItems: [
+      'Кожа может постепенно становиться более плотной и упругой, а рельеф — ровнее',
+      'Ткани могут лучше удерживать форму, а кожа — выглядеть более собранной',
+      'Контуры лица или тела могут становиться более чёткими за счёт улучшения качества тканей',
+      'Зоны со сниженной плотностью могут выглядеть более гладкими и ухоженными',
+      'Результат формируется постепенно и зависит от препарата, зоны и способности тканей к восстановлению'
+    ],
     resultCopy: 'Кожа может постепенно становиться более плотной и упругой, а рельеф — ровнее. Результат развивается не мгновенно и зависит от выбранного препарата и способности тканей к восстановлению.',
     steps: ['Диагностика качества и объёма тканей', 'Выбор препарата и техники', 'Проведение процедуры по разметке', 'Контроль и план наблюдения'],
     note: 'Коллагеностимуляция не должна менять лицо до неузнаваемости: задача протокола — укрепить ткани и сохранить естественные пропорции.',
@@ -16928,6 +17339,8 @@ const editorialServiceData = {
     resultLead: 'Поддержка естественного восстановления кожи и волос',
     benefits: ['Работа с качеством кожи и микроциркуляцией', 'Поддержка комплексного лечения выпадения волос', 'Восстановительные протоколы после оценки показаний'],
     resultCopy: 'Плазмотерапия не заменяет диагностику причин выпадения волос или изменений кожи. Она включается в план только тогда, когда соответствует вашей задаче.',
+    hideResultCopy: true,
+    resultVariant: 'plasma',
     steps: ['Консультация и определение показаний', 'Забор небольшого объёма крови', 'Подготовка плазмы в центрифуге', 'Введение в выбранную зону и рекомендации'],
     note: 'Для работы с волосами важно сначала уточнить причину выпадения: иногда необходимы анализы и коррекция выявленных факторов.',
     faq: [
@@ -16951,6 +17364,14 @@ const editorialServiceData = {
       { src: 'rf-microneedle-before-after-cropped.jpeg', alt: 'До и после RF-микроигольчатого лифтинга лица', caption: 'RF-микроигольчатый лифтинг — анфас', width: 720, height: 800 },
       { src: 'rf-microneedle-before-after-profile.jpeg', alt: 'До и после RF-микроигольчатого лифтинга в профиль', caption: 'RF-микроигольчатый лифтинг — профиль', width: 1280, height: 848 },
       { src: 'rf-microneedle-knee-before-after.webp', alt: 'До и после RF-микроигольчатого лифтинга коленей', caption: 'Работа с качеством кожи в области коленей', width: 1248, height: 1122 }
+    ],
+    resultCopyTitle: 'Что вы получаете после процедуры:',
+    resultItems: [
+      'Кожа становится плотнее и упруже, овал лица — более чётким',
+      'Разглаживаются мелкие морщины и заломы',
+      'Сужаются поры, выравнивается рельеф и тон',
+      'Уменьшается выраженность постакне, рубцов и растяжек',
+      'Подтягиваются «поплывшие» зоны: овал, второй подбородок, шея'
     ],
     resultCopy: 'Кожа может стать более плотной и ровной, поры и следы постакне — менее заметными. Изменения развиваются постепенно, по мере обновления и ремоделирования тканей.',
     steps: ['Диагностика кожи и выбор параметров', 'Очищение и подготовка зоны', 'Обработка кожи аппаратом Vivace', 'Восстановительный уход и рекомендации'],
@@ -16976,6 +17397,15 @@ const editorialServiceData = {
       { src: 'bbl-before-after-front-clean.webp', alt: 'До и после BBL-фотоомоложения в анфас', caption: 'BBL — вид в анфас', width: 1089, height: 1444 },
       { src: 'bbl-before-after-profile.jpeg', alt: 'До и после BBL-фотоомоложения в профиль', caption: 'BBL — вид в профиль', width: 960, height: 1280 }
     ],
+    resultCopyTitle: 'Что вы получаете после процедуры:',
+    resultItems: [
+      'Уходят пигментные пятна и веснушки, тон становится ровным',
+      'Исчезают покраснения и сосудистые звёздочки',
+      'Кожа выглядит светящейся, отдохнувшей, «стеклянной»',
+      'Сужаются поры, выравнивается рельеф',
+      'Уменьшается активность акне и жирный блеск',
+      'Запускается выработка коллагена — кожа плотнее и упруже'
+    ],
     resultCopy: 'Процедура помогает сделать тон визуально ровнее, а пигментные и сосудистые проявления — менее заметными. BBL работает с качеством кожи, не меняя черты лица.',
     steps: ['Оценка фототипа и состояния кожи', 'Очищение и защита глаз', 'Световая обработка по выбранному протоколу', 'SPF-защита и рекомендации по уходу'],
     note: 'Параметры света и протокол выбираются с учётом фототипа, сезона, загара и конкретной задачи кожи.',
@@ -16998,6 +17428,13 @@ const editorialServiceData = {
     resultTitle: 'До и после',
     results: [
       { src: 'ozone-before-after-jawline.webp', alt: 'До и после озонотерапии нижней трети лица', caption: 'Нижняя треть лица', width: 1320, height: 658 }
+    ],
+    resultItems: [
+      'Кожа выглядит свежее, уходит тусклый сероватый тон',
+      'Уменьшается воспалительная активность, высыпания заживают быстрее',
+      'Улучшается микроциркуляция — цвет лица становится живее',
+      'Сокращается отёчность и следы усталости',
+      'Ускоряется восстановление кожи после других процедур'
     ],
     resultCopy: 'Внешний результат зависит от зоны, показаний и сочетания с другими методами. Озонотерапия не является универсальной процедурой и включается в план только после консультации.',
     steps: ['Консультация и оценка показаний', 'Выбор зоны и способа воздействия', 'Проведение процедуры по протоколу', 'Контроль реакции и рекомендации'],
@@ -17022,6 +17459,13 @@ const editorialServiceData = {
     results: [
       { src: 'facial-massage-before-after.jpeg', alt: 'До и после массажа лица: профиль и более свежий вид кожи', caption: 'Массаж лица — профиль', width: 1320, height: 2346, crop: true }
     ],
+    resultItems: [
+      'Уходит отёчность, лицо выглядит более чётким и «сухим»',
+      'Подтягивается овал, возвращается тонус мышц',
+      'Расслабляются зажимы: лоб, челюсть, шея',
+      'Разглаживаются мимические заломы',
+      'Улучшается цвет лица, кожа выглядит отдохнувшей'
+    ],
     resultCopy: 'Выраженность эффекта зависит от причины отёчности, тонуса мышц и регулярности процедур. Массаж не заменяет медицинскую диагностику при стойких отёках.',
     steps: ['Оценка отёчности и мышечного тонуса', 'Подготовка кожи и выбор техники', 'Массаж лица, шеи и выбранных зон', 'Завершающий уход и домашние рекомендации'],
     note: 'Техника и интенсивность подбираются по состоянию кожи, мышц и самочувствию в день процедуры.',
@@ -17042,6 +17486,8 @@ const editorialServiceData = {
     facts: ['По показаниям', 'Индивидуальный состав', 'Медицинский контроль'],
     concerns: ['Подтверждённые дефициты', 'Высокая нагрузка и стресс', 'Замедленное восстановление', 'Частые перелёты', 'Снижение ресурса'],
     resultTitle: 'Что даёт программа',
+    resultVariant: 'protocol',
+    resultMeta: 'IV · индивидуальный протокол',
     resultLead: 'Адресная поддержка вместо случайного набора витаминов',
     benefits: ['Состав с учётом анамнеза, анализов и совместимости', 'Контролируемое введение назначенных компонентов', 'План восстановления с понятной целью и наблюдением'],
     resultCopy: 'IV-терапия не назначается только по желанию «попробовать капельницу». Сначала оцениваются показания, риски и возможность решить задачу другими способами.',
@@ -17065,6 +17511,8 @@ const editorialServiceData = {
     facts: ['Сон и режим', 'Снижение перегрузки', 'Динамическое сопровождение'],
     concerns: ['Хроническая усталость', 'Нарушение сна', 'Внутреннее напряжение', 'Высокая нагрузка', 'Сложное восстановление'],
     resultTitle: 'Что даёт программа',
+    resultVariant: 'protocol',
+    resultMeta: 'Восстановление · персональная программа',
     resultLead: 'Понятный маршрут возвращения к устойчивому режиму',
     benefits: ['Выявление факторов, которые поддерживают усталость', 'Коррекция режима, питания и восстановительных привычек', 'Наблюдение динамики и последовательная корректировка плана'],
     resultCopy: 'Программа не подменяет лечение тревожных, депрессивных или других медицинских состояний. При необходимости рекомендуется консультация профильного специалиста.',
@@ -17092,6 +17540,8 @@ const editorialServiceData = {
     benefits: ['Анализ питания, воды, сна и ежедневной нагрузки', 'Мягкая коррекция привычек без экстремальных ограничений', 'Поддержка пищеварительного комфорта и общего самочувствия'],
     resultCopy: 'Организм не нуждается в агрессивных «чистках». Задача программы — убрать перегружающие факторы и поддержать естественные процессы с учётом состояния здоровья.',
     hideResultCopy: true,
+    resultVariant: 'protocol',
+    resultMeta: 'Мягкое восстановление · индивидуальная программа',
     steps: ['Разбор жалоб, рациона и режима', 'Определение основных перегружающих факторов', 'Составление безопасного плана изменений', 'Контроль самочувствия и корректировка'],
     note: 'При выраженной отёчности, боли или резком ухудшении самочувствия сначала необходима медицинская диагностика.',
     faq: [
@@ -17111,6 +17561,8 @@ const editorialServiceData = {
     facts: ['Комплексный разбор', 'План под вашу жизнь', 'Контроль динамики'],
     concerns: ['Хроническая усталость', 'Снижение энергии', 'Состояние кожи и волос', 'Вес и пищевые привычки', 'Подозрение на дефициты'],
     resultTitle: 'Что даёт сопровождение',
+    resultVariant: 'protocol',
+    resultMeta: 'Сопровождение · персональный маршрут',
     resultLead: 'Система решений вместо разрозненных советов',
     benefits: ['Разбор анализов и текущих назначений без дублирования', 'Персональные рекомендации по питанию и образу жизни', 'Промежуточный контроль и корректировка стратегии'],
     resultCopy: 'Цель сопровождения — не идеальный режим на неделю, а устойчивые изменения, которые подходят вашему образу жизни и могут поддерживаться долго.',
@@ -17135,6 +17587,12 @@ const editorialFactIcons = [
   '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg>'
 ];
 
+const detoxBenefitIcons = [
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h3l2-5 4 10 2-5h7"/></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5S5.5 10.1 5.5 14.3A6.5 6.5 0 0 0 18.5 14.3C18.5 10.1 12 3.5 12 3.5Z"/></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.8 1.7"/></svg>'
+];
+
 function editorialImageAttributes(image) {
   const dimensions = image.width && image.height ? ` width="${image.width}" height="${image.height}"` : '';
   return `src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"${dimensions}`;
@@ -17146,6 +17604,18 @@ function buildResultCarousel(key, title, images, suffix = '') {
 }
 
 function editorialResultMarkup(key, service) {
+  if (service.resultVariant === 'plasma' || service.resultVariant === 'protocol') {
+    return `<div class="plasma-outcome">
+      <p class="plasma-outcome__meta">${service.resultMeta || 'PRP · индивидуальный протокол'}</p>
+      <h5>${service.resultLead}</h5>
+      <div class="plasma-outcome__grid">${service.benefits.map((benefit, index) => `<article class="plasma-outcome__item"><span aria-hidden="true">0${index + 1}</span><p>${benefit}</p></article>`).join('')}</div>
+    </div>`;
+  }
+
+  if (service.resultVariant === 'detox') {
+    return `<div class="detox-outcome">${service.benefits.map((benefit, index) => `<article class="detox-outcome__item"><span class="detox-outcome__icon">${detoxBenefitIcons[index]}</span><p>${benefit}</p></article>`).join('')}</div>`;
+  }
+
   if (!service.results?.length) {
     return `<div class="treatment-benefit-panel"><h5>${service.resultLead}</h5><ul>${service.benefits.map((benefit) => `<li>${benefit}</li>`).join('')}</ul></div>`;
   }
@@ -17187,12 +17657,12 @@ function buildEditorialServiceModal(key, service) {
       <p class="modal-detail-card__eyebrow">Результаты</p>
       <div class="modal-detail-card__result-grid${service.hideResultCopy ? ' modal-detail-card__result-grid--solo' : ''}">
         <div class="modal-detail-card__result-column modal-detail-card__result-column--visual"><h3>${hasPhotos ? 'До и после' : (service.resultTitle || 'Результаты')}</h3>${editorialResultMarkup(key, service)}</div>
-        ${service.hideResultCopy ? '' : `<div class="modal-detail-card__result-column modal-detail-card__result-column--copy"><h3>Что получает клиент</h3>${service.resultItems ? `<ul class="modal-detail-card__result-list">${service.resultItems.map((item) => `<li>${item}</li>`).join('')}</ul>` : `<p>${service.resultCopy}</p>`}</div>`}
+        ${service.hideResultCopy ? '' : `<div class="modal-detail-card__result-column modal-detail-card__result-column--copy"><h3>${service.resultCopyTitle || 'Что получает клиент'}</h3>${service.resultItems ? `${service.resultItemsIntro ? `<p class="modal-detail-card__result-lead">${service.resultItemsIntro}</p>` : ''}<ul class="modal-detail-card__result-list">${service.resultItems.map((item) => `<li>${item}</li>`).join('')}</ul>` : `<p>${service.resultCopy}</p>`}</div>`}
       </div>
       <div class="modal-detail-card__note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><p>${service.note}</p></div>
     </section>
     <section class="modal-detail-card__section modal-detail-card__steps" aria-labelledby="${key}-steps-title"><h4 id="${key}-steps-title">Как проходит процедура</h4><ol>${service.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${step}</p></li>`).join('')}</ol></section>
-    ${faqMarkup ? `<section class="modal-detail-card__section modal-detail-card__faq" aria-labelledby="${key}-faq-title"><h4 id="${key}-faq-title">Что важно знать</h4>${faqMarkup}</section>` : ''}
+    ${faqMarkup ? `<section class="modal-detail-card__section modal-detail-card__faq" aria-labelledby="${key}-faq-title"><h4 id="${key}-faq-title">${service.faqTitle || 'Что важно знать'}</h4>${faqMarkup}</section>` : ''}
     <section class="modal-detail-card__callout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-9 8.5 9 9 0 0 1-4-.9L3 21l1.8-4.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg><div><h4>${service.consultTitle}</h4><p>${service.consultText}</p></div></section>
     <div class="modal-detail-card__cta"><a href="https://wa.me/79636716596" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-unified">${service.cta}</a><p>${service.ctaNote}</p></div>`;
 
@@ -17988,13 +18458,13 @@ if ('IntersectionObserver' in window) {
                 <div class="modal-carousel__viewport">
                   <figure class="modal-carousel__slide is-active">
                     <div class="modal-carousel__crop modal-carousel__crop--relatox">
-                      <img src="botox-relatox-before-after.jpeg" alt="До и после ботулинотерапии Релатокс: разглаживание лба и межбровья" loading="lazy" decoding="async" width="730" height="1280" />
+                      <img src="botox-relatox-before-after-clean.jpeg" alt="До и после ботулинотерапии Релатокс: разглаживание лба и межбровья" loading="lazy" decoding="async" width="548" height="549" />
                     </div>
                     <figcaption class="modal-result__caption">Релатокс, 35 единиц. Лоб и межбровье</figcaption>
                   </figure>
                   <figure class="modal-carousel__slide">
                     <div class="modal-carousel__crop modal-carousel__crop--rentox">
-                      <img src="botox-rentox-before-after.jpeg" alt="До и после ботулинотерапии Рентокс" loading="lazy" decoding="async" width="728" height="1280" />
+                      <img src="botox-rentox-before-after-clean.jpeg" alt="До и после ботулинотерапии Рентокс" loading="lazy" decoding="async" width="502" height="510" />
                     </div>
                     <figcaption class="modal-result__caption">Рентокс — до и после</figcaption>
                   </figure>
