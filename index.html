@@ -16630,6 +16630,34 @@ img[src$="ozone-before-after-jawline.webp"] {
   color: #466854 !important;
 }
 
+/* Mobile hero: reserve a little more vertical room and keep the copy legible
+   over the portrait, especially where the title meets the jacket. */
+@media (max-width: 767px) {
+  #hero.hero.section {
+    min-height: calc(100svh - 28px) !important;
+  }
+
+  #hero .hero-ref .hero-content {
+    min-height: calc(100svh - 28px - 48px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+  }
+
+  #hero .container.hero-ref::after {
+    background:
+      linear-gradient(to bottom, rgba(247, 243, 237, .54) 0%, rgba(247, 243, 237, 0) 31%),
+      linear-gradient(to top, rgba(24, 62, 42, .88) 0%, rgba(35, 77, 53, .68) 48%, rgba(49, 91, 65, .26) 69%, rgba(49, 91, 65, 0) 84%) !important;
+  }
+
+  #hero .hero-ref h1 {
+    color: #fffdf9 !important;
+    text-shadow: 0 2px 18px rgba(17, 52, 34, .42);
+  }
+
+  #hero .hero-ref .hero-subcity.hero__tagline {
+    color: rgba(255, 253, 249, .96) !important;
+    text-shadow: 0 2px 14px rgba(17, 52, 34, .48);
+  }
+}
+
 </style>
   </head>
   <body>
