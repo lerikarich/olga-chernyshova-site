@@ -16369,6 +16369,29 @@ img[src$="ozone-before-after-jawline.webp"] {
   object-position: center center !important;
 }
 
+/* Peeling comparisons use only the useful square image area: the solid brown
+   source canvas above and below the photos stays outside the visible frame. */
+#modal-peel.service-modal.treatment-modal .modal-carousel__slide .treatment-result-crop {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 16px;
+  background: transparent !important;
+}
+
+#modal-peel.service-modal.treatment-modal .modal-carousel__slide .treatment-result-crop > img {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
 /* Plasma results: a quieter editorial composition with a tactile, warm surface. */
 #modal-plasma.service-modal.treatment-modal .modal-detail-card__result-column--visual > h3 {
   max-width: 16ch;
@@ -17190,8 +17213,8 @@ const editorialServiceData = {
     concerns: ['Пигментация', 'Акне и постакне', 'Неровный тон', 'Тусклый цвет лица', 'Расширенные поры'],
     results: [
       { src: 'peeling-before-after.jpeg', alt: 'До и после курса пилинга: выравнивание тона кожи', caption: 'До и после курса пилинга', width: 1320, height: 1171 },
-      { src: 'peeling-before-after-eye-area.jpeg', alt: 'До и после пилинга: кожа в области глаз и щёк', caption: 'Пилинг — область глаз и щёк', width: 1320, height: 2346 },
-      { src: 'peeling-before-after-skin-texture.jpeg', alt: 'До и после пилинга: улучшение текстуры и сияния кожи', caption: 'Пилинг — текстура и сияние кожи', width: 1320, height: 2346 }
+      { src: 'peeling-before-after-eye-area.jpeg', alt: 'До и после пилинга: кожа в области глаз и щёк', caption: 'Пилинг — область глаз и щёк', width: 1320, height: 2346, crop: true },
+      { src: 'peeling-before-after-skin-texture.jpeg', alt: 'До и после пилинга: улучшение текстуры и сияния кожи', caption: 'Пилинг — текстура и сияние кожи', width: 1320, height: 2346, crop: true }
     ],
     resultItems: [
       'Кожа становится ровной, гладкой и сияющей',
@@ -17602,7 +17625,10 @@ function editorialImageAttributes(image) {
 }
 
 function buildResultCarousel(key, title, images, suffix = '') {
-  const slides = images.map((image, index) => `<figure class="modal-carousel__slide${index === 0 ? ' is-active' : ''}"><img ${editorialImageAttributes(image)}><figcaption class="modal-result__caption">${image.caption}</figcaption></figure>`).join('');
+  const slides = images.map((image, index) => {
+    const media = image.crop ? `<span class="treatment-result-crop"><img ${editorialImageAttributes(image)}></span>` : `<img ${editorialImageAttributes(image)}>`;
+    return `<figure class="modal-carousel__slide${index === 0 ? ' is-active' : ''}">${media}<figcaption class="modal-result__caption">${image.caption}</figcaption></figure>`;
+  }).join('');
   return `<div class="modal-carousel modal-carousel--compact treatment-carousel" data-carousel="editorial-${key}${suffix}"><button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото ${title}">‹</button><div class="modal-carousel__viewport">${slides}</div><button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото ${title}">›</button><div class="modal-carousel__dots" aria-label="Фотографии результатов ${title}"></div></div>`;
 }
 
