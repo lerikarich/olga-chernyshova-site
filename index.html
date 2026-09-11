@@ -4269,6 +4269,16 @@ li,
   margin-top: 8px;
 }
 
+.modal-carousel__counter {
+  margin: 2px 0 0;
+  color: var(--treatment-muted, #69776b);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .modal-carousel__dots button {
   width: 9px;
   height: 9px;
@@ -17679,7 +17689,7 @@ function buildResultCarousel(key, title, images, suffix = '') {
     const media = image.crop ? `<span class="treatment-result-crop"><img ${editorialImageAttributes(image)}></span>` : `<img ${editorialImageAttributes(image)}>`;
     return `<figure class="modal-carousel__slide${index === 0 ? ' is-active' : ''}">${media}<figcaption class="modal-result__caption">${image.caption}</figcaption></figure>`;
   }).join('');
-  return `<div class="modal-carousel modal-carousel--compact treatment-carousel" data-carousel="editorial-${key}${suffix}"><button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото ${title}">‹</button><div class="modal-carousel__viewport">${slides}</div><button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото ${title}">›</button><div class="modal-carousel__dots" aria-label="Фотографии результатов ${title}"></div></div>`;
+  return `<div class="modal-carousel modal-carousel--compact treatment-carousel" data-carousel="editorial-${key}${suffix}"><button class="modal-carousel__control modal-carousel__control--prev" type="button" aria-label="Предыдущее фото ${title}">‹</button><div class="modal-carousel__viewport">${slides}</div><button class="modal-carousel__control modal-carousel__control--next" type="button" aria-label="Следующее фото ${title}">›</button><div class="modal-carousel__dots" aria-label="Фотографии результатов ${title}"></div><p class="modal-carousel__counter" aria-live="polite">Фото 1 из ${images.length}</p></div>`;
 }
 
 function editorialResultMarkup(key, service) {
@@ -17879,6 +17889,7 @@ function initCarousel(carousel) {
   const prev = carousel.querySelector('.modal-carousel__control--prev');
   const next = carousel.querySelector('.modal-carousel__control--next');
   const dotsWrap = carousel.querySelector('.modal-carousel__dots');
+  const counter = carousel.querySelector('.modal-carousel__counter');
   if (!slides.length || !dotsWrap) return;
   let index = 0;
 
@@ -17894,6 +17905,7 @@ function initCarousel(carousel) {
       if (isActive) dot.setAttribute('aria-current', 'true');
       else dot.removeAttribute('aria-current');
     });
+    if (counter) counter.textContent = `Фото ${index + 1} из ${slides.length}`;
     if (prev) prev.disabled = index === 0;
     if (next) next.disabled = index === slides.length - 1;
   }
